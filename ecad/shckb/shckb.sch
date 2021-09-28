@@ -1,0 +1,346 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "shckb"
+Date "2021-09-26"
+Rev "0.1"
+Comp "Steven Eisinger"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L shckb:SW_Keyboard SW2
+U 1 1 61513951
+P 5900 3000
+F 0 "SW2" H 5900 3193 50  0000 C CNN
+F 1 "SW_Keyboard" H 5900 2940 50  0001 C CNN
+F 2 "" H 5900 3200 50  0001 C CNN
+F 3 "~" H 5900 3200 50  0001 C CNN
+	1    5900 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW3
+U 1 1 61514FDE
+P 6375 3000
+F 0 "SW3" H 6375 3193 50  0000 C CNN
+F 1 "SW_Keyboard" H 6375 2940 50  0001 C CNN
+F 2 "" H 6375 3200 50  0001 C CNN
+F 3 "~" H 6375 3200 50  0001 C CNN
+	1    6375 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW4
+U 1 1 615162C4
+P 6850 3000
+F 0 "SW4" H 6850 3193 50  0000 C CNN
+F 1 "SW_Keyboard" H 6850 2940 50  0001 C CNN
+F 2 "" H 6850 3200 50  0001 C CNN
+F 3 "~" H 6850 3200 50  0001 C CNN
+	1    6850 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW5
+U 1 1 61516D7F
+P 7325 3000
+F 0 "SW5" H 7325 3193 50  0000 C CNN
+F 1 "SW_Keyboard" H 7325 2940 50  0001 C CNN
+F 2 "" H 7325 3200 50  0001 C CNN
+F 3 "~" H 7325 3200 50  0001 C CNN
+	1    7325 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW6
+U 1 1 61517518
+P 7800 3000
+F 0 "SW6" H 7800 3193 50  0000 C CNN
+F 1 "SW_Keyboard" H 7800 2940 50  0001 C CNN
+F 2 "" H 7800 3200 50  0001 C CNN
+F 3 "~" H 7800 3200 50  0001 C CNN
+	1    7800 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW1
+U 1 1 61517C87
+P 5425 3000
+F 0 "SW1" H 5425 3193 50  0000 C CNN
+F 1 "SW_Keyboard" H 5425 2940 50  0001 C CNN
+F 2 "" H 5425 3200 50  0001 C CNN
+F 3 "~" H 5425 3200 50  0001 C CNN
+	1    5425 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW8
+U 1 1 6152C390
+P 5900 3500
+F 0 "SW8" H 5900 3693 50  0000 C CNN
+F 1 "SW_Keyboard" H 5900 3440 50  0001 C CNN
+F 2 "" H 5900 3700 50  0001 C CNN
+F 3 "~" H 5900 3700 50  0001 C CNN
+	1    5900 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW9
+U 1 1 6152C3AC
+P 6375 3500
+F 0 "SW9" H 6375 3693 50  0000 C CNN
+F 1 "SW_Keyboard" H 6375 3440 50  0001 C CNN
+F 2 "" H 6375 3700 50  0001 C CNN
+F 3 "~" H 6375 3700 50  0001 C CNN
+	1    6375 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW10
+U 1 1 6152C3B6
+P 6850 3500
+F 0 "SW10" H 6850 3693 50  0000 C CNN
+F 1 "SW_Keyboard" H 6850 3440 50  0001 C CNN
+F 2 "" H 6850 3700 50  0001 C CNN
+F 3 "~" H 6850 3700 50  0001 C CNN
+	1    6850 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW11
+U 1 1 6152C3C0
+P 7325 3500
+F 0 "SW11" H 7325 3693 50  0000 C CNN
+F 1 "SW_Keyboard" H 7325 3440 50  0001 C CNN
+F 2 "" H 7325 3700 50  0001 C CNN
+F 3 "~" H 7325 3700 50  0001 C CNN
+	1    7325 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW12
+U 1 1 6152C3CA
+P 7800 3500
+F 0 "SW12" H 7800 3693 50  0000 C CNN
+F 1 "SW_Keyboard" H 7800 3440 50  0001 C CNN
+F 2 "" H 7800 3700 50  0001 C CNN
+F 3 "~" H 7800 3700 50  0001 C CNN
+	1    7800 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW7
+U 1 1 6152C3D4
+P 5425 3500
+F 0 "SW7" H 5425 3693 50  0000 C CNN
+F 1 "SW_Keyboard" H 5425 3440 50  0001 C CNN
+F 2 "" H 5425 3700 50  0001 C CNN
+F 3 "~" H 5425 3700 50  0001 C CNN
+	1    5425 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW14
+U 1 1 6153548C
+P 5900 4000
+F 0 "SW14" H 5900 4193 50  0000 C CNN
+F 1 "SW_Keyboard" H 5900 3940 50  0001 C CNN
+F 2 "" H 5900 4200 50  0001 C CNN
+F 3 "~" H 5900 4200 50  0001 C CNN
+	1    5900 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW15
+U 1 1 61535496
+P 6375 4000
+F 0 "SW15" H 6375 4193 50  0000 C CNN
+F 1 "SW_Keyboard" H 6375 3940 50  0001 C CNN
+F 2 "" H 6375 4200 50  0001 C CNN
+F 3 "~" H 6375 4200 50  0001 C CNN
+	1    6375 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW16
+U 1 1 615354A0
+P 6850 4000
+F 0 "SW16" H 6850 4193 50  0000 C CNN
+F 1 "SW_Keyboard" H 6850 3940 50  0001 C CNN
+F 2 "" H 6850 4200 50  0001 C CNN
+F 3 "~" H 6850 4200 50  0001 C CNN
+	1    6850 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW17
+U 1 1 615354AA
+P 7325 4000
+F 0 "SW17" H 7325 4193 50  0000 C CNN
+F 1 "SW_Keyboard" H 7325 3940 50  0001 C CNN
+F 2 "" H 7325 4200 50  0001 C CNN
+F 3 "~" H 7325 4200 50  0001 C CNN
+	1    7325 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW18
+U 1 1 615354B4
+P 7800 4000
+F 0 "SW18" H 7800 4193 50  0000 C CNN
+F 1 "SW_Keyboard" H 7800 3940 50  0001 C CNN
+F 2 "" H 7800 4200 50  0001 C CNN
+F 3 "~" H 7800 4200 50  0001 C CNN
+	1    7800 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW13
+U 1 1 615354BE
+P 5425 4000
+F 0 "SW13" H 5425 4193 50  0000 C CNN
+F 1 "SW_Keyboard" H 5425 3940 50  0001 C CNN
+F 2 "" H 5425 4200 50  0001 C CNN
+F 3 "~" H 5425 4200 50  0001 C CNN
+	1    5425 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW20
+U 1 1 6155F1C8
+P 5900 4500
+F 0 "SW20" H 5900 4693 50  0000 C CNN
+F 1 "SW_Keyboard" H 5900 4440 50  0001 C CNN
+F 2 "" H 5900 4700 50  0001 C CNN
+F 3 "~" H 5900 4700 50  0001 C CNN
+	1    5900 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW21
+U 1 1 6155F1D2
+P 6375 4500
+F 0 "SW21" H 6375 4693 50  0000 C CNN
+F 1 "SW_Keyboard" H 6375 4440 50  0001 C CNN
+F 2 "" H 6375 4700 50  0001 C CNN
+F 3 "~" H 6375 4700 50  0001 C CNN
+	1    6375 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW22
+U 1 1 6155F1DC
+P 6850 4500
+F 0 "SW22" H 6850 4693 50  0000 C CNN
+F 1 "SW_Keyboard" H 6850 4440 50  0001 C CNN
+F 2 "" H 6850 4700 50  0001 C CNN
+F 3 "~" H 6850 4700 50  0001 C CNN
+	1    6850 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW23
+U 1 1 6155F1E6
+P 7325 4500
+F 0 "SW23" H 7325 4693 50  0000 C CNN
+F 1 "SW_Keyboard" H 7325 4440 50  0001 C CNN
+F 2 "" H 7325 4700 50  0001 C CNN
+F 3 "~" H 7325 4700 50  0001 C CNN
+	1    7325 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW24
+U 1 1 6155F1F0
+P 7800 4500
+F 0 "SW24" H 7800 4693 50  0000 C CNN
+F 1 "SW_Keyboard" H 7800 4440 50  0001 C CNN
+F 2 "" H 7800 4700 50  0001 C CNN
+F 3 "~" H 7800 4700 50  0001 C CNN
+	1    7800 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW19
+U 1 1 6155F1FA
+P 5425 4500
+F 0 "SW19" H 5425 4693 50  0000 C CNN
+F 1 "SW_Keyboard" H 5425 4440 50  0001 C CNN
+F 2 "" H 5425 4700 50  0001 C CNN
+F 3 "~" H 5425 4700 50  0001 C CNN
+	1    5425 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW26
+U 1 1 6155F204
+P 5900 5000
+F 0 "SW26" H 5900 5193 50  0000 C CNN
+F 1 "SW_Keyboard" H 5900 4940 50  0001 C CNN
+F 2 "" H 5900 5200 50  0001 C CNN
+F 3 "~" H 5900 5200 50  0001 C CNN
+	1    5900 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW27
+U 1 1 6155F20E
+P 6375 5000
+F 0 "SW27" H 6375 5193 50  0000 C CNN
+F 1 "SW_Keyboard" H 6375 4940 50  0001 C CNN
+F 2 "" H 6375 5200 50  0001 C CNN
+F 3 "~" H 6375 5200 50  0001 C CNN
+	1    6375 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW28
+U 1 1 6155F218
+P 6850 5000
+F 0 "SW28" H 6850 5193 50  0000 C CNN
+F 1 "SW_Keyboard" H 6850 4940 50  0001 C CNN
+F 2 "" H 6850 5200 50  0001 C CNN
+F 3 "~" H 6850 5200 50  0001 C CNN
+	1    6850 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW29
+U 1 1 6155F222
+P 7325 5000
+F 0 "SW29" H 7325 5193 50  0000 C CNN
+F 1 "SW_Keyboard" H 7325 4940 50  0001 C CNN
+F 2 "" H 7325 5200 50  0001 C CNN
+F 3 "~" H 7325 5200 50  0001 C CNN
+	1    7325 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW30
+U 1 1 6155F22C
+P 7800 5000
+F 0 "SW30" H 7800 5193 50  0000 C CNN
+F 1 "SW_Keyboard" H 7800 4940 50  0001 C CNN
+F 2 "" H 7800 5200 50  0001 C CNN
+F 3 "~" H 7800 5200 50  0001 C CNN
+	1    7800 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L shckb:SW_Keyboard SW25
+U 1 1 6155F236
+P 5425 5000
+F 0 "SW25" H 5425 5193 50  0000 C CNN
+F 1 "SW_Keyboard" H 5425 4940 50  0001 C CNN
+F 2 "" H 5425 5200 50  0001 C CNN
+F 3 "~" H 5425 5200 50  0001 C CNN
+	1    5425 5000
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

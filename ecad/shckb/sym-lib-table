@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name shckb)(type Legacy)(uri C:/Users/etien/Projects/shockboard/ecad/library/shckb.lib)(options "")(descr ""))
+  (lib (name sw_keyboard)(type Legacy)(uri C:/Users/etien/Projects/shockboard/ecad/library/sw_keyboard.lib)(options "")(descr "")(disabled))
+)
