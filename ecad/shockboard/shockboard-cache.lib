@@ -1,11 +1,11 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# D
+# shckb_D
 #
-DEF D D 0 40 N N 1 F N
+DEF shckb_D D 0 40 N N 1 F N
 F0 "D" 0 100 50 H V C CNN
-F1 "D" 0 -100 50 H V C CNN
+F1 "shckb_D" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -23,11 +23,11 @@ X A 2 150 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# LiPo_Cell
+# shckb_LiPo_Cell
 #
-DEF LiPo_Cell BT 0 0 N N 1 F N
+DEF shckb_LiPo_Cell BT 0 0 N N 1 F N
 F0 "BT" 100 100 50 H V L CNN
-F1 "LiPo_Cell" 100 0 50 H V L CNN
+F1 "shckb_LiPo_Cell" 100 0 50 H V L CNN
 F2 "" 0 60 50 V I C CNN
 F3 "" 0 60 50 V I C CNN
 DRAW
@@ -42,11 +42,11 @@ X - 2 0 -100 100 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# SW_Keyboard
+# shckb_SW_Keyboard
 #
-DEF SW_Keyboard SW 0 40 N N 1 F N
+DEF shckb_SW_Keyboard SW 0 40 N N 1 F N
 F0 "SW" 50 100 50 H V L CNN
-F1 "SW_Keyboard" 0 -60 50 H V C CNN
+F1 "shckb_SW_Keyboard" 0 -60 50 H V C CNN
 F2 "" 0 200 50 H I C CNN
 F3 "" 0 200 50 H I C CNN
 DRAW
@@ -59,11 +59,11 @@ X 2 2 200 0 100 L 50 50 0 1 P
 ENDDRAW
 ENDDEF
 #
-# nice!nano_v2.0
+# shckb_nice!nano_v2.0
 #
-DEF nice!nano_v2.0 U 0 40 Y Y 1 F N
+DEF shckb_nice!nano_v2.0 U 0 40 Y Y 1 F N
 F0 "U" -600 900 50 H V C CNN
-F1 "nice!nano_v2.0" 350 900 50 H V C CNN
+F1 "shckb_nice!nano_v2.0" 350 900 50 H V C CNN
 F2 "" -100 350 50 H I C CNN
 F3 "" -100 350 50 H I C CNN
 DRAW
