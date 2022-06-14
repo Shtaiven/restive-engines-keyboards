@@ -1,0 +1,39 @@
+points:
+  zones:
+    matrix:
+      columns:
+        outer:
+        pinky:
+        ring:
+          stagger: 12
+        middle:
+          stagger: 5
+        index:
+          stagger: -6
+        inner:
+          stagger: -2
+      rows:
+        bottom:
+        home:
+        top:
+        num:
+    thumbfan:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-7, -19]
+      columns:
+        near:
+        home:
+          spread: 21.25
+          rotate: -28
+          origin: [-11.75, -9]
+        far:
+          spread: 21.25
+          rotate: -28
+          origin: [-9.5, -9]
+      rows:
+        thumb:
+  rotate: -20
+  mirror:
+    ref: matrix_pinky_home
+    distance: 223.7529778
