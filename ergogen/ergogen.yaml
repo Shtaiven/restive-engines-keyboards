@@ -5,13 +5,13 @@ points:
         outer:
         pinky:
         ring:
-          stagger: 12
+          stagger: 10.5
         middle:
-          stagger: 5
+          stagger: 3
         index:
-          stagger: -6
+          stagger: -5
         inner:
-          stagger: -2
+          stagger: -1.5
       rows:
         bottom:
         home:
@@ -19,10 +19,15 @@ points:
         num:
     thumbfan:
       anchor:
-        ref: matrix_inner_bottom
-        shift: [-7, -19]
+        ref: matrix_ring_bottom
+        shift: [0, -23]
       columns:
+        inner:
+          spread: 0.5U
+          key:
+            width: 2
         near:
+          spread: 1.5U
         home:
           spread: 21.25
           rotate: -28
