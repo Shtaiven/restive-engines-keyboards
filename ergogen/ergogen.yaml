@@ -31,13 +31,14 @@ points:
         home:
           spread: 21.25
           rotate: -24.5
-          origin: [-6, -6]
+          origin: [-10, -6]
         far:
           spread: 21.25
           rotate: -16
-          origin: [-9.5, -9]
+          origin: [-10, -6]
       rows:
         thumb:
+  rotate: -10
   mirror:
     ref: matrix_pinky_home
     distance: 230
