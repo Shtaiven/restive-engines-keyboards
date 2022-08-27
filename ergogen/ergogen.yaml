@@ -38,7 +38,7 @@ points:
           origin: [-10, -6]
       rows:
         thumb:
-  rotate: -10
+  rotate: -8
   mirror:
     ref: matrix_pinky_home
-    distance: 230
+    distance: 220
