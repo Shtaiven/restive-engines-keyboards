@@ -19,8 +19,8 @@ points:
         num:
     thumbfan:
       anchor:
-        ref: matrix_ring_bottom
-        shift: [0, -23]
+        ref: matrix_ring_home
+        shift: [0, -42]
       columns:
         inner:
           spread: 0.5u
@@ -40,5 +40,12 @@ points:
         thumb:
   rotate: -8
   mirror:
-    ref: matrix_pinky_home
-    distance: 220
+    ref: matrix_inner_home
+    distance: 67.5
+outlines:
+  exports:
+    plate:
+      - type: keys
+        side: both
+        size: [14,14]
+        corner: 1
