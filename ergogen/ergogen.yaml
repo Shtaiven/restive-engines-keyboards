@@ -59,17 +59,19 @@ outlines:
       - type: keys
         side: both
         size: [14,14]
-    # TODO: outline for the plate shape
-    plate_outline:
-      - type: polygon
-        operation: stack
-        points:
-         - ref: matrix_outer_num
-         - ref: matrix_inner_num
-         - ref: thumbfan_far_thumb
-         - ref: matrix_outer_bottom
-    # TODO: plate generation
-    # plate:
+    # outline for the plate shape
+    _plate_outline:
+      - type: rectangle
+        corner: 40
+        size: [300, 140]
+        anchor:
+          ref: matrix_inner_home
+          rotate: 8
+          shift: [-103.5, -90]
+    # plate generation
+    plate:
+      - +_plate_outline
+      - -_mx_cutout
 
 #
 # Define case geometry
