@@ -44,8 +44,14 @@ points:
     distance: 67.5
 outlines:
   exports:
-    plate:
+    _mx_cutout:
       - type: keys
         side: both
         size: [14,14]
-        corner: 1
+    _plate_outline:
+      - type: polygon
+        operation: stack
+        points:
+         - ref: matrix_outer_num
+         - ref: matrix_inner_num
+         - ref: thumbfan_far_thumb
