@@ -62,12 +62,11 @@ outlines:
     # outline for the plate shape
     _plate_outline:
       - type: rectangle
-        corner: 40
-        size: [300, 140]
+        corner: 20
+        size: [300, 150]
         anchor:
-          ref: matrix_inner_home
-          rotate: 8
-          shift: [-103.5, -90]
+          ref: [matrix_inner_home, mirror_matrix_inner_home]
+          shift: [-150, -78]
     # plate generation
     plate:
       - +_plate_outline
