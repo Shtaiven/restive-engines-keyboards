@@ -1,4 +1,10 @@
 #
+# Define unit constants
+#
+units:
+  SPLIT_ROTATION: -8
+
+#
 # Define key locations
 #
 # matrix: finger matrix (excluding thumbs)
@@ -44,7 +50,7 @@ points:
           origin: [-10, -6]
       rows:
         thumb:
-  rotate: -8
+  rotate: SPLIT_ROTATION
   mirror:
     ref: matrix_inner_home
     distance: 67.5
@@ -60,17 +66,38 @@ outlines:
         side: both
         size: [14,14]
     # outline for the plate shape
-    _plate_outline:
+    _plate_outline_rectangular:
       - type: rectangle
         corner: 20
         size: [300, 150]
         anchor:
           ref: [matrix_inner_home, mirror_matrix_inner_home]
           shift: [-150, -78]
+    _plate_outline_conforming_left:
+      - type: rectangle
+        corner: 5
+        size: [10U, 7U]
+        anchor:
+          ref: [matrix_inner_home, mirror_matrix_inner_home]
+          shift: [-8U, -3U]
+          rotate: SPLIT_ROTATION
+    _plate_outline_conforming_right:
+      - type: rectangle
+        corner: 5
+        size: [10U, 7U]
+        anchor:
+          ref: [matrix_inner_home, mirror_matrix_inner_home]
+          shift: [-2U, -4.4U]
+          rotate: -SPLIT_ROTATION
     # plate generation
-    plate:
-      - +_plate_outline
+    plate_rectangular:
+      - +_plate_outline_rectangular
       - -_mx_cutout
+    plate_conforming:
+      - +_plate_outline_conforming_left
+      - +_plate_outline_conforming_right
+      - -_mx_cutout
+
 
 #
 # Define case geometry
