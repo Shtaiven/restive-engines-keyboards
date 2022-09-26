@@ -5,16 +5,18 @@ units:
   # common
   SPLIT_ROTATION: -8
 
-  # outlines.plate_rectangular
+  # outlines.exports.plate_rectangular
   PLATE_RECTANGULAR_W: 300
   PLATE_RECTANGULAR_H: 150
   PLATE_RECTANGULAR_Y: -78
+  PLATE_RECTANGULAR_CORNER: 20
 
-  # outlines.plate_bent
+  # outlines.exports.plate_bent
   PLATE_BENT_H: 7U
   PLATE_BENT_W: 8.28U
   PLATE_BENT_X: -0.75U
   PLATE_BENT_Y: 1.5U
+  PLATE_BENT_CORNER: 5
 
 #
 # Define key locations
@@ -80,34 +82,38 @@ outlines:
     # outline for the plate shape
     _plate_outline_rectangular:
       - type: rectangle
-        corner: 20
+        corner: PLATE_RECTANGULAR_CORNER
         size: [PLATE_RECTANGULAR_W, PLATE_RECTANGULAR_H]
         anchor:
           ref: [matrix_inner_home, mirror_matrix_inner_home]
           shift: [-PLATE_RECTANGULAR_W/2, PLATE_RECTANGULAR_Y]
-    _plate_outline_conforming_left:
+    _plate_outline_bent_left:
       - type: rectangle
-        corner: 5
+        corner: PLATE_BENT_CORNER
         size: [PLATE_BENT_H, PLATE_BENT_W]
         anchor:
           ref: matrix_outer_num
           shift: [PLATE_BENT_X, PLATE_BENT_Y]
           rotate: -90
-    _plate_outline_conforming_right:
+    _plate_outline_bent_right:
       - type: rectangle
-        corner: 5
+        corner: PLATE_BENT_CORNER
         size: [PLATE_BENT_W, PLATE_BENT_H]
         anchor:
           ref: mirror_matrix_outer_num
           shift: [PLATE_BENT_X, PLATE_BENT_Y]
           rotate: 180
+    _plate_outline_bent_flat_top:
+      - type: rectangle
+        anchor:
+          ref: [matrix_inner_home, mirror_matrix_inner_home]
     # plate generation
     plate_rectangular:
       - +_plate_outline_rectangular
       - -_mx_cutout
     plate_bent:
-      - +_plate_outline_conforming_left
-      - +_plate_outline_conforming_right
+      - +_plate_outline_bent_left
+      - +_plate_outline_bent_right
       - -_mx_cutout
 
 
