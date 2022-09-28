@@ -7,15 +7,15 @@ units:
 
   # outlines.exports.plate_rectangular
   PLATE_RECTANGULAR_W: 300
-  PLATE_RECTANGULAR_H: 150
-  PLATE_RECTANGULAR_Y: -78
-  PLATE_RECTANGULAR_CORNER: 20
+  PLATE_RECTANGULAR_H: 145
+  PLATE_RECTANGULAR_Y: -75.5
+  PLATE_RECTANGULAR_CORNER: 5
 
   # outlines.exports.plate_bent
-  PLATE_BENT_H: 7U
+  PLATE_BENT_H: 6.4U
   PLATE_BENT_W: 8.28U
   PLATE_BENT_X: -0.75U
-  PLATE_BENT_Y: 1.5U
+  PLATE_BENT_Y: 1U
   PLATE_BENT_CORNER: 5
 
 #
@@ -79,6 +79,18 @@ outlines:
       - type: keys
         side: both
         size: [14,14]
+    _mx_cutout_stab_left:
+      - type: rectangle
+        size: # TODO
+        anchor:
+          ref: thumbfan_inner_thumb
+          shift: # TODO
+    _mx_cutout_stab_right:
+      - type: rectangle
+        size: # TODO
+        anchor:
+          ref: thumbfan_inner_thumb
+          shift: # TODO
     # outline for the plate shape
     _plate_outline_rectangular:
       - type: rectangle
@@ -105,8 +117,11 @@ outlines:
           rotate: 180
     _plate_outline_bent_flat_top:
       - type: rectangle
+        corner: 5
+        size: [14.15U, 2U]
         anchor:
           ref: [matrix_inner_home, mirror_matrix_inner_home]
+          shift: [-PLATE_BENT_W+23, PLATE_BENT_H-95.8]
     # plate generation
     plate_rectangular:
       - +_plate_outline_rectangular
@@ -114,6 +129,7 @@ outlines:
     plate_bent:
       - +_plate_outline_bent_left
       - +_plate_outline_bent_right
+      - +_plate_outline_bent_flat_top
       - -_mx_cutout
 
 
