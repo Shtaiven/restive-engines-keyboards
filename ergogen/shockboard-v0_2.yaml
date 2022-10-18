@@ -11,12 +11,11 @@ units:
   PLATE_RECTANGULAR_Y: -75.5
   PLATE_RECTANGULAR_CORNER: 5
 
-  # TODO: tune
   # outlines.exports.plate_bent
-  PLATE_BENT_H: 6.4u
-  PLATE_BENT_W: 8.28u
-  PLATE_BENT_X: -0.75u
-  PLATE_BENT_Y: 1u
+  PLATE_BENT_H: 6.4U
+  PLATE_BENT_W: 8.28U
+  PLATE_BENT_X: -0.75U
+  PLATE_BENT_Y: 1U
   PLATE_BENT_CORNER: 5
 
 #
@@ -30,7 +29,12 @@ points:
     matrix:
       columns:
         outer:
+          row_overrides:
+            home:
+            top:
+            num:
         pinky:
+          stagger: -1u
         ring:
           stagger: 10.5
         middle:
@@ -49,15 +53,16 @@ points:
         ref: matrix_middle_bottom
         shift: [0, -1.375u]
       columns:
-        inner:  # TODO: tune
+        inner:
           key:
-            rotate: 20
-            shift: [-5, -4.5]
+            rotate: 45
+            shift: [-0.5u, 0]
+            width: 1.25
         near:
         home:
           rotate: -8
           origin: [-0.5u, -0.5u]
-        far:  # TODO: tune
+        far:
           rotate: -24
           origin: [-0.5u, -0.5u]
       rows:
@@ -78,13 +83,6 @@ outlines:
         side: both
         size: [14,14]
     # outline for the plate shape
-    _plate_outline_rectangular:
-      - type: rectangle
-        corner: PLATE_RECTANGULAR_CORNER
-        size: [PLATE_RECTANGULAR_W, PLATE_RECTANGULAR_H]
-        anchor:
-          ref: [matrix_inner_home, mirror_matrix_inner_home]
-          shift: [-PLATE_RECTANGULAR_W/2, PLATE_RECTANGULAR_Y]
     _plate_outline_bent_left:
       - type: rectangle
         corner: PLATE_BENT_CORNER
@@ -104,14 +102,11 @@ outlines:
     _plate_outline_bent_flat_top:
       - type: rectangle
         corner: 5
-        size: [14.15u, 2u]
+        size: [14.15U, 2U]
         anchor:
           ref: [matrix_inner_home, mirror_matrix_inner_home]
           shift: [-PLATE_BENT_W+23, PLATE_BENT_H-95.8]
     # plate generation
-    plate_rectangular:
-      - +_plate_outline_rectangular
-      - -_mx_cutout
     plate_bent:
       - +_plate_outline_bent_left
       - +_plate_outline_bent_right
