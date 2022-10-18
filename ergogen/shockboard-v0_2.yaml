@@ -13,10 +13,10 @@ units:
 
   # TODO: tune
   # outlines.exports.plate_bent
-  PLATE_BENT_H: 6.4U
-  PLATE_BENT_W: 8.28U
-  PLATE_BENT_X: -0.75U
-  PLATE_BENT_Y: 1U
+  PLATE_BENT_H: 6.4u
+  PLATE_BENT_W: 8.28u
+  PLATE_BENT_X: -0.75u
+  PLATE_BENT_Y: 1u
   PLATE_BENT_CORNER: 5
 
 #
@@ -47,7 +47,7 @@ points:
     thumbfan:
       anchor:
         ref: matrix_middle_bottom
-        shift: [0, -1.375U]
+        shift: [0, -1.375u]
       columns:
         inner:  # TODO: tune
           key:
@@ -56,10 +56,10 @@ points:
         near:
         home:
           rotate: -8
-          origin: [-0.5U, -0.5U]
+          origin: [-0.5u, -0.5u]
         far:  # TODO: tune
           rotate: -24
-          origin: [-0.5U, -0.5U]
+          origin: [-0.5u, -0.5u]
       rows:
         thumb:
   rotate: SPLIT_ROTATION
@@ -104,7 +104,7 @@ outlines:
     _plate_outline_bent_flat_top:
       - type: rectangle
         corner: 5
-        size: [14.15U, 2U]
+        size: [14.15u, 2u]
         anchor:
           ref: [matrix_inner_home, mirror_matrix_inner_home]
           shift: [-PLATE_BENT_W+23, PLATE_BENT_H-95.8]
