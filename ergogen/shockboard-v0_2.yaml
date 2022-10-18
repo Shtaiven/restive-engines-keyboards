@@ -78,7 +78,7 @@ points:
 outlines:
   exports:
     # cutouts for the keys to be used in plate generation
-    _mx_cutout:
+    mx_cutouts:
       - type: keys
         side: both
         size: [14,14]
@@ -111,7 +111,7 @@ outlines:
       - +_plate_outline_bent_left
       - +_plate_outline_bent_right
       - +_plate_outline_bent_flat_top
-      - -_mx_cutout
+      - -mx_cutouts
 
 
 #
