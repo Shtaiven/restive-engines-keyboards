@@ -1,0 +1,77 @@
+#
+# Define unit constants
+#
+units:
+  # common
+  SPLIT_ROTATION: -8
+
+#
+# Define key locations
+#
+# matrix: finger matrix (excluding thumbs)
+# thumbfan: thumb keys
+#
+points:
+  zones:
+    matrix:
+      columns:
+        outer:
+          row_overrides:
+            home:
+            top:
+            num:
+        pinky:
+          stagger: -1u
+        ring:
+          stagger: 10.5
+        middle:
+          stagger: 3
+        index:
+          stagger: -5
+        inner:
+          stagger: -1.5
+      rows:
+        bottom:
+        home:
+        top:
+        num:
+    thumbfan:
+      anchor:
+        ref: matrix_middle_bottom
+        shift: [0, -1.375u]
+      columns:
+        inner:
+          key:
+            rotate: 45
+            shift: [-0.5u, 0]
+            width: 1.25
+        near:
+          rotate: 5  # TODO: adjust
+        home:
+          rotate: -20  # TODO: adjust
+          origin: [-0.5u, -0.5u]
+        far:
+          rotate: 0
+          origin: [-0.5u, -0.5u]
+      rows:
+        thumb:
+  rotate: SPLIT_ROTATION
+  mirror:
+    ref: matrix_inner_home
+    distance: 67.5
+
+#
+# Define outlines for the plate
+#
+outlines:
+  exports:
+    # cutouts for the keys to be used in the plate
+    mx_cutouts:
+      - type: keys
+        side: both
+        size: [14,14]
+
+#
+# Define pcb information
+#
+pcbs:  # TODO
