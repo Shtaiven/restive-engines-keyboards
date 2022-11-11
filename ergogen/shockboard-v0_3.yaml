@@ -5,6 +5,20 @@ units:
   # common
   SPLIT_ROTATION: -8
 
+  # columns
+  COLUMN_PINKY_STAGGER: -1u
+  COLUMN_RING_STAGGER: 10.5
+  COLUMN_MIDDLE_STAGGER: 3
+  COLUMN_INDEX_STAGGER: -5
+  COLUMN_INNER_STAGGER: -1.5
+
+  # thumbfan
+  # TODO: adjust these
+  THUMBFAN_HOME_ROT: -25
+  THUMBFAN_NEAR_ROT: 10
+  THUMBFAN_HOME_X: 10
+  THUMBFAN_HOME_Y: -1
+
 #
 # Define key locations
 #
@@ -21,15 +35,15 @@ points:
             top:
             num:
         pinky:
-          stagger: -1u
+          stagger: COLUMN_PINKY_STAGGER
         ring:
-          stagger: 10.5
+          stagger: COLUMN_RING_STAGGER
         middle:
-          stagger: 3
+          stagger: COLUMN_MIDDLE_STAGGER
         index:
-          stagger: -5
+          stagger: COLUMN_INDEX_STAGGER
         inner:
-          stagger: -1.5
+          stagger: COLUMN_INNER_STAGGER
       rows:
         bottom:
         home:
@@ -46,13 +60,15 @@ points:
             shift: [-0.5u, 0]
             width: 1.25
         near:
-          rotate: 5  # TODO: adjust
+          key:
+            rotate: THUMBFAN_NEAR_ROT
         home:
-          rotate: -20  # TODO: adjust
-          origin: [-0.5u, -0.5u]
+          rotate: THUMBFAN_HOME_ROT
+          key:
+            shift: [THUMBFAN_HOME_X, THUMBFAN_HOME_Y]
         far:
-          rotate: 0
-          origin: [-0.5u, -0.5u]
+          key:
+            shift: [THUMBFAN_HOME_X, THUMBFAN_HOME_Y]
       rows:
         thumb:
   rotate: SPLIT_ROTATION
