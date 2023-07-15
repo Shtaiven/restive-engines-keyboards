@@ -81,13 +81,12 @@ points:
         inner:
           key:
             rotate: 45
-            width: 1.25u
             shift: [-0.5u, 0]
+            width: 1.25u
         near:
           key:
             splay: THUMBFAN_NEAR_ROT
         home:
-
           key:
             splay: THUMBFAN_HOME_ROT
             shift: [THUMBFAN_HOME_X, THUMBFAN_HOME_Y]
