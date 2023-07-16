@@ -17,8 +17,8 @@ units:
 
   # thumbfan common
   THUMBFAN_ROT: 0
-  THUMBFAN_X: -1u
-  THUMBFAN_Y: -1.112u
+  THUMBFAN_X: 0.5u
+  THUMBFAN_Y: -1.375u
 
   # thumbfan outer
   THUMBFAN_OUTER_ROT: 45
@@ -87,7 +87,7 @@ points:
             num:
     thumbfan:
       anchor:
-        ref: matrix_index_bottom
+        ref: matrix_middle_bottom
         rotate: THUMBFAN_ROT
         shift: [THUMBFAN_X, THUMBFAN_Y]
       columns:
@@ -103,7 +103,7 @@ points:
             width: 1.25u
         inner:
           key:
-            splay: -16
+            splay: -20
             origin: [-0.5u, -0.5u]
             rotate: THUMBFAN_INNER_ROT
             shift: [THUMBFAN_INNER_X, THUMBFAN_INNER_Y]
