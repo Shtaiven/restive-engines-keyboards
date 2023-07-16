@@ -4,8 +4,9 @@
 # Define unit constants
 #
 units:
-  # common
+  # split
   SPLIT_ROTATION: -8
+  SPLIT_DISTANCE: 67.5
 
   # column stagger
   COLUMN_PINKY_STAGGER: -1u
@@ -13,6 +14,11 @@ units:
   COLUMN_MIDDLE_STAGGER: 3
   COLUMN_INDEX_STAGGER: -5
   COLUMN_INNER_STAGGER: -1.5
+
+  # thumbfan common
+  THUMBFAN_ROT: 0
+  THUMBFAN_X: -1u
+  THUMBFAN_Y: -1.112u
 
   # thumbfan outer
   THUMBFAN_OUTER_ROT: 45
@@ -26,8 +32,8 @@ units:
 
   # thumbfan inner
   THUMBFAN_INNER_ROT: 0
-  THUMBFAN_INNER_X: 0.5u
-  THUMBFAN_INNER_Y: 0
+  THUMBFAN_INNER_X: 0.4u
+  THUMBFAN_INNER_Y: 0.05u
 
 #
 # Define key locations
@@ -81,8 +87,9 @@ points:
             num:
     thumbfan:
       anchor:
-        ref: matrix_middle_bottom
-        shift: [0, -1.375u]
+        ref: matrix_index_bottom
+        rotate: THUMBFAN_ROT
+        shift: [THUMBFAN_X, THUMBFAN_Y]
       columns:
         outer:
           key:
@@ -106,7 +113,7 @@ points:
   rotate: SPLIT_ROTATION
   mirror:
     ref: matrix_inner_home
-    distance: 67.5
+    distance: SPLIT_DISTANCE
 
 #
 # Define outlines for the plate
