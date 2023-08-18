@@ -9,7 +9,6 @@ units:
   SPLIT_DISTANCE: 67.5
 
   # column stagger
-  COLUMN_PINKY_STAGGER: -1u
   COLUMN_RING_STAGGER: 10.5
   COLUMN_MIDDLE_STAGGER: 3
   COLUMN_INDEX_STAGGER: -5
@@ -46,45 +45,44 @@ points:
     matrix:
       columns:
         outer:
+          key:
+            column_net: P0
+            mirror.column_net: P11
           rows:
-            bottom:
-            home:
-            top:
+            bottom.skip: true
         pinky:
-          key.stagger: COLUMN_PINKY_STAGGER
-          rows:
-            bottom:
-            home:
-            top:
-            num:
+          key:
+            column_net: P1
+            mirror.column_net: P10
         ring:
-          key.stagger: COLUMN_RING_STAGGER
-          rows:
-            bottom:
-            home:
-            top:
-            num:
+          key:
+            stagger: COLUMN_RING_STAGGER
+            column_net: P2
+            mirror.column_net: P9
         middle:
-          key.stagger: COLUMN_MIDDLE_STAGGER
-          rows:
-            bottom:
-            home:
-            top:
-            num:
+          key:
+            stagger: COLUMN_MIDDLE_STAGGER
+            column_net: P3
+            mirror.column_net: P8
         index:
-          key.stagger: COLUMN_INDEX_STAGGER
-          rows:
-            bottom:
-            home:
-            top:
-            num:
+          key:
+            stagger: COLUMN_INDEX_STAGGER
+            column_net: P4
+            mirror.column_net: P7
         inner:
-          key.stagger: COLUMN_INNER_STAGGER
-          rows:
-            bottom:
-            home:
-            top:
-            num:
+          key:
+            stagger: COLUMN_INNER_STAGGER
+            column_net: P5
+            mirror.column_net: P6
+      rows:
+        bottom:
+          key.row_net: P12
+        home:
+          key.row_net: P13
+        top:
+          key.row_net: P14
+        num:
+          key.row_net: P15
     thumbfan:
       anchor:
         ref: matrix_middle_bottom
@@ -96,11 +94,15 @@ points:
             rotate: THUMBFAN_OUTER_ROT
             shift: [THUMBFAN_OUTER_X, THUMBFAN_OUTER_Y]
             width: 1.25u
+            column_net: P3
+            mirror.column_net: P8
         middle:
           key:
             rotate: THUMBFAN_MIDDLE_ROT
             shift: [THUMBFAN_MIDDLE_X, THUMBFAN_MIDDLE_Y]
             width: 1.25u
+            column_net: P4
+            mirror.column_net: P7
         inner:
           key:
             splay: -20
@@ -108,8 +110,11 @@ points:
             rotate: THUMBFAN_INNER_ROT
             shift: [THUMBFAN_INNER_X, THUMBFAN_INNER_Y]
             width: 1.25u
+            column_net: P5
+            mirror.column_net: P6
       rows:
         thumb:
+          key.row_net: P16
   rotate: SPLIT_ROTATION
   mirror:
     ref: matrix_inner_home
@@ -119,10 +124,67 @@ points:
 # Define outlines for the plate
 #
 outlines:
+  _full_polygon:
+    - what: polygon
+      points:
+        - ref: matrix_middle_top
+          shift: [-3.7u, 1.2u]
+        - ref: mirror_matrix_middle_top
+          shift: [-3.7u, 1.2u]
+        - ref: mirror_matrix_outer_home
+          shift: [-0.7u, -2.5u]
+        - ref: mirror_thumbfan_inner_thumb
+          shift: [0.8u, -0.7u]
+        - ref: thumbfan_inner_thumb
+          shift: [0.8u, -0.7u]
+        - ref: matrix_outer_home
+          shift: [-0.7u, -2.5u]
+      bound: false
+  _fillet:
+    - what: outline
+      name: _full_polygon
+      fillet: 6
   # cutouts for the keys to be used in plate generation
+  raw:
+    - what: rectangle
+      where: true
+      asym: source
+      size: [1.25u+5, 1u+5]
+      bound: false
   mx_cutouts:
     - what: rectangle
       where: true
       asym: source
       size: 14
       bound: false
+  mx_plate: [
+    +_fillet,
+    -mx_cutouts,
+  ]
+
+pcbs:
+  shockboard:
+    footprints:
+      keys:
+        what: mx
+        where: true
+        params:
+          from: "{{row_net}}"
+          to: "{{column_net}}"
+          keycaps: true
+      diodes:
+        what: diode
+        where: true
+        adjust:
+          shift: [0, -4.7]
+        params:
+          from: "{{row_net}}"
+          to: "{{colrow}}"
+      mcu:
+        what: promicro
+        where:
+          aggregate.parts:
+            - ref: matrix_inner_top
+            - ref: mirror_matrix_inner_top
+          shift: [0, 22]
+          rotate: 90
