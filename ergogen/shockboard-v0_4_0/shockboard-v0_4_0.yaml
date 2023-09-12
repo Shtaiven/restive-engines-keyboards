@@ -1,4 +1,7 @@
-# Built for ergogen v4.0.2
+# meta:
+#   engine: 4.0.2
+#   version: 0.4.0
+#   author: Steven Eisinger
 
 #
 # Define unit constants
@@ -162,8 +165,14 @@ outlines:
     -mx_cutouts,
   ]
 
+#
+# Define the PCB, using a pro-micro layout
+#
 pcbs:
   shockboard:
+    outlines:
+      shockboard_pcb_outline:
+        outline: _fillet
     footprints:
       keys:
         what: mx
@@ -186,5 +195,5 @@ pcbs:
           aggregate.parts:
             - ref: matrix_inner_top
             - ref: mirror_matrix_inner_top
-          shift: [0, 22]
-          rotate: 90
+          shift: [0, 26]
+          rotate: -90
