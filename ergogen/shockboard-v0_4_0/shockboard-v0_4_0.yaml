@@ -49,34 +49,34 @@ points:
       columns:
         outer:
           key:
-            column_net: P1
-            mirror.column_net: P21
+            column_net: P21
+            mirror.column_net: P1
           rows:
             bottom.skip: true
         pinky:
           key:
-            column_net: P0
-            mirror.column_net: P20
+            column_net: P20
+            mirror.column_net: P0
         ring:
           key:
             stagger: COLUMN_RING_STAGGER
-            column_net: P2
-            mirror.column_net: P19
+            column_net: P19
+            mirror.column_net: P2
         middle:
           key:
             stagger: COLUMN_MIDDLE_STAGGER
-            column_net: P3
-            mirror.column_net: P18
+            column_net: P18
+            mirror.column_net: P3
         index:
           key:
             stagger: COLUMN_INDEX_STAGGER
-            column_net: P4
-            mirror.column_net: P15
+            column_net: P15
+            mirror.column_net: P4
         inner:
           key:
             stagger: COLUMN_INNER_STAGGER
-            column_net: P5
-            mirror.column_net: P14
+            column_net: P14
+            mirror.column_net: P5
       rows:
         bottom:
           row_net: P6
@@ -97,15 +97,15 @@ points:
             rotate: THUMBFAN_OUTER_ROT
             shift: [THUMBFAN_OUTER_X, THUMBFAN_OUTER_Y]
             width: 1.25u
-            column_net: P3
-            mirror.column_net: P18
+            column_net: P18
+            mirror.column_net: P3
         middle:
           key:
             rotate: THUMBFAN_MIDDLE_ROT
             shift: [THUMBFAN_MIDDLE_X, THUMBFAN_MIDDLE_Y]
             width: 1.25u
-            column_net: P4
-            mirror.column_net: P15
+            column_net: P15
+            mirror.column_net: P4
         inner:
           key:
             splay: -20
@@ -113,8 +113,8 @@ points:
             rotate: THUMBFAN_INNER_ROT
             shift: [THUMBFAN_INNER_X, THUMBFAN_INNER_Y]
             width: 1.25u
-            column_net: P5
-            mirror.column_net: P14
+            column_net: P14
+            mirror.column_net: P5
       rows:
         thumb:
           row_net: P16
@@ -174,13 +174,20 @@ pcbs:
       shockboard_pcb_outline:
         outline: _fillet
     footprints:
-      keys:
+      mx_hotswap:
         what: mx
         where: true
         params:
           from: "{{row_net}}"
           to: "{{column_net}}"
-          keycaps: true
+          hotswap: true
+      choc_hotswap:
+        what: choc
+        where: true
+        params:
+          from: "{{row_net}}"
+          to: "{{column_net}}"
+          hotswap: true
       diodes:
         what: diode
         where: true
@@ -195,5 +202,37 @@ pcbs:
           aggregate.parts:
             - ref: matrix_inner_top
             - ref: mirror_matrix_inner_top
-          shift: [0, 26]
+          shift: [0, 24.75]
           rotate: -90
+        params:
+          orientation: down
+      pad_plus:
+        what: pad
+        where:
+          aggregate.parts:
+            - ref: matrix_inner_top
+            - ref: mirror_matrix_inner_top
+          shift: [1, 34.75]
+          rotate: 0
+        params:
+          front: true
+          back: false
+          width: 1.5
+          height: 1.5
+          text: "B+"
+          net: RAW # TODO: Connect to a switch
+      pad_minus:
+        what: pad
+        where:
+          aggregate.parts:
+            - ref: matrix_inner_top
+            - ref: mirror_matrix_inner_top
+          shift: [1, 31.75]
+          rotate: 0
+        params:
+          front: true
+          back: false
+          width: 1.5
+          height: 1.5
+          text: "B-"
+          net: GND

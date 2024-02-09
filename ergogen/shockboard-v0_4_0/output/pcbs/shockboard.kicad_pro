@@ -51,6 +51,7 @@
       "diff_pair_dimensions": [],
       "drc_exclusions": [],
       "meta": {
+        "filename": "board_design_settings.json",
         "version": 2
       },
       "rule_severities": {
@@ -218,7 +219,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P1"
+        "pattern": "P21"
       },
       {
         "netclass": "Default",
@@ -231,34 +232,6 @@
       {
         "netclass": "Default",
         "pattern": "P6"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P0"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P2"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P3"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P4"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P5"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P16"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P21"
       },
       {
         "netclass": "Default",
@@ -279,6 +252,34 @@
       {
         "netclass": "Default",
         "pattern": "P14"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P16"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P1"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P0"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P2"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P3"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P4"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P5"
       },
       {
         "netclass": "Default",
