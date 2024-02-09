@@ -49,43 +49,43 @@ points:
       columns:
         outer:
           key:
-            column_net: P0
-            mirror.column_net: P11
+            column_net: P1
+            mirror.column_net: P21
           rows:
             bottom.skip: true
         pinky:
           key:
-            column_net: P1
-            mirror.column_net: P10
+            column_net: P0
+            mirror.column_net: P20
         ring:
           key:
             stagger: COLUMN_RING_STAGGER
             column_net: P2
-            mirror.column_net: P9
+            mirror.column_net: P19
         middle:
           key:
             stagger: COLUMN_MIDDLE_STAGGER
             column_net: P3
-            mirror.column_net: P8
+            mirror.column_net: P18
         index:
           key:
             stagger: COLUMN_INDEX_STAGGER
             column_net: P4
-            mirror.column_net: P7
+            mirror.column_net: P15
         inner:
           key:
             stagger: COLUMN_INNER_STAGGER
             column_net: P5
-            mirror.column_net: P6
+            mirror.column_net: P14
       rows:
         bottom:
-          key.row_net: P12
+          row_net: P6
         home:
-          key.row_net: P13
+          row_net: P7
         top:
-          key.row_net: P14
+          row_net: P8
         num:
-          key.row_net: P15
+          row_net: P9
     thumbfan:
       anchor:
         ref: matrix_middle_bottom
@@ -98,14 +98,14 @@ points:
             shift: [THUMBFAN_OUTER_X, THUMBFAN_OUTER_Y]
             width: 1.25u
             column_net: P3
-            mirror.column_net: P8
+            mirror.column_net: P18
         middle:
           key:
             rotate: THUMBFAN_MIDDLE_ROT
             shift: [THUMBFAN_MIDDLE_X, THUMBFAN_MIDDLE_Y]
             width: 1.25u
             column_net: P4
-            mirror.column_net: P7
+            mirror.column_net: P15
         inner:
           key:
             splay: -20
@@ -114,10 +114,10 @@ points:
             shift: [THUMBFAN_INNER_X, THUMBFAN_INNER_Y]
             width: 1.25u
             column_net: P5
-            mirror.column_net: P6
+            mirror.column_net: P14
       rows:
         thumb:
-          key.row_net: P16
+          row_net: P16
   rotate: SPLIT_ROTATION
   mirror:
     ref: matrix_inner_home
