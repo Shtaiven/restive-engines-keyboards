@@ -1,7 +1,14 @@
 # meta:
-#   engine: 4.0.2
+#   engine: 4.0.5
 #   version: 0.4.0
 #   author: Steven Eisinger
+
+# TODO: Verify params from/to for pcb switches
+# TODO: Don't connect to RX/TX promicro pins
+# TODO: Add display pins (external footprint)
+# TODO: Add an on/off switch and connect between battery (external footprint)
+# TODO: Reshape pcb outline
+# TODO: (future) Add pins for cirque trackpad (external footprint)
 
 #
 # Define unit constants
@@ -46,6 +53,9 @@ units:
 points:
   zones:
     matrix:
+     # Fix placement on KiCAD sheet.
+      anchor:
+        shift: [100, -130]
       columns:
         outer:
           key:
@@ -130,18 +140,39 @@ outlines:
   _full_polygon:
     - what: polygon
       points:
-        - ref: matrix_middle_top
-          shift: [-3.7u, 1.2u]
-        - ref: mirror_matrix_middle_top
-          shift: [-3.7u, 1.2u]
-        - ref: mirror_matrix_outer_home
-          shift: [-0.7u, -2.5u]
-        - ref: mirror_thumbfan_inner_thumb
-          shift: [0.8u, -0.7u]
         - ref: thumbfan_inner_thumb
           shift: [0.8u, -0.7u]
+        - ref: thumbfan_outer_thumb
+          shift: [-0.8u, -0.7u]
+        - ref: matrix_pinky_bottom
+          shift: [-0.5u, -0.5u]
         - ref: matrix_outer_home
-          shift: [-0.7u, -2.5u]
+          shift: [-0.5u, -0.5u]
+        - ref: matrix_outer_num
+          shift: [-0.5u, 0.5u]
+        - ref: matrix_ring_num
+          shift: [0, 0.5u]
+        - ref: matrix_middle_num
+          shift: [0, 0.5u]
+        - ref: matrix_inner_num
+          shift: [0, 0.5u]
+        - ref: mirror_matrix_inner_num
+          shift: [0, 0.5u]
+        - ref: mirror_matrix_middle_num
+          shift: [0, 0.5u]
+        - ref: mirror_matrix_ring_num
+          shift: [0, 0.5u]
+        - ref: mirror_matrix_outer_num
+          shift: [-0.5u, 0.5u]
+        - ref: mirror_matrix_outer_home
+          shift: [-0.5u, -0.5u]
+        - ref: mirror_matrix_pinky_bottom
+          shift: [-0.5u, -0.5u]
+        - ref: mirror_thumbfan_outer_thumb
+          shift: [-0.8u, -0.7u]
+        - ref: mirror_thumbfan_inner_thumb
+          shift: [0.8u, -0.7u]
+
       bound: false
   _fillet:
     - what: outline
@@ -178,14 +209,14 @@ pcbs:
         what: mx
         where: true
         params:
-          from: "{{row_net}}"
+          from: "{{colrow}}"
           to: "{{column_net}}"
           hotswap: true
       choc_hotswap:
         what: choc
         where: true
         params:
-          from: "{{row_net}}"
+          from: "{{colrow}}"
           to: "{{column_net}}"
           hotswap: true
       diodes:
@@ -202,7 +233,7 @@ pcbs:
           aggregate.parts:
             - ref: matrix_inner_top
             - ref: mirror_matrix_inner_top
-          shift: [0, 24.75]
+          shift: [0, 4.75]
           rotate: -90
         params:
           orientation: down
@@ -212,7 +243,7 @@ pcbs:
           aggregate.parts:
             - ref: matrix_inner_top
             - ref: mirror_matrix_inner_top
-          shift: [1, 34.75]
+          shift: [1, 14.75]
           rotate: 0
         params:
           front: true
@@ -227,7 +258,7 @@ pcbs:
           aggregate.parts:
             - ref: matrix_inner_top
             - ref: mirror_matrix_inner_top
-          shift: [1, 31.75]
+          shift: [1, 11.75]
           rotate: 0
         params:
           front: true
