@@ -140,44 +140,43 @@ outlines:
   _full_polygon:
     - what: polygon
       points:
-        - ref: thumbfan_inner_thumb
-          shift: [0.8u, -0.7u]
         - ref: thumbfan_outer_thumb
-          shift: [-0.8u, -0.7u]
+          shift: [-0.8u, -1.5u]
         - ref: matrix_pinky_bottom
-          shift: [-0.5u, -0.5u]
+          shift: [-0.6u, -0.6u]
         - ref: matrix_outer_home
-          shift: [-0.5u, -0.5u]
+          shift: [-0.6u, -0.6u]
         - ref: matrix_outer_num
-          shift: [-0.5u, 0.5u]
+          shift: [-0.6u, 0.6u]
         - ref: matrix_ring_num
-          shift: [0, 0.5u]
+          shift: [-0.6u, 0.6u]
         - ref: matrix_middle_num
-          shift: [0, 0.5u]
+          shift: [-0.6u, 0.6u]
+        - ref: matrix_middle_num
+          shift: [0.6u, 0.6u]
         - ref: matrix_inner_num
-          shift: [0, 0.5u]
+          shift: [0.6u, 0.6u]
         - ref: mirror_matrix_inner_num
-          shift: [0, 0.5u]
+          shift: [0.6u, 0.6u]
         - ref: mirror_matrix_middle_num
-          shift: [0, 0.5u]
+          shift: [0.6u, 0.6u]
+        - ref: mirror_matrix_middle_num
+          shift: [-0.6u, 0.6u]
         - ref: mirror_matrix_ring_num
-          shift: [0, 0.5u]
+          shift: [-0.6u, 0.6u]
         - ref: mirror_matrix_outer_num
-          shift: [-0.5u, 0.5u]
+          shift: [-0.6u, 0.6u]
         - ref: mirror_matrix_outer_home
-          shift: [-0.5u, -0.5u]
+          shift: [-0.6u, -0.6u]
         - ref: mirror_matrix_pinky_bottom
-          shift: [-0.5u, -0.5u]
+          shift: [-0.6u, -0.6u]
         - ref: mirror_thumbfan_outer_thumb
-          shift: [-0.8u, -0.7u]
-        - ref: mirror_thumbfan_inner_thumb
-          shift: [0.8u, -0.7u]
-
+          shift: [-0.8u, -1.5u]
       bound: false
   _fillet:
     - what: outline
       name: _full_polygon
-      fillet: 6
+      fillet: 5
   # cutouts for the keys to be used in plate generation
   raw:
     - what: rectangle
