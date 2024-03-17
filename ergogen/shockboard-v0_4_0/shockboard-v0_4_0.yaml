@@ -139,9 +139,10 @@ points:
 outlines:
   _full_polygon:
     - what: polygon
+      operation: stack
       points:
         - ref: thumbfan_outer_thumb
-          shift: [-0.8u, -1.5u]
+          shift: [-0.7u, -1.5u]
         - ref: matrix_pinky_bottom
           shift: [-0.6u, -0.6u]
         - ref: matrix_outer_home
@@ -171,7 +172,7 @@ outlines:
         - ref: mirror_matrix_pinky_bottom
           shift: [-0.6u, -0.6u]
         - ref: mirror_thumbfan_outer_thumb
-          shift: [-0.8u, -1.5u]
+          shift: [-0.7u, -1.5u]
       bound: false
   _fillet:
     - what: outline
@@ -190,9 +191,19 @@ outlines:
       asym: source
       size: 14
       bound: false
+  choc_cutouts:
+    - what: rectangle
+      where: true
+      asym: source
+      size: 13.8
+      bound: false
   mx_plate: [
     +_fillet,
     -mx_cutouts,
+  ]
+  choc_plate_mx: [
+    +_fillet,
+    -choc_cutouts,
   ]
 
 #
@@ -208,6 +219,7 @@ pcbs:
         what: mx
         where: true
         params:
+          keycaps: true
           from: "{{colrow}}"
           to: "{{column_net}}"
           hotswap: true
@@ -232,7 +244,7 @@ pcbs:
           aggregate.parts:
             - ref: matrix_inner_top
             - ref: mirror_matrix_inner_top
-          shift: [0, 4.75]
+          shift: [0, 9.213]
           rotate: -90
         params:
           orientation: down
