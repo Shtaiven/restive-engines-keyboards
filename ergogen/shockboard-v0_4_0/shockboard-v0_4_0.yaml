@@ -5,9 +5,8 @@
 
 # TODO: Verify params from/to for pcb switches
 # TODO: Don't connect to RX/TX promicro pins
-# TODO: Add display pins (external footprint)
 # TODO: Add an on/off switch and connect between battery (external footprint)
-# TODO: Reshape pcb outline
+# TODO: Add screw holes
 # TODO: (future) Add pins for cirque trackpad (external footprint)
 
 #
@@ -241,9 +240,7 @@ pcbs:
       mcu:
         what: promicro
         where:
-          aggregate.parts:
-            - ref: matrix_inner_top
-            - ref: mirror_matrix_inner_top
+          ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [0, 9.213]
           rotate: -90
         params:
@@ -251,9 +248,7 @@ pcbs:
       pad_plus:
         what: pad
         where:
-          aggregate.parts:
-            - ref: matrix_inner_top
-            - ref: mirror_matrix_inner_top
+          ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [1, 14.75]
           rotate: 0
         params:
@@ -266,9 +261,7 @@ pcbs:
       pad_minus:
         what: pad
         where:
-          aggregate.parts:
-            - ref: matrix_inner_top
-            - ref: mirror_matrix_inner_top
+          ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [1, 11.75]
           rotate: 0
         params:
@@ -278,3 +271,23 @@ pcbs:
           height: 1.5
           text: "B-"
           net: GND
+      oled:
+        what: oled
+        params:
+          side: "F"
+          SDA: P2
+          SCL: P3
+        where:
+          ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
+          shift: [-6, -10.213]
+          rotate: 90
+      # Four Pin Reset Button
+      reset:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref.aggregate.parts: [matrix_index_top, mirror_matrix_index_top]
+          shift: [-13.5, 15]
+          rotate: 90
