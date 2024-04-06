@@ -548,6 +548,10 @@
       {
         "netclass": "Default",
         "pattern": "P10"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "B+"
       }
     ]
   },

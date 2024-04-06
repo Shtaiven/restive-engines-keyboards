@@ -167,6 +167,7 @@
 (net 72 "RST")
 (net 73 "VCC")
 (net 74 "P10")
+(net 75 "B+")
             
   (net_class Default "This is the default net class."
     (clearance 0.2)
@@ -250,6 +251,7 @@
 (add_net "RST")
 (add_net "VCC")
 (add_net "P10")
+(add_net "B+")
   )
 
             
@@ -6523,42 +6525,6 @@
       )
         
 
-    
-        (module SMDPad (layer F.Cu) (tedit 5B24D78E)
-
-            (at 213.3782709 96.5615405 0)
-
-            
-            (fp_text reference "PAD1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
-            (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
-            
-            
-            (pad 1 smd rect (at 0 0 0) (size 1.5 1.5) (layers F.Cu F.Paste F.Mask) (net 70 "RAW"))
-(fp_text user B+ (at -2.25 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            
-            
-        )
-    
-        
-
-    
-        (module SMDPad (layer F.Cu) (tedit 5B24D78E)
-
-            (at 213.3782709 99.5615405 0)
-
-            
-            (fp_text reference "PAD2" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
-            (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
-            
-            
-            (pad 1 smd rect (at 0 0 0) (size 1.5 1.5) (layers F.Cu F.Paste F.Mask) (net 71 "GND"))
-(fp_text user B- (at -2.25 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            
-            
-        )
-    
-        
-
         (module lib:OLED_headers (layer F.Cu) (tedit 5E1ADAC2)
         (at 206.3782709 121.5245405 90) 
 
@@ -6604,6 +6570,77 @@
         (pad 1 smd rect (at 3.1 -1.85 90) (size 1.8 1.1) (layers F.Cu F.Paste F.Mask) (net 71 "GND"))
         (pad 2 smd rect (at -3.1 1.85 90) (size 1.8 1.1) (layers F.Cu F.Paste F.Mask) (net 72 "RST"))
         (pad 2 smd rect (at 3.1 1.85 90) (size 1.8 1.1) (layers F.Cu F.Paste F.Mask) (net 72 "RST"))
+    )
+    
+    
+
+        
+        (module E73:SPDT_C128955 (layer F.Cu) (tstamp 5BF2CC3C)
+
+            (at 319.5512817 72.3458067 -7.5)
+
+            
+            (fp_text reference "T1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            
+            
+            (fp_line (start 1.95 -1.35) (end -1.95 -1.35) (layer F.SilkS) (width 0.15))
+            (fp_line (start 0 -1.35) (end -3.3 -1.35) (layer F.SilkS) (width 0.15))
+            (fp_line (start -3.3 -1.35) (end -3.3 1.5) (layer F.SilkS) (width 0.15))
+            (fp_line (start -3.3 1.5) (end 3.3 1.5) (layer F.SilkS) (width 0.15))
+            (fp_line (start 3.3 1.5) (end 3.3 -1.35) (layer F.SilkS) (width 0.15))
+            (fp_line (start 0 -1.35) (end 3.3 -1.35) (layer F.SilkS) (width 0.15))
+            
+            
+            (fp_line (start -1.95 -3.85) (end 1.95 -3.85) (layer Dwgs.User) (width 0.15))
+            (fp_line (start 1.95 -3.85) (end 1.95 -1.35) (layer Dwgs.User) (width 0.15))
+            (fp_line (start -1.95 -1.35) (end -1.95 -3.85) (layer Dwgs.User) (width 0.15))
+            
+            
+            (pad "" np_thru_hole circle (at 1.5 0) (size 1 1) (drill 0.9) (layers *.Cu *.Mask))
+            (pad "" np_thru_hole circle (at -1.5 0) (size 1 1) (drill 0.9) (layers *.Cu *.Mask))
+
+            
+            (pad 1 smd rect (at 2.25 2.075 -7.5) (size 0.9 1.25) (layers F.Cu F.Paste F.Mask) (net 70 "RAW"))
+            (pad 2 smd rect (at -0.75 2.075 -7.5) (size 0.9 1.25) (layers F.Cu F.Paste F.Mask) (net 75 "B+"))
+            (pad 3 smd rect (at -2.25 2.075 -7.5) (size 0.9 1.25) (layers F.Cu F.Paste F.Mask))
+            
+            
+            (pad "" smd rect (at 3.7 -1.1 -7.5) (size 0.9 0.9) (layers F.Cu F.Paste F.Mask))
+            (pad "" smd rect (at 3.7 1.1 -7.5) (size 0.9 0.9) (layers F.Cu F.Paste F.Mask))
+            (pad "" smd rect (at -3.7 1.1 -7.5) (size 0.9 0.9) (layers F.Cu F.Paste F.Mask))
+            (pad "" smd rect (at -3.7 -1.1 -7.5) (size 0.9 0.9) (layers F.Cu F.Paste F.Mask))
+        )
+        
+        
+
+    
+    (module JST_PH_S2B-PH-K_02x2.00mm_Angled (layer F.Cu) (tedit 58D3FE32)
+
+        (descr "JST PH series connector, S2B-PH-K, side entry type, through hole, Datasheet: http://www.jst-mfg.com/product/pdf/eng/ePH.pdf")
+        (tags "connector jst ph")
+
+        (at 225.87827089999996 92.1818495 0)
+
+        
+        (fp_text reference "JST1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+        (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+
+        (fp_line (start -2.25 0.25) (end -2.25 -1.35) (layer F.SilkS) (width 0.15))
+        (fp_line (start -2.25 -1.35) (end -2.95 -1.35) (layer F.SilkS) (width 0.15))
+        (fp_line (start -2.95 -1.35) (end -2.95 6.25) (layer F.SilkS) (width 0.15))
+        (fp_line (start -2.95 6.25) (end 2.95 6.25) (layer F.SilkS) (width 0.15))
+        (fp_line (start 2.95 6.25) (end 2.95 -1.35) (layer F.SilkS) (width 0.15))
+        (fp_line (start 2.95 -1.35) (end 2.25 -1.35) (layer F.SilkS) (width 0.15))
+        (fp_line (start 2.25 -1.35) (end 2.25 0.25) (layer F.SilkS) (width 0.15))
+        (fp_line (start 2.25 0.25) (end -2.25 0.25) (layer F.SilkS) (width 0.15))
+
+        (fp_line (start -1 1.5) (end -1 2.0) (layer F.SilkS) (width 0.15))
+        (fp_line (start -1.25 1.75) (end -0.75 1.75) (layer F.SilkS) (width 0.15))
+
+        (pad 1 thru_hole rect (at -1 0 0) (size 1.2 1.7) (drill 0.75) (layers *.Cu *.Mask) (net 75 "B+"))
+        (pad 2 thru_hole oval (at 1 0 0) (size 1.2 1.7) (drill 0.75) (layers *.Cu *.Mask) (net 71 "GND"))
+            
     )
     
     
