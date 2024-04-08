@@ -6647,7 +6647,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 183.9168487 92.4964472 -8)
+      (at 173.7160154 96.8188307 -8)
 
       (fp_text reference "_1" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -6668,7 +6668,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 240.83969309999998 92.4964472 8)
+      (at 251.04052639999998 96.8188307 8)
 
       (fp_text reference "_2" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -6689,7 +6689,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 88.8671705 86.2068791 -8)
+      (at 97.4814305 93.1735516 -8)
 
       (fp_text reference "_3" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -6710,7 +6710,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 335.8893713 86.2068791 8)
+      (at 327.2751113 93.1735516 8)
 
       (fp_text reference "_4" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -6731,7 +6731,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 175.983982 148.9417271 -8)
+      (at 165.9153631 152.32335600000002 -8)
 
       (fp_text reference "_5" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -6752,7 +6752,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 248.77255979999998 148.9417271 8)
+      (at 258.8411787 152.32335600000002 8)
 
       (fp_text reference "_6" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -6773,7 +6773,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 99.7493971 145.296448 -8)
+      (at 108.5975789 136.9466169 -8)
 
       (fp_text reference "_7" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -6794,7 +6794,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 325.00714469999997 145.296448 8)
+      (at 316.15896289999995 136.9466169 8)
 
       (fp_text reference "_8" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))

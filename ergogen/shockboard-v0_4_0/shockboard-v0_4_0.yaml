@@ -290,31 +290,39 @@ pcbs:
         what: mountinghole
         where:
           ref: [matrix_inner_num]
+          shift: [-0.5u, -0.3u]
       hole_top_inner_right:
         what: mountinghole
         where:
           ref: [mirror_matrix_inner_num]
+          shift: [-0.5u, -0.3u]
       hole_top_outer_left:
         what: mountinghole
         where:
           ref: [matrix_outer_num]
+          shift: [0.5u, -0.3u]
       hole_top_outer_right:
         what: mountinghole
         where:
           ref: [mirror_matrix_outer_num]
+          shift: [0.5u, -0.3u]
       hole_bot_inner_left:
         what: mountinghole
         where:
           ref: [matrix_inner_bottom]
+          shift: [-0.5u, -0.25u]
       hole_bot_inner_right:
         what: mountinghole
         where:
           ref: [mirror_matrix_inner_bottom]
+          shift: [-0.5u, -0.25u]
       hole_bot_outer_left:
         what: mountinghole
         where:
           ref: [matrix_pinky_bottom]
+          shift: [0.4u, 0.5u]
       hole_bot_outer_right:
         what: mountinghole
         where:
           ref: [mirror_matrix_pinky_bottom]
+          shift: [0.4u, 0.5u]
