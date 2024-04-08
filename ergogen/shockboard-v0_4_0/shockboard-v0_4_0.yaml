@@ -285,3 +285,36 @@ pcbs:
         where:
           ref.aggregate.parts: [matrix_index_top, mirror_matrix_index_top]
           shift: [13.5, 15]
+      # Screw holes
+      hole_top_inner_left:
+        what: mountinghole
+        where:
+          ref: [matrix_inner_num]
+      hole_top_inner_right:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_inner_num]
+      hole_top_outer_left:
+        what: mountinghole
+        where:
+          ref: [matrix_outer_num]
+      hole_top_outer_right:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_outer_num]
+      hole_bot_inner_left:
+        what: mountinghole
+        where:
+          ref: [matrix_inner_bottom]
+      hole_bot_inner_right:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_inner_bottom]
+      hole_bot_outer_left:
+        what: mountinghole
+        where:
+          ref: [matrix_pinky_bottom]
+      hole_bot_outer_right:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_pinky_bottom]
