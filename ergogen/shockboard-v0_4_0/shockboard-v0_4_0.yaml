@@ -5,8 +5,7 @@
 
 # TODO: Verify params from/to for pcb switches
 # TODO: Don't connect to RX/TX promicro pins
-# TODO: Add screw holes
-# TODO: (future) Add pins for cirque trackpad (external footprint)
+# TODO: (future) Add pins for 35mm/40mm cirque trackpad (external footprint)
 
 #
 # Define unit constants
@@ -284,7 +283,7 @@ pcbs:
           neg: GND
         where:
           ref.aggregate.parts: [matrix_index_top, mirror_matrix_index_top]
-          shift: [13.5, 15]
+          shift: [15, 0]
       # Screw holes
       hole_top_inner_left:
         what: mountinghole
