@@ -3,9 +3,7 @@
 #   version: 0.4.0
 #   author: Steven Eisinger
 
-# TODO: Verify params from/to for pcb switches
-# TODO: Don't connect to RX/TX promicro pins
-# TODO: (future) Add pins for 35mm/40mm cirque trackpad (external footprint)
+# TODO: Add pins for 35mm/40mm cirque trackpad (external footprint)
 
 #
 # Define unit constants
@@ -56,43 +54,41 @@ points:
       columns:
         outer:
           key:
-            column_net: P21
-            mirror.column_net: P1
+            column_net: P14
           rows:
             bottom.skip: true
         pinky:
           key:
-            column_net: P20
-            mirror.column_net: P0
+            column_net: P16
         ring:
           key:
             stagger: COLUMN_RING_STAGGER
-            column_net: P19
-            mirror.column_net: P2
+            column_net: P10
         middle:
           key:
             stagger: COLUMN_MIDDLE_STAGGER
-            column_net: P18
-            mirror.column_net: P3
+            column_net: P7
         index:
           key:
             stagger: COLUMN_INDEX_STAGGER
-            column_net: P15
-            mirror.column_net: P4
+            column_net: P8
         inner:
           key:
             stagger: COLUMN_INNER_STAGGER
-            column_net: P14
-            mirror.column_net: P5
+            column_net: P9
       rows:
         bottom:
-          row_net: P6
+          row_net: P21
+          mirror.row_net: P1
         home:
-          row_net: P7
+          row_net: P20
+          mirror.row_net: P0
         top:
-          row_net: P8
+          row_net: P19
+          mirror.row_net: P4
         num:
-          row_net: P9
+          row_net: P18
+          mirror.row_net: P5
     thumbfan:
       anchor:
         ref: matrix_middle_bottom
@@ -104,15 +100,13 @@ points:
             rotate: THUMBFAN_OUTER_ROT
             shift: [THUMBFAN_OUTER_X, THUMBFAN_OUTER_Y]
             width: 1.25u
-            column_net: P18
-            mirror.column_net: P3
+            column_net: P7
         middle:
           key:
             rotate: THUMBFAN_MIDDLE_ROT
             shift: [THUMBFAN_MIDDLE_X, THUMBFAN_MIDDLE_Y]
             width: 1.25u
-            column_net: P15
-            mirror.column_net: P4
+            column_net: P8
         inner:
           key:
             splay: -20
@@ -120,11 +114,11 @@ points:
             rotate: THUMBFAN_INNER_ROT
             shift: [THUMBFAN_INNER_X, THUMBFAN_INNER_Y]
             width: 1.25u
-            column_net: P14
-            mirror.column_net: P5
+            column_net: P9
       rows:
         thumb:
-          row_net: P16
+          row_net: P15
+          mirror.row_net: P6
   rotate: SPLIT_ROTATION
   mirror:
     ref: matrix_inner_home
@@ -217,15 +211,15 @@ pcbs:
         where: true
         params:
           keycaps: true
-          from: "{{colrow}}"
-          to: "{{column_net}}"
+          from: "{{column_net}}"
+          to: "{{colrow}}"
           hotswap: true
       choc_hotswap:
         what: choc
         where: true
         params:
-          from: "{{colrow}}"
-          to: "{{column_net}}"
+          from: "{{column_net}}"
+          to: "{{colrow}}"
           hotswap: true
       diodes:
         what: diode
@@ -233,8 +227,8 @@ pcbs:
         adjust:
           shift: [0, -4.7]
         params:
-          from: "{{row_net}}"
-          to: "{{colrow}}"
+          from: "{{colrow}}"
+          to: "{{row_net}}"
       # Microcontroller
       mcu:
         what: promicro
