@@ -11,8 +11,8 @@ Ergogen v4.0.0 introduced breaking changes to configuration, some older config f
 Output folders are generated with [ergogen](ergogen.xyz), e.g.
 
 ```shell
-cd shockboard-vX_Y_Z
-ergogen shockboard-vX_Y_Z.yaml
+cd ergogen/shockboard-vX_Y_Z
+ergogen .
 ```
 
 `mx_cutouts.dxf` files contain the plate cutouts necessary for Cherry MX compatible switches.
