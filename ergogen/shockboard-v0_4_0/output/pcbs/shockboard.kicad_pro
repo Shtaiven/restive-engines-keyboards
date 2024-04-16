@@ -6,14 +6,14 @@
         "apply_defaults_to_fp_fields": false,
         "apply_defaults_to_fp_shapes": false,
         "apply_defaults_to_fp_text": false,
-        "board_outline_line_width": 0.049999999999999996,
-        "copper_line_width": 0.19999999999999998,
+        "board_outline_line_width": 0.05,
+        "copper_line_width": 0.2,
         "copper_text_italic": false,
         "copper_text_size_h": 1.5,
         "copper_text_size_v": 1.5,
         "copper_text_thickness": 0.3,
         "copper_text_upright": false,
-        "courtyard_line_width": 0.049999999999999996,
+        "courtyard_line_width": 0.05,
         "dimension_precision": 4,
         "dimension_units": 3,
         "dimensions": {
@@ -24,13 +24,13 @@
           "text_position": 0,
           "units_format": 1
         },
-        "fab_line_width": 0.09999999999999999,
+        "fab_line_width": 0.1,
         "fab_text_italic": false,
         "fab_text_size_h": 1.0,
         "fab_text_size_v": 1.0,
         "fab_text_thickness": 0.15,
         "fab_text_upright": false,
-        "other_line_width": 0.09999999999999999,
+        "other_line_width": 0.1,
         "other_text_italic": false,
         "other_text_size_h": 1.0,
         "other_text_size_v": 1.0,
@@ -115,16 +115,16 @@
         "min_copper_edge_clearance": 0.075,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
-        "min_microvia_diameter": 0.19999999999999998,
-        "min_microvia_drill": 0.09999999999999999,
+        "min_microvia_diameter": 0.2,
+        "min_microvia_drill": 0.1,
         "min_resolved_spokes": 2,
         "min_silk_clearance": 0.0,
-        "min_text_height": 0.7999999999999999,
+        "min_text_height": 0.8,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.19999999999999998,
-        "min_via_annular_width": 0.09999999999999999,
-        "min_via_diameter": 0.39999999999999997,
+        "min_track_width": 0.2,
+        "min_via_annular_width": 0.1,
+        "min_via_diameter": 0.4,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -255,11 +255,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "outer_home"
+        "pattern": "P14"
       },
       {
         "netclass": "Default",
-        "pattern": "P21"
+        "pattern": "outer_home"
       },
       {
         "netclass": "Default",
@@ -271,11 +271,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "pinky_bottom"
+        "pattern": "P16"
       },
       {
         "netclass": "Default",
-        "pattern": "P20"
+        "pattern": "pinky_bottom"
       },
       {
         "netclass": "Default",
@@ -291,11 +291,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "ring_bottom"
+        "pattern": "P10"
       },
       {
         "netclass": "Default",
-        "pattern": "P19"
+        "pattern": "ring_bottom"
       },
       {
         "netclass": "Default",
@@ -311,11 +311,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "middle_bottom"
+        "pattern": "P7"
       },
       {
         "netclass": "Default",
-        "pattern": "P18"
+        "pattern": "middle_bottom"
       },
       {
         "netclass": "Default",
@@ -331,11 +331,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "index_bottom"
+        "pattern": "P8"
       },
       {
         "netclass": "Default",
-        "pattern": "P15"
+        "pattern": "index_bottom"
       },
       {
         "netclass": "Default",
@@ -351,11 +351,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "inner_bottom"
+        "pattern": "P9"
       },
       {
         "netclass": "Default",
-        "pattern": "P14"
+        "pattern": "inner_bottom"
       },
       {
         "netclass": "Default",
@@ -387,10 +387,6 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P1"
-      },
-      {
-        "netclass": "Default",
         "pattern": "mirror_outer_top"
       },
       {
@@ -400,10 +396,6 @@
       {
         "netclass": "Default",
         "pattern": "mirror_pinky_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P0"
       },
       {
         "netclass": "Default",
@@ -423,10 +415,6 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P2"
-      },
-      {
-        "netclass": "Default",
         "pattern": "mirror_ring_home"
       },
       {
@@ -440,10 +428,6 @@
       {
         "netclass": "Default",
         "pattern": "mirror_middle_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P3"
       },
       {
         "netclass": "Default",
@@ -463,10 +447,6 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P4"
-      },
-      {
-        "netclass": "Default",
         "pattern": "mirror_index_home"
       },
       {
@@ -480,10 +460,6 @@
       {
         "netclass": "Default",
         "pattern": "mirror_inner_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P5"
       },
       {
         "netclass": "Default",
@@ -511,23 +487,43 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P7"
+        "pattern": "P20"
       },
       {
         "netclass": "Default",
-        "pattern": "P8"
+        "pattern": "P19"
       },
       {
         "netclass": "Default",
-        "pattern": "P9"
+        "pattern": "P18"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P21"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P15"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P0"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P4"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P5"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P1"
       },
       {
         "netclass": "Default",
         "pattern": "P6"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P16"
       },
       {
         "netclass": "Default",
@@ -547,7 +543,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P10"
+        "pattern": "P2"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P3"
       },
       {
         "netclass": "Default",

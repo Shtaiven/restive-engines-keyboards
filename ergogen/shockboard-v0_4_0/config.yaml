@@ -251,7 +251,7 @@ pcbs:
           rotate: 90
       # Four Pin Reset Button
       reset:
-        what: button
+        what: reset_switch_tht_top
         params:
           from: GND
           to: RST
