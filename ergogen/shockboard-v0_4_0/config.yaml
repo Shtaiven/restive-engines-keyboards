@@ -39,6 +39,14 @@ units:
   THUMBFAN_INNER_X: 0.4u
   THUMBFAN_INNER_Y: 0.05u
 
+  # case outline
+  padx: 1u + 5
+  pady: 1u + 5
+
+  # screw radius
+  SCREW_SIZE: 1.5
+  STANDOFF_SIZE: 2.5
+
 #
 # Define key locations
 #
@@ -165,10 +173,135 @@ outlines:
         - ref: mirror_thumbfan_outer_thumb
           shift: [-0.7u, -1.5u]
       bound: false
+  _padded_polygon:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: thumbfan_outer_thumb
+          shift: [-0.7padx, -1.5pady]
+        - ref: matrix_pinky_bottom
+          shift: [-0.6padx, -0.6pady]
+        - ref: matrix_outer_home
+          shift: [-0.6padx, -0.6pady]
+        - ref: matrix_outer_num
+          shift: [-0.6padx, 0.6pady]
+        - ref: matrix_ring_num
+          shift: [-0.6padx, 0.6pady]
+        - ref: matrix_middle_num
+          shift: [-0.6padx, 0.6pady]
+        - ref: matrix_middle_num
+          shift: [0.6padx, 0.6pady]
+        - ref: matrix_inner_num
+          shift: [0.6padx, 0.6pady]
+        - ref: mirror_matrix_inner_num
+          shift: [0.6padx, 0.6pady]
+        - ref: mirror_matrix_middle_num
+          shift: [0.6padx, 0.6pady]
+        - ref: mirror_matrix_middle_num
+          shift: [-0.6padx, 0.6pady]
+        - ref: mirror_matrix_ring_num
+          shift: [-0.6padx, 0.6pady]
+        - ref: mirror_matrix_outer_num
+          shift: [-0.6padx, 0.6pady]
+        - ref: mirror_matrix_outer_home
+          shift: [-0.6padx, -0.6pady]
+        - ref: mirror_matrix_pinky_bottom
+          shift: [-0.6padx, -0.6pady]
+        - ref: mirror_thumbfan_outer_thumb
+          shift: [-0.7padx, -1.5pady]
+      bound: false
   _fillet:
     - what: outline
       name: _full_polygon
       fillet: 5
+  _padded_fillet:
+    - what: outline
+      name: _padded_polygon
+      fillet: 5
+  _mounting:
+    # Screw holes
+    - what: circle
+      radius: SCREW_SIZE
+      where:
+        ref: [matrix_inner_num]
+        shift: [-0.5u, -0.3u]
+    - what: circle
+      radius: SCREW_SIZE
+      where:
+        ref: [mirror_matrix_inner_num]
+        shift: [-0.5u, -0.3u]
+    - what: circle
+      radius: SCREW_SIZE
+      where:
+        ref: [matrix_outer_num]
+        shift: [0.5u, -0.3u]
+    - what: circle
+      radius: SCREW_SIZE
+      where:
+        ref: [mirror_matrix_outer_num]
+        shift: [0.5u, -0.3u]
+    - what: circle
+      radius: SCREW_SIZE
+      where:
+        ref: [matrix_inner_bottom]
+        shift: [-0.5u, -0.25u]
+    - what: circle
+      radius: SCREW_SIZE
+      where:
+        ref: [mirror_matrix_inner_bottom]
+        shift: [-0.5u, -0.25u]
+    - what: circle
+      radius: SCREW_SIZE
+      where:
+        ref: [matrix_pinky_bottom]
+        shift: [0.4u, 0.5u]
+    - what: circle
+      radius: SCREW_SIZE
+      where:
+        ref: [mirror_matrix_pinky_bottom]
+        shift: [0.4u, 0.5u]
+  _standoff:
+    # Screw holes
+    - what: circle
+      radius: STANDOFF_SIZE
+      where:
+        ref: [matrix_inner_num]
+        shift: [-0.5u, -0.3u]
+    - what: circle
+      radius: STANDOFF_SIZE
+      where:
+        ref: [mirror_matrix_inner_num]
+        shift: [-0.5u, -0.3u]
+    - what: circle
+      radius: STANDOFF_SIZE
+      where:
+        ref: [matrix_outer_num]
+        shift: [0.5u, -0.3u]
+    - what: circle
+      radius: STANDOFF_SIZE
+      where:
+        ref: [mirror_matrix_outer_num]
+        shift: [0.5u, -0.3u]
+    - what: circle
+      radius: STANDOFF_SIZE
+      where:
+        ref: [matrix_inner_bottom]
+        shift: [-0.5u, -0.25u]
+    - what: circle
+      radius: STANDOFF_SIZE
+      where:
+        ref: [mirror_matrix_inner_bottom]
+        shift: [-0.5u, -0.25u]
+    - what: circle
+      radius: STANDOFF_SIZE
+      where:
+        ref: [matrix_pinky_bottom]
+        shift: [0.4u, 0.5u]
+    - what: circle
+      radius: STANDOFF_SIZE
+      where:
+        ref: [mirror_matrix_pinky_bottom]
+        shift: [0.4u, 0.5u]
   # cutouts for the keys to be used in plate generation
   raw:
     - what: rectangle
@@ -319,3 +452,43 @@ pcbs:
         where:
           ref: [mirror_matrix_pinky_bottom]
           shift: [0.4u, 0.5u]
+
+#
+# Case
+#
+cases:
+  bottom:
+    - name: _padded_fillet
+      extrude: 1
+  _outer_wall:
+    - name: _padded_fillet
+      extrude: 5.6
+  _inner_wall:
+    - name: _fillet
+      extrude: 5.6
+  wall:
+    - what: case
+      name: _outer_wall
+      operation: add
+    - what: case
+      name: _inner_wall
+      operation: subtract
+  _holes:
+    - name: _mounting
+      extrude: 4
+  _standoffs:
+    - name: _standoff
+      extrude: 4
+  case:
+    - what: case
+      name: _standoffs
+      operation: add
+    - what: case
+      name: _holes
+      operation: subtract
+    - what: case
+      name: bottom
+      operation: add
+    - what: case
+      name: wall
+      operation: add
