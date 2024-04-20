@@ -39,10 +39,6 @@ units:
   THUMBFAN_INNER_X: 0.4u
   THUMBFAN_INNER_Y: 0.05u
 
-  # case outline
-  padx: 1u + 5
-  pady: 1u + 5
-
   # screw radius
   SCREW_SIZE: 1.5
   STANDOFF_SIZE: 2.5
@@ -136,7 +132,7 @@ points:
 # Define outlines for the plate
 #
 outlines:
-  _full_polygon:
+  board:
     - what: polygon
       operation: stack
       points:
@@ -172,52 +168,11 @@ outlines:
           shift: [-0.6u, -0.6u]
         - ref: mirror_thumbfan_outer_thumb
           shift: [-0.7u, -1.5u]
-      bound: false
-  _padded_polygon:
-    - what: polygon
-      operation: stack
-      points:
-        - ref: thumbfan_outer_thumb
-          shift: [-0.7padx, -1.5pady]
-        - ref: matrix_pinky_bottom
-          shift: [-0.6padx, -0.6pady]
-        - ref: matrix_outer_home
-          shift: [-0.6padx, -0.6pady]
-        - ref: matrix_outer_num
-          shift: [-0.6padx, 0.6pady]
-        - ref: matrix_ring_num
-          shift: [-0.6padx, 0.6pady]
-        - ref: matrix_middle_num
-          shift: [-0.6padx, 0.6pady]
-        - ref: matrix_middle_num
-          shift: [0.6padx, 0.6pady]
-        - ref: matrix_inner_num
-          shift: [0.6padx, 0.6pady]
-        - ref: mirror_matrix_inner_num
-          shift: [0.6padx, 0.6pady]
-        - ref: mirror_matrix_middle_num
-          shift: [0.6padx, 0.6pady]
-        - ref: mirror_matrix_middle_num
-          shift: [-0.6padx, 0.6pady]
-        - ref: mirror_matrix_ring_num
-          shift: [-0.6padx, 0.6pady]
-        - ref: mirror_matrix_outer_num
-          shift: [-0.6padx, 0.6pady]
-        - ref: mirror_matrix_outer_home
-          shift: [-0.6padx, -0.6pady]
-        - ref: mirror_matrix_pinky_bottom
-          shift: [-0.6padx, -0.6pady]
-        - ref: mirror_thumbfan_outer_thumb
-          shift: [-0.7padx, -1.5pady]
-      bound: false
-  _fillet:
-    - what: outline
-      name: _full_polygon
       fillet: 5
-  _padded_fillet:
+  padded_board:
     - what: outline
-      name: _padded_polygon
-      fillet: 5
+      name: board
+      expand: 5
   _mounting:
     # Screw holes
     - what: circle
@@ -308,25 +263,22 @@ outlines:
       where: true
       asym: source
       size: [1.25u+5, 1u+5]
-      bound: false
   mx_cutouts:
     - what: rectangle
       where: true
       asym: source
       size: 14
-      bound: false
   choc_cutouts:
     - what: rectangle
       where: true
       asym: source
       size: 13.8
-      bound: false
   mx_plate: [
-    +_fillet,
+    +board,
     -mx_cutouts,
   ]
   choc_plate_mx: [
-    +_fillet,
+    +board,
     -choc_cutouts,
   ]
 
@@ -337,7 +289,7 @@ pcbs:
   shockboard:
     outlines:
       shockboard_pcb_outline:
-        outline: _fillet
+        outline: board
     footprints:
       mx_hotswap:
         what: mx
@@ -458,13 +410,13 @@ pcbs:
 #
 cases:
   bottom:
-    - name: _padded_fillet
+    - name: padded_board
       extrude: 1
   _outer_wall:
-    - name: _padded_fillet
+    - name: padded_board
       extrude: 5.6
   _inner_wall:
-    - name: _fillet
+    - name: board
       extrude: 5.6
   wall:
     - what: case
