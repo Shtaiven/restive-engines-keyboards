@@ -169,10 +169,14 @@ outlines:
         - ref: mirror_thumbfan_outer_thumb
           shift: [-0.7u, -1.5u]
       fillet: 5
-  padded_board:
+  case_outline:
     - what: outline
       name: board
       expand: 5
+  plate_outline:
+    - what: outline
+      name: board
+      expand: 2.5
   _mounting:
     # Screw holes
     - what: circle
@@ -273,12 +277,22 @@ outlines:
       where: true
       asym: source
       size: 13.8
-  mx_plate: [
+  mx_plate_no_padding: [
     +board,
+    -_mounting,
     -mx_cutouts,
   ]
-  choc_plate_mx: [
+  choc_plate_no_padding: [
     +board,
+    -_mounting,
+    -choc_cutouts,
+  ]
+  mx_plate: [
+    +plate_outline,
+    -mx_cutouts,
+  ]
+  choc_plate: [
+    +plate_outline,
     -choc_cutouts,
   ]
 
@@ -409,38 +423,96 @@ pcbs:
 # Case
 #
 cases:
-  bottom:
-    - name: padded_board
+
+  # common bottom for all cases
+  _bottom:
+    - name: case_outline
       extrude: 1
-  _outer_wall:
-    - name: padded_board
+
+  # wall construction
+  _outer_wall_low:
+    - name: case_outline
       extrude: 5.6
-  _inner_wall:
+  _outer_wall_mid_mx:
+    - name: case_outline
+      extrude: 10.6
+  _outer_wall_high_mx:
+    - name: case_outline
+      extrude: 16.8
+  _inner_wall_low:
     - name: board
       extrude: 5.6
-  wall:
+  _inner_wall_mid_mx:
+    - name: board
+      extrude: 10.6
+  _inner_wall_high_mx:
+    - name: board
+      extrude: 16.8
+  _wall_low:
     - what: case
-      name: _outer_wall
+      name: _outer_wall_low
       operation: add
     - what: case
-      name: _inner_wall
+      name: _inner_wall_low
       operation: subtract
-  _holes:
+  _wall_mid_mx:
+    - what: case
+      name: _outer_wall_mid_mx
+      operation: add
+    - what: case
+      name: _inner_wall_mid_mx
+      operation: subtract
+  _wall_high_mx:
+    - what: case
+      name: _outer_wall_high_mx
+      operation: add
+    - what: case
+      name: _inner_wall_high_mx
+      operation: subtract
+
+  # standoff construction
+  _standoff_holes:
     - name: _mounting
       extrude: 4
-  _standoffs:
+  _standoff_stems:
     - name: _standoff
       extrude: 4
-  case:
+  _standoffs:
+    - what: case
+      name: _standoff_stems
+      operation: add
+    - what: case
+      name: _standoff_holes
+      operation: subtract
+
+  # final cases
+  case_lowpro:
     - what: case
       name: _standoffs
       operation: add
     - what: case
-      name: _holes
-      operation: subtract
-    - what: case
-      name: bottom
+      name: _bottom
       operation: add
     - what: case
-      name: wall
+      name: _wall_low
+      operation: add
+  case_midpro_mx:
+    - what: case
+      name: _standoffs
+      operation: add
+    - what: case
+      name: _bottom
+      operation: add
+    - what: case
+      name: _wall_mid_mx
+      operation: add
+  case_hipro_mx:
+    - what: case
+      name: _standoffs
+      operation: add
+    - what: case
+      name: _bottom
+      operation: add
+    - what: case
+      name: _wall_high_mx
       operation: add
