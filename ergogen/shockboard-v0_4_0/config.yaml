@@ -4,6 +4,7 @@
 #   author: Steven Eisinger
 
 # TODO: Add pins for 35mm/40mm cirque trackpad (external footprint)
+# TODO: Add holes for threaded inserts
 
 #
 # Define unit constants
@@ -40,8 +41,17 @@ units:
   THUMBFAN_INNER_Y: 0.05u
 
   # screw radius
-  SCREW_SIZE: 1.5
-  STANDOFF_SIZE: 2.5
+  SCREW_SIZE: 3.2
+  SCREW_BORDER: SCREW_SIZE + 1.3
+  STANDOFF_SIZE: 4
+
+  # case parameters
+  BOTTOM_THICKNESS: 2
+  WALL_THICKNESS: 5
+
+  # plate parameters
+  PLATE_THICKNESS: 1.5
+  PLATE_EXTENSION: 0
 
 #
 # Define key locations
@@ -172,11 +182,11 @@ outlines:
   case_outline:
     - what: outline
       name: board
-      expand: 5
+      expand: WALL_THICKNESS
   plate_outline:
     - what: outline
       name: board
-      expand: 2.5
+      expand: PLATE_EXTENSION
   _mounting:
     # Screw holes
     - what: circle
@@ -222,42 +232,42 @@ outlines:
   _standoff:
     # Screw holes
     - what: circle
-      radius: STANDOFF_SIZE
+      radius: SCREW_BORDER
       where:
         ref: [matrix_inner_num]
         shift: [-0.5u, -0.3u]
     - what: circle
-      radius: STANDOFF_SIZE
+      radius: SCREW_BORDER
       where:
         ref: [mirror_matrix_inner_num]
         shift: [-0.5u, -0.3u]
     - what: circle
-      radius: STANDOFF_SIZE
+      radius: SCREW_BORDER
       where:
         ref: [matrix_outer_num]
         shift: [0.5u, -0.3u]
     - what: circle
-      radius: STANDOFF_SIZE
+      radius: SCREW_BORDER
       where:
         ref: [mirror_matrix_outer_num]
         shift: [0.5u, -0.3u]
     - what: circle
-      radius: STANDOFF_SIZE
+      radius: SCREW_BORDER
       where:
         ref: [matrix_inner_bottom]
         shift: [-0.5u, -0.25u]
     - what: circle
-      radius: STANDOFF_SIZE
+      radius: SCREW_BORDER
       where:
         ref: [mirror_matrix_inner_bottom]
         shift: [-0.5u, -0.25u]
     - what: circle
-      radius: STANDOFF_SIZE
+      radius: SCREW_BORDER
       where:
         ref: [matrix_pinky_bottom]
         shift: [0.4u, 0.5u]
     - what: circle
-      radius: STANDOFF_SIZE
+      radius: SCREW_BORDER
       where:
         ref: [mirror_matrix_pinky_bottom]
         shift: [0.4u, 0.5u]
@@ -427,27 +437,27 @@ cases:
   # common bottom for all cases
   _bottom:
     - name: case_outline
-      extrude: 1
+      extrude: BOTTOM_THICKNESS
 
   # wall construction
   _outer_wall_low:
     - name: case_outline
-      extrude: 5.6
+      extrude: BOTTOM_THICKNESS + 4.6
   _outer_wall_mid_mx:
     - name: case_outline
-      extrude: 10.6
+      extrude: BOTTOM_THICKNESS + 9.6
   _outer_wall_high_mx:
     - name: case_outline
-      extrude: 16.8
+      extrude: BOTTOM_THICKNESS + 15.8
   _inner_wall_low:
     - name: board
-      extrude: 5.6
+      extrude: BOTTOM_THICKNESS + 4.6
   _inner_wall_mid_mx:
     - name: board
-      extrude: 10.6
+      extrude: BOTTOM_THICKNESS + 9.6
   _inner_wall_high_mx:
     - name: board
-      extrude: 16.8
+      extrude: BOTTOM_THICKNESS + 15.8
   _wall_low:
     - what: case
       name: _outer_wall_low
@@ -473,10 +483,10 @@ cases:
   # standoff construction
   _standoff_holes:
     - name: _mounting
-      extrude: 4
+      extrude: BOTTOM_THICKNESS + 4
   _standoff_stems:
     - name: _standoff
-      extrude: 4
+      extrude: BOTTOM_THICKNESS + 4
   _standoffs:
     - what: case
       name: _standoff_stems
@@ -484,6 +494,11 @@ cases:
     - what: case
       name: _standoff_holes
       operation: subtract
+
+  # plate
+  mx_plate:
+    - name: mx_plate
+      extrude: PLATE_THICKNESS
 
   # final cases
   case_lowpro:
