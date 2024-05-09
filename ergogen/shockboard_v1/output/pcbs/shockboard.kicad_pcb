@@ -1,12 +1,12 @@
 
-            
+
 (kicad_pcb (version 20171130) (host pcbnew 5.1.6)
 
   (page A3)
   (title_block
-    (title shockboard)
-    (rev v1.0.0)
-    (company Unknown)
+    (title "shockboard")
+    (rev "v1.0.0")
+    (company "Unknown")
   )
 
   (general
@@ -92,7 +92,7 @@
       (outputdirectory ""))
   )
 
-            (net 0 "")
+  (net 0 "")
 (net 1 "P14")
 (net 2 "outer_home")
 (net 3 "outer_top")
@@ -168,7 +168,7 @@
 (net 73 "P2")
 (net 74 "P3")
 (net 75 "B+")
-            
+
   (net_class Default "This is the default net class."
     (clearance 0.2)
     (trace_width 0.25)
@@ -254,7 +254,7 @@
 (add_net "B+")
   )
 
-            
+  
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
       (at 83.5785927 123.8370657 -8)
@@ -6800,7 +6800,7 @@
       (pad "1" thru_hole circle locked (at 1.65 0) (size 0.7 0.7) (drill 0.4) (layers *.Cu *.Mask) (tstamp cde0acf2-b3b4-46de-9f6e-3ab519744000))
       (pad "1" thru_hole circle locked (at 0 -1.65) (size 0.7 0.7) (drill 0.4) (layers *.Cu *.Mask) (tstamp ff0de415-ae11-46fb-b780-c24aee621212))
     )
-            (gr_line (start 281.0227501060654 193.85241200000002) (end 143.73379169393456 193.85241200000002) (angle 90) (layer Edge.Cuts) (width 0.15))
+  (gr_line (start 281.0227501060654 193.85241200000002) (end 143.73379169393456 193.85241200000002) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 140.8586163541582 192.94305577204256) (end 87.51792705748205 155.4516883672485) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 86.3999247854134 154.3701196794871) (end 71.94936302876356 135.19357647760972) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 70.9912003367347 131.4886359208923) (end 78.63502478832638 77.09999867998124) (angle 90) (layer Edge.Cuts) (width 0.15))
@@ -6832,7 +6832,6 @@
 (gr_arc (start 348.81400115939135 132.184501393328) (end 352.8071787593914 135.19357649332798) (angle -44.99999898331575) (layer Edge.Cuts) (width 0.15))
 (gr_arc (start 334.3634394027415 151.36104459520595) (end 337.2386148027415 155.45168839520596) (angle -17.897912412154596) (layer Edge.Cuts) (width 0.15))
 (gr_arc (start 281.0227501060654 188.85241200000004) (end 281.0227501060654 193.85241200000004) (angle -35.10208830080262) (layer Edge.Cuts) (width 0.15))
-            
+
 )
 
-        

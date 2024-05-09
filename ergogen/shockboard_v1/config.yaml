@@ -1,10 +1,9 @@
 # meta:
 #   engine: 4.0.5
-#   version: 0.4.0
+#   version: 1.0
 #   author: Steven Eisinger
 
 # TODO: Add pins for 35mm/40mm cirque trackpad (external footprint)
-# TODO: Add holes for threaded inserts
 
 #
 # Define unit constants
