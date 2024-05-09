@@ -186,7 +186,11 @@ outlines:
     - what: outline
       name: board
       expand: PLATE_EXTENSION
-  _mounting:
+  wall: [
+    +case_outline,
+    -board,
+  ]
+  mounting_holes_inner:
     # Screw holes
     - what: circle
       radius: SCREW_SIZE
@@ -228,7 +232,7 @@ outlines:
       where:
         ref: [mirror_matrix_pinky_bottom]
         shift: [0.4u, 0.5u]
-  _standoff:
+  mounting_holes_outer:
     # Screw holes
     - what: circle
       radius: SCREW_BORDER
@@ -270,39 +274,62 @@ outlines:
       where:
         ref: [mirror_matrix_pinky_bottom]
         shift: [0.4u, 0.5u]
+  mounting_holes: [
+    +mounting_holes_outer,
+    -mounting_holes_inner,
+  ]
   # cutouts for the keys to be used in plate generation
-  raw:
+  _keywell_mx_matrix:
     - what: rectangle
-      where: true
+      where: /matrix/
       asym: source
-      size: [1.25u+5, 1u+5]
-  mx_cutouts:
+      size: 1u
+    - what: rectangle
+      where: /matrix_inner_bottom/
+      asym: source
+      size: 1u
+      adjust:
+        shift: [0, -5]
+  _keywell_mx_thumbs:
+    - what: rectangle
+      where: thumbfan_inner_thumb
+      asym: both
+      size: [1.25u+10, 1u]
+      adjust:
+        shift: [-5, 0]
+    - what: rectangle
+      where: thumbfan_middle_thumb
+      asym: both
+      size: [1.25u, 1u+5]
+      adjust:
+        shift: [0, 2.5]
+    - what: rectangle
+      where: thumbfan_outer_thumb
+      asym: both
+      size: [1.25u+10, 1u]
+      adjust:
+        shift: [5, 0]
+  keywell_mx: [
+    +_keywell_mx_matrix,
+    +_keywell_mx_thumbs,
+  ]
+  cutouts_mx:
     - what: rectangle
       where: true
       asym: source
       size: 14
-  choc_cutouts:
+  cutouts_choc:
     - what: rectangle
       where: true
       asym: source
       size: 13.8
-  mx_plate_no_padding: [
-    +board,
-    -_mounting,
-    -mx_cutouts,
-  ]
-  choc_plate_no_padding: [
-    +board,
-    -_mounting,
-    -choc_cutouts,
-  ]
-  mx_plate: [
+  plate_mx: [
     +plate_outline,
-    -mx_cutouts,
+    -cutouts_mx,
   ]
-  choc_plate: [
+  plate_choc: [
     +plate_outline,
-    -choc_cutouts,
+    -cutouts_choc,
   ]
 
 #
@@ -439,70 +466,30 @@ cases:
       extrude: BOTTOM_THICKNESS
 
   # wall construction
-  _outer_wall_low:
-    - name: case_outline
-      extrude: BOTTOM_THICKNESS + 4.6
-  _outer_wall_mid_mx:
-    - name: case_outline
-      extrude: BOTTOM_THICKNESS + 9.6
-  _outer_wall_high_mx:
-    - name: case_outline
-      extrude: BOTTOM_THICKNESS + 15.8
-  _inner_wall_low:
-    - name: board
-      extrude: BOTTOM_THICKNESS + 4.6
-  _inner_wall_mid_mx:
-    - name: board
-      extrude: BOTTOM_THICKNESS + 9.6
-  _inner_wall_high_mx:
-    - name: board
-      extrude: BOTTOM_THICKNESS + 15.8
   _wall_low:
-    - what: case
-      name: _outer_wall_low
-      operation: add
-    - what: case
-      name: _inner_wall_low
-      operation: subtract
+    - name: wall
+      extrude: BOTTOM_THICKNESS + 4.6
   _wall_mid_mx:
-    - what: case
-      name: _outer_wall_mid_mx
-      operation: add
-    - what: case
-      name: _inner_wall_mid_mx
-      operation: subtract
+    - name: wall
+      extrude: BOTTOM_THICKNESS + 9.6
   _wall_high_mx:
-    - what: case
-      name: _outer_wall_high_mx
-      operation: add
-    - what: case
-      name: _inner_wall_high_mx
-      operation: subtract
+    - name: wall
+      extrude: BOTTOM_THICKNESS + 15.8
 
   # standoff construction
-  _standoff_holes:
-    - name: _mounting
+  mounting_holes:
+    - name: mounting_holes
       extrude: BOTTOM_THICKNESS + 4
-  _standoff_stems:
-    - name: _standoff
-      extrude: BOTTOM_THICKNESS + 4
-  _standoffs:
-    - what: case
-      name: _standoff_stems
-      operation: add
-    - what: case
-      name: _standoff_holes
-      operation: subtract
 
   # plate
-  mx_plate:
-    - name: mx_plate
+  plate_mx:
+    - name: plate_mx
       extrude: PLATE_THICKNESS
 
   # final cases
   case_lowpro:
     - what: case
-      name: _standoffs
+      name: mounting_holes
       operation: add
     - what: case
       name: _bottom
@@ -512,7 +499,7 @@ cases:
       operation: add
   case_midpro_mx:
     - what: case
-      name: _standoffs
+      name: mounting_holes
       operation: add
     - what: case
       name: _bottom
@@ -522,7 +509,7 @@ cases:
       operation: add
   case_hipro_mx:
     - what: case
-      name: _standoffs
+      name: mounting_holes
       operation: add
     - what: case
       name: _bottom

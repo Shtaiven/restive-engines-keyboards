@@ -1,4 +1,4 @@
-function mx_plate_extrude_1_5_outline_fn(){
+function plate_mx_extrude_1_5_outline_fn(){
     return new CSG.Path2D([[281.0227501,-193.852412],[143.7337917,-193.852412]]).appendArc([140.8586163,-192.9430558],{"radius":5,"clockwise":true,"large":false}).appendPoint([87.5179271,-155.4516884]).appendArc([86.3999248,-154.3701197],{"radius":5,"clockwise":true,"large":false}).appendPoint([71.949363,-135.1935765]).appendArc([70.9912003,-131.4886359],{"radius":5,"clockwise":true,"large":false}).appendPoint([78.6350248,-77.0999987]).appendArc([82.9383791,-72.8380306],{"radius":5,"clockwise":true,"large":false}).appendPoint([117.9758077,-68.258659]).appendArc([118.5389202,-68.217213],{"radius":5,"clockwise":true,"large":false}).appendPoint([137.0965549,-67.9021569]).appendArc([137.8772939,-67.9500962],{"radius":5,"clockwise":true,"large":false}).appendPoint([159.6464994,-71.0095585]).appendArc([160.4713523,-71.197768],{"radius":5,"clockwise":true,"large":false}).appendPoint([196.0505663,-82.5570955]).appendArc([197.5712847,-82.7939646],{"radius":5,"clockwise":false,"large":false}).appendPoint([227.1852571,-82.7939646]).appendArc([228.7059755,-82.5570954],{"radius":5,"clockwise":false,"large":false}).appendPoint([264.2851894,-71.197768]).appendArc([265.1100424,-71.0095585],{"radius":5,"clockwise":true,"large":false}).appendPoint([286.879248,-67.9500962]).appendArc([287.6599869,-67.9021569],{"radius":5,"clockwise":true,"large":false}).appendPoint([306.2176216,-68.217213]).appendArc([306.7807341,-68.258659],{"radius":5,"clockwise":true,"large":false}).appendPoint([341.8181627,-72.8380306]).appendArc([346.121517,-77.0999987],{"radius":5,"clockwise":true,"large":false}).appendPoint([353.7653415,-131.4886359]).appendArc([352.8071788,-135.1935765],{"radius":5,"clockwise":true,"large":false}).appendPoint([338.356617,-154.3701197]).appendArc([337.2386148,-155.4516884],{"radius":5,"clockwise":true,"large":false}).appendPoint([283.8979254,-192.9430558]).appendArc([281.0227501,-193.852412],{"radius":5,"clockwise":true,"large":false}).close().innerToCAG()
 .subtract(
     new CSG.Path2D([[279.3308648,-164.4649036],[290.5117619,-172.8903139]]).appendPoint([298.9371722,-161.7094168]).appendPoint([287.7562751,-153.2840065]).appendPoint([279.3308648,-164.4649036]).close().innerToCAG()
@@ -110,22 +110,22 @@ function mx_plate_extrude_1_5_outline_fn(){
 
 
 
-                function mx_plate_case_fn() {
+                function plate_mx_case_fn() {
                     
 
-                // creating part 0 of case mx_plate
-                let mx_plate__part_0 = mx_plate_extrude_1_5_outline_fn();
+                // creating part 0 of case plate_mx
+                let plate_mx__part_0 = plate_mx_extrude_1_5_outline_fn();
 
                 // make sure that rotations are relative
-                let mx_plate__part_0_bounds = mx_plate__part_0.getBounds();
-                let mx_plate__part_0_x = mx_plate__part_0_bounds[0].x + (mx_plate__part_0_bounds[1].x - mx_plate__part_0_bounds[0].x) / 2
-                let mx_plate__part_0_y = mx_plate__part_0_bounds[0].y + (mx_plate__part_0_bounds[1].y - mx_plate__part_0_bounds[0].y) / 2
-                mx_plate__part_0 = translate([-mx_plate__part_0_x, -mx_plate__part_0_y, 0], mx_plate__part_0);
-                mx_plate__part_0 = rotate([0,0,0], mx_plate__part_0);
-                mx_plate__part_0 = translate([mx_plate__part_0_x, mx_plate__part_0_y, 0], mx_plate__part_0);
+                let plate_mx__part_0_bounds = plate_mx__part_0.getBounds();
+                let plate_mx__part_0_x = plate_mx__part_0_bounds[0].x + (plate_mx__part_0_bounds[1].x - plate_mx__part_0_bounds[0].x) / 2
+                let plate_mx__part_0_y = plate_mx__part_0_bounds[0].y + (plate_mx__part_0_bounds[1].y - plate_mx__part_0_bounds[0].y) / 2
+                plate_mx__part_0 = translate([-plate_mx__part_0_x, -plate_mx__part_0_y, 0], plate_mx__part_0);
+                plate_mx__part_0 = rotate([0,0,0], plate_mx__part_0);
+                plate_mx__part_0 = translate([plate_mx__part_0_x, plate_mx__part_0_y, 0], plate_mx__part_0);
 
-                mx_plate__part_0 = translate([0,0,0], mx_plate__part_0);
-                let result = mx_plate__part_0;
+                plate_mx__part_0 = translate([0,0,0], plate_mx__part_0);
+                let result = plate_mx__part_0;
                 
             
                     return result;
@@ -134,7 +134,7 @@ function mx_plate_extrude_1_5_outline_fn(){
             
         
             function main() {
-                return mx_plate_case_fn();
+                return plate_mx_case_fn();
             }
 
         
