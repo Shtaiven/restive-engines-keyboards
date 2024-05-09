@@ -274,6 +274,48 @@ outlines:
       where:
         ref: [mirror_matrix_pinky_bottom]
         shift: [0.4u, 0.5u]
+  m2_holes:
+    # Screw holes
+    - what: circle
+      radius: 1
+      where:
+        ref: [matrix_inner_num]
+        shift: [-0.5u, -0.3u]
+    - what: circle
+      radius: 1
+      where:
+        ref: [mirror_matrix_inner_num]
+        shift: [-0.5u, -0.3u]
+    - what: circle
+      radius: 1
+      where:
+        ref: [matrix_outer_num]
+        shift: [0.5u, -0.3u]
+    - what: circle
+      radius: 1
+      where:
+        ref: [mirror_matrix_outer_num]
+        shift: [0.5u, -0.3u]
+    - what: circle
+      radius: 1
+      where:
+        ref: [matrix_inner_bottom]
+        shift: [-0.5u, -0.25u]
+    - what: circle
+      radius: 1
+      where:
+        ref: [mirror_matrix_inner_bottom]
+        shift: [-0.5u, -0.25u]
+    - what: circle
+      radius: 1
+      where:
+        ref: [matrix_pinky_bottom]
+        shift: [0.4u, 0.5u]
+    - what: circle
+      radius: 1
+      where:
+        ref: [mirror_matrix_pinky_bottom]
+        shift: [0.4u, 0.5u]
   mounting_holes: [
     +mounting_holes_outer,
     -mounting_holes_inner,
