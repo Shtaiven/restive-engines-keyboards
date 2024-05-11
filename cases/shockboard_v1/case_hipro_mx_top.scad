@@ -17,7 +17,7 @@ module plate() {
 
 module case_top() {
     plate_thickness = 1.5;
-    keywell_rise = 6.2;
+    keywell_rise = 6.2 + 1.2;
 
     translate([0, 0, plate_thickness])
     linear_extrude(keywell_rise)

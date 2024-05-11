@@ -19,9 +19,8 @@ module fillet_wall(wall_height, fillet_radius, fillet_steps, fillet_enable) {
 
 module case_bottom(wall_height=18, fillet_radius=3, fillet_steps=20, fillet_enable=1) {
     difference() {
-        // 
         union() {
-            linear_extrude(2);
+            linear_extrude(2)
             case_outline();
 
             linear_extrude(4)
