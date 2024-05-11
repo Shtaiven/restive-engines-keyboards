@@ -385,6 +385,13 @@ outlines:
         ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
         shift: [0, 29 + WALL_THICKNESS/2]
       size: [12.5, 2*WALL_THICKNESS]
+  battery_switch_cutout:
+    - what: rectangle
+      where:
+        ref.aggregate.parts: [mirror_matrix_pinky_num]
+        shift: [0.25u, 0.5u + 6.5]
+        rotate: -15.5
+      size: [12.5, 4*WALL_THICKNESS]
 
 
 #

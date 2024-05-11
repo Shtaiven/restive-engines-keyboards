@@ -6,6 +6,11 @@
 OFFSET_X = 0;
 OFFSET_Y = 0;
 
+module battery_switch_cutout() {
+    translate([OFFSET_X, OFFSET_Y, 0])
+    import("../../ergogen/shockboard_v1/output/outlines/battery_switch_cutout.dxf");
+}
+
 module board() {
     translate([OFFSET_X, OFFSET_Y, 0])
     import("../../ergogen/shockboard_v1/output/outlines/board.dxf");

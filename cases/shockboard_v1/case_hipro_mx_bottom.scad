@@ -42,6 +42,10 @@ module case_bottom(wall_height=18, fillet_radius=3, fillet_steps=20, fillet_enab
         translate([0, 0, 5.6])
         linear_extrude(9)
         usbc_cutout();
+        
+        translate([0, 0, 5.6])
+        linear_extrude(15)
+        battery_switch_cutout();
     }
 }
 
