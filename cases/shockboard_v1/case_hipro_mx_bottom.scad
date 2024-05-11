@@ -17,7 +17,7 @@ module fillet_wall(wall_height, fillet_radius, fillet_steps, fillet_enable) {
     };
 }
 
-module case_bottom(wall_height=18, fillet_radius=3, fillet_steps=20, fillet_enable=1) {
+module case_bottom_no_cutout(wall_height=18, fillet_radius=3, fillet_steps=20, fillet_enable=1) {
     difference() {
         union() {
             linear_extrude(2)
@@ -33,6 +33,16 @@ module case_bottom(wall_height=18, fillet_radius=3, fillet_steps=20, fillet_enab
     }
 
     fillet_wall(wall_height, fillet_radius, fillet_steps, fillet_enable);
+}
+
+module case_bottom(wall_height=18, fillet_radius=3, fillet_steps=20, fillet_enable=1) {
+    difference() {
+        case_bottom_no_cutout(wall_height, fillet_radius, fillet_steps, fillet_enable);
+        
+        translate([0, 0, 5.6])
+        linear_extrude(9)
+        usbc_cutout();
+    }
 }
 
 case_bottom(fillet_enable=ENABLE_FILLET);

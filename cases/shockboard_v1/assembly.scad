@@ -3,8 +3,8 @@ use <hardware.scad>
 use <case_hipro_mx_bottom.scad>
 use <case_hipro_mx_top.scad>
 
-FILLET_ENABLE = 1;
-EXPLODE = 20;
+FILLET_ENABLE = 0;
+EXPLODE = 0;
 
 SCREW_HOLE_LOCATIONS = [
     [97.6, -93.17],
@@ -21,7 +21,7 @@ module assembly(explode=0, fillet_enable=0) {
     color("cyan", 0.2)
     case_bottom(fillet_enable=fillet_enable);
 
-    color("magenta", 0.2)
+    color("magenta", 1)
     translate([0, 0, 4 + explode*2])
     linear_extrude(1.6)
     board();

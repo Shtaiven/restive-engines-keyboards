@@ -71,6 +71,11 @@ module promicro_cutout() {
     import("../../ergogen/shockboard_v1/output/outlines/promicro_cutout.dxf");
 }
 
+module usbc_cutout() {
+    translate([OFFSET_X, OFFSET_Y, 0])
+    import("../../ergogen/shockboard_v1/output/outlines/usbc_cutout.dxf");
+}
+
 module wall() {
     translate([OFFSET_X, OFFSET_Y, 0])
     import("../../ergogen/shockboard_v1/output/outlines/wall.dxf");

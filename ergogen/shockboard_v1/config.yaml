@@ -379,6 +379,13 @@ outlines:
         ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
         shift: [0, 9.215]
       size: [28, 40]
+  usbc_cutout:
+    - what: rectangle
+      where:
+        ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
+        shift: [0, 29 + WALL_THICKNESS/2]
+      size: [12.5, 2*WALL_THICKNESS]
+
 
 #
 # Define the PCB, using a pro-micro layout
