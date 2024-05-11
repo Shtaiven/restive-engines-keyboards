@@ -1,5 +1,7 @@
 use <shockboard_v1.scad>
 
+$fs = $preview ? 1 : 0.1;
+$fa = $preview ? 3 : 0.1;
 
 module keywell() {
     difference() {

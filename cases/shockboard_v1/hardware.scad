@@ -1,3 +1,6 @@
+$fs = $preview ? 1 : 0.1;
+$fa = $preview ? 3 : 0.1;
+
 module screw(d, l) {
     union() {
         cylinder(l, d/2, d/2);
@@ -21,5 +24,5 @@ module standoff(di, do, l) {
     }
 }
 
-screw(2, 8);
+//screw(2, 8);
 standoff(2, 4, 3.5);

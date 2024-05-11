@@ -1,9 +1,9 @@
 use <shockboard_v1.scad>
 use <../openscad-fillets/fillets3d.scad>
 
-
-ENABLE_FILLET = 0;
-
+$fs = $preview ? 1 : 0.1;
+$fa = $preview ? 3 : 0.1;
+FILLET_STEPS = $preview ? 10 : 25;
 
 module fillet_wall(wall_height, fillet_radius, fillet_steps, fillet_enable) {
     difference() {
@@ -17,7 +17,7 @@ module fillet_wall(wall_height, fillet_radius, fillet_steps, fillet_enable) {
     };
 }
 
-module case_bottom_no_cutout(wall_height=18, fillet_radius=3, fillet_steps=20, fillet_enable=1) {
+module case_bottom_no_cutout(wall_height=18, fillet_radius=2.5, fillet_steps=50, fillet_enable=1) {
     difference() {
         union() {
             linear_extrude(2)
@@ -40,7 +40,7 @@ module case_bottom(wall_height=18, fillet_radius=3, fillet_steps=20, fillet_enab
         case_bottom_no_cutout(wall_height, fillet_radius, fillet_steps, fillet_enable);
         
         translate([0, 0, 5.6])
-        linear_extrude(9)
+        linear_extrude(15)
         usbc_cutout();
         
         translate([0, 0, 5.6])
@@ -49,4 +49,4 @@ module case_bottom(wall_height=18, fillet_radius=3, fillet_steps=20, fillet_enab
     }
 }
 
-case_bottom(fillet_enable=ENABLE_FILLET);
+case_bottom(fillet_steps=FILLET_STEPS);
