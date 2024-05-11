@@ -19,12 +19,20 @@ module case_top() {
     plate_thickness = 1.5;
     keywell_rise = 6.2 + 1.2;
 
-    translate([0, 0, plate_thickness])
-    linear_extrude(keywell_rise)
-    keywell();
+    difference() {
+        union() {
+            translate([0, 0, plate_thickness])
+            linear_extrude(keywell_rise)
+            keywell();
 
-    linear_extrude(plate_thickness)
-    plate();
+            linear_extrude(plate_thickness)
+            plate();
+        }
+    
+        linear_extrude(10)
+        translate([0, 0, -1])
+        promicro_cutout();
+    }
 }
 
 case_top();

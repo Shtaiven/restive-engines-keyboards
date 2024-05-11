@@ -373,6 +373,12 @@ outlines:
     +plate_outline,
     -cutouts_choc,
   ]
+  promicro_cutout:
+    - what: rectangle
+      where:
+        ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
+        shift: [0, 9.215]
+      size: [28, 40]
 
 #
 # Define the PCB, using a pro-micro layout

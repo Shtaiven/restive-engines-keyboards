@@ -66,6 +66,11 @@ module plate_outline() {
     import("../../ergogen/shockboard_v1/output/outlines/plate_outline.dxf");
 }
 
+module promicro_cutout() {
+    translate([OFFSET_X, OFFSET_Y, 0])
+    import("../../ergogen/shockboard_v1/output/outlines/promicro_cutout.dxf");
+}
+
 module wall() {
     translate([OFFSET_X, OFFSET_Y, 0])
     import("../../ergogen/shockboard_v1/output/outlines/wall.dxf");
