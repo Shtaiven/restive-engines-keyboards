@@ -2,7 +2,7 @@ use <shockboard_v1.scad>
 use <../openscad-fillets/fillets3d.scad>
 
 
-ENABLE_FILLET = 1;
+ENABLE_FILLET = 0;
 
 
 module fillet_wall(wall_height, fillet_radius, fillet_steps, fillet_enable) {
@@ -19,7 +19,9 @@ module fillet_wall(wall_height, fillet_radius, fillet_steps, fillet_enable) {
 
 module case_bottom(wall_height=18, fillet_radius=3, fillet_steps=20, fillet_enable=1) {
     difference() {
+        // 
         union() {
+            linear_extrude(2);
             case_outline();
 
             linear_extrude(4)
