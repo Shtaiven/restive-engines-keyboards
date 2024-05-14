@@ -1,35 +1,35 @@
 function mounting_holes_extrude_6_outline_fn(){
-    return CAG.circle({"center":[316.1589629,-136.9466169],"radius":4.5})
+    return CAG.circle({"center":[316.1589629,-136.9466169],"radius":2.9})
 .subtract(
-    CAG.circle({"center":[316.1589629,-136.9466169],"radius":3.2})
+    CAG.circle({"center":[316.1589629,-136.9466169],"radius":1.6})
 ).union(
-    CAG.circle({"center":[108.5975789,-136.9466169],"radius":4.5})
+    CAG.circle({"center":[108.5975789,-136.9466169],"radius":2.9})
 .subtract(
-    CAG.circle({"center":[108.5975789,-136.9466169],"radius":3.2})
+    CAG.circle({"center":[108.5975789,-136.9466169],"radius":1.6})
 )).union(
-    CAG.circle({"center":[258.8411787,-152.323356],"radius":4.5})
+    CAG.circle({"center":[258.8411787,-152.323356],"radius":2.9})
 .subtract(
-    CAG.circle({"center":[258.8411787,-152.323356],"radius":3.2})
+    CAG.circle({"center":[258.8411787,-152.323356],"radius":1.6})
 )).union(
-    CAG.circle({"center":[165.9153631,-152.323356],"radius":4.5})
+    CAG.circle({"center":[165.9153631,-152.323356],"radius":2.9})
 .subtract(
-    CAG.circle({"center":[165.9153631,-152.323356],"radius":3.2})
+    CAG.circle({"center":[165.9153631,-152.323356],"radius":1.6})
 )).union(
-    CAG.circle({"center":[327.2751113,-93.1735516],"radius":4.5})
+    CAG.circle({"center":[327.2751113,-93.1735516],"radius":2.9})
 .subtract(
-    CAG.circle({"center":[327.2751113,-93.1735516],"radius":3.2})
+    CAG.circle({"center":[327.2751113,-93.1735516],"radius":1.6})
 )).union(
-    CAG.circle({"center":[97.4814305,-93.1735516],"radius":4.5})
+    CAG.circle({"center":[97.4814305,-93.1735516],"radius":2.9})
 .subtract(
-    CAG.circle({"center":[97.4814305,-93.1735516],"radius":3.2})
+    CAG.circle({"center":[97.4814305,-93.1735516],"radius":1.6})
 )).union(
-    CAG.circle({"center":[251.0405264,-96.8188307],"radius":4.5})
+    CAG.circle({"center":[251.0405264,-96.8188307],"radius":2.9})
 .subtract(
-    CAG.circle({"center":[251.0405264,-96.8188307],"radius":3.2})
+    CAG.circle({"center":[251.0405264,-96.8188307],"radius":1.6})
 )).union(
-    CAG.circle({"center":[173.7160154,-96.8188307],"radius":4.5})
+    CAG.circle({"center":[173.7160154,-96.8188307],"radius":2.9})
 .subtract(
-    CAG.circle({"center":[173.7160154,-96.8188307],"radius":3.2})
+    CAG.circle({"center":[173.7160154,-96.8188307],"radius":1.6})
 )).extrude({ offset: [0, 0, 6] });
 }
 

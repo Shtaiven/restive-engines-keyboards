@@ -20,7 +20,7 @@ SCREW_HOLE_LOCATIONS = [
 
 module assembly(explode=0, fillet_enable=0, alpha=1) {
     color("cyan", alpha)
-    case_bottom(fillet_enable=fillet_enable);
+    case_hipro_mx_bottom(fillet_enable=fillet_enable);
 
     color("magenta", alpha)
     translate([0, 0, 4 + explode*2])
@@ -29,7 +29,7 @@ module assembly(explode=0, fillet_enable=0, alpha=1) {
 
     color("yellow", alpha)
     translate([0, 0, 9.1 + explode*4])
-    case_top();
+    case_hipro_mx_top();
     
     for(location = SCREW_HOLE_LOCATIONS) {
         color("red", alpha)
