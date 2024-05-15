@@ -4,8 +4,8 @@ use <case_hipro_mx_bottom.scad>
 use <case_hipro_mx_top.scad>
 
 FILLET_ENABLE = 1;
-ALPHA = 0.25;
-EXPLODE = 0;
+ALPHA = 1;
+EXPLODE = 15;
 
 SCREW_HOLE_LOCATIONS = [
     [97.6, -93.17],
@@ -19,28 +19,36 @@ SCREW_HOLE_LOCATIONS = [
 ];
 
 module assembly(explode=0, fillet_enable=0, alpha=1) {
-    color("cyan", alpha)
+    color("magenta", alpha)
     case_hipro_mx_bottom(fillet_enable=fillet_enable);
 
-    color("magenta", alpha)
-    translate([0, 0, 4 + explode*2])
-    linear_extrude(1.6)
-    board();
+    difference () {
+        color("green", alpha)
+        translate([0, 0, 4 + explode*2])
+        linear_extrude(1.6)
+        board();
+        
+        // screw holes in board
+        for(location = SCREW_HOLE_LOCATIONS) {
+            translate([location[0], location[1], 4 + explode*2])
+            cylinder(3);
+        }
+    }
 
-    color("yellow", alpha)
+    color("magenta", alpha)
     translate([0, 0, 9.1 + explode*4])
     case_hipro_mx_top();
     
     for(location = SCREW_HOLE_LOCATIONS) {
-        color("red", alpha)
+        color("gold", alpha)
         translate([location[0], location[1], 5.6 + explode*3])
         standoff(2, 4, 3.5);
         
-        color("green", alpha)
+        color("gold", alpha)
         translate([location[0], location[1], 2.4 + explode*5])
         screw(2, 8);
         
-        color("blue", alpha)
+        color("gold", alpha)
         translate([location[0], location[1], 1 + explode])
         standoff(2, 3.6, 3); // heat set inserts
     }

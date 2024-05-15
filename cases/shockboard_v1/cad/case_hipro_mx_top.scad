@@ -6,7 +6,8 @@ $fa = $preview ? 3 : 0.1;
 module keywell() {
     difference() {
         plate_outline();
-        offset(delta=1)
+        
+        offset(delta=0.5) // create space for the keycaps
         keywell_mx();
     };
 }
@@ -41,8 +42,8 @@ module case_hipro_mx_top() {
             plate();
         }
 
-        linear_extrude(10)
         translate([0, 0, -1])
+        linear_extrude(10)
         promicro_cutout();
         
         // fix for interference with battery connector
@@ -57,5 +58,6 @@ module case_hipro_mx_top() {
         wedge(10);
     }
 }
+
 
 case_hipro_mx_top();

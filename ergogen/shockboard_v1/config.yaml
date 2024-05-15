@@ -58,7 +58,7 @@ units:
 
   # plate parameters
   PLATE_THICKNESS: 1.5
-  PLATE_EXTENSION: 1.5
+  PLATE_EXTENSION: 1
 
 #
 # Define key locations
