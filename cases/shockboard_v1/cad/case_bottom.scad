@@ -46,6 +46,10 @@ module case_bottom(wall_height=18, fillet_radius=3, fillet_steps=20, fillet_enab
         linear_extrude(15)
         battery_switch_cutout();
         
+        // fix to allow tolerance for wire over top edge
+        translate([200.05, -85.8, 2])
+        cube([6.1, 10, 18]);
+        
         // fix for interference with left bottom hotswap socket
         //translate([108.60-3.7, -137-3, 2])
         //rotate([0, 0, -8])

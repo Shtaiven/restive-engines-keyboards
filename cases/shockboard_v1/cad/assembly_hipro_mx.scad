@@ -5,7 +5,7 @@ use <case_hipro_mx_top.scad>
 
 FILLET_ENABLE = 1;
 ALPHA = 1;
-EXPLODE = 15;
+EXPLODE = 0;
 
 SCREW_HOLE_LOCATIONS = [
     [97.6, -93.17],
