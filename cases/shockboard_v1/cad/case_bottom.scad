@@ -39,16 +39,16 @@ module case_bottom(wall_height=18, fillet_radius=3, fillet_steps=20, fillet_enab
         case_bottom_no_cutout(wall_height, fillet_radius, fillet_steps, fillet_enable, clearance);
         
         translate([0, 0, 5.6])
-        linear_extrude(15)
+        linear_extrude(9)
         usbc_cutout();
         
         translate([0, 0, 5.6])
-        linear_extrude(15)
+        linear_extrude(wall_height)
         battery_switch_cutout();
         
         // fix to allow tolerance for wire over top edge
-        translate([200.05, -85.8, 2])
-        cube([6.1, 10, 18]);
+        translate([198.05, -83.3, 2])
+        cube([6.1, 5, 8]);
         
         // fix for interference with left bottom hotswap socket
         //translate([108.60-3.7, -137-3, 2])
