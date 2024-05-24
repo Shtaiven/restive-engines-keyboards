@@ -6,12 +6,15 @@
 # V2 TODOS:
 #   TODO: Add pins for 35mm/40mm cirque trackpad (external footprint)
 #   TODO: Add pins for nice!view
-#   TODO: Widen mounting holes to accomodate a full m2 spacer through the pcb
-#   TODO: move inner thumb key closer
-#   TODO: Larger split rotation
+#   TODO: Widen mounting holes to accomodate a full m2 spacer through the pcb?
+#   TODO: move inner thumb keys inward
+#   TODO: Larger split rotation (15 degrees?)
 #   TODO: Move reset button (maybe a sidways one)
-#   TODO: Bigger battery switch
+#   TODO: Bigger battery slide switch
 #   TODO: Standoff location for Lily58-compatible acrylic screen window
+#   TODO: Wire key matrix to use 5x9 pins (up to 54) instead of 5x10 (up to 60)
+#   TODO: Leave P1 free for nice!view CS pin
+#   TODO: Widen keywell for middle thumb key to accomodate 1u-1.5u-1u configuration
 
 #
 # Define unit constants
