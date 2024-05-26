@@ -45,23 +45,17 @@ module case_bottom(wall_height=18, fillet_radius=3, fillet_steps=20, fillet_enab
         translate([0, 0, 5.6])
         linear_extrude(wall_height)
         battery_switch_cutout();
+    }
+    
+    linear_extrude(4)
+    difference() {
+        case_outline();
+        promicro_cutout();
+        keywell_mx();
         
-        // fix to allow tolerance for wire over top edge
-        translate([198.05, -83.3, 2])
-        cube([6.1, 5, 8]);
-        
-        // fix for interference with left bottom hotswap socket
-        //translate([108.60-3.7, -137-3, 2])
-        //rotate([0, 0, -8])
-        //linear_extrude(3)
-        //square(3);
-        
-        // fix for interference with right bottom hotswap socket
-        //translate([313.60+3.7, -137-3, 2])
-        //rotate([0, 0, 8])
-        //linear_extrude(3)
-        //square(3);
-    }    
+        translate([187.5, -125, 2])
+        square([50, 42]);
+    }
 }
 
 case_bottom();

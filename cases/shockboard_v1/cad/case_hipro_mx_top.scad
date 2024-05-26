@@ -56,8 +56,11 @@ module case_hipro_mx_top() {
         translate([198.4 - 5, -122.1 + 26 , 0])
         resize([0, 8, 0])
         wedge(10);
+        
+        // fix for interference with reset button
+        translate([198.4-2, -122.1 + 26 , 2.5])
+        cube([5, 8, 10]);
     }
 }
-
 
 case_hipro_mx_top();

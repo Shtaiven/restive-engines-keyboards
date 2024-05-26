@@ -353,15 +353,21 @@ outlines:
     - what: rectangle
       where: thumbfan_middle_thumb
       asym: both
-      size: [1.25u, 1u+5]
+      size: [1.25u+1u, 1u+5]
       adjust:
-        shift: [0, 2.5]
+        shift: [-0.5u, 2.5]
     - what: rectangle
       where: thumbfan_outer_thumb
       asym: both
-      size: [1.25u+10, 1u]
+      size: [1.25u+10, 1u+1u]
       adjust:
-        shift: [5, 0]
+        shift: [5, 0.5u]
+    - what: rectangle
+      where: matrix_pinky_bottom
+      asym: both
+      size: 1u
+      adjust:
+        shift: [1u, 0]
   keywell_mx: [
     +_keywell_mx_matrix,
     +_keywell_mx_thumbs,

@@ -24,13 +24,11 @@ module case_lopro_mx_top() {
         // fix for interference with battery connector
         translate([226.4 + 5, -122.1 + 18, -1])
         rotate([0, 0, 180])
-        resize([0, 12.5, 0])
-        cube(10);
+        cube([10, 12.5, 10]);
 
         // fix for interference with reset button
         translate([198.4 - 5, -122.1 + 26 , -1])
-        resize([0, 8, 0])
-        cube(10);
+        cube([10, 8, 10]);
     }
 }
 
