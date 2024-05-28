@@ -1,5 +1,6 @@
 use <shockboard_v1.scad>
 use <hardware.scad>
+use <pcb_spacer.scad>
 use <case_hipro_mx_bottom.scad>
 use <case_hipro_mx_top.scad>
 
@@ -35,14 +36,18 @@ module assembly(explode=0, fillet_enable=0, alpha=1) {
         }
     }
 
+    color("cyan", alpha)
+    translate([0, 0, 5.6 + explode*3])
+    pcb_spacer(3.5);
+
     color("magenta", alpha)
     translate([0, 0, 9.1 + explode*4])
     case_hipro_mx_top();
     
     for(location = SCREW_HOLE_LOCATIONS) {
-        color("gold", alpha)
-        translate([location[0], location[1], 5.6 + explode*3])
-        standoff(2, 4, 3.5);
+        //color("gold", alpha)
+        //translate([location[0], location[1], 5.6 + explode*3])
+        //standoff(2, 4, 3.5);
         
         color("gold", alpha)
         translate([location[0], location[1], 2.4 + explode*5])

@@ -353,17 +353,17 @@ outlines:
     - what: rectangle
       where: thumbfan_middle_thumb
       asym: both
-      size: [1.25u+1u, 1u+5]
+      size: [1.25u+0.8u, 1u+5]
       adjust:
-        shift: [-0.5u, 2.5]
+        shift: [-0.4u, 2.5]
     - what: rectangle
       where: thumbfan_outer_thumb
       asym: both
-      size: [1.25u+10, 1u+1u]
+      size: [1.25u+10, 1u]
       adjust:
-        shift: [5, 0.5u]
+        shift: [5, 0]
     - what: rectangle
-      where: matrix_pinky_bottom
+      where: matrix_ring_bottom
       asym: both
       size: 1u
       adjust:
