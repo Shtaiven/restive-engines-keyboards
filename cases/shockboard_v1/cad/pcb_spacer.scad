@@ -30,6 +30,8 @@ module pcb_spacer(thickness=3.5) {
         translate([0, 0, -1])
         promicro_cutout();
         
+        battery_switch_cutout();
+        
         // fix for interference with battery connector
         translate([226.4 + 5, -122.1 + 18, 0])
         rotate([0, 0, 180])

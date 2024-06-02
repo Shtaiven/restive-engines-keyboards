@@ -15,6 +15,8 @@ module keywell() {
 module plate() {
     difference() {
         plate_mx();
+        
+        offset(delta=0.2)
         m2_holes();
     };
 }
