@@ -76,7 +76,7 @@ Assembling the case:
     3. PCB spacer
     4. Case top
 3. Align the 8 holes of all 4 pieces and screw in the 8 m2 screws from the top of the case until reasonable tight.
-4. Insert your favorite switches and keycaps and upload, your keyboard firmware, and enjoy!
+4. Insert your favorite switches and keycaps, upload your keyboard firmware, and enjoy!
 
 ## Firmware
 
