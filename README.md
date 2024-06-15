@@ -1,5 +1,7 @@
 # shockboard
 
+![Assembled shockboard](images/shockboard.png)
+
 ## Introduction
 
 The shockboard is a monoblock split columnar-staggered keyboard inspired by boards such as the corne, Lily58, Le Chiffre, and others. It is designed based on my own finger positions, with a thumb cluster that is comfortable for my smaller hands while resting in what I consider a neutral position. A monoblock design has been chosen easy portability and setup.
