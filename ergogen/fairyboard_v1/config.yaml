@@ -443,11 +443,21 @@ pcbs:
           from: "{{column_net}}"
           to: "{{colrow}}"
           hotswap: true
-      diodes:
-        what: diode
-        where: true
         adjust:
-          shift: [0, -4.7]
+          rotate: 180
+      diodes_left:
+        what: diode_smt_bottom
+        where: -/mirror/
+        adjust:
+          shift: [-4, 0.5u - 1]
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+      diodes_right:
+        what: diode_smt_bottom
+        where: /mirror/
+        adjust:
+          shift: [4, 0.5u - 1]
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
