@@ -10,6 +10,7 @@
 #   TODO: Standoff location for Lily58-compatible acrylic screen window
 #   TODO: Wire key matrix to use 5x9 pins (up to 54) instead of 5x10 (up to 60)
 #   TODO: Widen mounting holes to accomodate a full m2 spacer through the pcb?
+#   TODO: Move mounting holes so that they don't interfere with diodes
 
 #
 # Define unit constants
