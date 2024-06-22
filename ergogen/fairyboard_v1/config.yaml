@@ -4,7 +4,6 @@
 #   author: Steven Eisinger
 
 # V2 TODOS:
-#   TODO: Add pins for nice!view
 #   TODO: Leave P1 free for nice!view CS pin
 #   TODO: Move reset button (maybe a sidways one)
 #   TODO: Bigger battery slide switch
@@ -161,8 +160,10 @@ outlines:
     - what: polygon
       operation: stack
       points:
+        - ref: thumbfan_inner_thumb
+          shift: [0.6u, -0.6u]
         - ref: thumbfan_outer_thumb
-          shift: [-0.7u, -1.5u]
+          shift: [-0.6u, -0.6u]
         - ref: matrix_pinky_bottom
           shift: [-0.6u, -0.6u]
         - ref: matrix_outer_home
@@ -192,7 +193,9 @@ outlines:
         - ref: mirror_matrix_pinky_bottom
           shift: [-0.6u, -0.6u]
         - ref: mirror_thumbfan_outer_thumb
-          shift: [-0.7u, -1.5u]
+          shift: [-0.6u, -0.6u]
+        - ref: mirror_thumbfan_inner_thumb
+          shift: [0.6u, -0.6u]
       fillet: 5
   case_outline:
     - what: outline
@@ -457,17 +460,16 @@ pcbs:
           rotate: -90
         params:
           orientation: down
-      # OLED screen
-      oled:
-        what: oled
+      # nice!view screen
+      display:
+        what: nice_view
         params:
-          side: "F"
-          SDA: P2
-          SCL: P3
+          MOSI: P2
+          SCK: P3
+          CS: P1
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [-6, -10.213]
-          rotate: 90
+          shift: [0, 8.213]
       # Four Pin Reset Button
       reset:
         what: reset_switch_tht_top
