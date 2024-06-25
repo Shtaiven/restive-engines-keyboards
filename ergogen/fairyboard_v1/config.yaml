@@ -341,46 +341,17 @@ outlines:
     -mounting_holes_inner,
   ]
   # cutouts for the keys to be used in plate generation
-  _keywell_mx_matrix:
+  keywell_mx:
     - what: rectangle
-      where: /matrix/
+      where: true
       asym: source
-      size: 1u
+      size: 1u + 2
     - what: rectangle
-      where: /matrix_inner_bottom/
-      asym: source
-      size: 1u
-      adjust:
-        shift: [0, -5]
-  _keywell_mx_thumbs:
-    - what: rectangle
-      where: thumbfan_inner_thumb
+      where:
+        ref: [thumbfan_outer_thumb]
+        shift: [0, 0.5u]
       asym: both
-      size: [1.25u+10, 1u]
-      adjust:
-        shift: [-5, 0]
-    - what: rectangle
-      where: thumbfan_middle_thumb
-      asym: both
-      size: [1.25u+0.8u, 1u+5]
-      adjust:
-        shift: [-0.4u, 2.5]
-    - what: rectangle
-      where: thumbfan_outer_thumb
-      asym: both
-      size: [1.25u+10, 1u]
-      adjust:
-        shift: [5, 0]
-    - what: rectangle
-      where: matrix_ring_bottom
-      asym: both
-      size: 1u
-      adjust:
-        shift: [1u, 0]
-  keywell_mx: [
-    +_keywell_mx_matrix,
-    +_keywell_mx_thumbs,
-  ]
+      size: 1u + 2
   cutouts_mx:
     - what: rectangle
       where: true
