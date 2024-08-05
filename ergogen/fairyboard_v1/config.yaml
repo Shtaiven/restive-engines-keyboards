@@ -8,16 +8,18 @@
 #   TODO: Move reset button (maybe a sidways one)
 #   TODO: Bigger battery slide switch
 #   TODO: Standoff location for Lily58-compatible acrylic screen window
-#   TODO: Wire key matrix to use 5x9 pins (up to 54) instead of 5x10 (up to 60)
+#   TODO: Wire key matrix to use 6x7 pins (up to 42) instead of 5x10 (up to 60)
 #   TODO: Widen mounting holes to accomodate a full m2 spacer through the pcb?
 #   TODO: Move mounting holes so that they don't interfere with diodes
+# TODO: Add VIK connector
+# TODO: Make space for small VIK modules
 
 #
 # Define unit constants
 #
 units:
   # split
-  SPLIT_ROTATION: -15
+  SPLIT_ROTATION: -14
   SPLIT_DISTANCE: 64*2  # measured from inter-index distance
 
   # column stagger
@@ -28,7 +30,7 @@ units:
 
   # thumbfan common
   THUMBFAN_ROT: 0
-  THUMBFAN_X: -0.5u
+  THUMBFAN_X: 0
   THUMBFAN_Y: -1u + COLUMN_INNER_STAGGER
 
   # thumbfan outer
@@ -45,8 +47,8 @@ units:
 
   # thumbfan inner
   THUMBFAN_INNER_ROT: 0
-  THUMBFAN_INNER_SPLAY: -10
-  THUMBFAN_INNER_STAGGER: -5
+  THUMBFAN_INNER_SPLAY: -16.5
+  THUMBFAN_INNER_STAGGER: 0
   THUMBFAN_INNER_X: 0
   THUMBFAN_INNER_Y: 0
 
@@ -161,18 +163,26 @@ outlines:
       size: 1u + 2
     - what: rectangle
       where:
-        ref: [thumbfan_outer_thumb]
+        ref: thumbfan_outer_thumb
         shift: [0, 0.5u]
       asym: both
       size: 1u + 2
-    # - what: polygon
-    #   operation: stack
-    #   points:
-    #     - ref: matrix_inner_top
-    #     - ref: mirror_matrix_inner_top
-    #     - ref: mirror_thumbfan_inner_thumb
-    #     - ref: thumbfan_inner_thumb
-    #     - ref: matrix_inner_top
+    - what: rectangle
+      where:
+        ref: matrix_middle_top
+        shift: [-2u, 0]
+      asym: both
+      size: [3u + 2, 1u + 2]
+    - what: polygon
+      points:
+        - ref: matrix_inner_top
+          shift: [0.5u+1, 0.5u+1]
+        - ref: mirror_matrix_inner_top
+          shift: [0.5u+1, 0.5u+1]
+        - ref: mirror_matrix_inner_bottom
+          shift: [0.5u+1, 0.5u+1]
+        - ref: matrix_inner_bottom
+          shift: [0.5u+1, 0.5u+1]
   case_outline:
     - what: outline
       name: board
