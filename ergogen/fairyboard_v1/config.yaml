@@ -7,12 +7,12 @@
 #   TODO: Leave P1 free for nice!view CS pin
 #   TODO: Move reset button (maybe a sidways one)
 #   TODO: Bigger battery slide switch
-#   TODO: Standoff location for Lily58-compatible acrylic screen window
+#   TODO: Standoff location for acrylic screen window
 #   TODO: Wire key matrix to use 6x7 pins (up to 42) instead of 5x10 (up to 60)
 #   TODO: Widen mounting holes to accomodate a full m2 spacer through the pcb?
 #   TODO: Move mounting holes so that they don't interfere with diodes
-# TODO: Add VIK connector
-# TODO: Make space for small VIK modules
+#   TODO: Add VIK connector
+#   TODO: Make space for small VIK modules
 
 #
 # Define unit constants
@@ -23,10 +23,11 @@ units:
   SPLIT_DISTANCE: 64*2  # measured from inter-index distance
 
   # column stagger
+  COLUMN_PINKY_STAGGER: 2
   COLUMN_RING_STAGGER: 10.5
   COLUMN_MIDDLE_STAGGER: 3
   COLUMN_INDEX_STAGGER: -5
-  COLUMN_INNER_STAGGER: -1.5
+  COLUMN_INNER_STAGGER: -3.5
 
   # thumbfan common
   THUMBFAN_ROT: 0
@@ -85,6 +86,7 @@ points:
             bottom.skip: true
         pinky:
           key:
+            stagger: COLUMN_PINKY_STAGGER
             column_net: P16
         ring:
           key:

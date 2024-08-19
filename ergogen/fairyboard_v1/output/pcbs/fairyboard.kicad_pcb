@@ -327,7 +327,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 84.015345 154.92715 -14)
+      (at 84.4991888 152.9865585 -14)
 
       
       (fp_text reference "S3" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -370,7 +370,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 88.611861 136.4915312 -14)
+      (at 89.0957048 134.5509397 -14)
 
       
       (fp_text reference "S4" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -413,7 +413,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 93.208377 118.0559124 -14)
+      (at 93.6922208 116.1153209 -14)
 
       
       (fp_text reference "S5" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -456,7 +456,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 104.9911437 149.3355609 -14)
+      (at 105.4749875 147.3949694 -14)
 
       
       (fp_text reference "S6" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -499,7 +499,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 109.5876597 130.8999421 -14)
+      (at 110.0715035 128.9593506 -14)
 
       
       (fp_text reference "S7" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -542,7 +542,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 114.1841757 112.4643233 -14)
+      (at 114.6680195 110.5237318 -14)
 
       
       (fp_text reference "S8" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -585,7 +585,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 124.1525282 151.0211897 -14)
+      (at 124.636372 149.0805983 -14)
 
       
       (fp_text reference "S9" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -628,7 +628,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 128.7490442 132.5855709 -14)
+      (at 129.232888 130.6449795 -14)
 
       
       (fp_text reference "S10" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -671,7 +671,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 133.3455602 114.1499521 -14)
+      (at 133.829404 112.2093607 -14)
 
       
       (fp_text reference "S11" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -714,7 +714,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 141.3785375 160.4691844 -14)
+      (at 141.8623813 158.5285929 -14)
 
       
       (fp_text reference "S12" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -757,7 +757,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 145.9750535 142.0335656 -14)
+      (at 146.4588973 140.0929741 -14)
 
       
       (fp_text reference "S13" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -800,7 +800,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 150.5715695 123.5979468 -14)
+      (at 151.0554133 121.6573553 -14)
 
       
       (fp_text reference "S14" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1101,7 +1101,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 349.7738648 131.8950152 14)
+      (at 350.7415524 131.8950152 14)
 
       
       (fp_text reference "S21" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1144,7 +1144,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 345.1773488 113.4593964 14)
+      (at 346.1450364 113.4593964 14)
 
       
       (fp_text reference "S22" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1187,7 +1187,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 335.934762 154.92715 14)
+      (at 336.41860579999997 152.9865585 14)
 
       
       (fp_text reference "S23" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1230,7 +1230,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 331.338246 136.4915312 14)
+      (at 331.82208979999996 134.5509397 14)
 
       
       (fp_text reference "S24" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1273,7 +1273,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 326.74173 118.0559124 14)
+      (at 327.2255738 116.1153209 14)
 
       
       (fp_text reference "S25" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1316,7 +1316,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 314.9589633 149.3355609 14)
+      (at 315.4428071 147.3949694 14)
 
       
       (fp_text reference "S26" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1359,7 +1359,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 310.3624473 130.8999421 14)
+      (at 310.8462911 128.9593506 14)
 
       
       (fp_text reference "S27" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1402,7 +1402,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 305.76593130000003 112.4643233 14)
+      (at 306.24977509999997 110.5237318 14)
 
       
       (fp_text reference "S28" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1445,7 +1445,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 295.7975788 151.0211897 14)
+      (at 296.2814226 149.0805983 14)
 
       
       (fp_text reference "S29" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1488,7 +1488,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 291.20106280000005 132.5855709 14)
+      (at 291.6849066 130.6449795 14)
 
       
       (fp_text reference "S30" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1531,7 +1531,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 286.6045468 114.1499521 14)
+      (at 287.08839059999997 112.2093607 14)
 
       
       (fp_text reference "S31" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1574,7 +1574,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 278.5715695 160.4691844 14)
+      (at 279.05541329999994 158.5285929 14)
 
       
       (fp_text reference "S32" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1617,7 +1617,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 273.9750535 142.0335656 14)
+      (at 274.4588973 140.0929741 14)
 
       
       (fp_text reference "S33" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1660,7 +1660,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 269.3785375 123.5979468 14)
+      (at 269.8623813 121.6573553 14)
 
       
       (fp_text reference "S34" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1703,7 +1703,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 260.4988335 166.521144 14)
+      (at 261.46652109999997 166.521144 14)
 
       
       (fp_text reference "S35" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1746,7 +1746,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 255.9023175 148.0855252 14)
+      (at 256.87000509999996 148.0855252 14)
 
       
       (fp_text reference "S36" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1789,7 +1789,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 251.3058015 129.6499064 14)
+      (at 252.27348909999998 129.6499064 14)
 
       
       (fp_text reference "S37" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1832,7 +1832,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 283.5309684 180.3602468 14)
+      (at 284.498656 180.3602468 14)
 
       
       (fp_text reference "S38" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1875,7 +1875,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 263.6043254 188.5124516 30.5)
+      (at 264.57201299999997 188.5124516 30.5)
 
       
       (fp_text reference "S39" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -1918,7 +1918,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 246.8136183 201.9884187 47)
+      (at 247.78130589999998 201.9884187 47)
 
       
       (fp_text reference "S40" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2035,7 +2035,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 84.015345 154.92715 166)
+      (at 84.4991888 152.9865585 166)
 
       
       (fp_text reference "S43" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2072,7 +2072,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 88.611861 136.4915312 166)
+      (at 89.0957048 134.5509397 166)
 
       
       (fp_text reference "S44" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2109,7 +2109,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 93.208377 118.0559124 166)
+      (at 93.6922208 116.1153209 166)
 
       
       (fp_text reference "S45" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2146,7 +2146,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 104.9911437 149.3355609 166)
+      (at 105.4749875 147.3949694 166)
 
       
       (fp_text reference "S46" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2183,7 +2183,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 109.5876597 130.8999421 166)
+      (at 110.0715035 128.9593506 166)
 
       
       (fp_text reference "S47" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2220,7 +2220,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 114.1841757 112.4643233 166)
+      (at 114.6680195 110.5237318 166)
 
       
       (fp_text reference "S48" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2257,7 +2257,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 124.1525282 151.0211897 166)
+      (at 124.636372 149.0805983 166)
 
       
       (fp_text reference "S49" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2294,7 +2294,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 128.7490442 132.5855709 166)
+      (at 129.232888 130.6449795 166)
 
       
       (fp_text reference "S50" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2331,7 +2331,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 133.3455602 114.1499521 166)
+      (at 133.829404 112.2093607 166)
 
       
       (fp_text reference "S51" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2368,7 +2368,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 141.3785375 160.4691844 166)
+      (at 141.8623813 158.5285929 166)
 
       
       (fp_text reference "S52" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2405,7 +2405,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 145.9750535 142.0335656 166)
+      (at 146.4588973 140.0929741 166)
 
       
       (fp_text reference "S53" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2442,7 +2442,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 150.5715695 123.5979468 166)
+      (at 151.0554133 121.6573553 166)
 
       
       (fp_text reference "S54" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2701,7 +2701,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 349.7738648 131.8950152 -166)
+      (at 350.7415524 131.8950152 -166)
 
       
       (fp_text reference "S61" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2738,7 +2738,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 345.1773488 113.4593964 -166)
+      (at 346.1450364 113.4593964 -166)
 
       
       (fp_text reference "S62" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2775,7 +2775,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 335.934762 154.92715 -166)
+      (at 336.41860579999997 152.9865585 -166)
 
       
       (fp_text reference "S63" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2812,7 +2812,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 331.338246 136.4915312 -166)
+      (at 331.82208979999996 134.5509397 -166)
 
       
       (fp_text reference "S64" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2849,7 +2849,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 326.74173 118.0559124 -166)
+      (at 327.2255738 116.1153209 -166)
 
       
       (fp_text reference "S65" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2886,7 +2886,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 314.9589633 149.3355609 -166)
+      (at 315.4428071 147.3949694 -166)
 
       
       (fp_text reference "S66" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2923,7 +2923,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 310.3624473 130.8999421 -166)
+      (at 310.8462911 128.9593506 -166)
 
       
       (fp_text reference "S67" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2960,7 +2960,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 305.76593130000003 112.4643233 -166)
+      (at 306.24977509999997 110.5237318 -166)
 
       
       (fp_text reference "S68" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2997,7 +2997,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 295.7975788 151.0211897 -166)
+      (at 296.2814226 149.0805983 -166)
 
       
       (fp_text reference "S69" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3034,7 +3034,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 291.20106280000005 132.5855709 -166)
+      (at 291.6849066 130.6449795 -166)
 
       
       (fp_text reference "S70" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3071,7 +3071,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 286.6045468 114.1499521 -166)
+      (at 287.08839059999997 112.2093607 -166)
 
       
       (fp_text reference "S71" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3108,7 +3108,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 278.5715695 160.4691844 -166)
+      (at 279.05541329999994 158.5285929 -166)
 
       
       (fp_text reference "S72" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3145,7 +3145,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 273.9750535 142.0335656 -166)
+      (at 274.4588973 140.0929741 -166)
 
       
       (fp_text reference "S73" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3182,7 +3182,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 269.3785375 123.5979468 -166)
+      (at 269.8623813 121.6573553 -166)
 
       
       (fp_text reference "S74" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3219,7 +3219,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 260.4988335 166.521144 -166)
+      (at 261.46652109999997 166.521144 -166)
 
       
       (fp_text reference "S75" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3256,7 +3256,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 255.9023175 148.0855252 -166)
+      (at 256.87000509999996 148.0855252 -166)
 
       
       (fp_text reference "S76" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3293,7 +3293,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 251.3058015 129.6499064 -166)
+      (at 252.27348909999998 129.6499064 -166)
 
       
       (fp_text reference "S77" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3330,7 +3330,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 283.5309684 180.3602468 -166)
+      (at 284.498656 180.3602468 -166)
 
       
       (fp_text reference "S78" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3367,7 +3367,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 263.6043254 188.5124516 -149.5)
+      (at 264.57201299999997 188.5124516 -149.5)
 
       
       (fp_text reference "S79" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3404,7 +3404,7 @@
 
         
       (module PG1350 (layer F.Cu) (tedit 5DD50112)
-      (at 246.8136183 201.9884187 -133)
+      (at 247.78130589999998 201.9884187 -133)
 
       
       (fp_text reference "S80" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3495,7 +3495,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 82.1904982 145.71194870000002 -14)
+        (at 82.674342 143.7713572 -14)
 
         
         (fp_text reference "D3" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3521,7 +3521,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 86.7870142 127.2763299 -14)
+        (at 87.27085799999999 125.33573839999998 -14)
 
         
         (fp_text reference "D4" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3547,7 +3547,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 91.3835302 108.8407111 -14)
+        (at 91.867374 106.9001196 -14)
 
         
         (fp_text reference "D5" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3573,7 +3573,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 103.16629689999999 140.1203596 -14)
+        (at 103.6501407 138.17976810000002 -14)
 
         
         (fp_text reference "D6" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3599,7 +3599,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 107.7628129 121.6847408 -14)
+        (at 108.2466567 119.74414929999999 -14)
 
         
         (fp_text reference "D7" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3625,7 +3625,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 112.3593289 103.249122 -14)
+        (at 112.8431727 101.30853049999999 -14)
 
         
         (fp_text reference "D8" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3651,7 +3651,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 122.3276814 141.80598840000002 -14)
+        (at 122.81152519999999 139.865397 -14)
 
         
         (fp_text reference "D9" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3677,7 +3677,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 126.92419739999998 123.37036959999999 -14)
+        (at 127.4080412 121.4297782 -14)
 
         
         (fp_text reference "D10" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3703,7 +3703,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 131.5207134 104.93475079999999 -14)
+        (at 132.00455720000002 102.9941594 -14)
 
         
         (fp_text reference "D11" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3729,7 +3729,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 139.5536907 151.2539831 -14)
+        (at 140.03753450000002 149.31339160000002 -14)
 
         
         (fp_text reference "D12" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3755,7 +3755,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 144.1502067 132.8183643 -14)
+        (at 144.6340505 130.8777728 -14)
 
         
         (fp_text reference "D13" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3781,7 +3781,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 148.74672270000002 114.3827455 -14)
+        (at 149.2305665 112.442154 -14)
 
         
         (fp_text reference "D14" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3963,7 +3963,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 343.8363458 124.6151891 14)
+        (at 344.8040334 124.6151891 14)
 
         
         (fp_text reference "D21" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3989,7 +3989,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 339.2398298 106.17957030000001 14)
+        (at 340.2075174 106.17957030000001 14)
 
         
         (fp_text reference "D22" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4015,7 +4015,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 329.99724299999997 147.6473239 14)
+        (at 330.48108679999996 145.7067324 14)
 
         
         (fp_text reference "D23" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4041,7 +4041,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 325.400727 129.2117051 14)
+        (at 325.88457079999995 127.27111359999999 14)
 
         
         (fp_text reference "D24" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4067,7 +4067,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 320.804211 110.7760863 14)
+        (at 321.2880548 108.8354948 14)
 
         
         (fp_text reference "D25" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4093,7 +4093,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 309.0214443 142.05573479999998 14)
+        (at 309.5052881 140.1151433 14)
 
         
         (fp_text reference "D26" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4119,7 +4119,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 304.4249283 123.62011600000001 14)
+        (at 304.90877209999996 121.6795245 14)
 
         
         (fp_text reference "D27" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4145,7 +4145,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 299.8284123 105.18449720000001 14)
+        (at 300.31225609999996 103.2439057 14)
 
         
         (fp_text reference "D28" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4171,7 +4171,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 289.8600598 143.7413636 14)
+        (at 290.3439036 141.80077219999998 14)
 
         
         (fp_text reference "D29" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4197,7 +4197,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 285.26354380000004 125.3057448 14)
+        (at 285.74738759999997 123.36515340000001 14)
 
         
         (fp_text reference "D30" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4223,7 +4223,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 280.66702779999997 106.870126 14)
+        (at 281.15087159999996 104.92953460000001 14)
 
         
         (fp_text reference "D31" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4249,7 +4249,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 272.6340505 153.18935829999998 14)
+        (at 273.11789429999993 151.2487668 14)
 
         
         (fp_text reference "D32" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4275,7 +4275,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 268.0375345 134.7537395 14)
+        (at 268.5213783 132.81314799999998 14)
 
         
         (fp_text reference "D33" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4301,7 +4301,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 263.4410185 116.31812070000001 14)
+        (at 263.9248623 114.37752920000001 14)
 
         
         (fp_text reference "D34" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4327,7 +4327,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 254.56131449999998 159.24131789999998 14)
+        (at 255.52900209999996 159.24131789999998 14)
 
         
         (fp_text reference "D35" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4353,7 +4353,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 249.9647985 140.8056991 14)
+        (at 250.93248609999995 140.8056991 14)
 
         
         (fp_text reference "D36" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4379,7 +4379,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 245.3682825 122.3700803 14)
+        (at 246.33597009999997 122.3700803 14)
 
         
         (fp_text reference "D37" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4405,7 +4405,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 277.5934494 173.0804207 14)
+        (at 278.561137 173.0804207 14)
 
         
         (fp_text reference "D38" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4431,7 +4431,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 255.8437327 183.2187572 30.5)
+        (at 256.81142029999995 183.2187572 30.5)
 
         
         (fp_text reference "D39" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4457,7 +4457,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 237.8691184 199.1168474 47)
+        (at 238.83680599999997 199.1168474 47)
 
         
         (fp_text reference "D40" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4481,7 +4481,7 @@
 
         
       (module ProMicro (layer F.Cu) (tedit 5B307E4C)
-      (at 209.9750535 120.4369064 -90)
+      (at 210.4588973 120.4369064 -90)
 
       
       (fp_text reference "MCU1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4562,7 +4562,7 @@
         
 
       (module "ceoloide:display_nice_view" (layer F.Cu) (tedit 6448AF5B)
-        (at 209.9750535 121.4369064 0)
+        (at 210.4588973 121.4369064 0)
         (attr virtual)
         (fp_text reference "DISP1" (at 0 20 0) (layer F.SilkS) hide
           (effects (font (size 1 1) (thickness 0.15)))
@@ -4599,7 +4599,7 @@
     
 
             (module "ceoloide:reset_switch_tht_top" (layer F.Cu) (tedit 5B9559E6) (tstamp 61905781)
-                (at 196.4750535 108.5979468 90)
+                (at 196.9588973 106.6573553 90)
                 (fp_text value "reset_switch_tht_top" (at 0 -2.55 180) (layer F.Fab) (effects (font (size 1 1) (thickness 0.15))))
                 (fp_text reference "RST1" (at 0 2.55 180) (layer F.SilkS) hide (effects (font (size 1 1) (thickness 0.15))))
             
@@ -4619,7 +4619,7 @@
         
         (module E73:SPDT_C128955 (layer F.Cu) (tstamp 5BF2CC3C)
 
-            (at 327.4798844 101.3820518 -1.5)
+            (at 327.9637282 99.4414603 -1.5)
 
             
             (fp_text reference "T1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4662,7 +4662,7 @@
         (descr "JST PH series connector, S2B-PH-K, side entry type, through hole, Datasheet: http://www.jst-mfg.com/product/pdf/eng/ePH.pdf")
         (tags "connector jst ph")
 
-        (at 224.9750535 123.5979468 0)
+        (at 225.4588973 121.6573553 0)
 
         
         (fp_text reference "JST1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4710,7 +4710,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 261.9025657 132.882334 14)
+      (at 262.8702533 132.882334 14)
 
       (fp_text reference "_2" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -4752,7 +4752,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 337.3384942 121.28834 14)
+      (at 338.3061818 121.28834 14)
 
       (fp_text reference "_4" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -4794,7 +4794,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 270.86577189999997 168.8317907 14)
+      (at 271.83345949999995 168.8317907 14)
 
       (fp_text reference "_6" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -4815,7 +4815,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 93.6878505 147.54794700000002 -14)
+      (at 94.1716943 145.6073555 -14)
 
       (fp_text reference "_7" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -4836,7 +4836,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 326.2622565 147.54794700000002 14)
+      (at 326.74610029999997 145.6073555 14)
 
       (fp_text reference "_8" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -4854,23 +4854,23 @@
       (pad "1" thru_hole circle locked (at 1.65 0) (size 0.7 0.7) (drill 0.4) (layers *.Cu *.Mask) (tstamp cde0acf2-b3b4-46de-9f6e-3ab519744000))
       (pad "1" thru_hole circle locked (at 0 -1.65) (size 0.7 0.7) (drill 0.4) (layers *.Cu *.Mask) (tstamp ff0de415-ae11-46fb-b780-c24aee621212))
     )
-  (gr_line (start 57.447957200000005 139.5429404) (end 75.88357601512178 144.13945642516686) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 57.447957200000005 139.5429404) (end 70.39077859999999 87.63211909999998) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 71.28706 162.57507520000001) (end 91.6632702 167.655435) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 91.6632702 167.655435) (end 94.20345009389015 157.4673298770801) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 75.88357601512178 144.13945642516683) (end 71.28706 162.57507520000001) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 94.20345009389015 157.46732987708006) (end 112.6390689 162.0638459) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 112.6390689 162.0638459) (end 113.36483459509897 159.15295867738143) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 113.36483459509897 159.15295867738146) (end 129.85986199156383 163.2656309192932) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 144.86423571373726 111.35350558202856) (end 146.0738452 106.50202689999999) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 70.39077859999999 87.63211909999998) (end 146.0738452 106.50202689999999) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 123.6908536 188.008172) (end 129.85986199156383 163.26563091929324) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 162.93697166291062 117.40546516935603) (end 163.2998545 115.95002159999999) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 163.2998545 115.95002159999999) (end 144.86423571373726 111.3535055820285) (angle 90) (layer Edge.Cuts) (width 0.15))
+  (gr_line (start 57.447957200000005 139.5429404) (end 75.88357601179251 144.13945642433677) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 57.447957200000005 139.5429404) (end 70.8746224 85.6915277) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 71.7709038 160.6344837) (end 92.147114 165.7148435) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 92.147114 165.7148435) (end 94.68729389389014 155.5267383770801) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 75.88357601179251 144.13945642433674) (end 71.7709038 160.6344837) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 94.68729389389014 155.52673837708008) (end 113.1229127 160.1232544) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 113.1229127 160.1232544) (end 113.84867837162538 157.21236727152888) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 113.84867837162538 157.21236727152885) (end 130.3437057680903 161.32503951344057) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 145.34807953721088 109.41291408788118) (end 146.557689 104.5614355) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 70.8746224 85.6915277) (end 146.557689 104.5614355) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 123.6908536 188.008172) (end 130.3437057680903 161.3250395134404) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 162.93697166170182 117.40546516905454) (end 163.7836983 114.0094301) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 163.7836983 114.0094301) (end 145.34807953721088 109.41291408788116) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 148.66357983101943 174.65291296140464) (end 151.854779741405 175.44856846256778) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 157.05833489208828 176.74596047733087) (end 167.09919870000002 179.249429) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 167.09919870000002 179.249429) (end 172.1795585 158.8732188) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 181.3725905 122.00198119999999) (end 162.93697166291062 117.40546516935599) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 181.3725905 122.00198119999999) (end 162.93697166170182 117.4054651690546) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 123.6908536 188.008172) (end 142.95608208990967 192.81153294873775) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 145.97749185649454 185.42622338414526) (end 148.66357983101943 174.6529129614047) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 142.95608208990967 192.81153294873775) (end 159.07717574672884 202.30758279065296) (angle 90) (layer Edge.Cuts) (width 0.15))
@@ -4881,35 +4881,35 @@
 (gr_line (start 172.6182576 216.82861530000002) (end 187.97668529999999 202.50664980000002) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 187.97668529999999 202.50664980000002) (end 173.6547198 187.1482221) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 173.6547198 187.1482221) (end 164.07170469772512 196.08452823508435) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 344.06653098487817 144.13945642516688) (end 362.5021498 139.5429404) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 349.55932839999997 87.63211909999998) (end 362.5021498 139.5429404) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 328.2868368 167.655435) (end 348.663047 162.57507520000001) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 348.663047 162.57507520000001) (end 344.06653098487817 144.13945642516683) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 325.7466569061099 157.46732987708015) (end 328.2868368 167.655435) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 307.3110381 162.0638459) (end 325.7466569061099 157.46732987708006) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 306.58527240490105 159.15295867738155) (end 307.3110381 162.0638459) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 290.09024500843617 163.2656309192932) (end 306.58527240490105 159.1529586773815) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 273.87626179999995 106.50202689999999) (end 349.55932839999997 87.63211909999998) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 273.87626179999995 106.50202689999999) (end 275.08587128626266 111.35350558202856) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 290.09024500843617 163.26563091929324) (end 296.25925340000003 188.008172) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 275.08587128626266 111.35350558202852) (end 256.65025249999997 115.95002159999999) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 256.65025249999997 115.95002159999999) (end 257.01313533708935 117.40546516935603) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 252.8509083 179.249429) (end 262.8917721079117 176.74596047733087) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 268.095327258595 175.44856846256778) (end 271.2865271689805 174.65291296140464) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 247.7705485 158.8732188) (end 252.8509083 179.249429) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 257.01313533708935 117.40546516935599) (end 238.5775165 122.00198119999999) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 276.99402491009016 192.8115329487378) (end 296.25925340000003 188.008172) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 271.2865271689805 174.65291296140458) (end 273.97261514350555 185.4262233841455) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 260.872931253271 202.30758279065304) (end 276.99402491009016 192.8115329487378) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 273.97261514350555 185.42622338414537) (end 268.095327258595 175.44856846256778) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 262.8917721079117 176.74596047733084) (end 249.2280664 184.7944982) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 249.2280664 184.7944982) (end 255.8784023022749 196.08452823508438) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 247.3318494 216.82861530000002) (end 260.872931253271 202.30758279065304) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 255.8784023022749 196.0845282350844) (end 246.2953872 187.1482221) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 246.2953872 187.1482221) (end 231.9734217 202.50664980000002) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 231.9734217 202.50664980000002) (end 247.3318494 216.82861530000002) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 181.3725905 122.00198119999999) (end 238.5775165 122.00198119999999) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 247.7705485 158.8732188) (end 172.1795585 158.8732188) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 345.0342185882074 144.13945642433677) (end 363.46983739999996 139.5429404) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 350.0431722 85.6915277) (end 363.46983739999996 139.5429404) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 328.7706806 165.7148435) (end 349.14689079999994 160.6344837) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 349.14689079999994 160.6344837) (end 345.0342185882074 144.1394564243367) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 326.23050070610986 155.52673837708016) (end 328.7706806 165.7148435) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 307.7948819 160.1232544) (end 326.23050070610986 155.5267383770801) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 307.0691162283746 157.2123672715286) (end 307.7948819 160.1232544) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 290.57408883190965 161.32503951344057) (end 307.0691162283746 157.21236727152882) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 274.3601056 104.5614355) (end 350.0431722 85.6915277) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 274.3601056 104.5614355) (end 275.56971506278904 109.41291408788084) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 290.57408883190965 161.32503951344052) (end 297.226941 188.008172) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 275.56971506278904 109.41291408788115) (end 257.1340963 114.0094301) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 257.1340963 114.0094301) (end 257.98082293829816 117.40546516905454) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 253.81859589999996 179.249429) (end 263.85945970791175 176.74596047733084) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 269.063014858595 175.44856846256775) (end 272.2542147689805 174.65291296140464) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 248.73823609999997 158.8732188) (end 253.81859589999996 179.249429) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 257.98082293829816 117.40546516905464) (end 239.54520409999998 122.00198119999999) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 277.96171251009025 192.81153294873775) (end 297.226941 188.008172) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 272.2542147689805 174.6529129614048) (end 274.94030274350536 185.42622338414503) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 261.84061885327105 202.30758279065302) (end 277.96171251009025 192.81153294873778) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 274.94030274350536 185.4262233841451) (end 269.063014858595 175.44856846256778) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 263.85945970791175 176.74596047733084) (end 250.19575399999997 184.7944982) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 250.19575399999997 184.7944982) (end 256.84608990227497 196.0845282350845) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 248.299537 216.82861530000002) (end 261.84061885327105 202.30758279065304) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 256.84608990227497 196.0845282350845) (end 247.26307479999997 187.1482221) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 247.26307479999997 187.1482221) (end 232.94110929999997 202.50664980000002) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 232.94110929999997 202.50664980000002) (end 248.299537 216.82861530000002) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 181.3725905 122.00198119999999) (end 239.54520409999998 122.00198119999999) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 248.73823609999997 158.8732188) (end 172.1795585 158.8732188) (angle 90) (layer Edge.Cuts) (width 0.15))
 
 )
 
