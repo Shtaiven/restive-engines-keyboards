@@ -58,6 +58,9 @@ units:
   SCREW_BORDER: SCREW_SIZE + 1.3
   STANDOFF_SIZE: 4
 
+  # board parameters
+  BOARD_FILLET: 2
+
   # case parameters
   BOTTOM_THICKNESS: 2
   WALL_THICKNESS: 5
@@ -158,7 +161,7 @@ outlines:
     - what: rectangle
       where: true
       size: 1u - 1
-  board:
+  board_raw:
     - what: rectangle
       where: true
       asym: source
@@ -166,9 +169,33 @@ outlines:
     - what: rectangle
       where:
         ref: thumbfan_outer_thumb
-        shift: [0, 0.5u]
+        shift: [0.25u, 0.3u]
+      asym: both
+      size: [1.5u + 2, 1u + 2]
+    - what: rectangle
+      where:
+        ref: thumbfan_inner_thumb
+        shift: [-1u, 0]
+      asym: both
+      size: [2u + 2, 1u + 2]
+    - what: rectangle
+      where:
+        ref: matrix_inner_bottom
+        shift: [0, -0.3u]
       asym: both
       size: 1u + 2
+    - what: rectangle
+      where:
+        ref: matrix_middle_top
+        shift: [1u, 0]
+      asym: both
+      size: [3u + 2, 1u + 2]
+    - what: rectangle
+      where:
+        ref: matrix_pinky_bottom
+        shift: [1u, 0]
+      asym: both
+      size: [3u + 2, 1u + 2]
     - what: rectangle
       where:
         ref: matrix_middle_top
@@ -178,13 +205,17 @@ outlines:
     - what: polygon
       points:
         - ref: matrix_inner_top
-          shift: [0.5u+1, 0.5u+1]
+          shift: [0.5u + 1, 1u]
         - ref: mirror_matrix_inner_top
-          shift: [0.5u+1, 0.5u+1]
+          shift: [0.5u + 1, 1u]
         - ref: mirror_matrix_inner_bottom
-          shift: [0.5u+1, 0.5u+1]
+          shift: [0.5u + 1, 1u - 3]
         - ref: matrix_inner_bottom
-          shift: [0.5u+1, 0.5u+1]
+          shift: [0.5u + 1, 1u - 3]
+  board:
+    - what: outline
+      name: board_raw
+      fillet: BOARD_FILLET
   case_outline:
     - what: outline
       name: board
