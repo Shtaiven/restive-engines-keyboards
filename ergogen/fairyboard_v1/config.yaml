@@ -12,7 +12,6 @@
 #   TODO: Widen mounting holes to accomodate a full m2 spacer through the pcb?
 #   TODO: Move mounting holes so that they don't interfere with diodes
 #   TODO: Add VIK connector
-#   TODO: Make space for small VIK modules
 
 #
 # Define unit constants
@@ -67,7 +66,7 @@ units:
 
   # plate parameters
   PLATE_THICKNESS: 1.5
-  PLATE_EXTENSION: 1
+  PLATE_EXTENSION: 0
 
 #
 # Define key locations
@@ -192,7 +191,7 @@ outlines:
       size: [3u + 2, 1u + 2]
     - what: rectangle
       where:
-        ref: matrix_pinky_bottom
+        ref: matrix_ring_bottom
         shift: [1u, 0]
       asym: both
       size: [3u + 2, 1u + 2]
