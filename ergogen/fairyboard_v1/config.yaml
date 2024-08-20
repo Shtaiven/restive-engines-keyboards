@@ -58,7 +58,7 @@ units:
   STANDOFF_SIZE: 4
 
   # board parameters
-  BOARD_FILLET: 2
+  BOARD_FILLET: 1
 
   # case parameters
   BOTTOM_THICKNESS: 2
@@ -195,12 +195,12 @@ outlines:
         shift: [1u, 0]
       asym: both
       size: [3u + 2, 1u + 2]
-    - what: rectangle
-      where:
-        ref: matrix_middle_top
-        shift: [-2u, 0]
-      asym: both
-      size: [3u + 2, 1u + 2]
+    # - what: rectangle
+    #   where:
+    #     ref: matrix_middle_top
+    #     shift: [-2u, 0]
+    #   asym: both
+    #   size: [3u + 2, 1u + 2]
     - what: polygon
       points:
         - ref: matrix_inner_top
@@ -429,8 +429,8 @@ pcbs:
         what: choc
         where: true
         params:
-          from: "{{column_net}}"
-          to: "{{colrow}}"
+          from: "{{colrow}}"
+          to: "{{column_net}}"
           hotswap: true
         adjust:
           rotate: 180
@@ -455,7 +455,7 @@ pcbs:
         what: promicro
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [0, 9.213]
+          shift: [0, -3.41]
           rotate: -90
         params:
           orientation: down
@@ -468,7 +468,7 @@ pcbs:
           CS: P1
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [0, 8.213]
+          shift: [0, -4.41]
       # Four Pin Reset Button
       reset:
         what: reset_switch_tht_top
@@ -496,8 +496,8 @@ pcbs:
           pos: B+
           neg: GND
         where:
-          ref.aggregate.parts: [matrix_index_top, mirror_matrix_index_top]
-          shift: [15, 0]
+          ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
+          shift: [15, -8]
       # Screw holes
       hole_top_inner_left:
         what: mountinghole
