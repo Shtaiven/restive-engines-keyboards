@@ -30,3 +30,8 @@ fp-info-cache
 # Printing files
 *.gcode
 *.bgcode
+
+# pixi environments
+.pixi
+*.egg-info
+

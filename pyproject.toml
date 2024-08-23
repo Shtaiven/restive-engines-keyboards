@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "shockboard"
+version = "0.1.0"
+description = "\"Fairyboard/Shockboard keyboard\""
+authors = ["Steven Eisinger <steven.a.eisinger@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+build123d = "^0.6.0"
+ezdxf = {extras = ["draw5"], version = "^1.3.3"}
+ocp-vscode = "^2.3.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
