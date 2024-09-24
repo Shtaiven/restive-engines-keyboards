@@ -35,3 +35,6 @@ fp-info-cache
 .pixi
 *.egg-info
 
+# Ruff
+.ruff_cache
+

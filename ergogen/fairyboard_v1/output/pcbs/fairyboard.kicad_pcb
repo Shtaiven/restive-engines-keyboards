@@ -4598,21 +4598,19 @@
     )
     
 
-            (module "ceoloide:reset_switch_tht_top" (layer F.Cu) (tedit 5B9559E6) (tstamp 61905781)
-                (at 196.9588973 106.6573553 90)
-                (fp_text value "reset_switch_tht_top" (at 0 -2.55 180) (layer F.Fab) (effects (font (size 1 1) (thickness 0.15))))
-                (fp_text reference "RST1" (at 0 2.55 180) (layer F.SilkS) hide (effects (font (size 1 1) (thickness 0.15))))
+            (module "restiveengines:reset_switch_tht_side" (layer F.Cu) (tedit 5B9559E6) (tstamp 61905781)
+                (at 196.9588973 106.6573553 0)
+                (fp_text value "reset_switch_tht_side" (at 0 -2.55 0) (layer F.Fab) (effects (font (size 1 1) (thickness 0.15))))
+                (fp_text reference "RST1" (at 0 2.55 90) (layer F.SilkS) hide (effects (font (size 1 1) (thickness 0.15))))
             
-                (fp_text user "RST" (at 0 0 90) (layer F.SilkS) (effects (font (size 1 1) (thickness 0.15))))
-                (fp_line (start -3 1.75) (end 3 1.75) (layer F.SilkS) (width 0.15))
-                (fp_line (start 3 1.75) (end 3 1.5) (layer F.SilkS) (width 0.15))
-                (fp_line (start -3 1.75) (end -3 1.5) (layer F.SilkS) (width 0.15))
-                (fp_line (start -3 -1.75) (end -3 -1.5) (layer F.SilkS) (width 0.15))
-                (fp_line (start -3 -1.75) (end 3 -1.75) (layer F.SilkS) (width 0.15))
-                (fp_line (start 3 -1.75) (end 3 -1.5) (layer F.SilkS) (width 0.15))
+                (fp_text user "RST" (at 0 0 0) (layer F.SilkS) (effects (font (size 1 1) (thickness 0.15))))
+                (fp_rect (start -3.65 -3.25) (end 3.65 2.25) (width 0.12) (fill none) (layer F.SilkS))
             
-                (pad 2 thru_hole circle (at -3.25 0 90) (size 2 2) (drill 1.3) (layers *.Cu *.Mask) (net 56 "GND"))
-                (pad 1 thru_hole circle (at 3.25 0 90) (size 2 2) (drill 1.3) (layers *.Cu *.Mask) (net 57 "RST"))
+                (fp_rect (start -1.5 -4.97) (end 1.5 -3.25) (width 0.12) (fill none) (layer Dwgs.User))
+                (pad 1 thru_hole circle (at 2.5 -1.25 0) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) (net 56 "GND"))
+                (pad 2 thru_hole circle (at -2.5 -1.25 0) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) (net 57 "RST"))
+                (pad "" thru_hole circle (at 3.5 1.25 0) (size 2 2) (drill 1.3) (layers *.Cu *.Mask))
+                (pad "" thru_hole circle (at -3.5 1.25 0) (size 2 2) (drill 1.3) (layers *.Cu *.Mask))
             )
         
 

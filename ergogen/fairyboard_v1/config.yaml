@@ -4,14 +4,12 @@
 #   author: Steven Eisinger
 
 # V2 TODOS:
-#   TODO: Leave P1 free for nice!view CS pin
 #   TODO: Move reset button (maybe a sidways one)
-#   TODO: Bigger battery slide switch
 #   TODO: Standoff location for acrylic screen window
-#   TODO: Wire key matrix to use 6x7 pins (up to 42) instead of 5x10 (up to 60)
-#   TODO: Widen mounting holes to accomodate a full m2 spacer through the pcb?
 #   TODO: Move mounting holes so that they don't interfere with diodes
-#   TODO: Add VIK connector
+#   TODO: Leave P1 free for nice!view CS pin
+#   TODO: Wire key matrix to use 6x7 pins (up to 42)
+#   TODO: Widen mounting holes to accomodate a full m2 spacer through the pcb?
 
 #
 # Define unit constants
@@ -471,14 +469,14 @@ pcbs:
           shift: [0, -4.41]
       # Four Pin Reset Button
       reset:
-        what: reset_switch_tht_top
+        what: reset_switch_tht_side
         params:
           from: GND
           to: RST
         where:
           ref.aggregate.parts: [matrix_index_top, mirror_matrix_index_top]
           shift: [-13.5, 15]
-          rotate: 90
+          rotate: 0
       # Battery switch
       battery_switch:
         what: slider
