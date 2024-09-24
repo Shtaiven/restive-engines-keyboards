@@ -4,7 +4,6 @@
 #   author: Steven Eisinger
 
 # V2 TODOS:
-#   TODO: Move reset button (maybe a sidways one)
 #   TODO: Standoff location for acrylic screen window
 #   TODO: Move mounting holes so that they don't interfere with diodes
 #   TODO: Leave P1 free for nice!view CS pin
@@ -187,18 +186,6 @@ outlines:
         shift: [1u, 0]
       asym: both
       size: [3u + 2, 1u + 2]
-    # - what: rectangle
-    #   where:
-    #     ref: matrix_ring_bottom
-    #     shift: [1u, 0]
-    #   asym: both
-    #   size: [3u + 2, 1u + 2]
-    # - what: rectangle
-    #   where:
-    #     ref: matrix_middle_top
-    #     shift: [-2u, 0]
-    #   asym: both
-    #   size: [3u + 2, 1u + 2]
     - what: polygon
       points:
         - ref: matrix_inner_top
@@ -475,8 +462,7 @@ pcbs:
           to: RST
         where:
           ref.aggregate.parts: [matrix_index_top, mirror_matrix_index_top]
-          shift: [-13.5, 15]
-          rotate: 0
+          shift: [-18, 4.5]
       # Battery switch
       battery_switch:
         what: slider
@@ -484,9 +470,8 @@ pcbs:
           from: RAW
           to: B+
         where:
-          ref.aggregate.parts: [mirror_matrix_pinky_top]
-          shift: [0.25u, 0.5u + 6.5]
-          rotate: -15.5
+          ref.aggregate.parts: [matrix_index_top, mirror_matrix_index_top]
+          shift: [18, 6]
       # Battery connector
       battery_connector:
         what: jstph
@@ -512,6 +497,9 @@ pcbs:
           SPI_CS: P1
           MISO: P9 # TODO
           SCLK: P3
+        where:
+          ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
+          shift: [-21, -14.5]
       # Screw holes
       hole_top_inner_left:
         what: mountinghole

@@ -4599,7 +4599,7 @@
     
 
             (module "restiveengines:reset_switch_tht_side" (layer F.Cu) (tedit 5B9559E6) (tstamp 61905781)
-                (at 196.9588973 106.6573553 0)
+                (at 192.4588973 117.1573553 0)
                 (fp_text value "reset_switch_tht_side" (at 0 -2.55 0) (layer F.Fab) (effects (font (size 1 1) (thickness 0.15))))
                 (fp_text reference "RST1" (at 0 2.55 90) (layer F.SilkS) hide (effects (font (size 1 1) (thickness 0.15))))
             
@@ -4617,7 +4617,7 @@
         
         (module E73:SPDT_C128955 (layer F.Cu) (tstamp 5BF2CC3C)
 
-            (at 327.9637282 99.4414603 -1.5)
+            (at 228.4588973 115.6573553 0)
 
             
             (fp_text reference "T1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4641,15 +4641,15 @@
             (pad "" np_thru_hole circle (at -1.5 0) (size 1 1) (drill 0.9) (layers *.Cu *.Mask))
 
             
-            (pad 1 smd rect (at 2.25 2.075 -1.5) (size 0.9 1.25) (layers F.Cu F.Paste F.Mask) (net 55 "RAW"))
-            (pad 2 smd rect (at -0.75 2.075 -1.5) (size 0.9 1.25) (layers F.Cu F.Paste F.Mask) (net 67 "B+"))
-            (pad 3 smd rect (at -2.25 2.075 -1.5) (size 0.9 1.25) (layers F.Cu F.Paste F.Mask))
+            (pad 1 smd rect (at 2.25 2.075 0) (size 0.9 1.25) (layers F.Cu F.Paste F.Mask) (net 55 "RAW"))
+            (pad 2 smd rect (at -0.75 2.075 0) (size 0.9 1.25) (layers F.Cu F.Paste F.Mask) (net 67 "B+"))
+            (pad 3 smd rect (at -2.25 2.075 0) (size 0.9 1.25) (layers F.Cu F.Paste F.Mask))
             
             
-            (pad "" smd rect (at 3.7 -1.1 -1.5) (size 0.9 0.9) (layers F.Cu F.Paste F.Mask))
-            (pad "" smd rect (at 3.7 1.1 -1.5) (size 0.9 0.9) (layers F.Cu F.Paste F.Mask))
-            (pad "" smd rect (at -3.7 1.1 -1.5) (size 0.9 0.9) (layers F.Cu F.Paste F.Mask))
-            (pad "" smd rect (at -3.7 -1.1 -1.5) (size 0.9 0.9) (layers F.Cu F.Paste F.Mask))
+            (pad "" smd rect (at 3.7 -1.1 0) (size 0.9 0.9) (layers F.Cu F.Paste F.Mask))
+            (pad "" smd rect (at 3.7 1.1 0) (size 0.9 0.9) (layers F.Cu F.Paste F.Mask))
+            (pad "" smd rect (at -3.7 1.1 0) (size 0.9 0.9) (layers F.Cu F.Paste F.Mask))
+            (pad "" smd rect (at -3.7 -1.1 0) (size 0.9 0.9) (layers F.Cu F.Paste F.Mask))
         )
         
         
@@ -4687,7 +4687,7 @@
 
     (module "vik-module-connector-horizontal" (version 20210722) (generator pcbnew)
         (layer "F.Cu")
-        (at 0 0 0)
+        (at 189.4588973 144.1499064 0)
 
         
         (fp_text reference "VIK_IN1" (at 5.12 -3.56 unlocked) (layer "F.SilkS") hide
