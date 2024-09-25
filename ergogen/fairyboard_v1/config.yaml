@@ -1,14 +1,15 @@
-# meta:
-#   engine: 4.0.5
-#   version: 1.0
-#   author: Steven Eisinger
+meta:
+  engine: 4.1.0
+  version: 1.0
+  author: Steven Eisinger (restive.engines)
 
 # V2 TODOS:
-#   TODO: Standoff location for acrylic screen window
-#   TODO: Move mounting holes so that they don't interfere with diodes
+#   TODO: Move mounting holes so that they don't interfere with anything
+#   TODO: Move diodes so they don't interfere with anything
 #   TODO: Leave P1 free for nice!view CS pin
 #   TODO: Wire key matrix to use 6x7 pins (up to 42)
-#   TODO: Widen mounting holes to accomodate a full m2 spacer through the pcb?
+#   TODO: Standoff location for acrylic screen window?
+#   TODO: VIK compatibility (pins + through hole)
 
 #
 # Define unit constants
@@ -52,7 +53,6 @@ units:
   # screw radius
   SCREW_SIZE: 1.6
   SCREW_BORDER: SCREW_SIZE + 1.3
-  STANDOFF_SIZE: 4
 
   # board parameters
   BOARD_FILLET: 1
@@ -502,42 +502,42 @@ pcbs:
           shift: [-21, -14.5]
       # Screw holes
       hole_top_inner_left:
-        what: mountinghole
+        what: spacerhole
         where:
-          ref: [matrix_inner_top]
-          shift: [-0.5u, -0.3u]
+          ref.aggregate.parts: [matrix_inner_top, matrix_index_top]
+          shift: [0, -0.5u]
       hole_top_inner_right:
-        what: mountinghole
+        what: spacerhole
         where:
-          ref: [mirror_matrix_inner_top]
-          shift: [-0.5u, -0.3u]
+          ref.aggregate.parts: [mirror_matrix_inner_top, mirror_matrix_index_top]
+          shift: [0, -0.5u]
       hole_top_outer_left:
-        what: mountinghole
+        what: spacerhole
         where:
-          ref: [matrix_outer_top]
-          shift: [0.5u, -0.3u]
+          ref.aggregate.parts: [matrix_outer_top, matrix_pinky_top]
+          shift: [0, -0.5u]
       hole_top_outer_right:
-        what: mountinghole
+        what: spacerhole
         where:
-          ref: [mirror_matrix_outer_top]
-          shift: [0.5u, -0.3u]
+          ref.aggregate.parts: [mirror_matrix_outer_top, mirror_matrix_pinky_top]
+          shift: [0, -0.5u]
       hole_bot_inner_left:
-        what: mountinghole
+        what: spacerhole
         where:
-          ref: [matrix_inner_bottom]
-          shift: [-0.5u, -0.25u]
+          ref.aggregate.parts: [matrix_inner_bottom, matrix_index_bottom]
+          shift: [0, -0.5u]
       hole_bot_inner_right:
-        what: mountinghole
+        what: spacerhole
         where:
-          ref: [mirror_matrix_inner_bottom]
-          shift: [-0.5u, -0.25u]
+          ref.aggregate.parts: [mirror_matrix_inner_bottom, mirror_matrix_index_bottom]
+          shift: [0, -0.5u]
       hole_bot_outer_left:
-        what: mountinghole
+        what: spacerhole
         where:
           ref: [matrix_pinky_bottom]
           shift: [0.4u, 0.5u]
       hole_bot_outer_right:
-        what: mountinghole
+        what: spacerhole
         where:
           ref: [mirror_matrix_pinky_bottom]
           shift: [0.4u, 0.5u]

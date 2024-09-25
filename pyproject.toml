@@ -14,6 +14,7 @@ ocp-vscode = "^2.3.3"
 ruff = "^0.6.2"
 pyright = "^1.1.377"
 pre-commit = "^3.8.0"
+jupyter-console = "^6.6.3"
 
 
 [build-system]

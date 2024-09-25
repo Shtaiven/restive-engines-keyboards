@@ -77,8 +77,8 @@ module.exports = {
         (pad "10" smd rect (at 1.75 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") ${p.SPI_CS.str})
         (pad "11" smd rect (at 2.25 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") ${p.MISO.str})
         (pad "12" smd rect (at 2.75 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") ${p.SCLK.str})
-        (pad "13" smd rect (at 4.55 0.686) (size 1.8 2) (layers "F.Cu" "F.Paste" "F.Mask"))
-        (pad "14" smd rect (at -4.55 0.686) (size 1.8 2) (layers "F.Cu" "F.Paste" "F.Mask"))
+        (pad "" smd rect (at 4.55 0.686) (size 1.8 2) (layers "F.Cu" "F.Paste" "F.Mask"))
+        (pad "" smd rect (at -4.55 0.686) (size 1.8 2) (layers "F.Cu" "F.Paste" "F.Mask"))
     )
     `
 }
