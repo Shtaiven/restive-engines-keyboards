@@ -4,8 +4,7 @@ meta:
   author: Steven Eisinger (restive.engines)
 
 # V2 TODOS:
-#   TODO: Move mounting holes so that they don't interfere with anything
-#   TODO: Move diodes so they don't interfere with anything
+#   TODO: Add mounting holes to reinforce thumb and top?
 #   TODO: Leave P1 free for nice!view CS pin
 #   TODO: Wire key matrix to use 6x7 pins (up to 42)
 #   TODO: Standoff location for acrylic screen window?
@@ -423,7 +422,8 @@ pcbs:
         what: diode_smt_bottom
         where: -/mirror/
         adjust:
-          shift: [-4, 0.5u - 1]
+          shift: [7, -3.75]
+          rotate: 90
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
@@ -431,7 +431,8 @@ pcbs:
         what: diode_smt_bottom
         where: /mirror/
         adjust:
-          shift: [4, 0.5u - 1]
+          shift: [-7, -3.75]
+          rotate: -90
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"

@@ -3443,7 +3443,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 68.3513954 122.67981389999998 -14)
+        (at 76.0611052 137.22707739999998 76)
 
         
         (fp_text reference "D1" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3459,8 +3459,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 2 "outer_home"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 47 "P20"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 2 "outer_home"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 47 "P20"))
     )
 
     
@@ -3469,7 +3469,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 72.9479114 104.2441951 -14)
+        (at 80.6576212 118.7914586 76)
 
         
         (fp_text reference "D2" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3485,8 +3485,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 3 "outer_top"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 48 "P19"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 3 "outer_top"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 48 "P19"))
     )
 
     
@@ -3495,7 +3495,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 82.674342 143.7713572 -14)
+        (at 90.3840518 158.3186207 76)
 
         
         (fp_text reference "D3" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3511,8 +3511,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 5 "pinky_bottom"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 49 "P21"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 5 "pinky_bottom"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 49 "P21"))
     )
 
     
@@ -3521,7 +3521,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 87.27085799999999 125.33573839999998 -14)
+        (at 94.98056779999999 139.88300189999998 76)
 
         
         (fp_text reference "D4" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3537,8 +3537,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 6 "pinky_home"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 47 "P20"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 6 "pinky_home"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 47 "P20"))
     )
 
     
@@ -3547,7 +3547,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 91.867374 106.9001196 -14)
+        (at 99.5770838 121.4473831 76)
 
         
         (fp_text reference "D5" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3563,8 +3563,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 7 "pinky_top"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 48 "P19"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 7 "pinky_top"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 48 "P19"))
     )
 
     
@@ -3573,7 +3573,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 103.6501407 138.17976810000002 -14)
+        (at 111.3598505 152.7270316 76)
 
         
         (fp_text reference "D6" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3589,8 +3589,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 9 "ring_bottom"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 49 "P21"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 9 "ring_bottom"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 49 "P21"))
     )
 
     
@@ -3599,7 +3599,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 108.2466567 119.74414929999999 -14)
+        (at 115.9563665 134.2914128 76)
 
         
         (fp_text reference "D7" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3615,8 +3615,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 10 "ring_home"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 47 "P20"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 10 "ring_home"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 47 "P20"))
     )
 
     
@@ -3625,7 +3625,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 112.8431727 101.30853049999999 -14)
+        (at 120.5528825 115.85579399999999 76)
 
         
         (fp_text reference "D8" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3641,8 +3641,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 11 "ring_top"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 48 "P19"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 11 "ring_top"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 48 "P19"))
     )
 
     
@@ -3651,7 +3651,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 122.81152519999999 139.865397 -14)
+        (at 130.521235 154.4126605 76)
 
         
         (fp_text reference "D9" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3667,8 +3667,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 13 "middle_bottom"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 49 "P21"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 13 "middle_bottom"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 49 "P21"))
     )
 
     
@@ -3677,7 +3677,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 127.4080412 121.4297782 -14)
+        (at 135.117751 135.9770417 76)
 
         
         (fp_text reference "D10" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3693,8 +3693,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 14 "middle_home"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 47 "P20"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 14 "middle_home"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 47 "P20"))
     )
 
     
@@ -3703,7 +3703,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 132.00455720000002 102.9941594 -14)
+        (at 139.714267 117.5414229 76)
 
         
         (fp_text reference "D11" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3719,8 +3719,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 15 "middle_top"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 48 "P19"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 15 "middle_top"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 48 "P19"))
     )
 
     
@@ -3729,7 +3729,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 140.03753450000002 149.31339160000002 -14)
+        (at 147.7472443 163.8606551 76)
 
         
         (fp_text reference "D12" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3745,8 +3745,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 17 "index_bottom"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 49 "P21"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 17 "index_bottom"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 49 "P21"))
     )
 
     
@@ -3755,7 +3755,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 144.6340505 130.8777728 -14)
+        (at 152.34376029999999 145.4250363 76)
 
         
         (fp_text reference "D13" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3771,8 +3771,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 18 "index_home"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 47 "P20"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 18 "index_home"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 47 "P20"))
     )
 
     
@@ -3781,7 +3781,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 149.2305665 112.442154 -14)
+        (at 156.9402763 126.9894175 76)
 
         
         (fp_text reference "D14" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3797,8 +3797,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 19 "index_top"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 48 "P19"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 19 "index_top"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 48 "P19"))
     )
 
     
@@ -3807,7 +3807,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 157.62642670000002 157.3059427 -14)
+        (at 165.3361365 171.8532062 76)
 
         
         (fp_text reference "D15" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3823,8 +3823,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 21 "inner_bottom"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 49 "P21"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 21 "inner_bottom"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 49 "P21"))
     )
 
     
@@ -3833,7 +3833,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 162.2229427 138.87032390000002 -14)
+        (at 169.9326525 153.4175874 76)
 
         
         (fp_text reference "D16" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3849,8 +3849,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 22 "inner_home"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 47 "P20"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 22 "inner_home"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 47 "P20"))
     )
 
     
@@ -3859,7 +3859,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 166.8194587 120.43470509999999 -14)
+        (at 174.5291685 134.9819686 76)
 
         
         (fp_text reference "D17" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3875,8 +3875,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 23 "inner_top"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 48 "P19"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 23 "inner_top"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 48 "P19"))
     )
 
     
@@ -3885,7 +3885,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 134.5942918 171.1450455 -14)
+        (at 142.3040016 185.692309 76)
 
         
         (fp_text reference "D18" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3901,8 +3901,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 24 "outer_thumb"))
-        (pad 1 smd rect (at -1.65 0 -14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 50 "P15"))
+        (pad 2 smd rect (at 1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 24 "outer_thumb"))
+        (pad 1 smd rect (at -1.65 0 76) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 50 "P15"))
     )
 
     
@@ -3911,7 +3911,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 157.213341 179.1584503 -30.5)
+        (at 160.4739169 195.29632949999998 59.5)
 
         
         (fp_text reference "D19" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3927,8 +3927,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -30.5) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 25 "middle_thumb"))
-        (pad 1 smd rect (at -1.65 0 -30.5) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 50 "P15"))
+        (pad 2 smd rect (at 1.65 0 59.5) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 25 "middle_thumb"))
+        (pad 1 smd rect (at -1.65 0 59.5) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 50 "P15"))
     )
 
     
@@ -3937,7 +3937,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 176.6250017 193.26601780000001 -47)
+        (at 175.1679008 209.6653885 43)
 
         
         (fp_text reference "D20" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3953,8 +3953,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 -47) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 26 "inner_thumb"))
-        (pad 1 smd rect (at -1.65 0 -47) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 50 "P15"))
+        (pad 2 smd rect (at 1.65 0 43) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 26 "inner_thumb"))
+        (pad 1 smd rect (at -1.65 0 43) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 50 "P15"))
     )
 
     
@@ -3963,7 +3963,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 344.8040334 124.6151891 14)
+        (at 358.4408296 133.84017089999998 104)
 
         
         (fp_text reference "D21" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -3979,8 +3979,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 27 "mirror_outer_home"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 51 "P0"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 27 "mirror_outer_home"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 51 "P0"))
     )
 
     
@@ -3989,7 +3989,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 340.2075174 106.17957030000001 14)
+        (at 353.84431359999996 115.4045521 104)
 
         
         (fp_text reference "D22" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4005,8 +4005,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 28 "mirror_outer_top"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 52 "P4"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 28 "mirror_outer_top"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 52 "P4"))
     )
 
     
@@ -4015,7 +4015,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 330.48108679999996 145.7067324 14)
+        (at 344.11788299999995 154.9317142 104)
 
         
         (fp_text reference "D23" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4031,8 +4031,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 29 "mirror_pinky_bottom"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 53 "P1"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 29 "mirror_pinky_bottom"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 53 "P1"))
     )
 
     
@@ -4041,7 +4041,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 325.88457079999995 127.27111359999999 14)
+        (at 339.52136699999994 136.49609539999997 104)
 
         
         (fp_text reference "D24" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4057,8 +4057,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 30 "mirror_pinky_home"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 51 "P0"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 30 "mirror_pinky_home"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 51 "P0"))
     )
 
     
@@ -4067,7 +4067,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 321.2880548 108.8354948 14)
+        (at 334.924851 118.0604766 104)
 
         
         (fp_text reference "D25" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4083,8 +4083,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 31 "mirror_pinky_top"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 52 "P4"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 31 "mirror_pinky_top"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 52 "P4"))
     )
 
     
@@ -4093,7 +4093,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 309.5052881 140.1151433 14)
+        (at 323.14208429999996 149.3401251 104)
 
         
         (fp_text reference "D26" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4109,8 +4109,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 32 "mirror_ring_bottom"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 53 "P1"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 32 "mirror_ring_bottom"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 53 "P1"))
     )
 
     
@@ -4119,7 +4119,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 304.90877209999996 121.6795245 14)
+        (at 318.54556829999996 130.90450629999998 104)
 
         
         (fp_text reference "D27" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4135,8 +4135,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 33 "mirror_ring_home"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 51 "P0"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 33 "mirror_ring_home"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 51 "P0"))
     )
 
     
@@ -4145,7 +4145,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 300.31225609999996 103.2439057 14)
+        (at 313.94905229999995 112.4688875 104)
 
         
         (fp_text reference "D28" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4161,8 +4161,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 34 "mirror_ring_top"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 52 "P4"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 34 "mirror_ring_top"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 52 "P4"))
     )
 
     
@@ -4171,7 +4171,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 290.3439036 141.80077219999998 14)
+        (at 303.98069979999997 151.02575399999998 104)
 
         
         (fp_text reference "D29" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4187,8 +4187,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 35 "mirror_middle_bottom"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 53 "P1"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 35 "mirror_middle_bottom"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 53 "P1"))
     )
 
     
@@ -4197,7 +4197,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 285.74738759999997 123.36515340000001 14)
+        (at 299.38418379999996 132.5901352 104)
 
         
         (fp_text reference "D30" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4213,8 +4213,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 36 "mirror_middle_home"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 51 "P0"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 36 "mirror_middle_home"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 51 "P0"))
     )
 
     
@@ -4223,7 +4223,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 281.15087159999996 104.92953460000001 14)
+        (at 294.78766779999995 114.1545164 104)
 
         
         (fp_text reference "D31" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4239,8 +4239,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 37 "mirror_middle_top"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 52 "P4"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 37 "mirror_middle_top"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 52 "P4"))
     )
 
     
@@ -4249,7 +4249,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 273.11789429999993 151.2487668 14)
+        (at 286.7546904999999 160.4737486 104)
 
         
         (fp_text reference "D32" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4265,8 +4265,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 38 "mirror_index_bottom"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 53 "P1"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 38 "mirror_index_bottom"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 53 "P1"))
     )
 
     
@@ -4275,7 +4275,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 268.5213783 132.81314799999998 14)
+        (at 282.1581745 142.03812979999998 104)
 
         
         (fp_text reference "D33" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4291,8 +4291,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 39 "mirror_index_home"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 51 "P0"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 39 "mirror_index_home"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 51 "P0"))
     )
 
     
@@ -4301,7 +4301,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 263.9248623 114.37752920000001 14)
+        (at 277.56165849999996 123.602511 104)
 
         
         (fp_text reference "D34" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4317,8 +4317,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 40 "mirror_index_top"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 52 "P4"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 40 "mirror_index_top"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 52 "P4"))
     )
 
     
@@ -4327,7 +4327,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 255.52900209999996 159.24131789999998 14)
+        (at 269.16579829999995 168.46629969999998 104)
 
         
         (fp_text reference "D35" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4343,8 +4343,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 41 "mirror_inner_bottom"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 53 "P1"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 41 "mirror_inner_bottom"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 53 "P1"))
     )
 
     
@@ -4353,7 +4353,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 250.93248609999995 140.8056991 14)
+        (at 264.56928229999994 150.0306809 104)
 
         
         (fp_text reference "D36" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4369,8 +4369,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 42 "mirror_inner_home"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 51 "P0"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 42 "mirror_inner_home"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 51 "P0"))
     )
 
     
@@ -4379,7 +4379,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 246.33597009999997 122.3700803 14)
+        (at 259.9727663 131.59506209999998 104)
 
         
         (fp_text reference "D37" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4395,8 +4395,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 43 "mirror_inner_top"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 52 "P4"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 43 "mirror_inner_top"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 52 "P4"))
     )
 
     
@@ -4405,7 +4405,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 278.561137 173.0804207 14)
+        (at 292.19793319999997 182.30540249999999 104)
 
         
         (fp_text reference "D38" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4421,8 +4421,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 44 "mirror_outer_thumb"))
-        (pad 1 smd rect (at -1.65 0 14) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 54 "P6"))
+        (pad 2 smd rect (at 1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 44 "mirror_outer_thumb"))
+        (pad 1 smd rect (at -1.65 0 104) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 54 "P6"))
     )
 
     
@@ -4431,7 +4431,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 256.81142029999995 183.2187572 30.5)
+        (at 272.50668599999995 188.1907924 120.5)
 
         
         (fp_text reference "D39" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4447,8 +4447,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 30.5) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 45 "mirror_middle_thumb"))
-        (pad 1 smd rect (at -1.65 0 30.5) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 54 "P6"))
+        (pad 2 smd rect (at 1.65 0 120.5) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 45 "mirror_middle_thumb"))
+        (pad 1 smd rect (at -1.65 0 120.5) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 54 "P6"))
     )
 
     
@@ -4457,7 +4457,7 @@
     (module SmtDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 238.83680599999997 199.1168474 47)
+        (at 255.29787079999997 199.42643660000002 137)
 
         
         (fp_text reference "D40" (at 0 0) (layer B.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -4473,8 +4473,8 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
 
         
-        (pad 2 smd rect (at 1.65 0 47) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 46 "mirror_inner_thumb"))
-        (pad 1 smd rect (at -1.65 0 47) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 54 "P6"))
+        (pad 2 smd rect (at 1.65 0 137) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 46 "mirror_inner_thumb"))
+        (pad 1 smd rect (at -1.65 0 137) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 54 "P6"))
     )
 
     
