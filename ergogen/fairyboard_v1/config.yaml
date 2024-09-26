@@ -501,6 +501,24 @@ pcbs:
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [-21, -19.5]
+      vik_throughhole:
+        what: vik_throughhole
+        params:
+          V3V: RAW # TODO
+          GND: GND # TODO
+          SDA: P4 # TODO
+          SCL: P5 # TODO
+          RGB_LED_OUT: P6
+          V5V: RAW # TODO
+          GPIO1: P7 # TODO
+          MOSI: P2
+          GPIO2: P8 # TODO
+          SPI_CS: P1
+          MISO: P9 # TODO
+          SCLK: P3
+        where:
+          ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
+          shift: [-21, 0]
       # Screw holes
       hole_top_inner_left:
         what: spacerhole
