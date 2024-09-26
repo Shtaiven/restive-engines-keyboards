@@ -483,8 +483,8 @@ pcbs:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [15, -8]
       # VIK keyboard connector
-      vik_in:
-        what: vik_in
+      vik_out:
+        what: vik_out
         params:
           V3V: RAW # TODO
           GND: GND # TODO
@@ -500,7 +500,7 @@ pcbs:
           SCLK: P3
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [-21, -14.5]
+          shift: [-21, -19.5]
       # Screw holes
       hole_top_inner_left:
         what: spacerhole

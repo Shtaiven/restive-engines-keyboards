@@ -4685,26 +4685,26 @@
     
     
 
-    (module "vik-module-connector-horizontal" (version 20210722) (generator pcbnew)
+    (module "vik-keyboard-connector-horizontal" (version 20210722) (generator pcbnew)
         (layer "F.Cu")
-        (at 189.4588973 144.1499064 0)
+        (at 189.4588973 149.1499064 0)
 
         
-        (fp_text reference "VIK_IN1" (at 5.12 -3.56 unlocked) (layer "F.SilkS") hide
+        (fp_text reference "VIK_OUT1" (at 4.25 -3.5 unlocked) (layer "F.SilkS") hide
             (effects (font (size 1 1) (thickness 0.15)))
             (tstamp 6a24f8c0-aeb6-4acc-9c9e-28fc44782c17)
         )
 
         
-        (fp_text value "vik-module-connector-horizontal" (at 0.1 2.5 unlocked) (layer "F.Fab")
+        (fp_text value "vik-keyboard-connector-horizontal" (at 0.05 5.09 unlocked) (layer "F.Fab")
             (effects (font (size 1 1) (thickness 0.15)))
             (tstamp c70d6d6a-d6fc-495d-9524-6faba107174f)
         )
-        (fp_text user "3v3" (at 3.3 -2.7 unlocked) (layer "F.SilkS")
+        (fp_text user "3v3" (at -5.9 -2.7 unlocked) (layer "F.SilkS")
             (effects (font (size 0.75 0.75) (thickness 0.15)) (justify left bottom))
-            (tstamp 4b11a486-b108-4ffc-8af7-1f570059679e)
+            (tstamp 406371b3-d729-4746-a81f-a7e7bae453e6)
         )
-        (fp_text user "VIK IN" (at -2.36 -3.42 unlocked) (layer "F.SilkS" knockout)
+        (fp_text user "VIK OUT" (at -3.05 -3.48 unlocked) (layer "F.SilkS" knockout)
             (effects (font (size 1 1) (thickness 0.15)) (justify left bottom))
             (tstamp 680dee3f-61a6-4e55-8e3f-51c2eda13336)
         )
@@ -4729,9 +4729,9 @@
         (fp_circle (center -3.429 -2.708) (end -3.302 -2.708)
             (stroke (width 0.254) (type solid)) (fill none) (layer "F.SilkS") (tstamp 23c8b252-36ac-4d51-ab48-29ba0dc7cb7f))
         (fp_line (start -3.5 2) (end -3.5 4.5)
-            (stroke (width 0.12) (type default)) (layer "Cmts.User") (tstamp 98fc752f-6329-4116-b170-1697d5789616))
+            (stroke (width 0.12) (type default)) (layer "Cmts.User") (tstamp 4ea22fb2-74e3-4048-bbfa-0116ba82c802))
         (fp_line (start 3.5 2) (end 3.5 4.5)
-            (stroke (width 0.12) (type default)) (layer "Cmts.User") (tstamp d61faa52-f880-4bf1-bb18-952e3ddbb395))
+            (stroke (width 0.12) (type default)) (layer "Cmts.User") (tstamp 5942cc9a-20b1-4fc9-ba6f-30ad255b531b))
 
         
         (pad "1" smd rect (at -2.75 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") (net 55 "RAW"))
