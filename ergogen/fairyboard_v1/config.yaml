@@ -4,7 +4,7 @@ meta:
   author: Steven Eisinger (restive.engines)
 
 # V2 TODOS:
-#   TODO: Add mounting holes to reinforce thumb and top?
+#   TODO: Mounting holes for bottom
 #   TODO: Leave P1 free for nice!view CS pin
 #   TODO: Wire key matrix to use 6x7 pins (up to 42)
 #   TODO: VIK pins (pins + through hole) might need 5V out?
@@ -521,6 +521,16 @@ pcbs:
         where:
           ref.aggregate.parts: [mirror_matrix_outer_top, mirror_matrix_pinky_top]
           shift: [0, -0.5u]
+      hole_top_middle_left:
+        what: spacerhole
+        where:
+          ref: [matrix_ring_top]
+          shift: [0.5u, -0.5u + 1]
+      hole_top_middle_right:
+        what: spacerhole
+        where:
+          ref: [mirror_matrix_ring_top]
+          shift: [0.5u, -0.5u + 1]
       hole_bot_inner_left:
         what: spacerhole
         where:
@@ -531,6 +541,16 @@ pcbs:
         where:
           ref.aggregate.parts: [mirror_matrix_inner_bottom, mirror_matrix_index_bottom]
           shift: [0, -0.5u]
+      hole_thumb_left:
+        what: spacerhole
+        where:
+          ref.aggregate.parts: [thumbfan_inner_thumb, thumbfan_middle_thumb]
+          shift: [0, 1.7]
+      hole_thumb_right:
+        what: spacerhole
+        where:
+          ref.aggregate.parts: [mirror_thumbfan_inner_thumb, mirror_thumbfan_middle_thumb]
+          shift: [0, 1.7]
       hole_bot_outer_left:
         what: spacerhole
         where:

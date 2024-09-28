@@ -4805,7 +4805,7 @@
 
     (module "SpacerHole_3.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 148.3585694 171.74267784999998 -14)
+      (at 121.8294928 121.0695035 -14)
 
       (fp_text reference "_5" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -4818,7 +4818,7 @@
 
     (module "SpacerHole_3.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 272.55922519999996 171.74267784999998 14)
+      (at 299.08830179999995 121.0695035 14)
 
       (fp_text reference "_6" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -4831,7 +4831,7 @@
 
     (module "SpacerHole_3.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 94.1716943 145.6073555 -14)
+      (at 148.3585694 171.74267784999998 -14)
 
       (fp_text reference "_7" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -4844,9 +4844,61 @@
 
     (module "SpacerHole_3.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 326.74610029999997 145.6073555 14)
+      (at 272.55922519999996 171.74267784999998 14)
 
       (fp_text reference "_8" (at 0 -3.2) (layer "F.SilkS") hide
+        (effects (font (size 1 1) (thickness 0.15)))
+        (tstamp b68bb25c-687d-44b1-b966-dad4cac66b35)
+      )
+
+      (fp_circle (center 0 0) (end 2.45 0) (layer "F.CrtYd") (width 0.05) (fill none) (tstamp b2688462-c375-45d3-9095-3425fb17c88f))
+      (pad "" np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers "F&B.Cu" "*.Mask"))
+    )
+
+    (module "SpacerHole_3.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
+      (tedit 56DDB9C7)
+      (at 165.80520504999998 193.92463155 -38.75)
+
+      (fp_text reference "_9" (at 0 -3.2) (layer "F.SilkS") hide
+        (effects (font (size 1 1) (thickness 0.15)))
+        (tstamp b68bb25c-687d-44b1-b966-dad4cac66b35)
+      )
+
+      (fp_circle (center 0 0) (end 2.45 0) (layer "F.CrtYd") (width 0.05) (fill none) (tstamp b2688462-c375-45d3-9095-3425fb17c88f))
+      (pad "" np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers "F&B.Cu" "*.Mask"))
+    )
+
+    (module "SpacerHole_3.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
+      (tedit 56DDB9C7)
+      (at 255.11258955 193.92463155 38.75)
+
+      (fp_text reference "_10" (at 0 -3.2) (layer "F.SilkS") hide
+        (effects (font (size 1 1) (thickness 0.15)))
+        (tstamp b68bb25c-687d-44b1-b966-dad4cac66b35)
+      )
+
+      (fp_circle (center 0 0) (end 2.45 0) (layer "F.CrtYd") (width 0.05) (fill none) (tstamp b2688462-c375-45d3-9095-3425fb17c88f))
+      (pad "" np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers "F&B.Cu" "*.Mask"))
+    )
+
+    (module "SpacerHole_3.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
+      (tedit 56DDB9C7)
+      (at 94.1716943 145.6073555 -14)
+
+      (fp_text reference "_11" (at 0 -3.2) (layer "F.SilkS") hide
+        (effects (font (size 1 1) (thickness 0.15)))
+        (tstamp b68bb25c-687d-44b1-b966-dad4cac66b35)
+      )
+
+      (fp_circle (center 0 0) (end 2.45 0) (layer "F.CrtYd") (width 0.05) (fill none) (tstamp b2688462-c375-45d3-9095-3425fb17c88f))
+      (pad "" np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers "F&B.Cu" "*.Mask"))
+    )
+
+    (module "SpacerHole_3.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
+      (tedit 56DDB9C7)
+      (at 326.74610029999997 145.6073555 14)
+
+      (fp_text reference "_12" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
         (tstamp b68bb25c-687d-44b1-b966-dad4cac66b35)
       )
@@ -4859,7 +4911,7 @@
       (tedit 56DDB9C7)
       (at 182.8410748 142.980388 -14)
 
-      (fp_text reference "_9" (at 0 -3.2) (layer "F.SilkS") hide
+      (fp_text reference "_13" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
         (tstamp b68bb25c-687d-44b1-b966-dad4cac66b35)
       )
@@ -4880,7 +4932,7 @@
       (tedit 56DDB9C7)
       (at 238.07671979999998 142.980388 14)
 
-      (fp_text reference "_10" (at 0 -3.2) (layer "F.SilkS") hide
+      (fp_text reference "_14" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
         (tstamp b68bb25c-687d-44b1-b966-dad4cac66b35)
       )
@@ -4901,7 +4953,7 @@
       (tedit 56DDB9C7)
       (at 187.4375909 124.54476919999999 -14)
 
-      (fp_text reference "_11" (at 0 -3.2) (layer "F.SilkS") hide
+      (fp_text reference "_15" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
         (tstamp b68bb25c-687d-44b1-b966-dad4cac66b35)
       )
@@ -4922,7 +4974,7 @@
       (tedit 56DDB9C7)
       (at 233.48020369999998 124.54476919999999 14)
 
-      (fp_text reference "_12" (at 0 -3.2) (layer "F.SilkS") hide
+      (fp_text reference "_16" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
         (tstamp b68bb25c-687d-44b1-b966-dad4cac66b35)
       )
