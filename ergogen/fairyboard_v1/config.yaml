@@ -7,8 +7,7 @@ meta:
 #   TODO: Add mounting holes to reinforce thumb and top?
 #   TODO: Leave P1 free for nice!view CS pin
 #   TODO: Wire key matrix to use 6x7 pins (up to 42)
-#   TODO: Standoff location for acrylic screen window?
-#   TODO: VIK compatibility (pins + through hole)
+#   TODO: VIK pins (pins + through hole) might need 5V out?
 
 #
 # Define unit constants
@@ -500,25 +499,7 @@ pcbs:
           SCLK: P3
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [-21, -19.5]
-      vik_throughhole:
-        what: vik_throughhole
-        params:
-          V3V: RAW # TODO
-          GND: GND # TODO
-          SDA: P4 # TODO
-          SCL: P5 # TODO
-          RGB_LED_OUT: P6
-          V5V: RAW # TODO
-          GPIO1: P7 # TODO
-          MOSI: P2
-          GPIO2: P8 # TODO
-          SPI_CS: P1
-          MISO: P9 # TODO
-          SCLK: P3
-        where:
-          ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [-21, 0]
+          shift: [-18, -19.5]
       # Screw holes
       hole_top_inner_left:
         what: spacerhole
@@ -560,6 +541,26 @@ pcbs:
         where:
           ref: [mirror_matrix_pinky_bottom]
           shift: [0.4u, 0.5u]
+      window_hole_top_left:
+        what: mountinghole
+        where:
+          ref: [matrix_inner_top]
+          shift: [0.5u + 7.5, -0.5u]
+      window_hole_top_right:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_inner_top]
+          shift: [0.5u + 7.5, -0.5u]
+      window_hole_bot_left:
+        what: mountinghole
+        where:
+          ref: [matrix_inner_top]
+          shift: [0.5u + 7.5, 0.5u]
+      window_hole_bot_right:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_inner_top]
+          shift: [0.5u + 7.5, 0.5u]
 
 #
 # Case
