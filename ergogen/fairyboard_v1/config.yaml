@@ -541,6 +541,16 @@ pcbs:
         where:
           ref.aggregate.parts: [mirror_matrix_inner_bottom, mirror_matrix_index_bottom]
           shift: [0, -0.5u]
+      hole_bot_outer_left:
+        what: spacerhole
+        where:
+          ref: [matrix_pinky_bottom]
+          shift: [0.4u, 0.5u + 0.8]
+      hole_bot_outer_right:
+        what: spacerhole
+        where:
+          ref: [mirror_matrix_pinky_bottom]
+          shift: [0.4u, 0.5u + 0.8]
       hole_thumb_left:
         what: spacerhole
         where:
@@ -551,16 +561,6 @@ pcbs:
         where:
           ref.aggregate.parts: [mirror_thumbfan_inner_thumb, mirror_thumbfan_middle_thumb]
           shift: [0, 1.7]
-      hole_bot_outer_left:
-        what: spacerhole
-        where:
-          ref: [matrix_pinky_bottom]
-          shift: [0.4u, 0.5u]
-      hole_bot_outer_right:
-        what: spacerhole
-        where:
-          ref: [mirror_matrix_pinky_bottom]
-          shift: [0.4u, 0.5u]
       window_hole_top_left:
         what: mountinghole
         where:
