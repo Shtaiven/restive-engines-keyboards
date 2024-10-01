@@ -5,8 +5,10 @@ meta:
 
 # V2 TODOS:
 #   NOTE: Leave P1 free for nice!view CS pin
+#   TODO: Use an rp2040 + nice!nano specific footprint
 #   TODO: Wire key matrix to use 6x7 pins (up to 42)
-#   TODO: VIK pins (pins + through hole) might need 5V out?
+#   TODO: VIK pins (pins + through hole)
+#   TODO: Add a trackpoint footprint?
 
 #
 # Define unit constants
@@ -436,13 +438,14 @@ pcbs:
           to: "{{row_net}}"
       # Microcontroller
       mcu:
-        what: promicro
+        what: nice_nano_elite_c
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [0, -3.41]
-          rotate: -90
+          shift: [0, -2.139]
         params:
-          orientation: down
+          reversable: false
+          flipped: true
+          label: false
       # nice!view screen
       display:
         what: nice_view
@@ -452,7 +455,7 @@ pcbs:
           CS: P1
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [0, -4.41]
+          shift: [0, -4.934]
       # Four Pin Reset Button
       reset:
         what: reset_switch_tht_side
