@@ -347,8 +347,10 @@ module.exports = {
     const standard = `
     (module nice_nano_elite_c ${p.at /* parametric position */} (layer F.Cu) (tedit 64CF2E17)
 
-
-    (fp_line (start 6.29 -11.43) (end 8.95 -11.43) (layer F.SilkS) (width 0.12))
+    ${p.flipped ?
+    '(fp_line (start -6.29 -11.43) (end -8.95 -11.43) (layer F.SilkS) (width 0.12))' :
+    '(fp_line (start 6.29 -11.43) (end 8.95 -11.43) (layer F.SilkS) (width 0.12))'
+    }
     (fp_line (start 6.29 -14.03) (end 8.95 -14.03) (layer F.SilkS) (width 0.12))
     (fp_line (start 6.29 -14.03) (end 6.29 16.57) (layer F.SilkS) (width 0.12))
     (fp_line (start 6.29 16.57) (end 8.95 16.57) (layer F.SilkS) (width 0.12))
