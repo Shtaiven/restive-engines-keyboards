@@ -213,6 +213,15 @@
 (net 118 "DISP1_5")
 (net 119 "B+")
 (net 120 "P5")
+(net 121 "TERMINAL1_1")
+(net 122 "TERMINAL1_2")
+(net 123 "TERMINAL1_3")
+(net 124 "TERMINAL1_4")
+(net 125 "TERMINAL1_5")
+(net 126 "TERMINAL1_6")
+(net 127 "TERMINAL1_7")
+(net 128 "TERMINAL1_8")
+(net 129 "TERMINAL1_9")
 
   (net_class Default "This is the default net class."
     (clearance 0.2)
@@ -342,6 +351,15 @@
 (add_net "DISP1_5")
 (add_net "B+")
 (add_net "P5")
+(add_net "TERMINAL1_1")
+(add_net "TERMINAL1_2")
+(add_net "TERMINAL1_3")
+(add_net "TERMINAL1_4")
+(add_net "TERMINAL1_5")
+(add_net "TERMINAL1_6")
+(add_net "TERMINAL1_7")
+(add_net "TERMINAL1_8")
+(add_net "TERMINAL1_9")
   )
 
   
@@ -4782,71 +4800,97 @@
     
     
 
-    (module "vik-keyboard-connector-horizontal" (version 20210722) (generator pcbnew)
-        (layer "F.Cu")
-        (at 192.4588973 149.1499064 0)
-
-        
-        (fp_text reference "VIK_OUT1" (at 4.25 -3.5 unlocked) (layer "F.SilkS") hide
-            (effects (font (size 1 1) (thickness 0.15)))
-            (tstamp 6a24f8c0-aeb6-4acc-9c9e-28fc44782c17)
-        )
-
-        
-        (fp_text value "vik-keyboard-connector-horizontal" (at 0.05 5.09 unlocked) (layer "F.Fab")
-            (effects (font (size 1 1) (thickness 0.15)))
-            (tstamp c70d6d6a-d6fc-495d-9524-6faba107174f)
-        )
-        (fp_text user "3v3" (at -5.9 -2.7 unlocked) (layer "F.SilkS")
-            (effects (font (size 0.75 0.75) (thickness 0.15)) (justify left bottom))
-            (tstamp 406371b3-d729-4746-a81f-a7e7bae453e6)
-        )
-        (fp_text user "VIK OUT" (at -3.05 -3.48 unlocked) (layer "F.SilkS" knockout)
-            (effects (font (size 1 1) (thickness 0.15)) (justify left bottom))
-            (tstamp 680dee3f-61a6-4e55-8e3f-51c2eda13336)
-        )
-        (fp_text user "C479750" (at 0 0.75) (layer "User.2")
-            (effects (font (size 1 1) (thickness 0.15)))
-            (tstamp f5c1073f-d475-4492-a36d-fb0b7148e8a1)
-        )
-        (fp_line (start -5.5 -2.2) (end -3.131 -2.2)
-            (stroke (width 0.254) (type solid)) (layer "F.SilkS") (tstamp e9c3c16c-d370-46bb-8ec2-bcf5a670a865))
-        (fp_line (start -5.5 -0.539) (end -5.5 -2.2)
-            (stroke (width 0.254) (type solid)) (layer "F.SilkS") (tstamp 432687d1-f599-4763-a3a1-716eb5338f19))
-        (fp_line (start -5.5 4.295) (end -5.5 1.912)
-            (stroke (width 0.254) (type solid)) (layer "F.SilkS") (tstamp 500be781-dcbb-4d71-aa39-5dc1c0b2a28b))
-        (fp_line (start 5.5 -2.2) (end 3.131 -2.2)
-            (stroke (width 0.254) (type solid)) (layer "F.SilkS") (tstamp d62be2f6-d1e3-4136-a34b-7d2f16211654))
-        (fp_line (start 5.5 -0.539) (end 5.5 -2.2)
-            (stroke (width 0.254) (type solid)) (layer "F.SilkS") (tstamp aff7b656-725d-4a36-bd1d-dfb618d9818f))
-        (fp_line (start 5.5 4.295) (end -5.5 4.295)
-            (stroke (width 0.254) (type solid)) (layer "F.SilkS") (tstamp 60ebbfd5-fbba-4ecf-91e2-3418f75fdb23))
-        (fp_line (start 5.5 4.295) (end 5.5 1.912)
-            (stroke (width 0.254) (type solid)) (layer "F.SilkS") (tstamp 6bfda8d1-d217-4924-ba4e-8c2698453f37))
-        (fp_circle (center -3.429 -2.708) (end -3.302 -2.708)
-            (stroke (width 0.254) (type solid)) (fill none) (layer "F.SilkS") (tstamp 23c8b252-36ac-4d51-ab48-29ba0dc7cb7f))
-        (fp_line (start -3.5 2) (end -3.5 4.5)
-            (stroke (width 0.12) (type default)) (layer "Cmts.User") (tstamp 4ea22fb2-74e3-4048-bbfa-0116ba82c802))
-        (fp_line (start 3.5 2) (end 3.5 4.5)
-            (stroke (width 0.12) (type default)) (layer "Cmts.User") (tstamp 5942cc9a-20b1-4fc9-ba6f-30ad255b531b))
-
-        
-        (pad "1" smd rect (at -2.75 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") (net 75 "RAW"))
-        (pad "2" smd rect (at -2.25 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") (net 76 "GND"))
-        (pad "3" smd rect (at -1.75 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") (net 52 "P4"))
-        (pad "4" smd rect (at -1.25 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") (net 120 "P5"))
-        (pad "5" smd rect (at -0.75 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") (net 54 "P6"))
-        (pad "6" smd rect (at -0.25 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") (net 75 "RAW"))
-        (pad "7" smd rect (at 0.25 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") (net 12 "P7"))
-        (pad "8" smd rect (at 0.75 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") (net 113 "P2"))
-        (pad "9" smd rect (at 1.25 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") (net 16 "P8"))
-        (pad "10" smd rect (at 1.75 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") (net 53 "P1"))
-        (pad "11" smd rect (at 2.25 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") (net 20 "P9"))
-        (pad "12" smd rect (at 2.75 -2.038) (size 0.28 1.25) (layers "F.Cu" "F.Paste" "F.Mask") (net 114 "P3"))
-        (pad "" smd rect (at 4.55 0.686) (size 1.8 2) (layers "F.Cu" "F.Paste" "F.Mask"))
-        (pad "" smd rect (at -4.55 0.686) (size 1.8 2) (layers "F.Cu" "F.Paste" "F.Mask"))
-    )
+      (module "restiveengines:terminal_block" (layer F.Cu) (tedit 6448AF5B)
+      (at 189.4588973 132.8999064 0)
+      (attr virtual)
+      (fp_text reference "TERMINAL1" (at 0 20 0) (layer F.SilkS) hide
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
+      (fp_text user %R (at 0 20 0) (layer F.Fab)
+        (effects (font (size 1 1) (thickness 0.15)))
+      )
     
+      (fp_text user RAW (at -11.43 14.6 90) (layer F.SilkS)
+        (effects (font (size 1 1) (thickness 0.15)) (justify left))
+      )
+      
+      (fp_text user VCC (at -8.89 14.6 90) (layer F.SilkS)
+        (effects (font (size 1 1) (thickness 0.15)) (justify left))
+      )
+      
+      (fp_text user GND (at -6.35 14.6 90) (layer F.SilkS)
+        (effects (font (size 1 1) (thickness 0.15)) (justify left))
+      )
+      
+      (fp_text user D0 (at -3.8099999999999996 14.6 90) (layer F.SilkS)
+        (effects (font (size 1 1) (thickness 0.15)) (justify left))
+      )
+      
+      (fp_text user D1 (at -1.2699999999999996 14.6 90) (layer F.SilkS)
+        (effects (font (size 1 1) (thickness 0.15)) (justify left))
+      )
+      
+      (fp_text user D2 (at 1.2699999999999996 14.6 90) (layer F.SilkS)
+        (effects (font (size 1 1) (thickness 0.15)) (justify left))
+      )
+      
+      (fp_text user D3 (at 3.8100000000000005 14.6 90) (layer F.SilkS)
+        (effects (font (size 1 1) (thickness 0.15)) (justify left))
+      )
+      
+      (fp_text user D4 (at 6.350000000000001 14.6 90) (layer F.SilkS)
+        (effects (font (size 1 1) (thickness 0.15)) (justify left))
+      )
+      
+      (fp_text user D5 (at 8.89 14.6 90) (layer F.SilkS)
+        (effects (font (size 1 1) (thickness 0.15)) (justify left))
+      )
+      
+      (fp_line (start -12.93 13.6) (end -12.93 19.8) (layer F.SilkS) (width 0.12))
+      (fp_line (start 10.39 19.8) (end -12.93 19.8) (layer F.SilkS) (width 0.12))
+      (fp_line (start 10.39 13.6) (end 10.39 19.8) (layer F.SilkS) (width 0.12))
+      (fp_line (start 10.39 13.6) (end -12.93 13.6) (layer F.SilkS) (width 0.12))
+      (fp_line (start 10.8 13.2) (end 10.8 20.2) (layer F.CrtYd) (width 0.15))
+      (fp_line (start 10.8 20.2) (end -13.34 20.2) (layer F.CrtYd) (width 0.15))
+      (fp_line (start -13.34 20.2) (end -13.34 13.2) (layer F.CrtYd) (width 0.15))
+      (fp_line (start -13.34 13.2) (end 10.8 13.2) (layer F.CrtYd) (width 0.15))
+    
+      (pad 1 thru_hole circle (at -11.43 16.7 270)
+        (size 1.8 1.8) (drill 1.1) (layers *.Cu *.Mask) (net 75 "RAW")
+      )
+      
+      (pad 2 thru_hole circle (at -8.89 16.7 270)
+        (size 1.8 1.8) (drill 1.1) (layers *.Cu *.Mask) (net 78 "VCC")
+      )
+      
+      (pad 3 thru_hole circle (at -6.35 16.7 270)
+        (size 1.8 1.8) (drill 1.1) (layers *.Cu *.Mask) (net 76 "GND")
+      )
+      
+      (pad 4 thru_hole circle (at -3.8099999999999996 16.7 270)
+        (size 1.8 1.8) (drill 1.1) (layers *.Cu *.Mask) (net 51 "P0")
+      )
+      
+      (pad 5 thru_hole circle (at -1.2699999999999996 16.7 270)
+        (size 1.8 1.8) (drill 1.1) (layers *.Cu *.Mask) (net 53 "P1")
+      )
+      
+      (pad 6 thru_hole circle (at 1.2699999999999996 16.7 270)
+        (size 1.8 1.8) (drill 1.1) (layers *.Cu *.Mask) (net 113 "P2")
+      )
+      
+      (pad 7 thru_hole circle (at 3.8100000000000005 16.7 270)
+        (size 1.8 1.8) (drill 1.1) (layers *.Cu *.Mask) (net 114 "P3")
+      )
+      
+      (pad 8 thru_hole circle (at 6.350000000000001 16.7 270)
+        (size 1.8 1.8) (drill 1.1) (layers *.Cu *.Mask) (net 52 "P4")
+      )
+      
+      (pad 9 thru_hole circle (at 8.89 16.7 270)
+        (size 1.8 1.8) (drill 1.1) (layers *.Cu *.Mask) (net 120 "P5")
+      )
+      )
 
     (module "SpacerHole_3.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
