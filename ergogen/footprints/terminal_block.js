@@ -21,8 +21,6 @@
 //    label_side: default is top
 //      either 'top' or 'bottom'
 //
-// @ceoloide's improvements:
-//  - Added support for traces
 
 module.exports = {
   params: {
@@ -91,9 +89,9 @@ module.exports = {
     }
     label_justify += ')';
 
-    let label_pos = 14.6;
+    let label_pos = 13.6;
     if (p.label_side === 'bottom') {
-      label_pos = 18.1;
+      label_pos = 19.8;
     }
 
     let labels = '';

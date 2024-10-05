@@ -6,9 +6,6 @@ meta:
 # V2 TODOS:
 #   NOTE: Leave P1 free for nice!view CS pin
 #   TODO: Wire key matrix to use 6x7 pins (up to 42)
-#   TODO: Remove VIK and break out a total of 6 high frequency pins (3 are already on the display)
-#   TODO: Breakout RAW and GND for the other pins
-#   TODO: Breakout elite-c extra pins
 
 #
 # Define unit constants
@@ -561,22 +558,22 @@ pcbs:
         where:
           ref.aggregate.parts: [mirror_thumbfan_inner_thumb, mirror_thumbfan_middle_thumb]
           shift: [0, 1.7]
-      window_hole_top_left:
-        what: mountinghole
-        where:
-          ref: [matrix_inner_top]
-          shift: [0.5u + 7.5, -0.5u]
-      window_hole_top_right:
-        what: mountinghole
-        where:
-          ref: [mirror_matrix_inner_top]
-          shift: [0.5u + 7.5, -0.5u]
       window_hole_bot_left:
         what: mountinghole
         where:
           ref: [matrix_inner_top]
-          shift: [0.5u + 7.5, 0.5u]
+          shift: [0.5u + 7.5, -0.3u]
       window_hole_bot_right:
+        what: mountinghole
+        where:
+          ref: [mirror_matrix_inner_top]
+          shift: [0.5u + 7.5, -0.7u]
+      window_hole_top_left:
+        what: mountinghole
+        where:
+          ref: [matrix_inner_top]
+          shift: [0.5u + 7.5, 0.5u]
+      window_hole_top_right:
         what: mountinghole
         where:
           ref: [mirror_matrix_inner_top]

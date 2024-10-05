@@ -4810,39 +4810,39 @@
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text user RAW (at -11.43 14.6 90) (layer F.SilkS)
+      (fp_text user RAW (at -11.43 13.6 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user VCC (at -8.89 14.6 90) (layer F.SilkS)
+      (fp_text user VCC (at -8.89 13.6 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user GND (at -6.35 14.6 90) (layer F.SilkS)
+      (fp_text user GND (at -6.35 13.6 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user D0 (at -3.8099999999999996 14.6 90) (layer F.SilkS)
+      (fp_text user D0 (at -3.8099999999999996 13.6 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user D1 (at -1.2699999999999996 14.6 90) (layer F.SilkS)
+      (fp_text user D1 (at -1.2699999999999996 13.6 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user D2 (at 1.2699999999999996 14.6 90) (layer F.SilkS)
+      (fp_text user D2 (at 1.2699999999999996 13.6 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user D3 (at 3.8100000000000005 14.6 90) (layer F.SilkS)
+      (fp_text user D3 (at 3.8100000000000005 13.6 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user D4 (at 6.350000000000001 14.6 90) (layer F.SilkS)
+      (fp_text user D4 (at 6.350000000000001 13.6 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user D5 (at 8.89 14.6 90) (layer F.SilkS)
+      (fp_text user D5 (at 8.89 13.6 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
@@ -5050,7 +5050,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 182.8410748 142.980388 -14)
+      (at 183.760378 139.2932643 -14)
 
       (fp_text reference "_14" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
@@ -5071,7 +5071,7 @@
 
     (module "MountingHole_2.2mm_M2_Pad_Via" (version 20210722) (generator pcbnew) (layer "F.Cu")
       (tedit 56DDB9C7)
-      (at 238.07671979999998 142.980388 14)
+      (at 238.99602299999998 146.6675118 14)
 
       (fp_text reference "_15" (at 0 -3.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
