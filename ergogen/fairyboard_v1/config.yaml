@@ -3,9 +3,6 @@ meta:
   version: 1.0
   author: Steven Eisinger (restive.engines)
 
-# V2 TODOS:
-#   TODO: Adjust middle spacer so that it doesn't interfere with key
-
 #---------------------------------------------------------------------------------------------------
 # Define unit constants
 units:
@@ -620,12 +617,12 @@ pcbs:
         what: spacerhole
         where:
           ref: [matrix_pinky_bottom]
-          shift: [0.4u, 0.5u + 0.8]
+          shift: [0.4u, 0.5u + 0.3]
       hole_bot_outer_right:
         what: spacerhole
         where:
           ref: [mirror_matrix_pinky_bottom]
-          shift: [0.4u, 0.5u + 0.8]
+          shift: [0.4u, 0.5u + 0.3]
       hole_thumb_left:
         what: spacerhole
         where:
