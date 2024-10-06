@@ -4,11 +4,10 @@ meta:
   author: Steven Eisinger (restive.engines)
 
 # V2 TODOS:
-#   TODO: Wire key matrix to use 6x7 pins (up to 42)
+#   TODO: Adjust middle spacer so that it doesn't interfere with key
 
-#
+#---------------------------------------------------------------------------------------------------
 # Define unit constants
-#
 units:
   # split
   SPLIT_ROTATION: -14
@@ -60,12 +59,10 @@ units:
   PLATE_THICKNESS: 1.5
   PLATE_EXTENSION: 0
 
-#
+#---------------------------------------------------------------------------------------------------
 # Define key locations
-#
-# matrix: finger matrix (excluding thumbs)
-# thumbfan: thumb keys
-#
+#   matrix: finger matrix (excluding thumbs)
+#   thumbfan: thumb keys
 points:
   zones:
     matrix:
@@ -133,8 +130,7 @@ points:
             stagger: COLUMN_INDEX_STAGGER
           rows.top:
             row_net: ROW1
-            mirror.row_net: ROW1
-            column_net: COL2
+            column_net: COL5
             mirror.column_net: COL4
           rows.home:
             row_net: ROW2
@@ -149,8 +145,7 @@ points:
             stagger: COLUMN_INNER_STAGGER
           rows.top:
             row_net: ROW1
-            mirror.row_net: ROW1
-            column_net: COL1
+            column_net: COL6
             mirror.column_net: COL3
           rows.home:
             row_net: ROW2
@@ -200,9 +195,8 @@ points:
     ref: matrix_index_home
     distance: SPLIT_DISTANCE
 
-#
+#---------------------------------------------------------------------------------------------------
 # Define outlines for the plate
-#
 outlines:
   demo:
     - what: rectangle
@@ -444,9 +438,8 @@ outlines:
       size: [12.5, 4*WALL_THICKNESS]
 
 
-#
+#---------------------------------------------------------------------------------------------------
 # Define the PCB, using a pro-micro layout
-#
 pcbs:
   fairyboard:
     outlines:
@@ -495,16 +488,46 @@ pcbs:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [0, -2.139]
         params:
-          reversable: false
           flipped: true
           label: false
+          P006: D1
+          P008: D0
+          P017: D2
+          P020: D3
+          P022: D4
+          P024: ROW1
+          P100: ROW3
+          P011: ROW6
+          P104: ROW4
+          P106: ROW7
+
+          P031: COL1
+          P029: COL2
+          P002: COL3
+          P115: COL4
+          P113: COL5
+          P111: COL6
+          P010: ROW2
+          P009: ROW5
+
+          # nice!nano specific pins
+          P101: D5
+          P102: ""
+          P107: ""
+
+          # elite c specific pins
+          B7: D5
+          D5: ""
+          C7: ""
+          F1: ""
+          F0: ""
       # nice!view screen
       display:
         what: nice_view
         params:
-          MOSI: P2
-          SCK: P3
-          CS: P1
+          MOSI: D2
+          SCK: D3
+          CS: D5
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [0, -4.934]
@@ -543,12 +566,12 @@ pcbs:
           RAW: RAW
           VCC: VCC
           GND: GND
-          D0: P0
-          D1: P1
-          D2: P2
-          D3: P3
-          D4: P4
-          D5: P5
+          D0: D0
+          D1: D1
+          D2: D2
+          D3: D3
+          D4: D4
+          D5: D5
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [-21, -3.25]
@@ -634,9 +657,8 @@ pcbs:
           ref: [mirror_matrix_inner_top]
           shift: [0.5u + 7.5, 0.5u]
 
-#
-# Case
-#
+#---------------------------------------------------------------------------------------------------
+# Simple case parts
 cases:
 
   # common bottom for all cases
