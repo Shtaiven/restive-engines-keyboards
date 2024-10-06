@@ -4,7 +4,6 @@ meta:
   author: Steven Eisinger (restive.engines)
 
 # V2 TODOS:
-#   NOTE: Leave P1 free for nice!view CS pin
 #   TODO: Wire key matrix to use 6x7 pins (up to 42)
 
 #
@@ -75,40 +74,96 @@ points:
         shift: [100, -130]
       columns:
         outer:
-          key:
-            column_net: P14
-          rows:
-            bottom.skip: true
+          rows.top:
+            row_net: ROW2
+            mirror.row_net: ROW5
+            column_net: COL1
+          rows.home:
+            row_net: ROW3
+            mirror.row_net: ROW6
+            column_net: COL1
+          rows.bottom.skip: true
         pinky:
           key:
             stagger: COLUMN_PINKY_STAGGER
-            column_net: P16
+          rows.top:
+            row_net: ROW2
+            mirror.row_net: ROW5
+            column_net: COL2
+          rows.home:
+            row_net: ROW3
+            mirror.row_net: ROW6
+            column_net: COL2
+          rows.bottom:
+            row_net: ROW4
+            mirror.row_net: ROW7
+            column_net: COL1
         ring:
           key:
             stagger: COLUMN_RING_STAGGER
-            column_net: P10
+          rows.top:
+            row_net: ROW2
+            mirror.row_net: ROW5
+            column_net: COL3
+          rows.home:
+            row_net: ROW3
+            mirror.row_net: ROW6
+            column_net: COL3
+          rows.bottom:
+            row_net: ROW4
+            mirror.row_net: ROW7
+            column_net: COL2
         middle:
           key:
             stagger: COLUMN_MIDDLE_STAGGER
-            column_net: P7
+          rows.top:
+            row_net: ROW2
+            mirror.row_net: ROW5
+            column_net: COL4
+          rows.home:
+            row_net: ROW3
+            mirror.row_net: ROW6
+            column_net: COL4
+          rows.bottom:
+            row_net: ROW4
+            mirror.row_net: ROW7
+            column_net: COL3
         index:
           key:
             stagger: COLUMN_INDEX_STAGGER
-            column_net: P8
+          rows.top:
+            row_net: ROW1
+            mirror.row_net: ROW1
+            column_net: COL2
+            mirror.column_net: COL4
+          rows.home:
+            row_net: ROW2
+            mirror.row_net: ROW5
+            column_net: COL5
+          rows.bottom:
+            row_net: ROW3
+            mirror.row_net: ROW6
+            column_net: COL5
         inner:
           key:
             stagger: COLUMN_INNER_STAGGER
-            column_net: P9
+          rows.top:
+            row_net: ROW1
+            mirror.row_net: ROW1
+            column_net: COL1
+            mirror.column_net: COL3
+          rows.home:
+            row_net: ROW2
+            mirror.row_net: ROW5
+            column_net: COL6
+          rows.bottom:
+            row_net: ROW3
+            mirror.row_net: ROW6
+            column_net: COL6
       rows:
         bottom:
-          row_net: P21
-          mirror.row_net: P1
         home:
-          row_net: P20
-          mirror.row_net: P0
         top:
-          row_net: P19
-          mirror.row_net: P4
     thumbfan:
       anchor:
         ref: matrix_index_bottom
@@ -120,14 +175,14 @@ points:
             splay: THUMBFAN_OUTER_SPLAY
             rotate: THUMBFAN_OUTER_ROT
             shift: [THUMBFAN_OUTER_X, THUMBFAN_OUTER_Y]
-            column_net: P7
+            column_net: COL4
         middle:
           key:
             splay: THUMBFAN_MIDDLE_SPLAY
             rotate: THUMBFAN_MIDDLE_ROT
             origin: [-0.5u, -0.5u]
             shift: [THUMBFAN_MIDDLE_X, THUMBFAN_MIDDLE_Y]
-            column_net: P8
+            column_net: COL5
         inner:
           key:
             splay: THUMBFAN_INNER_SPLAY
@@ -135,11 +190,11 @@ points:
             stagger: THUMBFAN_INNER_STAGGER
             origin: [-0.5u, -0.5u]
             shift: [THUMBFAN_INNER_X, THUMBFAN_INNER_Y]
-            column_net: P9
+            column_net: COL6
       rows:
         thumb:
-          row_net: P15
-          mirror.row_net: P6
+          row_net: ROW4
+          mirror.row_net: ROW7
   rotate: SPLIT_ROTATION
   mirror:
     ref: matrix_index_home

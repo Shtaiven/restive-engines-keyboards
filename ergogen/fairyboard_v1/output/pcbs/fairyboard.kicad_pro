@@ -256,7 +256,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P14"
+        "pattern": "COL1"
       },
       {
         "netclass": "Default",
@@ -268,11 +268,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P16"
+        "pattern": "pinky_bottom"
       },
       {
         "netclass": "Default",
-        "pattern": "pinky_bottom"
+        "pattern": "COL2"
       },
       {
         "netclass": "Default",
@@ -284,11 +284,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P10"
+        "pattern": "ring_bottom"
       },
       {
         "netclass": "Default",
-        "pattern": "ring_bottom"
+        "pattern": "COL3"
       },
       {
         "netclass": "Default",
@@ -300,11 +300,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P7"
+        "pattern": "middle_bottom"
       },
       {
         "netclass": "Default",
-        "pattern": "middle_bottom"
+        "pattern": "COL4"
       },
       {
         "netclass": "Default",
@@ -316,7 +316,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P8"
+        "pattern": "COL5"
       },
       {
         "netclass": "Default",
@@ -332,7 +332,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P9"
+        "pattern": "COL6"
       },
       {
         "netclass": "Default",
@@ -440,35 +440,31 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P20"
+        "pattern": "ROW3"
       },
       {
         "netclass": "Default",
-        "pattern": "P19"
+        "pattern": "ROW2"
       },
       {
         "netclass": "Default",
-        "pattern": "P21"
+        "pattern": "ROW4"
       },
       {
         "netclass": "Default",
-        "pattern": "P15"
+        "pattern": "ROW1"
       },
       {
         "netclass": "Default",
-        "pattern": "P0"
+        "pattern": "ROW6"
       },
       {
         "netclass": "Default",
-        "pattern": "P4"
+        "pattern": "ROW5"
       },
       {
         "netclass": "Default",
-        "pattern": "P1"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P6"
+        "pattern": "ROW7"
       },
       {
         "netclass": "Default",
@@ -712,6 +708,10 @@
       },
       {
         "netclass": "Default",
+        "pattern": "P1"
+      },
+      {
+        "netclass": "Default",
         "pattern": "DISP1_1"
       },
       {
@@ -729,6 +729,14 @@
       {
         "netclass": "Default",
         "pattern": "B+"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P0"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P4"
       },
       {
         "netclass": "Default",
