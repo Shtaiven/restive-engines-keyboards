@@ -89,9 +89,9 @@ module.exports = {
     }
     label_justify += ')';
 
-    let label_pos = 13.6;
+    let label_pos = 13.2;
     if (p.label_side === 'bottom') {
-      label_pos = 19.8;
+      label_pos = 20.2;
     }
 
     let labels = '';

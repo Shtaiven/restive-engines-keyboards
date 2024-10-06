@@ -4810,39 +4810,39 @@
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text user RAW (at -11.43 13.6 90) (layer F.SilkS)
+      (fp_text user RAW (at -11.43 13.2 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user VCC (at -8.89 13.6 90) (layer F.SilkS)
+      (fp_text user VCC (at -8.89 13.2 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user GND (at -6.35 13.6 90) (layer F.SilkS)
+      (fp_text user GND (at -6.35 13.2 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user D0 (at -3.8099999999999996 13.6 90) (layer F.SilkS)
+      (fp_text user D0 (at -3.8099999999999996 13.2 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user D1 (at -1.2699999999999996 13.6 90) (layer F.SilkS)
+      (fp_text user D1 (at -1.2699999999999996 13.2 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user D2 (at 1.2699999999999996 13.6 90) (layer F.SilkS)
+      (fp_text user D2 (at 1.2699999999999996 13.2 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user D3 (at 3.8100000000000005 13.6 90) (layer F.SilkS)
+      (fp_text user D3 (at 3.8100000000000005 13.2 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user D4 (at 6.350000000000001 13.6 90) (layer F.SilkS)
+      (fp_text user D4 (at 6.350000000000001 13.2 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
-      (fp_text user D5 (at 8.89 13.6 90) (layer F.SilkS)
+      (fp_text user D5 (at 8.89 13.2 90) (layer F.SilkS)
         (effects (font (size 1 1) (thickness 0.15)) (justify left))
       )
       
