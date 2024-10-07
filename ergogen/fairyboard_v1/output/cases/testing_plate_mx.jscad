@@ -1,4 +1,4 @@
-function plate_mx_extrude_1_5_outline_fn(){
+function plate_mx_extrude_11_6_outline_fn(){
     return new CSG.Path2D([[58.5152825,-139.8090545],[74.8162507,-143.8733423]]).appendArc([75.6174619,-145.2067817],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([72.0370179,-159.5671584]).appendArc([72.8382291,-160.9005978],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([91.0797887,-165.4487294]).appendArc([92.4132281,-164.6475182],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([94.4211798,-156.5940637]).appendArc([95.7546192,-155.7928525],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([112.0555874,-159.8571403]).appendArc([113.3890268,-159.0559291],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([113.5825643,-158.2796926]).appendArc([114.9160037,-157.4784814],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([129.2763805,-161.0589254]).appendArc([130.0775917,-162.3923648],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([123.9569677,-186.9408467]).appendArc([124.7581789,-188.2742861],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([142.8013272,-192.7729482]).appendArc([143.0935053,-192.8924814],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([158.9397524,-202.2266343]).appendArc([159.1859492,-202.4242282],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([171.8680594,-216.0241262]).appendArc([173.4227467,-216.078417],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([187.1721962,-203.256848]).appendArc([187.226487,-201.7021607],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([167.3355942,-180.3717895]).appendArc([167.0727579,-179.3554771],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([173.3022179,-154.3704782]).appendArc([174.3695432,-153.5365923],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([246.5482514,-153.5365923]).appendArc([247.6155767,-154.3704782],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([253.8450367,-179.3554771]).appendArc([253.5822004,-180.3717894],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([233.6913075,-201.7021607]).appendArc([233.7455984,-203.2568479],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([247.4950479,-216.0784171]).appendArc([249.0497351,-216.0241262],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([261.7318453,-202.4242281]).appendArc([261.9780422,-202.2266343],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([277.8242892,-192.8924814]).appendArc([278.1164674,-192.7729482],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([296.1596157,-188.2742861]).appendArc([296.9608269,-186.9408467],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([290.8402029,-162.3923648]).appendArc([291.6414141,-161.0589254],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([306.0017909,-157.4784814]).appendArc([307.3352303,-158.2796926],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([307.5287678,-159.0559291]).appendArc([308.8622072,-159.8571403],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([325.1631754,-155.7928525]).appendArc([326.4966148,-156.5940637],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([328.5045665,-164.6475182]).appendArc([329.8380059,-165.4487294],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([348.0795655,-160.9005978]).appendArc([348.8807767,-159.5671584],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([345.3003327,-145.2067817]).appendArc([346.1015439,-143.8733423],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([362.4025121,-139.8090545]).appendArc([363.2037233,-138.4756151],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([354.0590757,-101.7984367]).appendArc([352.7256363,-100.9972255],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([336.4246681,-105.0615133]).appendArc([335.0912287,-104.2603021],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([334.873499,-103.3870359]).appendPoint([317.5052055,-107.7174378]).appendArc([316.1717661,-106.9162266],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([314.1638144,-98.8627721]).appendArc([312.830375,-98.0615609],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([296.5294068,-102.1258487]).appendArc([295.1959674,-101.3246375],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([295.0024299,-100.548401]).appendArc([293.6689905,-99.7471898],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([237.6199191,-113.7217928]).appendArc([237.353805,-113.7544675],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([183.5639896,-113.7544675]).appendArc([183.2978755,-113.7217928],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([127.2488041,-99.7471898]).appendArc([125.9153647,-100.548401],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([125.7218272,-101.3246375]).appendArc([124.3883878,-102.1258487],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([108.0874196,-98.0615609]).appendArc([106.7539802,-98.8627721],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([104.7460285,-106.9162266]).appendArc([103.4125891,-107.7174378],{"radius":1.1,"clockwise":true,"large":false}).appendPoint([87.1116209,-103.65315]).appendArc([85.7781815,-104.4543612],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([85.5604518,-105.3276274]).appendPoint([68.1921583,-100.9972255]).appendArc([66.8587189,-101.7984367],{"radius":1.1,"clockwise":false,"large":false}).appendPoint([57.7140713,-138.4756151]).appendArc([58.5152825,-139.8090545],{"radius":1.1,"clockwise":false,"large":false}).close().innerToCAG()
 .subtract(
     CAG.circle({"center":[255.1125896,-193.9246316],"radius":1.2})
@@ -104,11 +104,11 @@ function plate_mx_extrude_1_5_outline_fn(){
     new CSG.Path2D([[146.7616089,-190.9910872],[158.8244172,-198.0966243]]).appendPoint([165.9299543,-186.033816]).appendPoint([153.867146,-178.9282789]).appendPoint([146.7616089,-190.9910872]).close().innerToCAG()
 ).union(
     new CSG.Path2D([[262.0933774,-198.0966243],[274.1561857,-190.9910872]]).appendPoint([267.0506486,-178.9282789]).appendPoint([254.9878403,-186.033816]).appendPoint([262.0933774,-198.0966243]).close().innerToCAG()
-)).extrude({ offset: [0, 0, 1.5] });
+)).extrude({ offset: [0, 0, 11.6] });
 }
 
 
-function m2_holes_extrude_1_5_outline_fn(){
+function m2_holes_extrude_11_6_outline_fn(){
     return CAG.circle({"center":[255.1125896,-193.9246316],"radius":1.2})
 .union(
     CAG.circle({"center":[165.805205,-193.9246316],"radius":1.2})
@@ -132,44 +132,44 @@ function m2_holes_extrude_1_5_outline_fn(){
     CAG.circle({"center":[263.3661932,-134.8714403],"radius":1.2})
 ).union(
     CAG.circle({"center":[157.5516014,-134.8714403],"radius":1.2})
-).extrude({ offset: [0, 0, 1.5] });
+).extrude({ offset: [0, 0, 11.6] });
 }
 
 
 
 
-                function plate_mx_case_fn() {
+                function testing_plate_mx_case_fn() {
                     
 
-                // creating part 0 of case plate_mx
-                let plate_mx__part_0 = plate_mx_extrude_1_5_outline_fn();
+                // creating part 0 of case testing_plate_mx
+                let testing_plate_mx__part_0 = plate_mx_extrude_11_6_outline_fn();
 
                 // make sure that rotations are relative
-                let plate_mx__part_0_bounds = plate_mx__part_0.getBounds();
-                let plate_mx__part_0_x = plate_mx__part_0_bounds[0].x + (plate_mx__part_0_bounds[1].x - plate_mx__part_0_bounds[0].x) / 2
-                let plate_mx__part_0_y = plate_mx__part_0_bounds[0].y + (plate_mx__part_0_bounds[1].y - plate_mx__part_0_bounds[0].y) / 2
-                plate_mx__part_0 = translate([-plate_mx__part_0_x, -plate_mx__part_0_y, 0], plate_mx__part_0);
-                plate_mx__part_0 = rotate([0,0,0], plate_mx__part_0);
-                plate_mx__part_0 = translate([plate_mx__part_0_x, plate_mx__part_0_y, 0], plate_mx__part_0);
+                let testing_plate_mx__part_0_bounds = testing_plate_mx__part_0.getBounds();
+                let testing_plate_mx__part_0_x = testing_plate_mx__part_0_bounds[0].x + (testing_plate_mx__part_0_bounds[1].x - testing_plate_mx__part_0_bounds[0].x) / 2
+                let testing_plate_mx__part_0_y = testing_plate_mx__part_0_bounds[0].y + (testing_plate_mx__part_0_bounds[1].y - testing_plate_mx__part_0_bounds[0].y) / 2
+                testing_plate_mx__part_0 = translate([-testing_plate_mx__part_0_x, -testing_plate_mx__part_0_y, 0], testing_plate_mx__part_0);
+                testing_plate_mx__part_0 = rotate([0,0,0], testing_plate_mx__part_0);
+                testing_plate_mx__part_0 = translate([testing_plate_mx__part_0_x, testing_plate_mx__part_0_y, 0], testing_plate_mx__part_0);
 
-                plate_mx__part_0 = translate([0,0,0], plate_mx__part_0);
-                let result = plate_mx__part_0;
+                testing_plate_mx__part_0 = translate([0,0,0], testing_plate_mx__part_0);
+                let result = testing_plate_mx__part_0;
                 
             
 
-                // creating part 1 of case plate_mx
-                let plate_mx__part_1 = m2_holes_extrude_1_5_outline_fn();
+                // creating part 1 of case testing_plate_mx
+                let testing_plate_mx__part_1 = m2_holes_extrude_11_6_outline_fn();
 
                 // make sure that rotations are relative
-                let plate_mx__part_1_bounds = plate_mx__part_1.getBounds();
-                let plate_mx__part_1_x = plate_mx__part_1_bounds[0].x + (plate_mx__part_1_bounds[1].x - plate_mx__part_1_bounds[0].x) / 2
-                let plate_mx__part_1_y = plate_mx__part_1_bounds[0].y + (plate_mx__part_1_bounds[1].y - plate_mx__part_1_bounds[0].y) / 2
-                plate_mx__part_1 = translate([-plate_mx__part_1_x, -plate_mx__part_1_y, 0], plate_mx__part_1);
-                plate_mx__part_1 = rotate([0,0,0], plate_mx__part_1);
-                plate_mx__part_1 = translate([plate_mx__part_1_x, plate_mx__part_1_y, 0], plate_mx__part_1);
+                let testing_plate_mx__part_1_bounds = testing_plate_mx__part_1.getBounds();
+                let testing_plate_mx__part_1_x = testing_plate_mx__part_1_bounds[0].x + (testing_plate_mx__part_1_bounds[1].x - testing_plate_mx__part_1_bounds[0].x) / 2
+                let testing_plate_mx__part_1_y = testing_plate_mx__part_1_bounds[0].y + (testing_plate_mx__part_1_bounds[1].y - testing_plate_mx__part_1_bounds[0].y) / 2
+                testing_plate_mx__part_1 = translate([-testing_plate_mx__part_1_x, -testing_plate_mx__part_1_y, 0], testing_plate_mx__part_1);
+                testing_plate_mx__part_1 = rotate([0,0,0], testing_plate_mx__part_1);
+                testing_plate_mx__part_1 = translate([testing_plate_mx__part_1_x, testing_plate_mx__part_1_y, 0], testing_plate_mx__part_1);
 
-                plate_mx__part_1 = translate([0,0,0], plate_mx__part_1);
-                result = result.subtract(plate_mx__part_1);
+                testing_plate_mx__part_1 = translate([0,0,0], testing_plate_mx__part_1);
+                result = result.subtract(testing_plate_mx__part_1);
                 
             
                     return result;
@@ -178,7 +178,7 @@ function m2_holes_extrude_1_5_outline_fn(){
             
         
             function main() {
-                return plate_mx_case_fn();
+                return testing_plate_mx_case_fn();
             }
 
         
