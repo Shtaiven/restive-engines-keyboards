@@ -516,6 +516,14 @@
       },
       {
         "netclass": "Default",
+        "pattern": "D6"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "D7"
+      },
+      {
+        "netclass": "Default",
         "pattern": "_1_0"
       },
       {

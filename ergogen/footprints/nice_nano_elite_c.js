@@ -336,11 +336,11 @@ module.exports = {
 
     /* Solder pads for elite c compatibility */
     const through_hole_bottom = `
-    (pad 33  thru_hole oval  (at  ${p.flipped ? 5.08 : -5.08} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.B7.str})
-    (pad 32  thru_hole oval  (at  ${p.flipped ? 2.54 : -2.54} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.D5.str})
+    (pad 29  thru_hole oval  (at  ${p.flipped ? 5.08 : -5.08} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.B7.str})
+    (pad 30  thru_hole oval  (at  ${p.flipped ? 2.54 : -2.54} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.D5.str})
     (pad 31  thru_hole oval  (at  0                            15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.C7.str})
-    (pad 30  thru_hole oval  (at  ${p.flipped ?  -2.54 : 2.54} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.F1.str})
-    (pad 29  thru_hole oval  (at  ${p.flipped ?  -5.08 : 5.08} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.F0.str})
+    (pad 32  thru_hole oval  (at  ${p.flipped ?  -2.54 : 2.54} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.F1.str})
+    (pad 33  thru_hole oval  (at  ${p.flipped ?  -5.08 : 5.08} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.F0.str})
     `
 
     /* Code for hte reversable footprints */

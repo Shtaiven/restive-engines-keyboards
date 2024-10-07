@@ -1,3 +1,6 @@
+# TODO: Flip the terminal block around (and fix footprint)
+# TODO: Make a simple plate from the PCB outline and test fit (with screw holes!)
+
 meta:
   engine: 4.1.0
   version: 1.0
@@ -509,13 +512,13 @@ pcbs:
 
           # nice!nano specific pins
           P101: D5
-          P102: ""
-          P107: ""
+          P102: D6
+          P107: D7
 
           # elite c specific pins
           B7: D5
-          D5: ""
-          C7: ""
+          D5: D6
+          C7: D7
           F1: ""
           F0: ""
       # nice!view screen
