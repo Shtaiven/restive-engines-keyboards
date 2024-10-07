@@ -201,6 +201,39 @@ outlines:
     - what: rectangle
       where: true
       size: 1u - 1
+  board_connector:
+    - what: polygon
+      points:
+        - ref: matrix_inner_top
+          shift: [0.5u + 1, 1u]
+        - ref: mirror_matrix_inner_top
+          shift: [0.5u + 1, 1u]
+        - ref: mirror_matrix_inner_bottom
+          shift: [0.5u + 1, 1u - 3]
+        - ref: matrix_inner_bottom
+          shift: [0.5u + 1, 1u - 3]
+  board_connector_cutout:
+    - what: polygon
+      points:
+        - ref: matrix_inner_top
+          shift: [0.5u + 1 + WALL_THICKNESS, 1u + (WALL_THICKNESS+1)]
+        - ref: mirror_matrix_inner_top
+          shift: [0.5u + 1 + WALL_THICKNESS, 1u + (WALL_THICKNESS+1)]
+        - ref: mirror_matrix_inner_bottom
+          shift: [0.5u + 1 + WALL_THICKNESS, 1u - 3 - (WALL_THICKNESS+0.1)]
+        - ref: matrix_inner_bottom
+          shift: [0.5u + 1 + WALL_THICKNESS, 1u - 3 - (WALL_THICKNESS+0.1)]
+  board_connector_extended:
+    - what: polygon
+      points:
+        - ref: matrix_inner_top
+          shift: [0.5u + 1, 1u + (WALL_THICKNESS+1)]
+        - ref: mirror_matrix_inner_top
+          shift: [0.5u + 1, 1u + (WALL_THICKNESS+1)]
+        - ref: mirror_matrix_inner_bottom
+          shift: [0.5u + 1, 1u - 3 - (WALL_THICKNESS+0.1)]
+        - ref: matrix_inner_bottom
+          shift: [0.5u + 1, 1u - 3 - (WALL_THICKNESS+0.1)]
   board_raw:
     - what: rectangle
       where: true
@@ -230,16 +263,8 @@ outlines:
         shift: [1u, 0]
       asym: both
       size: [3u + 2, 1u + 2]
-    - what: polygon
-      points:
-        - ref: matrix_inner_top
-          shift: [0.5u + 1, 1u]
-        - ref: mirror_matrix_inner_top
-          shift: [0.5u + 1, 1u]
-        - ref: mirror_matrix_inner_bottom
-          shift: [0.5u + 1, 1u - 3]
-        - ref: matrix_inner_bottom
-          shift: [0.5u + 1, 1u - 3]
+    - what: outline
+      name: board_connector
   board:
     - what: outline
       name: board_raw
@@ -578,24 +603,28 @@ cases:
   _wall_mid_mx:
     - name: wall
       extrude: BOTTOM_THICKNESS + 9.6
+    - name: board_connector_cutout
+      extrude: BOTTOM_THICKNESS + 9.6
+      operation: subtract
+    - what: case
+      name: _wall_low
+      operation: add
   _wall_high_mx:
     - name: wall
       extrude: BOTTOM_THICKNESS + 15.8
+    - name: board_connector_cutout
+      extrude: BOTTOM_THICKNESS + 15.8
+      operation: subtract
+    - what: case
+      name: _wall_low
+      operation: add
 
   # plate
   plate_mx:
     - name: plate_mx
       extrude: PLATE_THICKNESS
-    - name: m2_holes
+    - name: board_connector_extended
       extrude: PLATE_THICKNESS
-      operation: subtract
-
-  # testing plate for shape and sizing
-  testing_plate_mx:
-    - name: plate_mx
-      extrude: BOTTOM_THICKNESS + 9.6
-    - name: m2_holes
-      extrude: BOTTOM_THICKNESS + 9.6
       operation: subtract
 
   # final cases
@@ -620,3 +649,13 @@ cases:
     - what: case
       name: _wall_high_mx
       operation: add
+
+  # testing plate for shape and sizing
+  testing_plate_mx:
+    - name: plate_mx
+      extrude: BOTTOM_THICKNESS + 9.6
+    - name: board_connector_extended
+      extrude: BOTTOM_THICKNESS + 9.6
+      operation: subtract
+    - what: case
+      name: case_midpro_mx

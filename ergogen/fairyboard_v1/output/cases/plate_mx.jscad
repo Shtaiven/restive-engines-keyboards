@@ -108,31 +108,9 @@ function plate_mx_extrude_1_5_outline_fn(){
 }
 
 
-function m2_holes_extrude_1_5_outline_fn(){
-    return CAG.circle({"center":[255.1125896,-193.9246316],"radius":1.2})
-.union(
-    CAG.circle({"center":[165.805205,-193.9246316],"radius":1.2})
-).union(
-    CAG.circle({"center":[326.6735237,-145.3162668],"radius":1.2})
-).union(
-    CAG.circle({"center":[94.2442709,-145.3162668],"radius":1.2})
-).union(
-    CAG.circle({"center":[272.5592252,-171.7426778],"radius":1.2})
-).union(
-    CAG.circle({"center":[148.3585694,-171.7426778],"radius":1.2})
-).union(
-    CAG.circle({"center":[299.0883018,-121.0695035],"radius":1.2})
-).union(
-    CAG.circle({"center":[121.8294928,-121.0695035],"radius":1.2})
-).union(
-    CAG.circle({"center":[338.9835631,-124.0051681],"radius":1.2})
-).union(
-    CAG.circle({"center":[81.9342315,-124.0051681],"radius":1.2})
-).union(
-    CAG.circle({"center":[263.3661932,-134.8714403],"radius":1.2})
-).union(
-    CAG.circle({"center":[157.5516014,-134.8714403],"radius":1.2})
-).extrude({ offset: [0, 0, 1.5] });
+function board_connector_extended_extrude_1_5_outline_fn(){
+    return new CSG.Path2D([[172.7601711,-156.544509],[184.3966142,-109.8732846]]).appendPoint([236.5211804,-109.8732846]).appendPoint([248.1576235,-156.544509]).appendPoint([172.7601711,-156.544509]).close().innerToCAG()
+.extrude({ offset: [0, 0, 1.5] });
 }
 
 
@@ -158,7 +136,7 @@ function m2_holes_extrude_1_5_outline_fn(){
             
 
                 // creating part 1 of case plate_mx
-                let plate_mx__part_1 = m2_holes_extrude_1_5_outline_fn();
+                let plate_mx__part_1 = board_connector_extended_extrude_1_5_outline_fn();
 
                 // make sure that rotations are relative
                 let plate_mx__part_1_bounds = plate_mx__part_1.getBounds();
