@@ -114,6 +114,7 @@ module.exports = {
       (pad ${i+1} thru_hole circle (at ${start_pos_x + i*p.pitch} 16.7 ${270 + p.rot})
         (size 1.8 1.8) (drill 1.1) (layers *.Cu *.Mask) ${socket_nets[i]}
       )
+      (pad "" np_thru_hole circle (at ${start_pos_x + i*p.pitch} 19.24 ${270 + p.rot}) (size 1.1 1.1) (drill 1.1) (layers *.Cu *.Mask))
       `;
     }
 
