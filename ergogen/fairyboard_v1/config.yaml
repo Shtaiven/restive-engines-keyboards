@@ -1,4 +1,4 @@
-# TODO: Make a simple plate from the PCB outline and test fit (with screw holes!)
+# TODO: cutout under the JST connector to make space for wires
 
 meta:
   engine: 4.1.0
@@ -382,7 +382,7 @@ pcbs:
           to: "{{colrow}}"
           hotswap: true
       choc_hotswap:
-        what: choc
+        what: choc_compat
         where: true
         params:
           from: "{{colrow}}"
