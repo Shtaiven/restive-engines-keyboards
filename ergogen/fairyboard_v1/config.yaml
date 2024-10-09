@@ -413,7 +413,7 @@ pcbs:
         what: nice_nano_elite_c
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [0, -2.139]
+          shift: [0, −0.615]
         params:
           flipped: true
           label: false
@@ -454,10 +454,10 @@ pcbs:
         params:
           MOSI: D2
           SCK: D3
-          CS: D5
+          CS: D1
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [0, -4.934]
+          shift: [0, −3.394]
       # Four Pin Reset Button
       reset:
         what: reset_switch_tht_side
@@ -501,7 +501,7 @@ pcbs:
           D5: D5
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [-21, -3.25]
+          shift: [-21, −3.394]
       # Screw holes
       hole_top_inner_left:
         what: spacerhole

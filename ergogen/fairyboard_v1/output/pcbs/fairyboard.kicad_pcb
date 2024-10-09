@@ -4560,7 +4560,7 @@
     
 
       
-    (module nice_nano_elite_c (at 210.4588973 131.7889064 0) (layer F.Cu) (tedit 64CF2E17)
+    (module nice_nano_elite_c (at 210.4588973 130.2649064 0) (layer F.Cu) (tedit 64CF2E17)
 
     (fp_line (start -6.29 -11.43) (end -8.95 -11.43) (layer F.SilkS) (width 0.12))
     (fp_line (start 6.29 -14.03) (end 8.95 -14.03) (layer F.SilkS) (width 0.12))
@@ -4633,7 +4633,7 @@
     
 
       (module "ceoloide:display_nice_view" (layer F.Cu) (tedit 6448AF5B)
-        (at 210.4588973 134.5839064 0)
+        (at 210.4588973 133.0439064 0)
         (attr virtual)
         (fp_text reference "DISP1" (at 0 20 0) (layer F.SilkS) hide
           (effects (font (size 1 1) (thickness 0.15)))
@@ -4655,7 +4655,7 @@
       (pad 2 thru_hole oval (at -2.54 16.7 270) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) (net 57 "D3"))
       (pad 3 thru_hole oval (at 0 16.7 270) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) (net 64 "VCC"))
       (pad 4 thru_hole oval (at 2.54 16.7 270) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) (net 62 "GND"))
-      (pad 5 thru_hole circle (at 5.08 16.7 270) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) (net 65 "D5"))
+      (pad 5 thru_hole circle (at 5.08 16.7 270) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) (net 54 "D1"))
 
       (fp_line (start 5.4 13.4) (end 5.4 -11.9) (layer Dwgs.User) (width 0.15))
       (fp_line (start -5.4 13.4) (end -5.4 -11.9) (layer Dwgs.User) (width 0.15))
@@ -4757,7 +4757,7 @@
     
 
       (module "restiveengines:terminal_block" (layer F.Cu) (tedit 6448AF5B)
-      (at 189.4588973 132.8999064 0)
+      (at 189.4588973 133.0439064 0)
       (attr virtual)
       (fp_text reference "TERMINAL1" (at 0 20 0) (layer F.SilkS) hide
         (effects (font (size 1 1) (thickness 0.15)))
