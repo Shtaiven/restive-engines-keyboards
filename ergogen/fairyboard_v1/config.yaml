@@ -1,4 +1,5 @@
-# TODO: cutout under the JST connector to make space for wires
+# TODO: Remove BPOS and BNEG pins from nice!nano
+# TODO: Trackpoint holes?
 
 meta:
   engine: 4.1.0
@@ -413,7 +414,7 @@ pcbs:
         what: nice_nano_elite_c
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [0, −0.615]
+          shift: [0, -0.615]
         params:
           flipped: true
           label: false
@@ -457,7 +458,7 @@ pcbs:
           CS: D1
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [0, −3.394]
+          shift: [0, -3.394]
       # Four Pin Reset Button
       reset:
         what: reset_switch_tht_side
@@ -484,7 +485,7 @@ pcbs:
           neg: GND
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [15, -8]
+          shift: [15, -6.476]
       # Terminal block for Trackball/point breakout
       terminal_block:
         what: terminal_block
@@ -501,7 +502,7 @@ pcbs:
           D5: D5
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [-21, −3.394]
+          shift: [-21, -3.394]
       # Screw holes
       hole_top_inner_left:
         what: spacerhole
