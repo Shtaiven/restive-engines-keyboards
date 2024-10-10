@@ -1,5 +1,3 @@
-# TODO: Trackpoint holes?
-
 meta:
   engine: 4.1.0
   version: 1.0
@@ -446,8 +444,8 @@ pcbs:
           B7: D5
           D5: D6
           C7: D7
-          F1: ""
-          F0: ""
+          F1: D8
+          F0: D9
       # nice!view screen
       display:
         what: nice_view
@@ -486,8 +484,8 @@ pcbs:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [15, -6.476]
       # Terminal block for Trackball/point breakout
-      terminal_block:
-        what: terminal_block
+      terminal_block_8:
+        what: terminal_block_8
         params:
           label_side: top
           RAW: RAW
@@ -498,10 +496,22 @@ pcbs:
           D2: D2
           D3: D3
           D4: D4
-          D5: D5
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [-21, -3.394]
+      # Terminal block for extra pins breakout
+      terminal_block_5:
+        what: terminal_block_5
+        params:
+          label_side: top
+          D5: D5
+          D6: D6
+          D7: D7
+          D8: D8
+          D9: D9
+        where:
+          ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
+          shift: [19.79, -3.394]
       # Screw holes
       hole_top_inner_left:
         what: spacerhole
@@ -572,7 +582,7 @@ pcbs:
         what: mountinghole
         where:
           ref: [mirror_matrix_inner_top]
-          shift: [0.5u + 7.5, -0.7u]
+          shift: [0.5u + 7.5, -0.3u]
       window_hole_top_left:
         what: mountinghole
         where:

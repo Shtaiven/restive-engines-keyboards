@@ -7,7 +7,7 @@
 // Author: @restiveengines
 //
 // Description:
-//  Footprint for a low-profile 9-pin terminal block
+//  Footprint for a low-profile 8-pin terminal block
 //
 // Pinout and schematics:
 //  https://nl.rs-online.com/web/p/pcb-terminal-blocks/2204333
@@ -37,7 +37,6 @@ module.exports = {
     D2: { type: 'net', value: 'D2' },
     D3: { type: 'net', value: 'D3' },
     D4: { type: 'net', value: 'D4' },
-    D5: { type: 'net', value: 'D5' },
   },
   body: p => {
     let socket_nets = [
@@ -49,7 +48,6 @@ module.exports = {
       p.D2,
       p.D3,
       p.D4,
-      p.D5,
     ];
 
     local_nets = [
@@ -61,13 +59,12 @@ module.exports = {
       p.local_net("6"),
       p.local_net("7"),
       p.local_net("8"),
-      p.local_net("9"),
     ];
 
     let start_pos_x = -p.pitch*socket_nets.length/2;
 
     const top = `
-      (module "restiveengines:terminal_block" (layer ${p.side}.Cu) (tedit 6448AF5B)
+      (module "restiveengines:terminal_block_8" (layer ${p.side}.Cu) (tedit 6448AF5B)
       ${p.at /* parametric position */}
       (attr virtual)
       (fp_text reference "${p.ref}" (at 0 20 ${p.rot}) (layer ${p.side}.SilkS) ${p.ref_hide}
