@@ -37,8 +37,6 @@ module.exports = {
     P010: { type: 'net', value: 'P010' },
     P009: { type: 'net', value: 'P009' },
 
-    BPOS: { type: 'net', value: 'BPOS' },
-    BNEG: { type: 'net', value: 'BNEG' },
     RAW: { type: 'net', value: 'RAW' },
     GND: { type: 'net', value: 'GND' },
     RST: { type: 'net', value: 'RST' },
@@ -61,7 +59,6 @@ module.exports = {
     let pin_nets;
     if (p.flipped) {
       pin_nets = [
-        [`${p.BPOS.str}`, `${p.BNEG.str}`],
         [`${p.RAW.str}`, `${p.P006.str}`],
         [`${p.GND.str}`, `${p.P008.str}`],
         [`${p.RST.str}`, `${p.GND.str}`],
@@ -77,7 +74,6 @@ module.exports = {
       ]
     } else {
       pin_nets = [
-        [`${p.BNEG.str}`, `${p.BPOS.str}`],
         [`${p.P006.str}`, `${p.RAW.str}`],
         [`${p.P008.str}`, `${p.GND.str}`],
         [`${p.GND.str}`, `${p.RST.str}`],
@@ -105,10 +101,10 @@ module.exports = {
     pin_to_via: the distance from the pin on the microcontroller to the via.
     */
     const spacing = {
-      top_left_pin: { x: -7.62, y: -15.24 },
-      top_right_pin: { x: 7.62, y: -15.24 },
+      top_left_pin: { x: -7.62, y: -12.7 },
+      top_right_pin: { x: 7.62, y: -12.7 },
       pin_dist: 2.54,
-      total_pin_num: 26, // Must be divisible by 2
+      total_pin_num: 24, // Must be divisible by 2
       pin_to_male_pad: 2,
       pin_to_female_pad: 2.845,
       pin_to_via: 4.358,
@@ -329,18 +325,18 @@ module.exports = {
 
     /* Solder pads for the nice!nano */
     const view_solder_pads = `
-    (pad 26 thru_hole oval (at ${p.flipped ? 5.08 : -5.08}  10.16  ${p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.P101.str})
-    (pad 27 thru_hole oval (at ${p.flipped ? 2.54 : -2.54}  10.16  ${p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.P102.str})
-    (pad 28 thru_hole oval (at 0                            10.16  ${p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.P107.str})
+    (pad 24 thru_hole oval (at ${p.flipped ? 5.08 : -5.08}  10.16  ${p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.P101.str})
+    (pad 25 thru_hole oval (at ${p.flipped ? 2.54 : -2.54}  10.16  ${p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.P102.str})
+    (pad 26 thru_hole oval (at 0                            10.16  ${p.rot}) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${p.P107.str})
     `
 
     /* Solder pads for elite c compatibility */
     const through_hole_bottom = `
-    (pad 29  thru_hole oval  (at  ${p.flipped ? 5.08 : -5.08} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.B7.str})
-    (pad 30  thru_hole oval  (at  ${p.flipped ? 2.54 : -2.54} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.D5.str})
-    (pad 31  thru_hole oval  (at  0                            15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.C7.str})
-    (pad 32  thru_hole oval  (at  ${p.flipped ?  -2.54 : 2.54} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.F1.str})
-    (pad 33  thru_hole oval  (at  ${p.flipped ?  -5.08 : 5.08} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.F0.str})
+    (pad 27  thru_hole oval  (at  ${p.flipped ? 5.08 : -5.08} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.B7.str})
+    (pad 28  thru_hole oval  (at  ${p.flipped ? 2.54 : -2.54} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.D5.str})
+    (pad 29  thru_hole oval  (at  0                            15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.C7.str})
+    (pad 30  thru_hole oval  (at  ${p.flipped ?  -2.54 : 2.54} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.F1.str})
+    (pad 31  thru_hole oval  (at  ${p.flipped ?  -5.08 : 5.08} 15.24) (size 1.7526 1.7526) (drill 1.0922) (layers *.Cu *.Mask) ${p.F0.str})
     `
 
     /* Code for hte reversable footprints */
