@@ -468,11 +468,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "D1"
+        "pattern": "D0"
       },
       {
         "netclass": "Default",
-        "pattern": "D0"
+        "pattern": "D1"
       },
       {
         "netclass": "Default",

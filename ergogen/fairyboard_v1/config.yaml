@@ -415,8 +415,8 @@ pcbs:
         params:
           flipped: true
           label: false
-          P006: D1
-          P008: D0
+          P006: D0
+          P008: D1
           P017: D2
           P020: D3
           P022: D4
@@ -452,7 +452,7 @@ pcbs:
         params:
           MOSI: D2
           SCK: D3
-          CS: D1
+          CS: D0
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
           shift: [0, -3.394]
@@ -482,7 +482,7 @@ pcbs:
           neg: GND
         where:
           ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [15, -6.476]
+          shift: [15, -0.476]
       # Terminal block for Trackball/point breakout
       terminal_block_8:
         what: terminal_block_8

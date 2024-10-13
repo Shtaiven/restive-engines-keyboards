@@ -444,8 +444,8 @@
 			(layer "Dwgs.User")
 			(uuid "fac81545-bbc9-4992-bc93-9f4cda86ab06")
 		)
-		(fp_text user "RST"
-			(at 0 0 0)
+		(fp_text user "RESET"
+			(at 0 3.5 0)
 			(layer "F.SilkS")
 			(uuid "3b6c7377-1c9a-44ce-9b78-8fba1ccc01d2")
 			(effects
@@ -1514,7 +1514,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 54 "D1")
+			(net 55 "D0")
 			(uuid "299da3d5-d774-470b-b779-c035beacffbb")
 		)
 	)
@@ -1920,7 +1920,7 @@
 			(uuid "f7a35ae1-5c1f-4de3-9daa-6ffa8bcba152")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -2265,7 +2265,7 @@
 			(uuid "8e3b2f77-3579-4bcd-ac55-416506e8a59d")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -2760,7 +2760,7 @@
 			(uuid "3d4e249b-9f0f-43dd-86f5-51287b453667")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -2955,7 +2955,7 @@
 			(uuid "59699fea-d984-42a6-bbce-82826abe8bda")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -4497,7 +4497,7 @@
 			(uuid "ce7042ad-53f2-464f-9fd8-e00d6414cfea")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -6039,7 +6039,7 @@
 			(uuid "035bc889-86e7-4199-a5f2-195ddc74714c")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -6234,7 +6234,7 @@
 			(uuid "dce264ab-72c0-4645-bb97-2f19a0217866")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -6624,7 +6624,7 @@
 			(uuid "c54ce3c7-4ac9-4d82-9ae4-30406028a063")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -8616,7 +8616,7 @@
 			(uuid "5e6dd145-2f34-4645-88b6-38bed218be89")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -9821,7 +9821,7 @@
 			(uuid "7850d396-cd8f-4d30-b82d-3082ce9a9443")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -11006,7 +11006,7 @@
 			(uuid "ef6566fd-b801-4b10-9e4e-692849544c98")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -14662,7 +14662,7 @@
 			(uuid "e2037009-108f-4adc-8fce-79fcb9488062")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -15147,7 +15147,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 55 "D0")
+			(net 54 "D1")
 			(uuid "e3825b16-e850-40f0-8efb-e29ab9efebf6")
 		)
 		(pad "23" thru_hole oval
@@ -15156,7 +15156,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 54 "D1")
+			(net 55 "D0")
 			(uuid "3c605cb0-a6e1-4492-8919-acc2ecd961cc")
 		)
 		(pad "24" thru_hole oval
@@ -15382,7 +15382,7 @@
 	(footprint "JST_PH_S2B-PH-K_02x2.00mm_Angled"
 		(layer "F.Cu")
 		(uuid "a6fba3d9-e1df-41b6-a348-d8b0bfcb4b71")
-		(at 225.458897 136.125906)
+		(at 225.458897 130.125906)
 		(descr "JST PH series connector, S2B-PH-K, side entry type, through hole, Datasheet: http://www.jst-mfg.com/product/pdf/eng/ePH.pdf")
 		(tags "connector jst ph")
 		(property "Reference" "JST1"
@@ -15882,7 +15882,7 @@
 			(uuid "023a3320-5d80-4e53-88a9-a1fcfdd51f8f")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -16971,7 +16971,7 @@
 			(uuid "4917f957-cc40-4e34-acf0-49f1a8c36304")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -17398,7 +17398,7 @@
 			(uuid "2dca7674-afa7-4fee-b011-b552b210ebee")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -17828,7 +17828,7 @@
 			(uuid "c6b1655c-9cfc-463f-a52a-285622d611b1")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -20502,7 +20502,7 @@
 			(layer "F.CrtYd")
 			(uuid "a746c4fe-2850-41d1-b156-539c4382df45")
 		)
-		(fp_text user "D7"
+		(fp_text user "D14"
 			(at -1.27 13.2 90)
 			(layer "F.SilkS")
 			(uuid "2922721f-7570-4936-a9e3-d019c3f97336")
@@ -20514,7 +20514,7 @@
 				(justify left)
 			)
 		)
-		(fp_text user "D6"
+		(fp_text user "D13"
 			(at -3.81 13.2 90)
 			(layer "F.SilkS")
 			(uuid "3e880663-f850-4d5b-a980-27604490d638")
@@ -20526,7 +20526,7 @@
 				(justify left)
 			)
 		)
-		(fp_text user "D5"
+		(fp_text user "D12"
 			(at -6.35 13.2 90)
 			(layer "F.SilkS")
 			(uuid "4aa04e81-6539-46b8-adba-162282961777")
@@ -20538,7 +20538,7 @@
 				(justify left)
 			)
 		)
-		(fp_text user "D8"
+		(fp_text user "D15"
 			(at 1.27 13.2 90)
 			(layer "F.SilkS")
 			(uuid "d54c36e3-29d9-4d67-82cc-53dbe7bb8242")
@@ -20550,7 +20550,7 @@
 				(justify left)
 			)
 		)
-		(fp_text user "D9"
+		(fp_text user "D16"
 			(at 3.81 13.2 90)
 			(layer "F.SilkS")
 			(uuid "f74617d5-6f94-4793-a3a9-09074bc46677")
@@ -22731,7 +22731,7 @@
 			(uuid "aa201d51-b1b6-4734-9e54-cb90e18c959b")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -25677,7 +25677,7 @@
 			(uuid "e8e22518-ab3c-4a7d-8115-381522897be2")
 		)
 		(pad "" np_thru_hole circle
-			(at 5 -3.749999)
+			(at 5 -3.749998)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -27890,5 +27890,39 @@
 		)
 		(layer "Edge.Cuts")
 		(uuid "fe37c393-792f-42a0-92d2-c2e83a2dfaa1")
+	)
+	(gr_text "HEY!\nLISTEN!\n\nPLACE MCU\nWITH\nCOMPONENTS\nFACE DOWN\n\nTERMINAL\nPINS USE\nELITE-PI\nNAMING"
+		(at 210.458897 137.264906 0)
+		(layer "F.SilkS")
+		(uuid "0eafe4f2-a033-4054-936f-7d383f56b9e8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify bottom)
+		)
+	)
+	(gr_text "DISPLAY"
+		(at 210.458897 152.323906 0)
+		(layer "F.SilkS")
+		(uuid "e2fecab7-c8af-44fe-b797-90e01857a303")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(gr_text "OFF | ON"
+		(at 228.458897 120.657355 0)
+		(layer "F.SilkS")
+		(uuid "fee87597-748f-4d7e-8e67-6486b53b12ee")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
 	)
 )
