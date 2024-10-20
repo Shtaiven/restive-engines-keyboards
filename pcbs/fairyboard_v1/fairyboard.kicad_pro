@@ -58,7 +58,12 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "starved_thermal|214271990|150139564|7b06fb2a-0d26-4695-9b95-9fe51eeeaa81|64e4ac86-9217-4815-8306-f73c854da5e1|B.Cu",
+        "starved_thermal|214271990|151211386|7b06fb2a-0d26-4695-9b95-9fe51eeeaa81|64e4ac86-9217-4815-8306-f73c854da5e1|F.Cu",
+        "starved_thermal|220423802|124112382|7b06fb2a-0d26-4695-9b95-9fe51eeeaa81|b0c68c8b-f3ac-4fb7-9fab-9f19d2b0c769|B.Cu",
+        "text_thickness|181408728|120163443|dcb9d806-b1dd-4d8c-a94f-bc2eed0b1a04|00000000-0000-0000-0000-000000000000"
+      ],
       "meta": {
         "filename": "board_design_settings.json",
         "version": 2
@@ -574,7 +579,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "fabrication/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
