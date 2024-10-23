@@ -41,9 +41,9 @@ units:
   THUMBFAN_INNER_X: 0
   THUMBFAN_INNER_Y: 0
 
-  # screw radius
+  # screw diameter
   SCREW_SIZE: 2.4
-  SCREW_BORDER: SCREW_SIZE
+  SCREW_BORDER: 3.2
 
   # board parameters
   BOARD_FILLET: 1.1
@@ -267,6 +267,11 @@ outlines:
     - what: outline
       name: board_raw
       fillet: BOARD_FILLET
+  pcb_edge_support:
+    - what: outline
+      name: board_raw
+      fillet: 0.5
+      expand: -0.8  # must be less than 1mm
   case_outline:
     - what: outline
       name: board
@@ -341,6 +346,68 @@ outlines:
       where:
         ref.aggregate.parts: [mirror_thumbfan_inner_thumb, mirror_thumbfan_middle_thumb]
         shift: [0, 1.7]
+  m2_spacers:
+    # spacer holes
+    - what: circle
+      radius: SCREW_BORDER/2
+      where:
+        ref.aggregate.parts: [matrix_inner_top, matrix_index_top]
+        shift: [0, -0.5u]
+    - what: circle
+      radius: SCREW_BORDER/2
+      where:
+        ref.aggregate.parts: [mirror_matrix_inner_top, mirror_matrix_index_top]
+        shift: [0, -0.5u]
+    - what: circle
+      radius: SCREW_BORDER/2
+      where:
+        ref.aggregate.parts: [matrix_outer_top, matrix_pinky_top]
+        shift: [0, -0.5u]
+    - what: circle
+      radius: SCREW_BORDER/2
+      where:
+        ref.aggregate.parts: [mirror_matrix_outer_top, mirror_matrix_pinky_top]
+        shift: [0, -0.5u]
+    - what: circle
+      radius: SCREW_BORDER/2
+      where:
+        ref: [matrix_ring_top]
+        shift: [0.5u, -0.5u + 1]
+    - what: circle
+      radius: SCREW_BORDER/2
+      where:
+        ref: [mirror_matrix_ring_top]
+        shift: [0.5u, -0.5u + 1]
+    - what: circle
+      radius: SCREW_BORDER/2
+      where:
+        ref.aggregate.parts: [matrix_inner_bottom, matrix_index_bottom]
+        shift: [0, -0.5u]
+    - what: circle
+      radius: SCREW_BORDER/2
+      where:
+        ref.aggregate.parts: [mirror_matrix_inner_bottom, mirror_matrix_index_bottom]
+        shift: [0, -0.5u]
+    - what: circle
+      radius: SCREW_BORDER/2
+      where:
+        ref: [matrix_pinky_bottom]
+        shift: [0.4u, 0.5u + 0.3]
+    - what: circle
+      radius: SCREW_BORDER/2
+      where:
+        ref: [mirror_matrix_pinky_bottom]
+        shift: [0.4u, 0.5u + 0.3]
+    - what: circle
+      radius: SCREW_BORDER/2
+      where:
+        ref.aggregate.parts: [thumbfan_inner_thumb, thumbfan_middle_thumb]
+        shift: [0, 1.7]
+    - what: circle
+      radius: SCREW_BORDER/2
+      where:
+        ref.aggregate.parts: [mirror_thumbfan_inner_thumb, mirror_thumbfan_middle_thumb]
+        shift: [0, 1.7]
   # cutouts for the keys to be used in plate generation
   cutouts_mx:
     - what: rectangle
@@ -352,6 +419,11 @@ outlines:
       where: true
       asym: source
       size: 13.8
+  cutouts_extension:
+    - what: rectangle
+      where: true
+      asym: source
+      size: 18
   plate_mx: [
     +plate_outline,
     -cutouts_mx,
