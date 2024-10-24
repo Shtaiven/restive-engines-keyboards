@@ -423,7 +423,7 @@ outlines:
     - what: rectangle
       where: true
       asym: source
-      size: 18
+      size: 18.2
   plate_mx: [
     +plate_outline,
     -cutouts_mx,
