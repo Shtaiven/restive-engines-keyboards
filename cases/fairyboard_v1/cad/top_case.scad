@@ -57,16 +57,16 @@ module top_case(wall_height=5, choc_v1_cutouts=false) {
         linear_extrude(wall_height*2+4, center=true)
         union() {
             // Split the halves of the plate to expose middle of the pcb
-            translate([0, -0.4, 0])
+            translate([0, -0.326, 0])
             board_connector_extended();
 
             // Round the top right corner of the left plate
-            translate([182.21, -114.51, 0])
+            translate([182.182928, -114.51, 0])
             rotate([0, 0, -14])
             edge_rounding(1.1);
             
             // Round the top left corner of the right plate
-            translate([238.68, -114.51, 0])
+            translate([238.722928, -114.51, 0])
             rotate([0, 0, 104])
             edge_rounding(1.1);
         }
@@ -77,7 +77,7 @@ module top_case(wall_height=5, choc_v1_cutouts=false) {
 
 // MX top case
 // Uses a 1.5mm plate (mx) and top to pcb distance is 5.0mm
-*top_case(wall_height=3.5, choc_v1_cutouts=false);
+top_case(wall_height=3.5, choc_v1_cutouts=false);
 
 // Choc v1 top case
 // Uses a 1.2mm plate (choc) and top to pcb distance is 2.2mm
@@ -93,4 +93,4 @@ module top_case(wall_height=5, choc_v1_cutouts=false) {
 
 // Choc v1 top plate
 // No wall between plate and pcb
-top_case(wall_height=0, choc_v1_cutouts=true);
+*top_case(wall_height=0, choc_v1_cutouts=true);

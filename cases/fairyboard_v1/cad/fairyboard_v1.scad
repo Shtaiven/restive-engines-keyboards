@@ -65,7 +65,7 @@ module m2_spacers() {
 
 module pcb_outline() {
     // this is exported directly from the pcb unlike the others in this file
-    translate([OFFSET_X-1.3, OFFSET_Y+1.45, 0]) // offsets compared in inkscape
+    translate([OFFSET_X-1.272928, OFFSET_Y+1.45, 0]) // offsets compared in inkscape
     fill() // requires openscad development version
     import(str(outline_dir,"pcb_outline.dxf"));
 }
