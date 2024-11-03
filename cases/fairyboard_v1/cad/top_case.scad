@@ -4,10 +4,20 @@ use <util.scad>
 $fs = $preview ? 0.5 : 0.1;
 $fa = $preview ? 3 : 0.1;
 
-/**Create the top plate.
- * Params:
- *   choc_v1_cutouts (bool): choc cutouts and 1.2 height if true
- *     otherwise mx cutouts and 1.5 height
+// case or plate
+Case_type=0; // [0:Case, 1:Plate]
+
+// effects cutout size
+Switch_type=0; // [0:MX, 1:Choc v1, 2:Choc v2]
+
+/* [Hidden] */
+
+
+//--------------------------------------------------------------------------------
+/** Create the top plate.
+ *  Params:
+ *    choc_v1_cutouts (bool): choc cutouts and 1.2 height if true
+ *      otherwise mx cutouts and 1.5 height
  */
 module top_plate(choc_v1_cutouts=false) {
     height = choc_v1_cutouts ? 1.2 : 1.5;
@@ -24,6 +34,8 @@ module top_plate(choc_v1_cutouts=false) {
     }
 }
 
+
+//--------------------------------------------------------------------------------
 /** Wall beneath the plate, with space for the keys.
  *  Params:
  *    height (float): height of the wall (not including plate)
@@ -39,12 +51,14 @@ module top_wall(height=5) {
     }
 }
 
+
+//--------------------------------------------------------------------------------
 /** Top case construction.
- * Params:
- *   choc_v1_cutouts (bool): choc cutouts and 1.2 height if true
- *     otherwise mx cutouts and 1.5 height
- *   wall_height (float): height of the wall (not including plate)
- *      this should be the space between the plate bottom and pcb top
+ *  Params:
+ *    choc_v1_cutouts (bool): choc cutouts and 1.2 height if true
+ *      otherwise mx cutouts and 1.5 height
+ *    wall_height (float): height of the wall (not including plate)
+ *       this should be the space between the plate bottom and pcb top
  */
 module top_case(wall_height=5, choc_v1_cutouts=false) {
     difference() {
@@ -73,24 +87,34 @@ module top_case(wall_height=5, choc_v1_cutouts=false) {
     }
 }
 
-// Enable (remove *) the case you would like to generate, and disable (add *) the others
 
-// MX top case
-// Uses a 1.5mm plate (mx) and top to pcb distance is 5.0mm
-top_case(wall_height=3.5, choc_v1_cutouts=false);
+//--------------------------------------------------------------------------------
+function switch_type_to_wall_height(switch_type) = (
+    switch_type==0 ?
+        // MX top case
+        // Uses a 1.5mm plate (mx) and top to pcb distance is 5.0mm
+        3.5 :
+    switch_type==1 ?
+        // Choc v1 top case
+        // Uses a 1.2mm plate (choc) and top to pcb distance is 2.2mm
+        1.0 :
+    switch_type==2 ?
+        // Choc v2 top case
+        // Uses a 1.5mm plate (mx) and top to pcb distance is 2.2mm
+        0.7 :
+    undef
+);
 
-// Choc v1 top case
-// Uses a 1.2mm plate (choc) and top to pcb distance is 2.2mm
-*top_case(wall_height=1.0, choc_v1_cutouts=true);
 
-// Choc v2 top case
-// Uses a 1.5mm plate (mx) and top to pcb distance is 2.2mm
-*top_case(wall_height=0.7, choc_v1_cutouts=false);
+//--------------------------------------------------------------------------------
+module generate_top_case(case_type, switch_type) { 
+    choc_v1_cutouts = switch_type==1;  // MX/Choc v2 or Choc v1 cutouts
+    wall_height = case_type==1 ? 0 : switch_type_to_wall_height(switch_type);
+    
+    if (is_undef(wall_height)) {
+        assert(str("wall_height is undefined! case_type must be [0,1] (is ", case_type, ") switch_type must be [0,1,2] (is ", switch_type, ")"));
+    }
+    top_case(wall_height, choc_v1_cutouts);
+}
 
-// MX and choc v2 top plate
-// No wall between plate and pcb
-*top_case(wall_height=0, choc_v1_cutouts=false);
-
-// Choc v1 top plate
-// No wall between plate and pcb
-*top_case(wall_height=0, choc_v1_cutouts=true);
+generate_top_case(Case_type, Switch_type);
