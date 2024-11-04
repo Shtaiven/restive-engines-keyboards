@@ -7,7 +7,7 @@ $fa = $preview ? 3 : 0.1;
 // case or plate
 Case_type=0; // [0:Case, 1:Plate]
 
-// effects cutout size
+// effects cutout size and wall height
 Switch_type=0; // [0:MX, 1:Choc v1, 2:Choc v2]
 
 /* [Hidden] */
@@ -22,7 +22,7 @@ Switch_type=0; // [0:MX, 1:Choc v1, 2:Choc v2]
 module top_plate(choc_v1_cutouts=false) {
     height = choc_v1_cutouts ? 1.2 : 1.5;
     
-    linear_extrude(height)
+    linear_extrude(height, convexity=5)
     difference() {
         pcb_outline();
         m2_holes();
@@ -43,7 +43,7 @@ module top_plate(choc_v1_cutouts=false) {
  */
 module top_wall(height=5) {
     translate([0, 0, -height])
-    linear_extrude(height)
+    linear_extrude(height, convexity=5)
     difference() {
         pcb_outline();
         cutouts_extension();
@@ -60,7 +60,8 @@ module top_wall(height=5) {
  *    wall_height (float): height of the wall (not including plate)
  *       this should be the space between the plate bottom and pcb top
  */
-module top_case(wall_height=5, choc_v1_cutouts=false) {
+module top_case_no_fillet(wall_height=5, choc_v1_cutouts=false) {
+    translate([0, 0, wall_height])
     difference() {
         union() {
             top_plate(choc_v1_cutouts);
@@ -68,21 +69,44 @@ module top_case(wall_height=5, choc_v1_cutouts=false) {
         }
 
         // Refine top case shape
-        linear_extrude(wall_height*2+4, center=true)
+        linear_extrude(wall_height*2+4, center=true, convexity=5)
         union() {
             // Split the halves of the plate to expose middle of the pcb
             translate([0, -0.326, 0])
             board_connector_extended();
 
             // Round the top right corner of the left plate
-            translate([182.182928, -114.51, 0])
+            translate([-28.27, 42.71 , 0])
             rotate([0, 0, -14])
             edge_rounding(1.1);
             
             // Round the top left corner of the right plate
-            translate([238.722928, -114.51, 0])
+            translate([28.27, 42.71, 0])
             rotate([0, 0, 104])
             edge_rounding(1.1);
+        }
+    }
+}
+
+module top_case_filled_fillet(height=6, fillet=1, choc_v1_cutouts=false) {
+    minkowski(convexity=5) {
+        linear_extrude(height-(2*fillet), convexity=5)
+        fill()
+        offset(r=-fillet)
+        projection()
+        top_case_no_fillet(wall_height=0, choc_v1_cutouts);
+        
+        sphere(fillet);
+    }
+}
+
+module top_case(wall_height=5, top_fillet=1, choc_v1_cutouts=false) {
+    height_addition = choc_v1_cutouts ? 1.2 : 1.5;
+    intersection() {
+        top_case_no_fillet(wall_height, choc_v1_cutouts);
+        
+        if (top_fillet > 0) {
+            top_case_filled_fillet(height=wall_height+top_fillet+height_addition, choc_v1_cutouts=choc_v1_cutouts);
         }
     }
 }
@@ -110,11 +134,12 @@ function switch_type_to_wall_height(switch_type) = (
 module generate_top_case(case_type, switch_type) { 
     choc_v1_cutouts = switch_type==1;  // MX/Choc v2 or Choc v1 cutouts
     wall_height = case_type==1 ? 0 : switch_type_to_wall_height(switch_type);
+    top_fillet = case_type==1 ? 0 : 1;
     
     if (is_undef(wall_height)) {
         assert(str("wall_height is undefined! case_type must be [0,1] (is ", case_type, ") switch_type must be [0,1,2] (is ", switch_type, ")"));
     }
-    top_case(wall_height, choc_v1_cutouts);
+    top_case(wall_height=wall_height, top_fillet=top_fillet, choc_v1_cutouts=choc_v1_cutouts);
 }
 
 generate_top_case(Case_type, Switch_type);

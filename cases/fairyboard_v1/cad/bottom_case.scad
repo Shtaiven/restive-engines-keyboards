@@ -26,9 +26,9 @@ module bottom_plate(height=1.5, bottom_fillet=0) {
     if (height >= bottom_fillet && bottom_fillet > 0) {
         translate([0, 0, bottom_fillet])
         difference() {
-            minkowski() {
+            minkowski(convexity=5) {
                 linear_extrude(height-bottom_fillet, convexity=5)
-                offset(delta=-bottom_fillet)
+                offset(r=-bottom_fillet)
                 pcb_outline();
                 sphere(bottom_fillet);
             }
@@ -58,8 +58,9 @@ module bottom_plate(height=1.5, bottom_fillet=0) {
  *    height (float): height of the cutout
  */
 module bottom_case_inner(height=2) {
-    linear_extrude(height)
-    pcb_edge_support();
+    linear_extrude(height, convexity=5)
+    offset(r=-0.8)
+    pcb_outline();
 }
 
 

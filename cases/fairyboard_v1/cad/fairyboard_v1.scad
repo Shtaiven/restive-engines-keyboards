@@ -1,6 +1,9 @@
-OFFSET_X = 0;
-OFFSET_Y = 0;
+/* [Corrective offset of imports (try Ctrl+T)] */
+OFFSET_X = -210.46;
+OFFSET_Y = 157.22;
 
+/* [Paths] */
+// (relative) path to the outline files
 outline_dir = "../outlines/";
 
 module board_connector_cutout() {
@@ -96,4 +99,4 @@ module wall() {
 }
 
 pcb_outline();
-#board();
+*board();
