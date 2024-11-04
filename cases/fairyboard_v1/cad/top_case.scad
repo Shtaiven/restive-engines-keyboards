@@ -53,12 +53,12 @@ module top_wall(height=5) {
 
 
 //--------------------------------------------------------------------------------
-/** Top case construction.
+/** Top case construction without fillets.
  *  Params:
+ *    wall_height (float): height of the wall (not including plate)
+ *      this should be the space between the plate bottom and pcb top
  *    choc_v1_cutouts (bool): choc cutouts and 1.2 height if true
  *      otherwise mx cutouts and 1.5 height
- *    wall_height (float): height of the wall (not including plate)
- *       this should be the space between the plate bottom and pcb top
  */
 module top_case_no_fillet(wall_height=5, choc_v1_cutouts=false) {
     translate([0, 0, wall_height])
@@ -88,6 +88,16 @@ module top_case_no_fillet(wall_height=5, choc_v1_cutouts=false) {
     }
 }
 
+
+//--------------------------------------------------------------------------------
+/** Top case construction with fillets and completely filled.
+ *  Params:
+ *    height (float): height of the object. a distance of fillet is below the object
+ *      so add fillet to total height for top-only fillet
+ *    fillet(float): fillet radius
+ *    choc_v1_cutouts (bool): choc cutouts and 1.2 height if true
+ *      otherwise mx cutouts and 1.5 height
+ */
 module top_case_filled_fillet(height=6, fillet=1, choc_v1_cutouts=false) {
     minkowski(convexity=5) {
         linear_extrude(height-(2*fillet), convexity=5)
@@ -100,6 +110,15 @@ module top_case_filled_fillet(height=6, fillet=1, choc_v1_cutouts=false) {
     }
 }
 
+
+//--------------------------------------------------------------------------------
+/** Top case construction with top fillets.
+ *  Params:
+ *    wall_height (float): height of the case walls
+ *    top_fillet(float): fillet radius
+ *    choc_v1_cutouts (bool): choc cutouts and add 1.2 height if true
+ *      otherwise mx cutouts and add 1.5 height to total object height
+ */
 module top_case(wall_height=5, top_fillet=1, choc_v1_cutouts=false) {
     height_addition = choc_v1_cutouts ? 1.2 : 1.5;
     intersection() {

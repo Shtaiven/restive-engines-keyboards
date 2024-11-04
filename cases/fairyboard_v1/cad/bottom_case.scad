@@ -69,7 +69,7 @@ module bottom_case_inner(height=2) {
  *  Params:
  *    height (float): total height of the bottom case
  *    bottom_fillet (float): radius of the bottom fillet
- *       requirement height >= bottom_fillet > 0
+ *      requirement height >= bottom_fillet > 0
  */
 module bottom_case(height=2, bottom_fillet=1.5) {
     difference() {
@@ -100,6 +100,9 @@ function switch_type_to_case_height(switch_type) = (
 //--------------------------------------------------------------------------------
 module generate_bottom_case(case_type, switch_type) {
     case_height = switch_type_to_case_height(switch_type);
+    
+     // translation helps with assembly so height doesn't need to be known at assembly
+    translate([0, 0, -case_height])
     if (case_type==1) {  // Plate: compatible with all switch type
         bottom_plate();
     }

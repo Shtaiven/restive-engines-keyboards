@@ -1,0 +1,40 @@
+use <fairyboard_v1.scad>
+use <top_case.scad>
+use <bottom_case.scad>
+
+$fs = $preview ? 0.5 : 0.1;
+$fa = $preview ? 3 : 0.1;
+
+// case or plate
+Case_type=0; // [0:Case, 1:Plate]
+
+// effects case height
+Switch_type=0; // [0:MX, 1:Choc v1, 2:Choc v2]
+
+// thickness of pcb
+PCB_thickness = 1.6;
+
+/* [Hidden] */
+
+module pcb(thickness=1.6) {
+   linear_extrude(PCB_thickness, convexity=5)
+    difference() {
+        pcb_outline();
+        m2_spacers();
+    }
+}
+
+
+module case_assembly(case_type, switch_type, pcb_thickness) {
+    color("white", 0.2)
+    translate([0, 0, PCB_thickness])
+    generate_top_case(Case_type, Switch_type);
+
+    color("purple")
+    pcb(PCB_thickness);
+    
+    color("white", 0.2)
+    generate_bottom_case(Case_type, Switch_type);
+}
+
+case_assembly(Case_type, Switch_type, PCB_thickness);
