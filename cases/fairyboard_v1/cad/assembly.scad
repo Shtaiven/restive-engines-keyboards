@@ -1,6 +1,7 @@
 use <fairyboard_v1.scad>
 use <top_case.scad>
 use <bottom_case.scad>
+use <center_window.scad>
 
 $fs = $preview ? 0.5 : 0.1;
 $fa = $preview ? 3 : 0.1;
@@ -16,20 +17,28 @@ PCB_thickness = 1.6;
 
 /* [Hidden] */
 
+
+//--------------------------------------------------------------------------------
 module pcb(thickness=1.6) {
    linear_extrude(PCB_thickness, convexity=5)
     difference() {
         pcb_outline();
         m2_spacers();
+        window_mounting_holes();
     }
 }
 
 
+//--------------------------------------------------------------------------------
 module case_assembly(case_type, switch_type, pcb_thickness) {
     color("white", 0.2)
     translate([0, 0, PCB_thickness])
     generate_top_case(Case_type, Switch_type);
 
+    color("white", 0.2)
+    translate([0, 0, 7])
+    center_window();
+    
     color("purple")
     pcb(PCB_thickness);
     

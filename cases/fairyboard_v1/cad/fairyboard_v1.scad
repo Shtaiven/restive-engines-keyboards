@@ -98,5 +98,10 @@ module wall() {
     import(str(outline_dir,"wall.dxf"));
 }
 
+module window_mounting_holes() {
+    translate([OFFSET_X, OFFSET_Y, 0])
+    import(str(outline_dir,"window_mounting_holes.dxf"));
+}
+
 pcb_outline();
 *board();
