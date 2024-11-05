@@ -1,4 +1,5 @@
 use <fairyboard_v1.scad>
+use <util.scad>
 
 $fs = $preview ? 0.5 : 0.1;
 $fa = $preview ? 3 : 0.1;
@@ -24,19 +25,9 @@ module bottom_plate(height=1.5, bottom_fillet=0) {
     
     // Create the fillet at the bottom of the plate if wanted
     if (height >= bottom_fillet && bottom_fillet > 0) {
-        translate([0, 0, bottom_fillet])
-        difference() {
-            minkowski(convexity=5) {
-                linear_extrude(height-bottom_fillet, convexity=5)
-                offset(r=-bottom_fillet)
-                pcb_outline();
-                sphere(bottom_fillet);
-            }
-            
-            translate([0, 0, height-bottom_fillet])
-            linear_extrude(bottom_fillet, convexity=5)
-            pcb_outline();
-        }  
+        bottom_fillet(bottom_fillet, height, 0, convexity=5)
+        linear_extrude(height, convexity=5)
+        pcb_outline();
     }
 
     // Simply extrude otherwise
@@ -76,7 +67,7 @@ module bottom_case(height=2, bottom_fillet=1.5) {
         bottom_plate(height=height, bottom_fillet=bottom_fillet);
         
         translate([0, 0, 1.5])
-        bottom_case_inner(height=height-1.5);
+        bottom_case_inner(height=height-1.5+0.01);
     }
 }
 

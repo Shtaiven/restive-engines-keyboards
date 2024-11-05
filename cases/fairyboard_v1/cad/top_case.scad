@@ -78,35 +78,13 @@ module top_case_no_fillet(wall_height=5, choc_v1_cutouts=false) {
             // Round the top right corner of the left plate
             translate([-28.27, 42.71 , 0])
             rotate([0, 0, -14])
-            edge_rounding(1.1);
+            edge_rounding_tool(1.1);
             
             // Round the top left corner of the right plate
             translate([28.27, 42.71, 0])
             rotate([0, 0, 104])
-            edge_rounding(1.1);
+            edge_rounding_tool(1.1);
         }
-    }
-}
-
-
-//--------------------------------------------------------------------------------
-/** Top case construction with fillets and completely filled.
- *  Params:
- *    height (float): height of the object. a distance of fillet is below the object
- *      so add fillet to total height for top-only fillet
- *    fillet(float): fillet radius
- *    choc_v1_cutouts (bool): choc cutouts and 1.2 height if true
- *      otherwise mx cutouts and 1.5 height
- */
-module top_case_filled_fillet(height=6, fillet=1, choc_v1_cutouts=false) {
-    minkowski(convexity=5) {
-        linear_extrude(height-(2*fillet), convexity=5)
-        fill()
-        offset(r=-fillet)
-        projection()
-        top_case_no_fillet(wall_height=0, choc_v1_cutouts);
-        
-        sphere(fillet);
     }
 }
 
@@ -121,13 +99,8 @@ module top_case_filled_fillet(height=6, fillet=1, choc_v1_cutouts=false) {
  */
 module top_case(wall_height=5, top_fillet=1, choc_v1_cutouts=false) {
     height_addition = choc_v1_cutouts ? 1.2 : 1.5;
-    intersection() {
-        top_case_no_fillet(wall_height, choc_v1_cutouts);
-        
-        if (top_fillet > 0) {
-            top_case_filled_fillet(height=wall_height+top_fillet+height_addition, choc_v1_cutouts=choc_v1_cutouts);
-        }
-    }
+    top_fillet(radius=top_fillet, top=wall_height+height_addition, bottom=0, convexity=5)
+    top_case_no_fillet(wall_height, choc_v1_cutouts);
 }
 
 
