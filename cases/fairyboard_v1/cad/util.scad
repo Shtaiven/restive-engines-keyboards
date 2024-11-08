@@ -34,7 +34,7 @@ module top_bottom_fillet_filled(radius, height, convexity=5) {
 
 
 //--------------------------------------------------------------------------------
-/** Fillet the top and bottom of an arbitrary object.
+/** Fillet the top and bottom of a flat 3d object with arbitrary outline.
  *  Params:
  *    radius (float): fillet radius
  *    top (float): top (z) of the object to fillet
@@ -53,7 +53,7 @@ module top_bottom_fillet(radius, top, bottom, convexity=5) {
 
 
 //--------------------------------------------------------------------------------
-/** Fillet the top of an arbitrary object.
+/** Fillet the top of a flat 3d object with arbitrary outline.
  *  Params:
  *    radius (float): fillet radius
  *    top (float): top (z) of the object to fillet
@@ -67,7 +67,7 @@ module top_fillet(radius, top, bottom, convexity=5) {
 
 
 //--------------------------------------------------------------------------------
-/** Fillet the bottom of an arbitrary object.
+/** Fillet the bottom of a flat 3d object with arbitrary outline.
  *  Params:
  *    radius (float): fillet radius
  *    top (float): top (z) of the object to fillet

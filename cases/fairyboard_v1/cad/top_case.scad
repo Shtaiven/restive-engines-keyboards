@@ -1,3 +1,6 @@
+// TODO: remove the need for spacers by using heat-set inserts
+// TODO: thicken inner walls, only thin where needed for switch
+// TODO: remove infill from top "wing"
 use <fairyboard_v1.scad>
 use <util.scad>
 
@@ -5,10 +8,10 @@ $fs = $preview ? 0.5 : 0.1;
 $fa = $preview ? 3 : 0.1;
 
 // case or plate
-Case_type=0; // [0:Case, 1:Plate]
+Case_type = 0; // [0:Case, 1:Plate]
 
 // effects cutout size and wall height
-Switch_type=0; // [0:MX, 1:Choc v1, 2:Choc v2]
+Switch_type = 0; // [0:MX, 1:Choc v1, 2:Choc v2]
 
 /* [Hidden] */
 
@@ -126,7 +129,7 @@ function switch_type_to_wall_height(switch_type) = (
 module generate_top_case(case_type, switch_type) { 
     choc_v1_cutouts = switch_type==1;  // MX/Choc v2 or Choc v1 cutouts
     wall_height = case_type==1 ? 0 : switch_type_to_wall_height(switch_type);
-    top_fillet = case_type==1 ? 0 : 1;
+    top_fillet = case_type==1 ? 0 : 1.1;
     
     if (is_undef(wall_height)) {
         assert(str("wall_height is undefined! case_type must be [0,1] (is ", case_type, ") switch_type must be [0,1,2] (is ", switch_type, ")"));

@@ -7,10 +7,10 @@ $fs = $preview ? 0.5 : 0.1;
 $fa = $preview ? 3 : 0.1;
 
 // case or plate
-Case_type=0; // [0:Case, 1:Plate]
+Case_type = 0; // [0:Case, 1:Plate]
 
 // effects case height
-Switch_type=0; // [0:MX, 1:Choc v1, 2:Choc v2]
+Switch_type = 0; // [0:MX, 1:Choc v1, 2:Choc v2]
 
 // thickness of pcb
 PCB_thickness = 1.6;
@@ -37,7 +37,7 @@ module case_assembly(case_type, switch_type, pcb_thickness) {
 
     color("white", 0.2)
     translate([0, 0, PCB_thickness])
-    %center_window(height=7);
+    %center_window(wall_height=5);
     
     color("purple")
     pcb(PCB_thickness);

@@ -1,3 +1,7 @@
+// TODO: add thickness to bottom for screws
+// TODO: remove the need for spacers?
+// TODO: thicker outer wall, only thin where there's interference
+// TODO: fix case height
 use <fairyboard_v1.scad>
 use <util.scad>
 
@@ -5,10 +9,10 @@ $fs = $preview ? 0.5 : 0.1;
 $fa = $preview ? 3 : 0.1;
 
 // case or plate
-Case_type=0; // [0:Case, 1:Plate]
+Case_type = 0; // [0:Case, 1:Plate]
 
 // effects case height
-Switch_type=0; // [0:MX, 1:Choc v1, 2:Choc v2]
+Switch_type = 0; // [0:MX, 1:Choc v1, 2:Choc v2]
 
 /* [Hidden] */
 
@@ -23,22 +27,22 @@ Switch_type=0; // [0:MX, 1:Choc v1, 2:Choc v2]
 module bottom_plate(height=1.5, bottom_fillet=0) {
     difference() {
     
-    // Create the fillet at the bottom of the plate if wanted
-    if (height >= bottom_fillet && bottom_fillet > 0) {
-        bottom_fillet(bottom_fillet, height, 0, convexity=5)
-        linear_extrude(height, convexity=5)
-        pcb_outline();
-    }
+        // Create the fillet at the bottom of the plate if wanted
+        if (height >= bottom_fillet && bottom_fillet > 0) {
+            bottom_fillet(bottom_fillet, height, 0, convexity=5)
+            linear_extrude(height, convexity=5)
+            pcb_outline();
+        }
 
-    // Simply extrude otherwise
-    else {
-        linear_extrude(height, convexity=5)
-        pcb_outline();
-    }
-    
-    // Cut out the holes
-    linear_extrude(height)
-    m2_holes();
+        // Simply extrude otherwise
+        else {
+            linear_extrude(height, convexity=5)
+            pcb_outline();
+        }
+        
+        // Cut out the holes
+        linear_extrude(height)
+        m2_holes();
     }
 }
 
