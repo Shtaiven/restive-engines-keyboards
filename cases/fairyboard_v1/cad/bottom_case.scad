@@ -1,7 +1,4 @@
-// TODO: add thickness to bottom for screws
-// TODO: remove the need for spacers?
 // TODO: thicker outer wall, only thin where there's interference
-// TODO: fix case height
 use <fairyboard_v1.scad>
 use <util.scad>
 
@@ -52,9 +49,9 @@ module bottom_plate(height=1.5, bottom_fillet=0) {
  *  Params:
  *    height (float): height of the cutout
  */
-module bottom_case_inner(height=2) {
+module bottom_case_inner(height=2, wall_thickness=0.8) {
     linear_extrude(height, convexity=5)
-    offset(r=-0.8)
+    offset(delta=-wall_thickness)
     pcb_outline();
 }
 
@@ -66,12 +63,22 @@ module bottom_case_inner(height=2) {
  *    bottom_fillet (float): radius of the bottom fillet
  *      requirement height >= bottom_fillet > 0
  */
-module bottom_case(height=2, bottom_fillet=1.5) {
+module bottom_case(height=5, bottom_thickness=3, bottom_fillet=1.1) {
     difference() {
         bottom_plate(height=height, bottom_fillet=bottom_fillet);
         
-        translate([0, 0, 1.5])
-        bottom_case_inner(height=height-1.5+0.01);
+        // Fillet
+        if (bottom_thickness < height) {
+            translate([0, 0, bottom_thickness])
+            bottom_case_inner(height=height-bottom_thickness+0.01);
+        }
+        
+        // Detents for screws
+        if (bottom_thickness < height && bottom_thickness > 1.5) {
+            linear_extrude(1.5)
+            offset(r=0.2)
+            m2_spacers();
+        }
     }
 }
 
@@ -79,15 +86,16 @@ module bottom_case(height=2, bottom_fillet=1.5) {
 //--------------------------------------------------------------------------------
 function switch_type_to_case_height(switch_type) = (
     // Base wall height = 2mm
+    // Bottom thickness = 1.5mm
     switch_type==0 ?
         // MX: 7mm spacer - 1.5mm pcb - 2mm hotswap sockets - 3.5mm between plate and pcb = 0 extra wall height
-        2 :
+        2+3 :
     switch_type==1 ?
         // Choc v1: 5mm spacer - 1.5mm pcb - 2mm hotswap sockets - 1mm between plate and pcb = 0.5mm extra wall height
-        2.5 :
+        2.5+3 :
     switch_type==2 ?
         // Choc v2: 5mm spacer - 1.5mm pcb - 2mm hotswap sockets - 0.7mm between plate and pcb = 0.8mm extra wall height
-        2.8 :
+        2.8+3 :
     undef
 );
 

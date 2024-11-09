@@ -1,6 +1,4 @@
-// TODO: remove the need for spacers by using heat-set inserts
-// TODO: thicken inner walls, only thin where needed for switch
-// TODO: remove infill from top "wing"
+// TODO: remove thin walls from thumb spacers
 use <fairyboard_v1.scad>
 use <util.scad>
 
@@ -56,6 +54,29 @@ module top_wall(height=5) {
 
 
 //--------------------------------------------------------------------------------
+/** Shape for removing infill from top wing.
+ *  Params:
+ *    wall_thickness (float): thickness of the wall around the cutout
+ */
+module wing_cutouts(wall_thickness=1.5) {
+    offset(delta=-wall_thickness)
+    intersection() {
+        translate([-75, 0, 0])
+        square(150);
+        
+        difference() {
+            pcb_outline();
+            
+            offset(delta=2.5)
+            cutouts_mx();
+            
+            board_connector_extended();
+        }
+    }
+}
+
+
+//--------------------------------------------------------------------------------
 /** Top case construction without fillets.
  *  Params:
  *    wall_height (float): height of the wall (not including plate)
@@ -71,6 +92,24 @@ module top_case_no_fillet(wall_height=5, choc_v1_cutouts=false) {
             top_wall(wall_height);
         }
 
+        // Cutouts for the top wings to reduce material
+        mirror([0, 0, 1])
+        linear_extrude(wall_height+0.01, convexity=5)
+        wing_cutouts();
+        
+        // Cutouts to remove thin walls around thumb pcb spacers
+        mirror([0, 0, 1])
+        linear_extrude(wall_height+0.01) {
+            translate([44.8, -36.7])
+            rotate([0, 0, 38])
+            square([6, 1], center = true);
+            
+            mirror([1, 0, 0])
+            translate([44.8, -36.7])
+            rotate([0, 0, 38])
+            square([6, 1], center = true);
+        }
+ 
         // Refine top case shape
         linear_extrude(wall_height*2+4, center=true, convexity=5)
         union() {

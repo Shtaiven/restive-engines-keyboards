@@ -87,20 +87,35 @@ module center_window(wall_height=5, window_height=10, thickness=1.5, fillet=1.1)
         translate([0, 0, -0.01])
         linear_extrude(window_height+thickness+0.02)
         window_mounting_holes();
-        
+
         // Terminal cutouts
-        translate([-11, 3.6, -0.01])
+        translate([-11.78, 3.68, -0.01])
         mirror([1, 0, 0])
-        cube([21, 7.2, window_height+thickness+0.02]);
+        cube([20.88, 6.9, window_height+thickness+0.02]);
         
-        translate([11, 3.6, -0.01])
-        cube([13.5, 7.2, window_height+thickness+0.02]);
+        translate([11.84, 3.68, -0.01])
+        cube([13.26, 6.9, window_height+thickness+0.02]);
         
         // USB cutout
+        translate([-7.466/2, 43.7, 0])
+        rotate([90, 0 ,0])
+        linear_extrude(thickness+2)
+//        offset(delta=-1.1)
+//        offset(r=1.1)
+        square([7.466, 4]); 
         
         // Slide switch cutout
+        translate([13.8-0.1/2, 43.7, 0])
+        rotate([90, 0, 0])
+        linear_extrude(thickness+2)
+        square([8.4, 4]);
         
         // Reset button cutout
+        translate([-14.35+0.1/2, 43.7, 0])
+        rotate([90, 0, 0])
+        linear_extrude(thickness+2)
+        mirror([1, 0, 0])
+        square([7.4, 4]);
     }
 }
 

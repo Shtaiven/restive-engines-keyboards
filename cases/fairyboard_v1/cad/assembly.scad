@@ -33,17 +33,17 @@ module pcb(thickness=1.6) {
 module case_assembly(case_type, switch_type, pcb_thickness) {
     color("white", 0.2)
     translate([0, 0, PCB_thickness])
-    %generate_top_case(Case_type, Switch_type);
+    generate_top_case(Case_type, Switch_type);
 
     color("white", 0.2)
     translate([0, 0, PCB_thickness])
-    %center_window(wall_height=5);
+    center_window(wall_height=5);
     
     color("purple")
     pcb(PCB_thickness);
     
     color("white", 0.2)
-    %generate_bottom_case(Case_type, Switch_type);
+    generate_bottom_case(Case_type, Switch_type);
 }
 
 case_assembly(Case_type, Switch_type, PCB_thickness);
