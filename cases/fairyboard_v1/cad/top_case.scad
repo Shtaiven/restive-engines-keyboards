@@ -1,4 +1,4 @@
-// TODO: remove thin walls from thumb spacers
+
 use <fairyboard_v1.scad>
 use <util.scad>
 
