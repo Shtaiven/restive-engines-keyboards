@@ -108,14 +108,14 @@ module center_window(wall_height=5, window_height=10, thickness=1.5, fillet=1.1)
         translate([13.8-0.1/2, 43.7, 0])
         rotate([90, 0, 0])
         linear_extrude(thickness+2)
-        square([8.4, 4]);
+        square([8.4, 1.5]);
         
         // Reset button cutout
         translate([-14.35+0.1/2, 43.7, 0])
         rotate([90, 0, 0])
         linear_extrude(thickness+2)
         mirror([1, 0, 0])
-        square([7.4, 4]);
+        square([7.4, 4.4]);
     }
 }
 

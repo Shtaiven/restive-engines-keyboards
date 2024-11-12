@@ -7,7 +7,7 @@ $fs = $preview ? 0.5 : 0.1;
 $fa = $preview ? 3 : 0.1;
 
 // case or plate
-Case_type = 0; // [0:Case, 1:Plate]
+Case_type = 0; // [0:Plate, 1:Low profile case, 2:High profile case]
 
 // effects case height
 Switch_type = 0; // [0:MX, 1:Choc v1, 2:Choc v2]
