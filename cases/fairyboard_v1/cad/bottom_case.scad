@@ -1,4 +1,5 @@
 use <fairyboard_v1.scad>
+use <hardware.scad>
 use <util.scad>
 
 $fs = $preview ? 0.5 : 0.1;
@@ -250,7 +251,8 @@ module bottom_case_high_profile(
     wall_thickness=1.5,
     hole_diameter=2.4,
     screw_detent_diameter=4,
-    screw_detent_depth=1.5
+    screw_detent_depth=1.5,
+    scuf_detents=true,
 ) {
     difference() {
         bottom_plate(height=height, bottom_fillet=bottom_fillet, hole_diameter=hole_diameter);
@@ -273,6 +275,22 @@ module bottom_case_high_profile(
             m2_spacers();
         }
         
+        // SCUF Rubber feet detents
+        if (scuf_detents) {
+            detent_locations = [
+                [0, 36, 0],
+                [-100, 36, 0],
+                [100, 36, 0],
+                [-47, -34, -46],
+                [47, -34, 46]
+            ];
+            for (l=detent_locations) {
+                translate([l.x, l.y, 0])
+                rotate([0, 0, l.z])
+                scuf_feet_detent();
+            }
+        }
+        
 
     }
 }
@@ -284,8 +302,8 @@ module bottom_case_high_profile(
 module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5) {  
     // Most of the low profile bottom case is a special case of the high profile case
     bottom_case_high_profile(
-        height=4,  // Total case thickness = min height of m2 x 3 heatset inserts = 4mm
-        bottom_thickness=2,  // Leave enough space for components
+        height=5,  // Total case thickness = min height of m2 x 3 heatset inserts + 1mm for screws and stability= 5mm
+        bottom_thickness=3,  // Leave enough space for components
         bottom_fillet=bottom_fillet,
         wall_thickness=wall_thickness,
         hole_diameter=3.1,  // diameter needed for the heatset inserts
@@ -331,17 +349,16 @@ function switch_type_to_case_height(switch_type) = (
 
 //--------------------------------------------------------------------------------
 module generate_bottom_case(case_type, switch_type) {
-    case_height = switch_type_to_case_height(switch_type);
-    
      // translation helps with assembly so height doesn't need to be known at assembly
     if (case_type==0) {  // Plate: compatible with all switch type
         bottom_plate();
     }
     else if (case_type==1) {  // Low profile case
-        translate([0, 0, -4])
+        translate([0, 0, -5])
         bottom_case_low_profile();
     }
     else if (case_type==2) {  // High profile case
+        case_height = switch_type_to_case_height(switch_type);
         assert(!is_undef(case_height), str("height is undefined! switch_type must be [0,1,2] (is ", switch_type, ")"));
         translate([0, 0, -case_height])
         bottom_case_high_profile(height=case_height);
