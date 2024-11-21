@@ -37,7 +37,7 @@ module case_assembly(case_type, switch_type, pcb_thickness) {
 
     color("white", 0.2)
     translate([0, 0, PCB_thickness])
-    center_window(wall_height=5);
+    center_window();
     
     color("purple")
     pcb(PCB_thickness);

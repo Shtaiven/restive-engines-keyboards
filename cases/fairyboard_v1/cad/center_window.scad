@@ -7,7 +7,7 @@ $fs = $preview ? 0.5 : 0.1;
 $fa = $preview ? 3 : 0.1;
 
 // height of the outer walls
-Wall_height = 5;
+Wall_height = 7;
 
 // height of the circular window
 Window_height = 10;
@@ -43,12 +43,15 @@ module center_window_base() {
 //--------------------------------------------------------------------------------
 /// Create the protruding window shape.
 module center_window_inner() {
-    resize([27.9, 0, 0])
-    translate([0, 23.575, 0])
-    mirror([0, 1, 0])
-    center_window_base();
-    
-//    circle(19.89);
+    intersection() {
+        translate([0, -23.575, 0])
+        center_window_base();
+        
+        resize([27.9, 0, 0])
+        translate([0, 23.575, 0])
+        mirror([0, 1, 0])
+        center_window_base(); 
+    }
 }
 
 //--------------------------------------------------------------------------------
@@ -60,7 +63,7 @@ module center_window_inner() {
  *    fillet (float): fillet radius along the top edges
  */
 module center_window(
-    wall_height=5,
+    wall_height=7,
     window_height=10,
     thickness=1.5,
     fillet=1.1,
@@ -68,6 +71,8 @@ module center_window(
     terminal8_cutout=true,
     terminal5_cutout=false,
 ) {
+    max_window_fillet = 4;
+    top_window_fillet = min(window_height-wall_height, max_window_fillet);
     difference() {
         union() {
             // Create the main hollowed window shape
@@ -78,7 +83,7 @@ module center_window(
             // Create the window bump
             if (window_height > wall_height) {
                 translate([0, 23.575, wall_height])
-                top_fillet(fillet, thickness+window_height-wall_height, 0)
+                top_fillet(top_window_fillet, thickness+window_height-wall_height, 0)
                 linear_extrude(thickness+window_height-wall_height)
                 center_window_inner();
             }
@@ -94,6 +99,7 @@ module center_window(
         
         // Hollow out the window bump
         if (window_height > wall_height) {
+            top_fillet(top_window_fillet, window_height, 0)
             translate([0, 23.575, 0])
             linear_extrude(window_height)
             offset(delta=-thickness)
