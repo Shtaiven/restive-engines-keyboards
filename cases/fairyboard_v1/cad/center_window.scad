@@ -18,6 +18,15 @@ Thickness = 1.5;
 // fillet radius along the top edges
 Top_fillet = 1.1;
 
+// cutout for a screen if opaque
+Screen_cutout = false;
+
+// cutout for an 8-pos terminal block on the left
+Terminal8_cutout = true;
+
+// cutout for a 5-pos terminal block on the right
+Terminal5_cutout = false;
+
 /* [Hidden] */
 
 
@@ -50,24 +59,24 @@ module center_window_inner() {
  *    thickness (float): thickness of the shell
  *    fillet (float): fillet radius along the top edges
  */
-module center_window(wall_height=5, window_height=10, thickness=1.5, fillet=1.1) {
+module center_window(
+    wall_height=5,
+    window_height=10,
+    thickness=1.5,
+    fillet=1.1,
+    screen_cutout=false,
+    terminal8_cutout=true,
+    terminal5_cutout=false,
+) {
     difference() {
         union() {
+            // Create the main hollowed window shape
             top_fillet(fillet, wall_height+thickness, 0)
-            difference() {
-                linear_extrude(thickness+wall_height, convexity=5)
-                center_window_base();
-                
-                if (wall_height > 0) {
-                    translate([0, 0, -0.01])
-                    linear_extrude(wall_height+0.01, convexity=5)
-                    offset(delta=-thickness)
-                    center_window_base();
-                }
-            }
+            linear_extrude(thickness+wall_height, convexity=5)
+            center_window_base();
             
+            // Create the window bump
             if (window_height > wall_height) {
-                
                 translate([0, 23.575, wall_height])
                 top_fillet(fillet, thickness+window_height-wall_height, 0)
                 linear_extrude(thickness+window_height-wall_height)
@@ -75,12 +84,20 @@ module center_window(wall_height=5, window_height=10, thickness=1.5, fillet=1.1)
             }
         }
 
+        // Hollow out the base shape
+        if (wall_height > 0) {
+            translate([0, 0, -0.01])
+            linear_extrude(wall_height+0.01, convexity=5)
+            offset(delta=-thickness)
+            center_window_base();
+        }
+        
+        // Hollow out the window bump
         if (window_height > wall_height) {
             translate([0, 23.575, 0])
             linear_extrude(window_height)
             offset(delta=-thickness)
             center_window_inner();
-
         }
         
         // Mounting hole cutouts
@@ -88,35 +105,59 @@ module center_window(wall_height=5, window_height=10, thickness=1.5, fillet=1.1)
         linear_extrude(window_height+thickness+0.02)
         window_mounting_holes();
 
-        // Terminal cutouts
-        translate([-11.78, 3.68, -0.01])
-        mirror([1, 0, 0])
-        cube([20.88, 6.9, window_height+thickness+0.02]);
+        bottom_offset = 3.68;  // y-offset of the "bottom" of the window
         
-        translate([11.84, 3.68, -0.01])
-        cube([13.26, 6.9, window_height+thickness+0.02]);
+        // Terminal cutouts
+        if (terminal8_cutout) {
+            translate([-11.78, bottom_offset, -0.01])
+            mirror([1, 0, 0])
+            cube([20.88, 6.9, window_height+thickness+0.02]);
+        }
+
+        if (terminal5_cutout) {
+            translate([11.84, bottom_offset, -0.01])
+            cube([13.26, 6.9, window_height+thickness+0.02]);
+        }
+        
+        top_edge_offset = 43.47;
         
         // USB cutout
-        translate([-7.466/2, 43.7, 0])
+        usb_dims = [10, 4];
+        translate([-usb_dims.x/2, top_edge_offset+1, 2.5])
         rotate([90, 0 ,0])
         linear_extrude(thickness+2)
-//        offset(delta=-1.1)
-//        offset(r=1.1)
-        square([7.466, 4]); 
+        offset(r=1)
+        offset(delta=-1)
+        square(usb_dims); 
         
         // Slide switch cutout
-        translate([13.8-0.1/2, 43.7, 0])
+        translate([13.8-0.1/2, top_edge_offset+1, 0])
         rotate([90, 0, 0])
         linear_extrude(thickness+2)
-        square([8.4, 1.5]);
+        square([8.6, 2]);
         
         // Reset button cutout
-        translate([-14.35+0.1/2, 43.7, 0])
+        translate([-14.35+0.1/2, top_edge_offset+1, 0])
         rotate([90, 0, 0])
         linear_extrude(thickness+2)
         mirror([1, 0, 0])
-        square([7.4, 4.4]);
+        square([8, 5]);
+        
+        // Optional screen cutout
+        if (screen_cutout) {
+            screen_dims = [13.5, 29.5];
+            translate([-screen_dims.x/2, bottom_offset+5.2, 0])
+            cube([screen_dims.x, screen_dims.y, window_height+thickness+1]);
+        }
     }
 }
 
-center_window(wall_height=Wall_height, window_height=Window_height, thickness=Thickness, fillet=Top_fillet);
+center_window(
+    wall_height=Wall_height,
+    window_height=Window_height,
+    thickness=Thickness,
+    fillet=Top_fillet,
+    screen_cutout=Screen_cutout,
+    terminal8_cutout=Terminal8_cutout,
+    terminal5_cutout=Terminal5_cutout
+);

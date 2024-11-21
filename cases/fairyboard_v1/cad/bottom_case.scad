@@ -277,12 +277,13 @@ module bottom_case_high_profile(
         
         // SCUF Rubber feet detents
         if (scuf_detents) {
+            // [x, y, rotation]
             detent_locations = [
-                [0, 36, 0],
-                [-100, 36, 0],
-                [100, 36, 0],
-                [-47, -34, -46],
-                [47, -34, 46]
+                [0, 38.5, 0],  // top-middle
+                [-115, 38.5, 0],  // top-right
+                [115, 38.5, 0],  // top-left
+                [-56, -33, -46],  // bottom-right
+                [56, -33, 46],  // bottom-left
             ];
             for (l=detent_locations) {
                 translate([l.x, l.y, 0])
@@ -290,8 +291,6 @@ module bottom_case_high_profile(
                 scuf_feet_detent();
             }
         }
-        
-
     }
 }
 
