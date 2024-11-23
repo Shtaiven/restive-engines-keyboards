@@ -7,16 +7,16 @@ $fs = $preview ? 0.5 : 0.1;
 $fa = $preview ? 3 : 0.1;
 
 // height of the outer walls
-Wall_height = 7;
+Wall_height = 10.0;  //[::float]
 
 // height of the circular window
-Window_height = 10;
+Window_height = 10.0;  //[::float]
 
 // thickness of the shell
-Thickness = 1.5;
+Thickness = 1.5;  //[::float]
 
 // fillet radius along the top edges
-Top_fillet = 1.1;
+Top_fillet = 1.1;  //[::float]
 
 // cutout for a screen if opaque
 Screen_cutout = false;
@@ -26,6 +26,15 @@ Terminal8_cutout = true;
 
 // cutout for a 5-pos terminal block on the right
 Terminal5_cutout = false;
+
+// cutout in the back for the usb and microcontroller
+Usb_cutout=true;
+
+// cutout in the back for the reset button
+Reset_button_cutout=true;
+
+// cutout in the back for the power switch
+Power_switch_cutout=true;
 
 /* [Hidden] */
 
@@ -55,21 +64,25 @@ module center_window_inner() {
 }
 
 //--------------------------------------------------------------------------------
-/** Create the center window with a wall and circular window.
+/** Create the center window with a wall and rounded window.
  *  Params:
  *    wall_height (float): height of the outer wall
  *    window_height (float): height of the circular window
  *    thickness (float): thickness of the shell
  *    fillet (float): fillet radius along the top edges
+ *    *_cutout (bool): make a cutout for the component if true
  */
 module center_window(
-    wall_height=7,
+    wall_height=10,
     window_height=10,
     thickness=1.5,
     fillet=1.1,
     screen_cutout=false,
     terminal8_cutout=true,
     terminal5_cutout=false,
+    usb_cutout=true,
+    reset_button_cutout=true,
+    power_switch_cutout=true
 ) {
     max_window_fillet = 4;
     top_window_fillet = min(window_height-wall_height, max_window_fillet);
@@ -128,26 +141,30 @@ module center_window(
         top_edge_offset = 43.47;
         
         // USB cutout
-        usb_dims = [10, 4];
-        translate([-usb_dims.x/2, top_edge_offset+1, 2.5])
-        rotate([90, 0 ,0])
-        linear_extrude(thickness+2)
-        offset(r=1)
-        offset(delta=-1)
-        square(usb_dims); 
+        if (usb_cutout) {
+            usb_dims = [19, 8.5];
+            translate([-usb_dims.x/2, top_edge_offset+1, 0])
+            rotate([90, 0 ,0])
+            linear_extrude(thickness+2)
+            square(usb_dims);
+        }
         
         // Slide switch cutout
-        translate([13.8-0.1/2, top_edge_offset+1, 0])
-        rotate([90, 0, 0])
-        linear_extrude(thickness+2)
-        square([8.6, 2]);
+        if (power_switch_cutout) {
+            translate([13.8-0.1/2, top_edge_offset+1, 0])
+            rotate([90, 0, 0])
+            linear_extrude(thickness+2)
+            square([8.6, 2]);
+        }
         
         // Reset button cutout
-        translate([-14.35+0.1/2, top_edge_offset+1, 0])
-        rotate([90, 0, 0])
-        linear_extrude(thickness+2)
-        mirror([1, 0, 0])
-        square([8, 5]);
+        if (reset_button_cutout) {
+            translate([-14.35+0.1/2, top_edge_offset+1, 0])
+            rotate([90, 0, 0])
+            linear_extrude(thickness+2)
+            mirror([1, 0, 0])
+            square([8, 5]);
+        }
         
         // Optional screen cutout
         if (screen_cutout) {
@@ -158,6 +175,33 @@ module center_window(
     }
 }
 
+
+//--------------------------------------------------------------------------------
+/** Create the flat center plate.
+ *  Params:
+ *    thickness (float): thickness of the plate
+ *    *_cutout (bool): make a cutout for the component if true
+ */
+module center_plate(
+    thickness=2,
+    screen_cutout=false,
+    terminal8_cutout=true,
+    terminal5_cutout=false
+) {
+    center_window(
+        wall_height=0,
+        window_height=0,
+        thickness=thickness,
+        fillet=0,
+        screen_cutout=screen_cutout,
+        terminal8_cutout=terminal8_cutout,
+        terminal5_cutout=terminal5_cutout,
+        usb_cutout=false,
+        reset_button_cutout=false,
+        power_switch_cutout=false
+    );
+}
+
 center_window(
     wall_height=Wall_height,
     window_height=Window_height,
@@ -165,5 +209,10 @@ center_window(
     fillet=Top_fillet,
     screen_cutout=Screen_cutout,
     terminal8_cutout=Terminal8_cutout,
-    terminal5_cutout=Terminal5_cutout
+    terminal5_cutout=Terminal5_cutout,
+    usb_cutout=Usb_cutout,
+    reset_button_cutout=Reset_button_cutout,
+    power_switch_cutout=Power_switch_cutout
 );
+
+*projection() center_plate();
