@@ -35,9 +35,15 @@ module case_assembly(case_type, switch_type, pcb_thickness) {
     translate([0, 0, PCB_thickness])
     generate_top_case(Case_type, Switch_type);
 
+    // adjust the center window to be flush with the plate
+    center_window_wall_height = switch_type==0 ? 3.5 : 0.7;
     color("white", 0.2)
     translate([0, 0, PCB_thickness])
-    center_window();
+    center_window(
+        wall_height=center_window_wall_height,
+        thickness=1.5,
+        hollow=switch_type==0
+    );
     
     color("purple")
     pcb(PCB_thickness);

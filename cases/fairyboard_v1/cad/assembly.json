@@ -1,0 +1,10 @@
+{
+    "fileFormatVersion": "1",
+    "parameterSets": {
+        "New set 1": {
+            "Case_type": "1",
+            "PCB_thickness": "1.6000000000000001",
+            "Switch_type": "1"
+        }
+    }
+}
