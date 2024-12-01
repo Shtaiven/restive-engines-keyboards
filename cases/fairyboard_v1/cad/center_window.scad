@@ -155,22 +155,24 @@ module center_window(
             translate([-11.78, bottom_offset, -0.01])
             mirror([1, 0, 0])
             // extra x added to chop off the thin bit left over
-            cube([25.88, 6.9, window_height+thickness+0.02]);
+            cube([25.88, 7.4, window_height+thickness+0.02]);
         }
 
         if (terminal5_cutout) {
             translate([11.84, bottom_offset, -0.01])
-            cube([13.26, 6.9, window_height+thickness+0.02]);
+            cube([13.26, 7.4, window_height+thickness+0.02]);
         }
         
         top_edge_offset = 43.47;
         
         // USB cutout
         if (usb_cutout) {
-            usb_dims = [19, 8.5];
-            translate([-usb_dims.x/2, top_edge_offset+1, 0])
+            usb_dims = [19, 6];
+            translate([-usb_dims.x/2, top_edge_offset+1, 2.5])
             rotate([90, 0 ,0])
             linear_extrude(thickness+2)
+            offset(r=fillet)
+            offset(delta=-fillet)
             square(usb_dims);
         }
         
@@ -204,9 +206,12 @@ module center_window(
         
         // Optional screen cutout
         if (screen_cutout) {
-            screen_dims = [13.5, 29.5];
-            translate([-screen_dims.x/2, bottom_offset+5.2, 0])
-            cube([screen_dims.x, screen_dims.y, window_height+thickness+1]);
+            screen_dims = [12, 26];
+            translate([-screen_dims.x/2, bottom_offset+7, 0])
+            linear_extrude(window_height+thickness+1)
+            offset(r=fillet)
+            offset(delta=-fillet)
+            #square([screen_dims.x, screen_dims.y]);
         }
     }
 }

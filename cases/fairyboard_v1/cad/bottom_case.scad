@@ -8,8 +8,11 @@ $fa = $preview ? 3 : 0.1;
 // type of case
 Case_type = 0; // [0:Plate, 1:Low profile case, 2:High profile case]
 
-// effects case height
+// effects case height for high profile
 Switch_type = 0; // [0:MX, 1:Choc v1, 2:Choc v2]
+
+// place holes for mounting the center window to the bottom
+Window_mounting_holes = false;
 
 /* [Hidden] */
 
@@ -22,7 +25,7 @@ Switch_type = 0; // [0:MX, 1:Choc v1, 2:Choc v2]
  *      requirement height >= bottom_fillet > 0
  *    hole_diameter (float): diameter of the screw holes
  */
-module bottom_plate(height=1.5, bottom_fillet=0, hole_diameter=2.4) {
+module bottom_plate(height=1.5, bottom_fillet=0, hole_diameter=2.4, window_mounting_detents=true) {
     difference() {
     
         // Create the fillet at the bottom of the plate if wanted
@@ -43,6 +46,13 @@ module bottom_plate(height=1.5, bottom_fillet=0, hole_diameter=2.4) {
         linear_extrude(height+0.02, convexity=5)
         offset(r=(hole_diameter-2.4)/2)
         m2_holes();
+        
+        if (window_mounting_detents) {
+            translate([0, 0, -0.01])
+            linear_extrude(height+0.02, convexity=5)
+            offset(r=(hole_diameter-2.4)/2)
+            window_mounting_holes();
+        }
     }
 }
 
@@ -253,9 +263,10 @@ module bottom_case_high_profile(
     screw_detent_diameter=4,
     screw_detent_depth=1.5,
     scuf_detents=true,
+    window_mounting_detents=true
 ) {
     difference() {
-        bottom_plate(height=height, bottom_fillet=bottom_fillet, hole_diameter=hole_diameter);
+        bottom_plate(height=height, bottom_fillet=bottom_fillet, hole_diameter=hole_diameter, window_mounting_detents=window_mounting_detents);
         
         if (bottom_thickness < height) {
             // Inner cutout
@@ -273,17 +284,33 @@ module bottom_case_high_profile(
             linear_extrude(screw_detent_depth, convexity=5)
             offset(r=(screw_detent_diameter-3.2)/2)
             m2_spacers();
+            
+            if (window_mounting_detents) {
+                linear_extrude(screw_detent_depth, convexity=5)
+                offset(r=(screw_detent_diameter-2.4)/2)
+                window_mounting_holes();
+            }
         }
         
         // SCUF Rubber feet detents
         if (scuf_detents) {
+            center_to_board_bottom = [0, 3.68];
+            board_bottom_to_top_index = [57.105, 41.097];
+            top_index_to_board_edge = [0.2, 0.1];
+            board_bottom_to_home_pinky = [121.363, 18.986];
+       
+            top_right_scuf = center_to_board_bottom + board_bottom_to_top_index  + top_index_to_board_edge;
+            mid_right_scuf =  center_to_board_bottom + board_bottom_to_home_pinky;
+            bot_right_scuf = [56, -33];
+
             // [x, y, rotation]
             detent_locations = [
-                [0, 38.5, 0],  // top-middle
-                [-115, 38.5, 0],  // top-right
-                [115, 38.5, 0],  // top-left
-                [-56, -33, -46],  // bottom-right
-                [56, -33, 46],  // bottom-left
+                [top_right_scuf.x, top_right_scuf.y, 14],  // top-right
+                [-top_right_scuf.x, top_right_scuf.y, -14],  // top-right
+                [mid_right_scuf.x, mid_right_scuf.y, 90+14],  // mid-right
+                [-mid_right_scuf.x, mid_right_scuf.y, 90-14],  // mid-left
+                [bot_right_scuf.x, bot_right_scuf.y, 46],  // bottom-right
+                [-bot_right_scuf.x, bot_right_scuf.y, -46],  // bottom-left
             ];
             for (l=detent_locations) {
                 translate([l.x, l.y, 0])
@@ -298,7 +325,7 @@ module bottom_case_high_profile(
 //--------------------------------------------------------------------------------
 /** Construct the low profile bottom case.
  */
-module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5) {  
+module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, window_mounting_detents=true) {  
     // Most of the low profile bottom case is a special case of the high profile case
     bottom_case_high_profile(
         height=5,  // Total case thickness = min height of m2 x 3 heatset inserts + 1mm for screws and stability= 5mm
@@ -306,12 +333,13 @@ module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5) {
         bottom_fillet=bottom_fillet,
         wall_thickness=wall_thickness,
         hole_diameter=3.1,  // diameter needed for the heatset inserts
-        screw_detent_depth=0  // we don't have screws!
+        screw_detent_depth=0,  // we don't have screws!
+        window_mounting_detents=window_mounting_detents
     );
     
     // Create the outer wall for the heatset inserts
     // Wall diameter = 3.1 + 2*1.3 = 5.7
-    translate([0, 0, 2])
+    translate([0, 0, 2]) {
     difference() {
         linear_extrude(height=2, convexity=5)
         offset(r=(5.7-3.2)/2)
@@ -325,7 +353,21 @@ module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5) {
         linear_extrude(height=2+0.01, convexity=5)
         component_cutouts();
     }
-    
+            
+        
+    if (window_mounting_detents) {
+        difference() {
+            linear_extrude(height=2, convexity=5)
+            offset(r=(5.7-2.4)/2)
+            window_mounting_holes();
+        
+            translate([0, 0, -0.01])
+            linear_extrude(height=2+0.02, convexity=5)
+            offset(r=(3.1-2.4)/2)
+            window_mounting_holes();
+        }
+    }
+    }
 }
 
 
@@ -347,24 +389,24 @@ function switch_type_to_case_height(switch_type) = (
 
 
 //--------------------------------------------------------------------------------
-module generate_bottom_case(case_type, switch_type) {
+module generate_bottom_case(case_type, switch_type, window_mounting_holes) {
      // translation helps with assembly so height doesn't need to be known at assembly
     if (case_type==0) {  // Plate: compatible with all switch type
-        bottom_plate();
+        bottom_plate(window_mounting_detents=window_mounting_holes);
     }
     else if (case_type==1) {  // Low profile case
         translate([0, 0, -5])
-        bottom_case_low_profile();
+        bottom_case_low_profile(window_mounting_detents=window_mounting_holes);
     }
     else if (case_type==2) {  // High profile case
         case_height = switch_type_to_case_height(switch_type);
         assert(!is_undef(case_height), str("height is undefined! switch_type must be [0,1,2] (is ", switch_type, ")"));
         translate([0, 0, -case_height])
-        bottom_case_high_profile(height=case_height);
+        bottom_case_high_profile(height=case_height, window_mounting_detents=window_mounting_holes);
     }
     else {
         assert(false, str("invalid case type! case_type must be [0,1,2] (is ", case_type, ")"));
     }
 }
 
-generate_bottom_case(Case_type, Switch_type);
+generate_bottom_case(Case_type, Switch_type, Window_mounting_holes);

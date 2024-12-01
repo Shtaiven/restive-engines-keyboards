@@ -49,7 +49,7 @@ module case_assembly(case_type, switch_type, pcb_thickness) {
     pcb(PCB_thickness);
     
     color("white", 0.2)
-    generate_bottom_case(Case_type, Switch_type);
+    generate_bottom_case(Case_type, Switch_type, window_mounting_holes=Case_type!=0);
 }
 
 case_assembly(Case_type, Switch_type, PCB_thickness);
