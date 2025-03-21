@@ -6,13 +6,16 @@ $fs = $preview ? 0.5 : 0.1;
 $fa = $preview ? 3 : 0.1;
 
 // type of case
-Case_type = 0; // [0:Plate, 1:Low profile case, 2:High profile case]
+Case_type = 0; // [0:Plate, 1:Low profile case, 2:Spacer case]
 
-// effects case height for high profile
+// effects case height for spacer case
 Switch_type = 0; // [0:MX, 1:Choc v1, 2:Choc v2]
 
 // place holes for mounting the center window to the bottom
 Window_mounting_holes = false;
+
+// threaded insert type
+Threaded_insert_type = 0;  // [0:Heatset, 1:Resin]
 
 /* [Hidden] */
 
@@ -233,7 +236,7 @@ module component_cutouts(socket_pad_size=2.6, diode_size=5.2) {
 
 
 //--------------------------------------------------------------------------------
-/** Inner cutout of the bottom case for the high profile case.
+/** Inner cutout of the bottom case for the spacer case.
  *  Params:
  *    height (float): height of the cutout
  */
@@ -245,7 +248,7 @@ module bottom_case_inner(height=2, wall_thickness=0.8) {
 
 
 //--------------------------------------------------------------------------------
-/** Construct the high profile bottom case.
+/** Construct the PCB spacer-based bottom case, which uses screws on both sides.
  *  Params:
  *    height (float): total height of the bottom case
  *    bottom_fillet (float): radius of the bottom fillet
@@ -254,7 +257,7 @@ module bottom_case_inner(height=2, wall_thickness=0.8) {
  *    screw_detent_diameter (float): diameter of the screw detents
  *    screw_detent_depth (float): depth of the screw detents
  */
-module bottom_case_high_profile(
+module bottom_case_for_spacers(
     height=5,
     bottom_thickness=3,
     bottom_fillet=1.1,
@@ -325,14 +328,14 @@ module bottom_case_high_profile(
 //--------------------------------------------------------------------------------
 /** Construct the low profile bottom case.
  */
-module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, window_mounting_detents=true) {  
-    // Most of the low profile bottom case is a special case of the high profile case
-    bottom_case_high_profile(
+module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diameter=3.1, window_mounting_detents=true) {  
+    // Most of the low profile bottom case is a special case of the spacer case
+    bottom_case_for_spacers(
         height=5,  // Total case thickness = min height of m2 x 3 heatset inserts + 1mm for screws and stability= 5mm
         bottom_thickness=3,  // Leave enough space for components
         bottom_fillet=bottom_fillet,
         wall_thickness=wall_thickness,
-        hole_diameter=3.1,  // diameter needed for the heatset inserts
+        hole_diameter=hole_diameter,  // diameter needed for the heatset inserts
         screw_detent_depth=0,  // we don't have screws!
         window_mounting_detents=window_mounting_detents
     );
@@ -342,12 +345,12 @@ module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, window_mou
     translate([0, 0, 2]) {
     difference() {
         linear_extrude(height=2, convexity=5)
-        offset(r=(5.7-3.2)/2)
+        offset(r=(hole_diameter+2.6-3.2)/2)
         m2_spacers();
         
         translate([0, 0, -0.01])
         linear_extrude(height=2+0.02, convexity=5)
-        offset(r=(3.1-3.2)/2)
+        offset(r=(hole_diameter-3.2)/2)
         m2_spacers();
         
         linear_extrude(height=2+0.01, convexity=5)
@@ -358,12 +361,12 @@ module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, window_mou
     if (window_mounting_detents) {
         difference() {
             linear_extrude(height=2, convexity=5)
-            offset(r=(5.7-2.4)/2)
+            offset(r=(hole_diameter+2.6-2.4)/2)
             window_mounting_holes();
         
             translate([0, 0, -0.01])
             linear_extrude(height=2+0.02, convexity=5)
-            offset(r=(3.1-2.4)/2)
+            offset(r=(hole_diameter-2.4)/2)
             window_mounting_holes();
         }
     }
@@ -389,24 +392,52 @@ function switch_type_to_case_height(switch_type) = (
 
 
 //--------------------------------------------------------------------------------
-module generate_bottom_case(case_type, switch_type, window_mounting_holes) {
-     // translation helps with assembly so height doesn't need to be known at assembly
+function threaded_insert_type_to_hole_diameter(threaded_insert_type) = (
+    // These are for CNC Kitchen M2 heatset inserts with 3.6 outer diameter (d1)
+    threaded_insert_type==0 ?
+        // heatset: the material will melt around the insert and the hole is smaller than the insert
+        3.1 :
+    threaded_insert_type==1 ?
+        // resin: the material doesn't melt and should be slightly bigger than the insert (0.2mm tolerance)
+        3.8 :
+    undef
+);
+
+
+//--------------------------------------------------------------------------------
+function threaded_insert_type_to_detent_diameter(threaded_insert_type) = (
+    // These are for CNC Kitchen M2 heatset inserts with 3.1 smaller diameter (d2)
+    threaded_insert_type==0 ?
+        // heatset: no bottom detent
+        0 :
+    threaded_insert_type==1 ?
+        // resin: 3.1mm for smaller diameter (d2) + 0.2mm tolerance
+        3.3 :
+    undef
+);
+
+
+//--------------------------------------------------------------------------------
+module generate_bottom_case(case_type, switch_type, window_mounting_holes, threaded_insert_type) {    
+    // translation helps with assembly so height doesn't need to be known at assembly
     if (case_type==0) {  // Plate: compatible with all switch type
         bottom_plate(window_mounting_detents=window_mounting_holes);
     }
     else if (case_type==1) {  // Low profile case
+        hole_diameter = threaded_insert_type_to_hole_diameter(threaded_insert_type);
+        detent_diameter = threaded_insert_type_to_detent_diameter(threaded_insert_type);
         translate([0, 0, -5])
-        bottom_case_low_profile(window_mounting_detents=window_mounting_holes);
+        bottom_case_low_profile(hole_diameter=hole_diameter, window_mounting_detents=window_mounting_holes);
     }
-    else if (case_type==2) {  // High profile case
+    else if (case_type==2) {  // Spacer case for which screws in from the bottom
         case_height = switch_type_to_case_height(switch_type);
         assert(!is_undef(case_height), str("height is undefined! switch_type must be [0,1,2] (is ", switch_type, ")"));
         translate([0, 0, -case_height])
-        bottom_case_high_profile(height=case_height, window_mounting_detents=window_mounting_holes);
+        bottom_case_for_spacers(height=case_height, window_mounting_detents=window_mounting_holes);
     }
     else {
         assert(false, str("invalid case type! case_type must be [0,1,2] (is ", case_type, ")"));
     }
 }
 
-generate_bottom_case(Case_type, Switch_type, Window_mounting_holes);
+generate_bottom_case(Case_type, Switch_type, Window_mounting_holes, Threaded_insert_type);
