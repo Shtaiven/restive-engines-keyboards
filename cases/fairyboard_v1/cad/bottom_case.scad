@@ -11,11 +11,12 @@ Case_type = 0; // [0:Plate, 1:Low profile case, 2:Spacer case]
 // effects case height for spacer case
 Switch_type = 0; // [0:MX, 1:Choc v1, 2:Choc v2]
 
+// threaded insert type for the low profile case
+Threaded_insert_type = 0;  // [0:Heatset, 1:Resin]
+
+
 // place holes for mounting the center window to the bottom
 Window_mounting_holes = false;
-
-// threaded insert type
-Threaded_insert_type = 0;  // [0:Heatset, 1:Resin]
 
 /* [Hidden] */
 
@@ -28,7 +29,7 @@ Threaded_insert_type = 0;  // [0:Heatset, 1:Resin]
  *      requirement height >= bottom_fillet > 0
  *    hole_diameter (float): diameter of the screw holes
  */
-module bottom_plate(height=1.5, bottom_fillet=0, hole_diameter=2.4, window_mounting_detents=true) {
+module bottom_plate(height=1.5, bottom_fillet=0, hole_diameter=2.4, hole_depth=undef, window_mounting_detents=true) {
     difference() {
     
         // Create the fillet at the bottom of the plate if wanted
@@ -45,14 +46,14 @@ module bottom_plate(height=1.5, bottom_fillet=0, hole_diameter=2.4, window_mount
         }
         
         // Cut out the holes
-        translate([0, 0, -0.01])
-        linear_extrude(height+0.02, convexity=5)
+        translate([0, 0, is_undef(hole_depth) ? -0.01 : height-hole_depth])
+        linear_extrude(is_undef(hole_depth) ? height+0.02 : hole_depth, convexity=5)
         offset(r=(hole_diameter-2.4)/2)
         m2_holes();
         
         if (window_mounting_detents) {
-            translate([0, 0, -0.01])
-            linear_extrude(height+0.02, convexity=5)
+            translate([0, 0, is_undef(hole_depth) ? -0.01 : height-hole_depth])
+            linear_extrude(is_undef(hole_depth) ? height+0.02 : hole_depth, convexity=5)
             offset(r=(hole_diameter-2.4)/2)
             window_mounting_holes();
         }
@@ -263,13 +264,19 @@ module bottom_case_for_spacers(
     bottom_fillet=1.1,
     wall_thickness=1.5,
     hole_diameter=2.4,
+    hole_depth=undef,
     screw_detent_diameter=4,
     screw_detent_depth=1.5,
     scuf_detents=true,
     window_mounting_detents=true
 ) {
     difference() {
-        bottom_plate(height=height, bottom_fillet=bottom_fillet, hole_diameter=hole_diameter, window_mounting_detents=window_mounting_detents);
+        bottom_plate(
+            height=height,
+            bottom_fillet=bottom_fillet,
+            hole_diameter=hole_diameter,
+            hole_depth=hole_depth,
+            window_mounting_detents=window_mounting_detents);
         
         if (bottom_thickness < height) {
             // Inner cutout
@@ -328,7 +335,7 @@ module bottom_case_for_spacers(
 //--------------------------------------------------------------------------------
 /** Construct the low profile bottom case.
  */
-module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diameter=3.1, window_mounting_detents=true) {  
+module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diameter=3.1, detent_diameter=undef, window_mounting_detents=true) {  
     // Most of the low profile bottom case is a special case of the spacer case
     bottom_case_for_spacers(
         height=5,  // Total case thickness = min height of m2 x 3 heatset inserts + 1mm for screws and stability= 5mm
@@ -336,13 +343,16 @@ module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diame
         bottom_fillet=bottom_fillet,
         wall_thickness=wall_thickness,
         hole_diameter=hole_diameter,  // diameter needed for the heatset inserts
-        screw_detent_depth=0,  // we don't have screws!
+        hole_depth=is_undef(detent_diameter) ? undef : 3.2,
+        screw_detent_diameter=is_undef(detent_diameter) ? 4 : detent_diameter,
+        screw_detent_depth=is_undef(detent_diameter) ? 0 : 5-3.2,  // height - hole_depth if using resin inserts, otherwise, nothing
         window_mounting_detents=window_mounting_detents
     );
     
-    // Create the outer wall for the heatset inserts
-    // Wall diameter = 3.1 + 2*1.3 = 5.7
-    translate([0, 0, 2]) {
+    // Create the outer wall for the threaded inserts
+    // Wall diameter = hole_diameter + 2*1.3
+    // We translate up by the bottom thickness so that the inserts are supporting the pcb
+    translate([0, 0, 3]) {
     difference() {
         linear_extrude(height=2, convexity=5)
         offset(r=(hole_diameter+2.6-3.2)/2)
@@ -409,7 +419,7 @@ function threaded_insert_type_to_detent_diameter(threaded_insert_type) = (
     // These are for CNC Kitchen M2 heatset inserts with 3.1 smaller diameter (d2)
     threaded_insert_type==0 ?
         // heatset: no bottom detent
-        0 :
+        undef :
     threaded_insert_type==1 ?
         // resin: 3.1mm for smaller diameter (d2) + 0.2mm tolerance
         3.3 :
@@ -427,7 +437,7 @@ module generate_bottom_case(case_type, switch_type, window_mounting_holes, threa
         hole_diameter = threaded_insert_type_to_hole_diameter(threaded_insert_type);
         detent_diameter = threaded_insert_type_to_detent_diameter(threaded_insert_type);
         translate([0, 0, -5])
-        bottom_case_low_profile(hole_diameter=hole_diameter, window_mounting_detents=window_mounting_holes);
+        bottom_case_low_profile(hole_diameter=hole_diameter, detent_diameter=detent_diameter, window_mounting_detents=window_mounting_holes);
     }
     else if (case_type==2) {  // Spacer case for which screws in from the bottom
         case_height = switch_type_to_case_height(switch_type);
