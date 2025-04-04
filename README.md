@@ -6,7 +6,7 @@
 
 This repository contains design and manufacturing files created by Steven Eisinger (@Shtaiven a.k.a. restive.engines). Everything you need to manufacture one of my keyboards can be found here, including pcbs, cases, and certain keycaps.
 
-For keyboard firmware, please refer to my [ZMK config repo](https://github.com/Shtaiven/shockboard-zmk-config).
+For keyboard firmware, please refer to my [ZMK config repo](https://github.com/Shtaiven/restive-engines-zmk-config).
 
 ## Keyboards
 
