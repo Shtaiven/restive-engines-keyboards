@@ -10,7 +10,7 @@ $fa = $preview ? 3 : 0.1;
 Window_type = 1;  //[0:Plate, 1:Case]
 
 // set to true if you want to export dxf for plate
-2D_projection = false;
+Projection_2D = false;
 
 /* [Window parameters] */
 
@@ -263,7 +263,7 @@ if (Window_type == 1 /* Case */) {
     );
 }
 else if (Window_type == 0 /* Plate */) {
-    if (2D_projection) {
+    if (Projection_2D) {
         projection() center_plate(
             thickness=Thickness,
             screen_cutout=Screen_cutout,
