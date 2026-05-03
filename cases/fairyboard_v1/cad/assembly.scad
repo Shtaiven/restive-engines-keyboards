@@ -7,10 +7,13 @@ $fs = $preview ? 0.5 : 0.1;
 $fa = $preview ? 3 : 0.1;
 
 // case or plate
-Case_type = 0; // [0:Plate, 1:Low profile case, 2:Spacer case]
+Case_type = 1; // [0:Plate, 1:Low profile case, 2:Spacer case]
 
 // effects case height
-Switch_type = 0; // [0:MX, 1:Choc v1, 2:Choc v2]
+Switch_type = 1; // [0:MX, 1:Choc v1, 2:Choc v2]
+
+// threaded insert type for the low profile case
+Threaded_insert_type = 0;  // [0:Heatset, 1:Resin]
 
 // thickness of pcb
 PCB_thickness = 1.6;
@@ -49,7 +52,7 @@ module case_assembly(case_type, switch_type, pcb_thickness) {
     pcb(PCB_thickness);
     
     color("white", 0.2)
-    generate_bottom_case(Case_type, Switch_type, window_mounting_holes=Case_type!=0);
+    generate_bottom_case(Case_type, Switch_type, window_mounting_holes=Case_type!=0, Threaded_insert_type, bottom_fillet=1.1);
 }
 
 case_assembly(Case_type, Switch_type, PCB_thickness);

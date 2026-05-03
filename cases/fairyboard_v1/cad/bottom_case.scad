@@ -6,17 +6,19 @@ $fs = $preview ? 0.5 : 0.1;
 $fa = $preview ? 3 : 0.1;
 
 // type of case
-Case_type = 0; // [0:Plate, 1:Low profile case, 2:Spacer case]
+Case_type = 1; // [0:Plate, 1:Low profile case, 2:Spacer case]
 
 // effects case height for spacer case
-Switch_type = 0; // [0:MX, 1:Choc v1, 2:Choc v2]
+Switch_type = 1; // [0:MX, 1:Choc v1, 2:Choc v2]
 
 // threaded insert type for the low profile case
 Threaded_insert_type = 0;  // [0:Heatset, 1:Resin]
 
+// bottom fillet radius (default = 1.1)
+Bottom_fillet_radius = 1.1;
 
 // place holes for mounting the center window to the bottom
-Window_mounting_holes = false;
+Window_mounting_holes = true;
 
 /* [Hidden] */
 
@@ -335,7 +337,10 @@ module bottom_case_for_spacers(
 //--------------------------------------------------------------------------------
 /** Construct the low profile bottom case.
  */
-module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diameter=3.1, detent_diameter=undef, window_mounting_detents=true) {  
+module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diameter=3.1, detent_diameter=undef, window_mounting_detents=true) {
+    // This is how long the top portion of the threaded insert is (measured from the CNC Kitchen m2 inserts)
+    threaded_insert_step_depth = 3;
+    
     // Most of the low profile bottom case is a special case of the spacer case
     bottom_case_for_spacers(
         height=5,  // Total case thickness = min height of m2 x 3 heatset inserts + 1mm for screws and stability= 5mm
@@ -343,9 +348,9 @@ module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diame
         bottom_fillet=bottom_fillet,
         wall_thickness=wall_thickness,
         hole_diameter=hole_diameter,  // diameter needed for the heatset inserts
-        hole_depth=is_undef(detent_diameter) ? undef : 3.2,
-        screw_detent_diameter=is_undef(detent_diameter) ? 4 : detent_diameter,
-        screw_detent_depth=is_undef(detent_diameter) ? 0 : 5-3.2,  // height - hole_depth if using resin inserts, otherwise, nothing
+        hole_depth=is_undef(detent_diameter) ? undef : threaded_insert_step_depth,
+        screw_detent_diameter=is_undef(detent_diameter) ? 0 : detent_diameter,
+        screw_detent_depth=is_undef(detent_diameter) ? 0 : 5-threaded_insert_step_depth,  // height - hole_depth if using resin inserts, otherwise, nothing
         window_mounting_detents=window_mounting_detents
     );
     
@@ -428,7 +433,7 @@ function threaded_insert_type_to_detent_diameter(threaded_insert_type) = (
 
 
 //--------------------------------------------------------------------------------
-module generate_bottom_case(case_type, switch_type, window_mounting_holes, threaded_insert_type) {    
+module generate_bottom_case(case_type, switch_type, window_mounting_holes, threaded_insert_type, bottom_fillet=1.1) {    
     // translation helps with assembly so height doesn't need to be known at assembly
     if (case_type==0) {  // Plate: compatible with all switch type
         bottom_plate(window_mounting_detents=window_mounting_holes);
@@ -437,17 +442,17 @@ module generate_bottom_case(case_type, switch_type, window_mounting_holes, threa
         hole_diameter = threaded_insert_type_to_hole_diameter(threaded_insert_type);
         detent_diameter = threaded_insert_type_to_detent_diameter(threaded_insert_type);
         translate([0, 0, -5])
-        bottom_case_low_profile(hole_diameter=hole_diameter, detent_diameter=detent_diameter, window_mounting_detents=window_mounting_holes);
+        bottom_case_low_profile(bottom_fillet=bottom_fillet,hole_diameter=hole_diameter, detent_diameter=detent_diameter, window_mounting_detents=window_mounting_holes);
     }
     else if (case_type==2) {  // Spacer case for which screws in from the bottom
         case_height = switch_type_to_case_height(switch_type);
         assert(!is_undef(case_height), str("height is undefined! switch_type must be [0,1,2] (is ", switch_type, ")"));
         translate([0, 0, -case_height])
-        bottom_case_for_spacers(height=case_height, window_mounting_detents=window_mounting_holes);
+        bottom_case_for_spacers(bottom_fillet=bottom_fillet, height=case_height, window_mounting_detents=window_mounting_holes);
     }
     else {
         assert(false, str("invalid case type! case_type must be [0,1,2] (is ", case_type, ")"));
     }
 }
 
-generate_bottom_case(Case_type, Switch_type, Window_mounting_holes, Threaded_insert_type);
+generate_bottom_case(Case_type, Switch_type, Window_mounting_holes, Threaded_insert_type, Bottom_fillet_radius);
