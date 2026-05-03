@@ -11,6 +11,12 @@ Case_type = 0; // [0:Plate, 1:Case]
 // effects cutout size and wall height
 Switch_type = 0; // [0:MX, 1:Choc v1, 2:Choc v2]
 
+// top fillet radius (default = 1.1)
+Top_fillet_radius = 1.1;
+
+// if true, rounds inner top corners
+Corner_correction = true;
+
 /* [Hidden] */
 
 
@@ -84,7 +90,7 @@ module wing_cutouts(wall_thickness=1.5) {
  *    choc_v1_cutouts (bool): choc cutouts and 1.2 height if true
  *      otherwise mx cutouts and 1.5 height
  */
-module top_case_no_fillet(wall_height=5, choc_v1_cutouts=false) {
+module top_case_no_fillet(wall_height=5, choc_v1_cutouts=false, corner_correction=true) {
     translate([0, 0, wall_height])
     difference() {
         union() {
@@ -93,7 +99,10 @@ module top_case_no_fillet(wall_height=5, choc_v1_cutouts=false) {
         }
 
         // Cutouts for the top wings to reduce material
-        mirror([0, 0, 1])
+        // Disabled as this reduces text visibility
+        // BUG: Large, infinitely long wings have appeared
+        // with a recent update to OpenSCAD
+        *mirror([0, 0, 1])
         linear_extrude(wall_height+0.01, convexity=5)
         wing_cutouts();
         
@@ -117,15 +126,17 @@ module top_case_no_fillet(wall_height=5, choc_v1_cutouts=false) {
             translate([0, -0.326, 0])
             board_connector_extended();
 
-            // Round the top right corner of the left plate
-            translate([-28.27, 42.71 , 0])
-            rotate([0, 0, -14])
-            edge_rounding_tool(1.1);
-            
-            // Round the top left corner of the right plate
-            translate([28.27, 42.71, 0])
-            rotate([0, 0, 104])
-            edge_rounding_tool(1.1);
+            if (corner_correction) {
+                // Round the top right corner of the left plate
+                translate([-28.27, 42.71 , 0])
+                rotate([0, 0, -14])
+                edge_rounding_tool(1.1);
+                
+                // Round the top left corner of the right plate
+                translate([28.27, 42.71, 0])
+                rotate([0, 0, 104])
+                edge_rounding_tool(1.1);
+            }
         }
     }
 }
@@ -139,10 +150,10 @@ module top_case_no_fillet(wall_height=5, choc_v1_cutouts=false) {
  *    choc_v1_cutouts (bool): choc cutouts and add 1.2 height if true
  *      otherwise mx cutouts and add 1.5 height to total object height
  */
-module top_case(wall_height=5, top_fillet=1, choc_v1_cutouts=false) {
+module top_case(wall_height=5, top_fillet=1, choc_v1_cutouts=false, corner_correction=true) {
     height_addition = choc_v1_cutouts ? 1.2 : 1.5;
     top_fillet(radius=top_fillet, top=wall_height+height_addition, bottom=0, convexity=5)
-    top_case_no_fillet(wall_height, choc_v1_cutouts);
+    top_case_no_fillet(wall_height, choc_v1_cutouts, corner_correction);
 }
 
 
@@ -165,13 +176,13 @@ function switch_type_to_wall_height(switch_type) = (
 
 
 //--------------------------------------------------------------------------------
-module generate_top_case(case_type, switch_type) { 
+module generate_top_case(case_type, switch_type, top_fillet_radius=1.1, corner_correction=true) { 
     choc_v1_cutouts = switch_type==1;  // MX/Choc v2 or Choc v1 cutouts
     wall_height = case_type==0 ? 0 : switch_type_to_wall_height(switch_type);
-    top_fillet = case_type==0 ? 0 : 1.1;
+    top_fillet = case_type==0 ? 0 : top_fillet_radius;
     
     assert(!is_undef(wall_height), str("wall_height is undefined! switch_type must be [0,1,2] (is ", switch_type, ")"));
-    top_case(wall_height=wall_height, top_fillet=top_fillet, choc_v1_cutouts=choc_v1_cutouts);
+    top_case(wall_height=wall_height, top_fillet=top_fillet, choc_v1_cutouts=choc_v1_cutouts, corner_correction=corner_correction);
 }
 
-generate_top_case(Case_type, Switch_type);
+generate_top_case(Case_type, Switch_type, Top_fillet_radius, Corner_correction);
