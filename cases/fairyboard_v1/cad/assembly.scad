@@ -19,7 +19,7 @@ Threaded_insert_type = 0;  // [0:Heatset, 1:Resin]
 Outer_wall = true;
 
 // thickness of pcb
-PCB_thickness = 1.5;
+PCB_thickness = 1.6;
 
 /* [Hidden] */
 

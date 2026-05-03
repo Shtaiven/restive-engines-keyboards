@@ -34,19 +34,21 @@ Outer_wall = true;
  *      requirement height >= bottom_fillet > 0
  *    hole_diameter (float): diameter of the screw holes
  */
-module bottom_plate(height=1.5, bottom_fillet=0, hole_diameter=2.4, hole_depth=undef, window_mounting_detents=true) {
+module bottom_plate(height=1.5, bottom_fillet=0, hole_diameter=2.4, hole_depth=undef, window_mounting_detents=true, tolerance=0) {
     difference() {
     
         // Create the fillet at the bottom of the plate if wanted
         if (height >= bottom_fillet && bottom_fillet > 0) {
             bottom_fillet(bottom_fillet, height, 0, convexity=5)
             linear_extrude(height, convexity=5)
+            offset(delta=tolerance)
             pcb_outline();
         }
 
         // Simply extrude otherwise
         else {
             linear_extrude(height, convexity=5)
+            offset(delta=tolerance)
             pcb_outline();
         }
         
@@ -255,14 +257,15 @@ module bottom_case_inner(height=2, wall_thickness=0.8) {
 //--------------------------------------------------------------------------------
 /** Construct the outer wall of the case.
  */
-module construct_outer_wall(fillet=1.1, thickness=1.5, height=5, terminal8_cutout=true, terminal5_cutout=false, power_switch_cutout=true, reset_button_cutout=true) {
+module construct_outer_wall(fillet=1.1, thickness=1.5, height=5, tolerance=0.3, terminal8_cutout=true, terminal5_cutout=false, power_switch_cutout=true, reset_button_cutout=true) {
     difference() {
     top_bottom_fillet(fillet, height, 0, convexity=5)
     linear_extrude(height)
-    offset(r=thickness)
+    offset(delta=thickness+tolerance)
     pcb_outline();
 
     linear_extrude(height)
+    offset(delta=tolerance)
     pcb_outline();
 
     // All cutouts
@@ -323,7 +326,8 @@ module bottom_case_for_spacers(
     screw_detent_diameter=4,
     screw_detent_depth=1.5,
     scuf_detents=true,
-    window_mounting_detents=true
+    window_mounting_detents=true,
+    tolerance=0
 ) {
     difference() {
         bottom_plate(
@@ -331,7 +335,8 @@ module bottom_case_for_spacers(
             bottom_fillet=bottom_fillet,
             hole_diameter=hole_diameter,
             hole_depth=hole_depth,
-            window_mounting_detents=window_mounting_detents);
+            window_mounting_detents=window_mounting_detents,
+            tolerance=tolerance);
         
         if (bottom_thickness < height) {
             // Inner cutout
@@ -395,6 +400,7 @@ module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diame
     threaded_insert_step_depth = 3;
     inner_bottom_fillet = outer_wall ? 0 : bottom_fillet;
     inner_wall_thickness = outer_wall ? 1 : wall_thickness;
+    tolerance = outer_wall ? 0.3 : 0;
     
     // Most of the low profile bottom case is a special case of the spacer case
     bottom_case_for_spacers(
@@ -406,7 +412,8 @@ module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diame
         hole_depth=is_undef(detent_diameter) ? undef : threaded_insert_step_depth,
         screw_detent_diameter=is_undef(detent_diameter) ? 0 : detent_diameter,
         screw_detent_depth=is_undef(detent_diameter) ? 0 : 5-threaded_insert_step_depth,  // height - hole_depth if using resin inserts, otherwise, nothing
-        window_mounting_detents=window_mounting_detents
+        window_mounting_detents=window_mounting_detents,
+        tolerance=tolerance
     );
     
     // Create the outer wall for the threaded inserts
@@ -443,10 +450,10 @@ module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diame
     }
     
     // Create an outer wall for the entire case
-    outer_wall_height = 5+1.5+2.2;  // bottom_case height + pcb height + top_case thickness low profile
+    outer_wall_height = 5+1.6+2.2;  // bottom_case height + pcb height + top_case thickness low profile
     
     if (outer_wall) {
-        construct_outer_wall(fillet=bottom_fillet, thickness=wall_thickness, height=outer_wall_height);
+        construct_outer_wall(fillet=bottom_fillet, thickness=wall_thickness, height=outer_wall_height, tolerance=tolerance);
     }
 }
 
