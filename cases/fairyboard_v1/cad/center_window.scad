@@ -211,7 +211,7 @@ module center_window(
             linear_extrude(window_height+thickness+1)
             offset(r=fillet)
             offset(delta=-fillet)
-            #square([screen_dims.x, screen_dims.y]);
+            square([screen_dims.x, screen_dims.y]);
         }
     }
 }

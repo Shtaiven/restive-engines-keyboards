@@ -20,6 +20,9 @@ Bottom_fillet_radius = 1.1;
 // place holes for mounting the center window to the bottom
 Window_mounting_holes = true;
 
+// outer wall that will hide the pcb
+Outer_wall = true;
+
 /* [Hidden] */
 
 
@@ -249,6 +252,56 @@ module bottom_case_inner(height=2, wall_thickness=0.8) {
     pcb_outline();
 }
 
+//--------------------------------------------------------------------------------
+/** Construct the outer wall of the case.
+ */
+module construct_outer_wall(fillet=1.1, thickness=1.5, height=5, terminal8_cutout=true, terminal5_cutout=false, power_switch_cutout=true, reset_button_cutout=true) {
+    difference() {
+    top_bottom_fillet(fillet, height, 0, convexity=5)
+    linear_extrude(height)
+    offset(r=thickness)
+    pcb_outline();
+
+    linear_extrude(height)
+    pcb_outline();
+
+    // All cutouts
+    cutout_height = 5.0+1.5; // cutouts need to be raise so they only affect the wall above the pcb
+    bottom_offset = -2;  // y-offset of the "bottom" of the window
+    
+    // Terminal cutouts
+    if (terminal8_cutout) {
+        translate([-11.78, bottom_offset, cutout_height])
+        mirror([1, 0, 0])
+        // extra x added to chop off; the thin bit left over
+        cube([21.0, 7.4, 5]);
+    }
+
+    if (terminal5_cutout) {
+        translate([11.84, bottom_offset, cutout_height])
+        cube([13.26, 7.4, 5]);
+    }
+
+    top_edge_offset = 50;
+
+    // Slide switch cutout
+    if (power_switch_cutout) {
+        pwr_sw_size = [9.2, 9, 3];
+        translate([13.2, top_edge_offset, cutout_height])
+        mirror([0, 1, 0])
+        cube(pwr_sw_size);
+    }
+
+    // Reset button cutout
+    if (reset_button_cutout) {
+        reset_btn_size = [8.5, 9, 5];
+        translate([-13.8, top_edge_offset, cutout_height])
+        mirror([1, 1, 0])
+        cube(reset_btn_size);
+    }
+    }
+}
+
 
 //--------------------------------------------------------------------------------
 /** Construct the PCB spacer-based bottom case, which uses screws on both sides.
@@ -337,16 +390,18 @@ module bottom_case_for_spacers(
 //--------------------------------------------------------------------------------
 /** Construct the low profile bottom case.
  */
-module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diameter=3.1, detent_diameter=undef, window_mounting_detents=true) {
+module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diameter=3.1, detent_diameter=undef, window_mounting_detents=true, outer_wall=true) {
     // This is how long the top portion of the threaded insert is (measured from the CNC Kitchen m2 inserts)
     threaded_insert_step_depth = 3;
+    inner_bottom_fillet = outer_wall ? 0 : bottom_fillet;
+    inner_wall_thickness = outer_wall ? 1 : wall_thickness;
     
     // Most of the low profile bottom case is a special case of the spacer case
     bottom_case_for_spacers(
         height=5,  // Total case thickness = min height of m2 x 3 heatset inserts + 1mm for screws and stability= 5mm
         bottom_thickness=3,  // Leave enough space for components
-        bottom_fillet=bottom_fillet,
-        wall_thickness=wall_thickness,
+        bottom_fillet=inner_bottom_fillet,
+        wall_thickness=inner_wall_thickness,
         hole_diameter=hole_diameter,  // diameter needed for the heatset inserts
         hole_depth=is_undef(detent_diameter) ? undef : threaded_insert_step_depth,
         screw_detent_diameter=is_undef(detent_diameter) ? 0 : detent_diameter,
@@ -372,7 +427,7 @@ module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diame
         component_cutouts();
     }
             
-        
+    // Mounting holes for the center window    
     if (window_mounting_detents) {
         difference() {
             linear_extrude(height=2, convexity=5)
@@ -385,6 +440,13 @@ module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diame
             window_mounting_holes();
         }
     }
+    }
+    
+    // Create an outer wall for the entire case
+    outer_wall_height = 5+1.5+2.2;  // bottom_case height + pcb height + top_case thickness low profile
+    
+    if (outer_wall) {
+        construct_outer_wall(fillet=bottom_fillet, thickness=wall_thickness, height=outer_wall_height);
     }
 }
 
@@ -433,7 +495,7 @@ function threaded_insert_type_to_detent_diameter(threaded_insert_type) = (
 
 
 //--------------------------------------------------------------------------------
-module generate_bottom_case(case_type, switch_type, window_mounting_holes, threaded_insert_type, bottom_fillet=1.1) {    
+module generate_bottom_case(case_type, switch_type, window_mounting_holes, threaded_insert_type, bottom_fillet=1.1, outer_wall=false) {    
     // translation helps with assembly so height doesn't need to be known at assembly
     if (case_type==0) {  // Plate: compatible with all switch type
         bottom_plate(window_mounting_detents=window_mounting_holes);
@@ -442,7 +504,7 @@ module generate_bottom_case(case_type, switch_type, window_mounting_holes, threa
         hole_diameter = threaded_insert_type_to_hole_diameter(threaded_insert_type);
         detent_diameter = threaded_insert_type_to_detent_diameter(threaded_insert_type);
         translate([0, 0, -5])
-        bottom_case_low_profile(bottom_fillet=bottom_fillet,hole_diameter=hole_diameter, detent_diameter=detent_diameter, window_mounting_detents=window_mounting_holes);
+        bottom_case_low_profile(bottom_fillet=bottom_fillet,hole_diameter=hole_diameter, detent_diameter=detent_diameter, window_mounting_detents=window_mounting_holes, outer_wall=outer_wall);
     }
     else if (case_type==2) {  // Spacer case for which screws in from the bottom
         case_height = switch_type_to_case_height(switch_type);
@@ -455,4 +517,4 @@ module generate_bottom_case(case_type, switch_type, window_mounting_holes, threa
     }
 }
 
-generate_bottom_case(Case_type, Switch_type, Window_mounting_holes, Threaded_insert_type, Bottom_fillet_radius);
+generate_bottom_case(Case_type, Switch_type, Window_mounting_holes, Threaded_insert_type, Bottom_fillet_radius, Outer_wall);
