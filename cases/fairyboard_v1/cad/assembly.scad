@@ -39,6 +39,8 @@ module pcb(thickness=1.6) {
 module case_assembly(case_type, switch_type, pcb_thickness, threaded_insert_type, outer_wall) {
     top_fillet_radius = outer_wall ? 0 : 1.1;
     corner_correction = outer_wall? false : true;
+    is_lp_walled = outer_wall && case_type == 1 && switch_type != 0;
+    
     alpha = 1.0;
     color("white", alpha)
     translate([0, 0, pcb_thickness])
@@ -51,7 +53,9 @@ module case_assembly(case_type, switch_type, pcb_thickness, threaded_insert_type
     center_window(
         wall_height=center_window_wall_height,
         thickness=1.5,
-        hollow=switch_type==0
+        hollow=switch_type==0,
+        fillet=is_lp_walled ? 0 : 1.1,
+        corner_rounding=!is_lp_walled
     );
     
     color("purple")

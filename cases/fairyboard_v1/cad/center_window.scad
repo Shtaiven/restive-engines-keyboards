@@ -53,15 +53,17 @@ JST_cutout=true;
 // hollow out the base shape
 Hollow=true;
 
+Corner_rounding=true;
+
 /* [Hidden] */
 
 
 //--------------------------------------------------------------------------------
 /// Create the base shape of the center window.
-module center_window_base() {
-    scale([0.99, 1, 1])
-    offset(r=1.1)
-    offset(delta=-1.1)
+module center_window_base(corner_radius=1.1) {
+    scale([0.985, 1, 1])
+    offset(r=corner_radius)
+    offset(delta=-corner_radius)
     board_connector();
 }
 
@@ -105,6 +107,7 @@ module center_window(
     power_switch_cutout=true,
     jst_cutout=true,
     hollow=true,
+    corner_rounding=true
 ) {
     max_window_fillet = 4;
     calculated_window_fillet = min(window_height-wall_height, max_window_fillet);
@@ -115,7 +118,7 @@ module center_window(
             // Create the main hollowed window shape
             top_fillet(fillet, wall_height+thickness, 0)
             linear_extrude(thickness+wall_height, convexity=5)
-            center_window_base();
+            center_window_base(corner_rounding ? 1.1 : 0);
             
             // Create the window bump
             if (window_height > wall_height) {
@@ -171,8 +174,8 @@ module center_window(
             translate([-usb_dims.x/2, top_edge_offset+1, 2.5])
             rotate([90, 0 ,0])
             linear_extrude(thickness+2)
-            offset(r=fillet)
-            offset(delta=-fillet)
+            offset(r=window_bump_fillet)
+            offset(delta=-window_bump_fillet)
             square(usb_dims);
         }
         
@@ -241,7 +244,8 @@ module center_plate(
         reset_button_cutout=false,
         power_switch_cutout=false,
         jst_cutout=false,
-        hollow=false
+        hollow=false,
+        corner_rounding=Corner_rounding,
     );
 }
 
@@ -260,6 +264,7 @@ if (Window_type == 1 /* Case */) {
         power_switch_cutout=Power_switch_cutout,
         jst_cutout=JST_cutout,
         hollow=Hollow,
+        corner_rounding=Corner_rounding,
     );
 }
 else if (Window_type == 0 /* Plate */) {
