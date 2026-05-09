@@ -15,7 +15,7 @@ Projection_2D = false;
 /* [Window parameters] */
 
 // height of the outer walls
-Wall_height = 3.5;  //[::float]
+Wall_height = 0.7;  //[::float]
 
 // height of the circular window
 Window_height = 10.0;  //[::float]
@@ -51,9 +51,13 @@ Power_switch_cutout=true;
 JST_cutout=true;
 
 // hollow out the base shape
-Hollow=true;
+Hollow=false;
 
-Corner_rounding=true;
+// round the corners of the base
+Corner_rounding=false;
+
+// how much the window should overhang the top (for outer walls)
+Top_overhang=1.8*2 + 0.15;
 
 /* [Hidden] */
 
@@ -70,17 +74,17 @@ module center_window_base(corner_radius=1.1) {
 
 //--------------------------------------------------------------------------------
 /// Create the protruding window shape.
-module center_window_inner() {
-    intersection() {
-        translate([0, -23.575, 0])
-        center_window_base();
-        
-//        resize([27.9, 0, 0])
-//        translate([0, 23.575, 0])
-//        mirror([0, 1, 0])
-//        center_window_base(); 
+module center_window_inner(top_overhang=undef) {
+    if (is_undef(top_overhang)) {
+        intersection() {
+            translate([0, -23.575, 0])
+            center_window_base();
 
-        square([22, 50], center = true); 
+            square([22, 55], center = true); 
+        }
+    } else {
+        // allow a top overhang (helps cover usb port if you have outer walls)
+        square([22, 39.78+top_overhang], center = true);
     }
 }
 
@@ -107,7 +111,8 @@ module center_window(
     power_switch_cutout=true,
     jst_cutout=true,
     hollow=true,
-    corner_rounding=true
+    corner_rounding=true,
+    top_overhang=undef
 ) {
     max_window_fillet = 4;
     calculated_window_fillet = min(window_height-wall_height, max_window_fillet);
@@ -122,10 +127,10 @@ module center_window(
             
             // Create the window bump
             if (window_height > wall_height) {
-                translate([0, 23.575, wall_height])
-                top_fillet(top_window_fillet, thickness+window_height-wall_height, 0)
-                linear_extrude(thickness+window_height-wall_height)
-                center_window_inner();
+                translate([0, 23.575, wall_height+thickness])
+                top_fillet(top_window_fillet, window_height-wall_height, 0)
+                linear_extrude(window_height-wall_height)
+                center_window_inner(top_overhang);
             }
         }
 
@@ -170,13 +175,21 @@ module center_window(
         
         // USB cutout
         if (usb_cutout) {
-            usb_dims = [19, 6];
-            translate([-usb_dims.x/2, top_edge_offset+1, 2.5])
+            usb_overhang = is_undef(top_overhang) ? 0.0 : top_overhang;
+            usb_dims = [19, 8.5+window_bump_fillet];
+            translate([-usb_dims.x/2, top_edge_offset-thickness-0.25, -window_bump_fillet])
             rotate([90, 0 ,0])
-            linear_extrude(thickness+2)
+            linear_extrude(thickness+2, center=true)
             offset(r=window_bump_fillet)
             offset(delta=-window_bump_fillet)
             square(usb_dims);
+            
+            translate([-5, top_edge_offset+1-thickness-1+usb_overhang/2, -window_bump_fillet])
+            rotate([90, 0 ,0])
+            linear_extrude(thickness+2, center=true)
+            offset(r=window_bump_fillet)
+            offset(delta=-window_bump_fillet)
+            square([10, usb_dims.y]);
         }
         
         // Slide switch cutout
@@ -209,12 +222,17 @@ module center_window(
         
         // Optional screen cutout
         if (screen_cutout) {
+            // Original rounded extruded screen cutout
             screen_dims = [12, 26];
-            translate([-screen_dims.x/2, bottom_offset+7, 0])
-            linear_extrude(window_height+thickness+1)
-            offset(r=fillet)
-            offset(delta=-fillet)
-            square([screen_dims.x, screen_dims.y]);
+            //translate([-screen_dims.x/2, bottom_offset+7, 0])
+            //linear_extrude(window_height+thickness+1)
+            //offset(r=fillet)
+            //offset(delta=-fillet)
+            //square([screen_dims.x, screen_dims.y]);
+            
+            // New chamfered screen cutout (60 degrees)
+            translate([0, (bottom_offset+top_edge_offset)/2, window_height-0.03])
+            chamfered_rectangle([screen_dims.x+2*(thickness+0.03), screen_dims.y+(2*thickness+0.03)], screen_dims, thickness+0.03);
         }
     }
 }
@@ -265,6 +283,7 @@ if (Window_type == 1 /* Case */) {
         jst_cutout=JST_cutout,
         hollow=Hollow,
         corner_rounding=Corner_rounding,
+        top_overhang=Top_overhang
     );
 }
 else if (Window_type == 0 /* Plate */) {

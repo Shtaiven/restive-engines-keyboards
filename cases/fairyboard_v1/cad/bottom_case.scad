@@ -1,6 +1,7 @@
 use <fairyboard_v1.scad>
 use <hardware.scad>
 use <util.scad>
+use <center_window.scad>
 
 $fs = $preview ? 0.5 : 0.1;
 $fa = $preview ? 3 : 0.1;
@@ -257,51 +258,65 @@ module bottom_case_inner(height=2, wall_thickness=0.8) {
 //--------------------------------------------------------------------------------
 /** Construct the outer wall of the case.
  */
-module construct_outer_wall(fillet=1.1, thickness=1.5, height=5, tolerance=0.3, terminal8_cutout=true, terminal5_cutout=false, power_switch_cutout=true, reset_button_cutout=true) {
+module construct_outer_wall(fillet=1.1, thickness=1.5, height=5, tolerance=0.3, terminal8_cutout=true, terminal5_cutout=false, power_switch_cutout=true, reset_button_cutout=true) {    
+    // Create the wall
     difference() {
-    top_bottom_fillet(fillet, height, 0, convexity=5)
-    linear_extrude(height)
-    offset(delta=thickness+tolerance)
-    pcb_outline();
+        top_bottom_fillet(fillet, height, 0, convexity=5)
+        linear_extrude(height)
+        offset(delta=thickness+tolerance)
+        pcb_outline();
 
-    linear_extrude(height)
-    offset(delta=tolerance)
-    pcb_outline();
+        linear_extrude(height)
+        offset(delta=tolerance)
+        pcb_outline();
 
-    // All cutouts
-    cutout_height = 5.0+1.5; // cutouts need to be raise so they only affect the wall above the pcb
-    bottom_offset = -2;  // y-offset of the "bottom" of the window
+        // All cutouts
+        cutout_height = 5.0+1.5; // cutouts need to be raise so they only affect the wall above the pcb
+        bottom_offset = -2;  // y-offset of the "bottom" of the window
+        
+        // Terminal cutouts
+        if (terminal8_cutout) {
+            translate([-11.78, bottom_offset, cutout_height])
+            mirror([1, 0, 0])
+            // extra x added to chop off; the thin bit left over
+            cube([21.0, 7.4, 5]);
+        }
+
+        if (terminal5_cutout) {
+            translate([11.84, bottom_offset, cutout_height])
+            cube([13.26, 7.4, 5]);
+        }
+
+        top_edge_offset = 50;
+
+        // Slide switch cutout
+        if (power_switch_cutout) {
+            pwr_sw_size = [9.2, 9, 3];
+            translate([13.2, top_edge_offset, cutout_height])
+            mirror([0, 1, 0])
+            cube(pwr_sw_size);
+        }
+
+        // Reset button cutout
+        if (reset_button_cutout) {
+            reset_btn_size = [8.5, 9, 5];
+            translate([-13.8, top_edge_offset, cutout_height])
+            mirror([1, 1, 0])
+            cube(reset_btn_size);
+        }
+    }
     
-    // Terminal cutouts
-    if (terminal8_cutout) {
-        translate([-11.78, bottom_offset, cutout_height])
-        mirror([1, 0, 0])
-        // extra x added to chop off; the thin bit left over
-        cube([21.0, 7.4, 5]);
-    }
-
-    if (terminal5_cutout) {
-        translate([11.84, bottom_offset, cutout_height])
-        cube([13.26, 7.4, 5]);
-    }
-
-    top_edge_offset = 50;
-
-    // Slide switch cutout
-    if (power_switch_cutout) {
-        pwr_sw_size = [9.2, 9, 3];
-        translate([13.2, top_edge_offset, cutout_height])
-        mirror([0, 1, 0])
-        cube(pwr_sw_size);
-    }
-
-    // Reset button cutout
-    if (reset_button_cutout) {
-        reset_btn_size = [8.5, 9, 5];
-        translate([-13.8, top_edge_offset, cutout_height])
-        mirror([1, 1, 0])
-        cube(reset_btn_size);
-    }
+    // Create a flat lip for the center window to cover
+    translate([0, 0, height-fillet])
+    linear_extrude(fillet)
+    difference() {
+        translate([0, 23.557, 0])
+        offset(r=fillet)
+        offset(delta=-fillet)
+        center_window_inner((thickness+tolerance)*2+0.15);
+    
+        offset(delta=tolerance)
+        pcb_outline();
     }
 }
 

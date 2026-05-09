@@ -79,6 +79,25 @@ module bottom_fillet(radius, top, bottom, convexity=5) {
     children();
 }
 
+//--------------------------------------------------------------------------------
+/** Create a chamfered rectangle.
+ *  Params:
+ *    size_top: [x, y] of top square (centered)
+ *    size_bottom: [x, y] of bottom square (centered)
+ *    height: height of the object (bottom at z=0)
+ */
+module chamfered_rectangle(size_top, size_bottom, height) {
+    hull () {
+        translate([0, 0, height])
+        linear_extrude(0.01)
+        square(size_top, center=true);
+        
+        translate([0, 0, 0])
+        linear_extrude(0.01)
+        square(size_bottom, center=true);
+    }
+}
+
 
 // Testing
 $fs = $preview ? 0.5 : 0.1;
@@ -102,4 +121,8 @@ translate([10+20+5+5, 0, 0]) {
 bottom_fillet(2, 5, 0)
 cube(5);
 %cube(5);
+}
+
+translate([50, 0, 0]) {
+chamfered_rectangle([5, 10], [4, 9], 1.0);
 }

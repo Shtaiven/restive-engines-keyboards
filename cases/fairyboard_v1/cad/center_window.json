@@ -3,7 +3,7 @@
     "parameterSets": {
         "New set 1": {
             "Corner_rounding": "false",
-            "Hollow": "true",
+            "Hollow": "false",
             "JST_cutout": "true",
             "Power_switch_cutout": "true",
             "Projection_2D": "false",
