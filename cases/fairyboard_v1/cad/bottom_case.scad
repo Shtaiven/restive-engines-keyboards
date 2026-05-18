@@ -287,7 +287,7 @@ module construct_outer_wall(fillet=1.1, thickness=1.5, height=5, tolerance=0.3, 
             cube([13.26, 7.4, 5]);
         }
 
-        top_edge_offset = 50;
+        top_edge_offset = 50;       
 
         // Slide switch cutout
         if (power_switch_cutout) {
@@ -410,7 +410,7 @@ module bottom_case_for_spacers(
 //--------------------------------------------------------------------------------
 /** Construct the low profile bottom case.
  */
-module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.5, hole_diameter=3.1, detent_diameter=undef, window_mounting_detents=true, outer_wall=true) {
+module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.1, hole_diameter=3.1, detent_diameter=undef, window_mounting_detents=true, outer_wall=true) {
     // This is how long the top portion of the threaded insert is (measured from the CNC Kitchen m2 inserts)
     threaded_insert_step_depth = 3;
     inner_bottom_fillet = outer_wall ? 0 : bottom_fillet;

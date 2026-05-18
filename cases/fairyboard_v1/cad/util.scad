@@ -98,6 +98,19 @@ module chamfered_rectangle(size_top, size_bottom, height) {
     }
 }
 
+//--------------------------------------------------------------------------------
+/** USB-C Cutout. */
+module usbc_cutout() {
+    usbc_w          = 9.0;   // cutout width
+    usbc_h          = 3.1;   // cutout height
+    r               = usbc_h / 2;
+
+    hull() {
+      translate([ usbc_w/2 - r, 0]) circle(r = r);
+      translate([-usbc_w/2 + r, 0]) circle(r = r);
+    }
+}
+
 
 // Testing
 $fs = $preview ? 0.5 : 0.1;
@@ -125,4 +138,8 @@ cube(5);
 
 translate([50, 0, 0]) {
 chamfered_rectangle([5, 10], [4, 9], 1.0);
+}
+
+translate([60, 0, 0]) {
+usbc_cutout();
 }

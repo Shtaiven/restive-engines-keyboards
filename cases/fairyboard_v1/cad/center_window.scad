@@ -176,20 +176,31 @@ module center_window(
         // USB cutout
         if (usb_cutout) {
             usb_overhang = is_undef(top_overhang) ? 0.0 : top_overhang;
+            
+            // A large inner cavity compatible without a top overhang
+            // which won't pinch the nice_view screen
             usb_dims = [19, 8.5+window_bump_fillet];
             translate([-usb_dims.x/2, top_edge_offset-thickness-0.25, -window_bump_fillet])
             rotate([90, 0 ,0])
             linear_extrude(thickness+2, center=true)
-            offset(r=window_bump_fillet)
-            offset(delta=-window_bump_fillet)
+            //offset(r=window_bump_fillet)
+            //offset(delta=-window_bump_fillet)
             square(usb_dims);
             
-            translate([-5, top_edge_offset+1-thickness-1+usb_overhang/2, -window_bump_fillet])
-            rotate([90, 0 ,0])
-            linear_extrude(thickness+2, center=true)
-            offset(r=window_bump_fillet)
-            offset(delta=-window_bump_fillet)
-            square([10, usb_dims.y]);
+            // A cutout more tightly surround the usb-c connector
+            // in the presence of a top overhang
+            nice_nano_usbc_height = 4.3;
+            hull() {
+                translate([0, top_edge_offset+usb_overhang/4, nice_nano_usbc_height])
+                rotate([90, 0 ,0])
+                linear_extrude(thickness+1, center=true)
+                usbc_cutout();
+                
+                translate([0, top_edge_offset+usb_overhang/4])
+                rotate([90, 0 ,0])
+                linear_extrude(thickness+1, center=true)
+                usbc_cutout();
+            }
         }
         
         // Slide switch cutout
@@ -230,9 +241,14 @@ module center_window(
             //offset(delta=-fillet)
             //square([screen_dims.x, screen_dims.y]);
             
-            // New chamfered screen cutout (60 degrees)
+            // New chamfered screen cutout
+            chamfer_depth = thickness/2;
+            translate([0, (bottom_offset+top_edge_offset)/2, window_height+chamfer_depth-0.03])
+            chamfered_rectangle([screen_dims.x+(2*chamfer_depth+0.03), screen_dims.y+(2*chamfer_depth+0.03)], screen_dims, chamfer_depth+0.03);
+            
+            // Give it some thickness so it doesn't end on the sharp edge
             translate([0, (bottom_offset+top_edge_offset)/2, window_height-0.03])
-            chamfered_rectangle([screen_dims.x+2*(thickness+0.03), screen_dims.y+(2*thickness+0.03)], screen_dims, thickness+0.03);
+            cube([screen_dims.x, screen_dims.y, thickness], center=true);
         }
     }
 }
