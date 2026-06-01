@@ -23,11 +23,16 @@ PCB_thickness = 1.6;
 
 /* [Hidden] */
 
-Color_top_case = "white";
-Color_bottom_case = "white";
-Color_center_window = "white";
+Color_top_case = "deeppink";
+Top_alpha = 0.5;
+
+Color_bottom_case = "#101010";
+Bottom_alpha = 1.0;
+
+Color_center_window = "#101010";
+Window_alpha = 1.0;
+
 Color_pcb = "purple";
-Case_alpha = 1.0;
 
 
 //--------------------------------------------------------------------------------
@@ -49,13 +54,13 @@ module case_assembly(case_type, switch_type, pcb_thickness, threaded_insert_type
     top_overhang = is_lp_walled ? 1.8*2 + 0.15 : undef;
     
     alpha = 1.0;
-    color(Color_top_case, Case_alpha)
+    color(Color_top_case, Top_alpha)
     translate([0, 0, pcb_thickness])
     generate_top_case(case_type, switch_type, top_fillet_radius, corner_correction);
 
     // adjust the center window to be flush with the plate
     center_window_wall_height = switch_type==0 ? 3.5 : 0.7;
-    color(Color_center_window, Case_alpha)
+    color(Color_center_window, Window_alpha)
     translate([0, 0, pcb_thickness])
     center_window(
         wall_height=center_window_wall_height,
@@ -69,7 +74,7 @@ module case_assembly(case_type, switch_type, pcb_thickness, threaded_insert_type
     color(Color_pcb)
     pcb(pcb_thickness);
     
-    color(Color_bottom_case, Case_alpha)
+    color(Color_bottom_case, Bottom_alpha)
     generate_bottom_case(case_type, switch_type, window_mounting_holes=case_type!=0, threaded_insert_type, bottom_fillet=1.1, outer_wall=outer_wall);
 }
 

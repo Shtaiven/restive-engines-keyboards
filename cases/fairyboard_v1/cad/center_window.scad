@@ -233,18 +233,17 @@ module center_window(
         
         // Optional screen cutout
         if (screen_cutout) {
-            // Original rounded extruded screen cutout
+            // Chamfered screen cutout
             screen_dims = [12, 26];
-            //translate([-screen_dims.x/2, bottom_offset+7, 0])
-            //linear_extrude(window_height+thickness+1)
-            //offset(r=fillet)
-            //offset(delta=-fillet)
-            //square([screen_dims.x, screen_dims.y]);
-            
-            // New chamfered screen cutout
+            top_chamfer = [22-fillet*3, 43.5-fillet*3];
+            window_step_size = [
+                (top_chamfer.x-screen_dims.x)/2,
+                (top_chamfer.y-screen_dims.y)/2
+            ];
+            bottom_chamfer = top_chamfer-window_step_size;
             chamfer_depth = thickness/2;
             translate([0, (bottom_offset+top_edge_offset)/2, window_height+chamfer_depth-0.03])
-            chamfered_rectangle([screen_dims.x+(2*chamfer_depth+0.03), screen_dims.y+(2*chamfer_depth+0.03)], screen_dims, chamfer_depth+0.03);
+            chamfered_rectangle(top_chamfer, bottom_chamfer, chamfer_depth+0.03);
             
             // Give it some thickness so it doesn't end on the sharp edge
             translate([0, (bottom_offset+top_edge_offset)/2, window_height-0.03])
