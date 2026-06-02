@@ -235,7 +235,7 @@ module center_window(
         if (screen_cutout) {
             // Chamfered screen cutout
             screen_dims = [12, 26];
-            top_chamfer = [22-fillet*3, 43.5-fillet*3];
+            top_chamfer = [22-window_bump_fillet*2-1, 43.5-window_bump_fillet*2-1];
             window_step_size = [
                 (top_chamfer.x-screen_dims.x)/2,
                 (top_chamfer.y-screen_dims.y)/2

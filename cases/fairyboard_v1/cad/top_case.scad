@@ -6,16 +6,22 @@ $fs = $preview ? 0.5 : 0.1;
 $fa = $preview ? 3 : 0.1;
 
 // case or plate
-Case_type = 0; // [0:Plate, 1:Case]
+Case_type = 1; // [0:Plate, 1:Case, 2:Spacer]
 
 // effects cutout size and wall height
-Switch_type = 0; // [0:MX, 1:Choc v1, 2:Choc v2]
+Switch_type = 1; // [0:MX, 1:Choc v1, 2:Choc v2]
 
 // top fillet radius (default = 1.1)
 Top_fillet_radius = 1.1;
 
 // if true, rounds inner top corners
 Corner_correction = true;
+
+// generate in 2d for laser cutting
+Draw_2D = false;
+
+// correction for width of the laser for laser cutting
+Cut_line_width = 0.0;
 
 /* [Hidden] */
 
@@ -48,9 +54,7 @@ module top_plate(choc_v1_cutouts=false) {
  *    height (float): height of the wall (not including plate)
  *      this should be the space between the plate bottom and pcb top
  */
-module top_wall(height=5) {
-    translate([0, 0, -height])
-    linear_extrude(height, convexity=5)
+module top_wall() {
     difference() {
         pcb_outline();
         cutouts_extension();
@@ -95,7 +99,10 @@ module top_case_no_fillet(wall_height=5, choc_v1_cutouts=false, corner_correctio
     difference() {
         union() {
             top_plate(choc_v1_cutouts);
-            top_wall(wall_height);
+            
+            translate([0, 0, -wall_height])
+            linear_extrude(wall_height, convexity=5)
+            top_wall();
         }
 
         // Cutouts for the top wings to reduce material
@@ -176,13 +183,44 @@ function switch_type_to_wall_height(switch_type) = (
 
 
 //--------------------------------------------------------------------------------
-module generate_top_case(case_type, switch_type, top_fillet_radius=1.1, corner_correction=true) { 
+module generate_top_case(case_type, switch_type, top_fillet_radius=1.1, corner_correction=true, cut_line_width=0.2) { 
     choc_v1_cutouts = switch_type==1;  // MX/Choc v2 or Choc v1 cutouts
     wall_height = case_type==0 ? 0 : switch_type_to_wall_height(switch_type);
     top_fillet = case_type==0 ? 0 : top_fillet_radius;
     
-    assert(!is_undef(wall_height), str("wall_height is undefined! switch_type must be [0,1,2] (is ", switch_type, ")"));
-    top_case(wall_height=wall_height, top_fillet=top_fillet, choc_v1_cutouts=choc_v1_cutouts, corner_correction=corner_correction);
+    if (case_type==2) {
+        // TODO: Move this into its own module
+        spacer_height = switch_type == 0 ? 3.5 : 1.0;
+        
+        translate([0, 0, -spacer_height-0.01])
+        linear_extrude(spacer_height+0.02)
+        offset(delta=cut_line_width/2)
+        difference() {
+            top_wall();
+            
+            board_connector_extended();
+            
+            if (corner_correction) {
+                // Round the top right corner of the left plate
+                translate([-28.27, 42.71 , 0])
+                rotate([0, 0, -14])
+                edge_rounding_tool(1.1);
+                
+                // Round the top left corner of the right plate
+                translate([28.27, 42.71, 0])
+                rotate([0, 0, 104])
+                edge_rounding_tool(1.1);
+            }
+        }
+    } else {
+        assert(!is_undef(wall_height), str("wall_height is undefined! switch_type must be [0,1,2] (is ", switch_type, ")"));
+        top_case(wall_height=wall_height, top_fillet=top_fillet, choc_v1_cutouts=choc_v1_cutouts, corner_correction=corner_correction);
+    }
 }
 
-generate_top_case(Case_type, Switch_type, Top_fillet_radius, Corner_correction);
+if (Draw_2D) {
+    projection()
+    generate_top_case(Case_type, Switch_type, Top_fillet_radius, Corner_correction, Cut_line_width);
+} else {
+    generate_top_case(Case_type, Switch_type, Top_fillet_radius, Corner_correction, Cut_line_width);
+}
