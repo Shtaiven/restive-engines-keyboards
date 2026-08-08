@@ -6,9 +6,8 @@
 
 ## bottom_case.scad
 
-- Make a 3mm spacer version with walls (maybe 4mm if we extend the bottom for the SCUF pads?)
-- Extend the bottom 1mm lower to better surround the SCUF pads
-- Make the SCUF pads 1mm deeper
+- Make the bottom of the case 2mm lower so that the heatset inserts can lie flush with the bottom. 
+- Make the SCUF pads detents 1-2mm deeper to have them surrounded better
 
 ## top_case.scad
 

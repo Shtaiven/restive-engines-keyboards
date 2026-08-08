@@ -258,7 +258,7 @@ module bottom_case_inner(height=2, wall_thickness=0.8) {
 //--------------------------------------------------------------------------------
 /** Construct the outer wall of the case.
  */
-module construct_outer_wall(fillet=1.1, thickness=1.5, height=5, tolerance=0.3, terminal8_cutout=true, terminal5_cutout=false, power_switch_cutout=true, reset_button_cutout=true) {    
+module construct_outer_wall(fillet=1.1, thickness=1.5, height=5, tolerance=0.3, terminal8_cutout=true, terminal5_cutout=false, power_switch_cutout=true, reset_button_cutout=true, cutout_z=6.5) {    
     // Create the wall
     difference() {
         top_bottom_fillet(fillet, height, 0, convexity=5)
@@ -271,7 +271,7 @@ module construct_outer_wall(fillet=1.1, thickness=1.5, height=5, tolerance=0.3, 
         pcb_outline();
 
         // All cutouts
-        cutout_height = 5.0+1.5; // cutouts need to be raise so they only affect the wall above the pcb
+        cutout_height = cutout_z; // cutouts need to be raise so they only affect the wall above the pcb
         bottom_offset = -2;  // y-offset of the "bottom" of the window
         
         // Terminal cutouts
@@ -416,11 +416,12 @@ module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.1, hole_diame
     inner_bottom_fillet = outer_wall ? 0 : bottom_fillet;
     inner_wall_thickness = outer_wall ? 1 : wall_thickness;
     tolerance = outer_wall ? 0.3 : 0;
+    bottom_case_height=6;
     
     // Most of the low profile bottom case is a special case of the spacer case
     bottom_case_for_spacers(
-        height=5,  // Total case thickness = min height of m2 x 3 heatset inserts + 1mm for screws and stability= 5mm
-        bottom_thickness=3,  // Leave enough space for components
+        height=bottom_case_height,  // Total case thickness = min height of m2 x 3 heatset inserts + 1mm for screws and stability= 5mm
+        bottom_thickness=bottom_case_height-2,  // Leave enough space for components
         bottom_fillet=inner_bottom_fillet,
         wall_thickness=inner_wall_thickness,
         hole_diameter=hole_diameter,  // diameter needed for the heatset inserts
@@ -434,41 +435,42 @@ module bottom_case_low_profile(bottom_fillet=1.1, wall_thickness=1.1, hole_diame
     // Create the outer wall for the threaded inserts
     // Wall diameter = hole_diameter + 2*1.3
     // We translate up by the bottom thickness so that the inserts are supporting the pcb
-    translate([0, 0, 3]) {
-    difference() {
-        linear_extrude(height=2, convexity=5)
-        offset(r=(hole_diameter+2.6-3.2)/2)
-        m2_spacers();
-        
-        translate([0, 0, -0.01])
-        linear_extrude(height=2+0.02, convexity=5)
-        offset(r=(hole_diameter-3.2)/2)
-        m2_spacers();
-        
-        linear_extrude(height=2+0.01, convexity=5)
-        component_cutouts();
-    }
-            
-    // Mounting holes for the center window    
-    if (window_mounting_detents) {
-        difference() {
-            linear_extrude(height=2, convexity=5)
-            offset(r=(hole_diameter+2.6-2.4)/2)
-            window_mounting_holes();
-        
-            translate([0, 0, -0.01])
-            linear_extrude(height=2+0.02, convexity=5)
-            offset(r=(hole_diameter-2.4)/2)
-            window_mounting_holes();
-        }
-    }
-    }
+//    threaded_insert_extra_height=0; // this was originally 2, now they sit flush with the bottom
+//    translate([0, 0, bottom_case_height-2]) {
+//    difference() {
+//        linear_extrude(height=threaded_insert_extra_height, convexity=5)
+//        offset(r=(hole_diameter+2.6-3.2)/2)
+//        m2_spacers();
+//        
+//        translate([0, 0, -0.01])
+//        linear_extrude(height=2+0.02, convexity=5)
+//        offset(r=(hole_diameter-3.2)/2)
+//        m2_spacers();
+//        
+//        linear_extrude(height=2+0.01, convexity=5)
+//        component_cutouts();
+//    }
+//            
+//    // Mounting holes for the center window    
+//    if (window_mounting_detents) {
+//        difference() {
+//            linear_extrude(height=threaded_insert_extra_height, convexity=5)
+//            offset(r=(hole_diameter+2.6-2.4)/2)
+//            window_mounting_holes();
+//        
+//            translate([0, 0, -0.01])
+//            linear_extrude(height=2+0.02, convexity=5)
+//            offset(r=(hole_diameter-2.4)/2)
+//            window_mounting_holes();
+//        }
+//    }
+//    }
     
     // Create an outer wall for the entire case
-    outer_wall_height = 5+1.6+2.2;  // bottom_case height + pcb height + top_case thickness low profile
+    outer_wall_height = bottom_case_height+1.6+2.2;  // bottom_case height + pcb height + top_case thickness low profile
     
     if (outer_wall) {
-        construct_outer_wall(fillet=bottom_fillet, thickness=wall_thickness, height=outer_wall_height, tolerance=tolerance);
+        construct_outer_wall(fillet=bottom_fillet, thickness=wall_thickness, height=outer_wall_height, tolerance=tolerance, cutout_z=bottom_case_height+1.5);
     }
 }
 
@@ -525,7 +527,7 @@ module generate_bottom_case(case_type, switch_type, window_mounting_holes, threa
     else if (case_type==1) {  // Low profile case
         hole_diameter = threaded_insert_type_to_hole_diameter(threaded_insert_type);
         detent_diameter = threaded_insert_type_to_detent_diameter(threaded_insert_type);
-        translate([0, 0, -5])
+        translate([0, 0, -6])
         bottom_case_low_profile(bottom_fillet=bottom_fillet,hole_diameter=hole_diameter, detent_diameter=detent_diameter, window_mounting_detents=window_mounting_holes, outer_wall=outer_wall);
     }
     else if (case_type==2) {  // Spacer case for which screws in from the bottom
