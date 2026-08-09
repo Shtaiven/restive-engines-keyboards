@@ -49,15 +49,29 @@ module top_plate(choc_v1_cutouts=false) {
 
 
 //--------------------------------------------------------------------------------
-/** Wall beneath the plate, with space for the keys.
- *  Params:
- *    height (float): height of the wall (not including plate)
- *      this should be the space between the plate bottom and pcb top
- */
+/** Wall beneath the plate, with space for the keys. */
 module top_wall() {
     difference() {
         pcb_outline();
         cutouts_extension();
+        m2_spacers();
+    }
+}
+
+//--------------------------------------------------------------------------------
+/** Spacer beneath the plate, with space for the keys. */
+module spacer() {
+    difference() {
+        pcb_outline();
+        
+        // 18.2 side length, can be 15
+        rounding = 0.5;
+        offset(r = rounding)
+        offset(delta = -(18.2-15)/2-rounding)
+        cutouts_extension(); 
+        
+        // 3.2mm diameter, can be 2
+        offset(delta= -(3.2-2)/2)
         m2_spacers();
     }
 }
@@ -196,7 +210,7 @@ module generate_top_case(case_type, switch_type, top_fillet_radius=1.1, corner_c
         linear_extrude(spacer_height+0.02)
         offset(delta=cut_line_width/2)
         difference() {
-            top_wall();
+            spacer();
             
             board_connector_extended();
             

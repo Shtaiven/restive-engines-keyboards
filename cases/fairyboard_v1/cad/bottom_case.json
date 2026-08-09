@@ -8,6 +8,14 @@
             "Switch_type": "1",
             "Threaded_insert_type": "0",
             "Window_mounting_holes": "true"
+        },
+        "New set 1": {
+            "Bottom_fillet_radius": "1.1000000000000001",
+            "Case_type": "1",
+            "Outer_wall": "true",
+            "Switch_type": "1",
+            "Threaded_insert_type": "0",
+            "Window_mounting_holes": "true"
         }
     }
 }

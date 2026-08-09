@@ -1,0 +1,37 @@
+{
+    "fileFormatVersion": "1",
+    "parameterSets": {
+        "New set 1": {
+            "Case_type": "2",
+            "Corner_correction": "true",
+            "Cut_line_width": "0.20000000000000004",
+            "Draw_2D": "false",
+            "Switch_type": "1",
+            "Top_fillet_radius": "1.1000000000000001"
+        },
+        "New set 2": {
+            "Case_type": "0",
+            "Corner_correction": "true",
+            "Cut_line_width": "0.20000000000000001",
+            "Draw_2D": "false",
+            "Switch_type": "1",
+            "Top_fillet_radius": "1.1000000000000001"
+        },
+        "New set 3": {
+            "Case_type": "2",
+            "Corner_correction": "false",
+            "Cut_line_width": "0",
+            "Draw_2D": "false",
+            "Switch_type": "1",
+            "Top_fillet_radius": "1.1000000000000001"
+        },
+        "New set 4": {
+            "Case_type": "2",
+            "Corner_correction": "true",
+            "Cut_line_width": "0",
+            "Draw_2D": "true",
+            "Switch_type": "1",
+            "Top_fillet_radius": "1.1000000000000001"
+        }
+    }
+}
