@@ -1,7 +1,7 @@
-*.stl filter=lfs diff=lfs merge=lfs -text
-*.3mf filter=lfs diff=lfs merge=lfs -text
-*.dxf filter=lfs diff=lfs merge=lfs -text
 *.gcode filter=lfs diff=lfs merge=lfs -text
 *.bgcode filter=lfs diff=lfs merge=lfs -text
+*.3mf filter=lfs diff=lfs merge=lfs -text
+*.stl filter=lfs diff=lfs merge=lfs -text
+*.dxf filter=lfs diff=lfs merge=lfs -text
 *.gbo filter=lfs diff=lfs merge=lfs -text
 *.slvs filter=lfs diff=lfs merge=lfs -text
