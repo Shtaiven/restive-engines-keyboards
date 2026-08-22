@@ -23,13 +23,13 @@ PCB_thickness = 1.6;
 
 /* [Hidden] */
 
-Color_top_case = "deeppink";
-Top_alpha = 0.5;
+Color_top_case = "purple";
+Top_alpha = 1.0;
 
-Color_bottom_case = "#101010";
+Color_bottom_case = "aquamarine";
 Bottom_alpha = 1.0;
 
-Color_center_window = "#101010";
+Color_center_window = "aquamarine";
 Window_alpha = 1.0;
 
 Color_pcb = "purple";
@@ -51,7 +51,7 @@ module case_assembly(case_type, switch_type, pcb_thickness, threaded_insert_type
     top_fillet_radius = outer_wall ? 0 : 1.1;
     corner_correction = outer_wall? false : true;
     is_lp_walled = outer_wall && case_type == 1 && switch_type != 0;
-    top_overhang = is_lp_walled ? 1.8*2 + 0.15 : undef;
+    top_overhang = is_lp_walled ? 1.5*2 : undef;
     
     alpha = 1.0;
     color(Color_top_case, Top_alpha)

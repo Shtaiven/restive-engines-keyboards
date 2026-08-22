@@ -57,7 +57,7 @@ Hollow=false;
 Corner_rounding=false;
 
 // how much the window should overhang the top (for outer walls)
-Top_overhang=1.8*2 + 0.15;
+Top_overhang=3.0;
 
 /* [Hidden] */
 
@@ -145,10 +145,10 @@ module center_window(
         // Hollow out the window bump
         if (window_height > wall_height) {
             top_fillet(top_window_fillet, window_height, 0)
-            translate([0, 23.575, 0])
+            translate([0, 23.575+top_overhang/4, 0])
             linear_extrude(window_height)
             offset(delta=-thickness)
-            center_window_inner();
+            center_window_inner(top_overhang/2);
         }
         
         // Mounting hole cutouts
@@ -180,12 +180,12 @@ module center_window(
             // A large inner cavity compatible without a top overhang
             // which won't pinch the nice_view screen
             usb_dims = [19, 8.5+window_bump_fillet];
-            translate([-usb_dims.x/2, top_edge_offset-thickness-0.25, -window_bump_fillet])
+            translate([-usb_dims.x/2, top_edge_offset-thickness-0.25, 0])
             rotate([90, 0 ,0])
             linear_extrude(thickness+2, center=true)
             //offset(r=window_bump_fillet)
             //offset(delta=-window_bump_fillet)
-            square(usb_dims);
+            square([19, wall_height+thickness]);
             
             // A cutout more tightly surround the usb-c connector
             // in the presence of a top overhang
@@ -206,7 +206,7 @@ module center_window(
         // Slide switch cutout
         if (power_switch_cutout) {
             pwr_sw_size = [9.2, 9, 3];
-            translate([13.7, top_edge_offset+1, 0])
+            translate([13.45, top_edge_offset+1, 0])
             mirror([0, 1, 0])
             cube(pwr_sw_size);
         }
@@ -214,7 +214,7 @@ module center_window(
         // Reset button cutout
         if (reset_button_cutout) {
             reset_btn_size = [8.5, 9, 5];
-            translate([-13.3, top_edge_offset+1, 0])
+            translate([-13.55, top_edge_offset+1, 0])
             mirror([1, 1, 0])
             cube(reset_btn_size);
         }
@@ -232,7 +232,7 @@ module center_window(
         }
         
         // Optional screen cutout
-        #if (screen_cutout) {
+        if (screen_cutout) {
             // Chamfered screen cutout
             screen_dims = [12, 26];
             top_chamfer = [22-window_bump_fillet*2-1, 43.5-window_bump_fillet*2-1];
