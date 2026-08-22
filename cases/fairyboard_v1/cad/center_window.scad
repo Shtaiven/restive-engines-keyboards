@@ -160,7 +160,7 @@ module center_window(
         
         // Terminal cutouts
         if (terminal8_cutout) {
-            translate([-11.78, bottom_offset, -0.01])
+            translate([-11, bottom_offset, -0.01])
             mirror([1, 0, 0])
             // extra x added to chop off the thin bit left over
             cube([25.88, 7.4, window_height+thickness+0.02]);
@@ -206,7 +206,7 @@ module center_window(
         // Slide switch cutout
         if (power_switch_cutout) {
             pwr_sw_size = [9.2, 9, 3];
-            translate([13.2, top_edge_offset+1, 0])
+            translate([13.7, top_edge_offset+1, 0])
             mirror([0, 1, 0])
             cube(pwr_sw_size);
         }
@@ -214,7 +214,7 @@ module center_window(
         // Reset button cutout
         if (reset_button_cutout) {
             reset_btn_size = [8.5, 9, 5];
-            translate([-13.8, top_edge_offset+1, 0])
+            translate([-13.3, top_edge_offset+1, 0])
             mirror([1, 1, 0])
             cube(reset_btn_size);
         }
@@ -232,13 +232,13 @@ module center_window(
         }
         
         // Optional screen cutout
-        if (screen_cutout) {
+        #if (screen_cutout) {
             // Chamfered screen cutout
             screen_dims = [12, 26];
             top_chamfer = [22-window_bump_fillet*2-1, 43.5-window_bump_fillet*2-1];
             window_step_size = [
-                (top_chamfer.x-screen_dims.x)/2,
-                (top_chamfer.y-screen_dims.y)/2
+                (top_chamfer.x-screen_dims.x),
+                (top_chamfer.y-screen_dims.y)
             ];
             bottom_chamfer = top_chamfer-window_step_size;
             chamfer_depth = thickness/2;
