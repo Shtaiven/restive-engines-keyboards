@@ -24,7 +24,7 @@ Window_height = 10.0;  //[::float]
 Thickness = 1.5;  //[::float]
 
 // fillet radius along the top edges
-Top_fillet = 1.1;  //[::float]
+Top_fillet = 0.0;  //[::float]
 
 // the fillet around the window bump (if present)
 Window_bump_fillet = 1.1;  //[::float]
@@ -131,6 +131,14 @@ module center_window(
                 top_fillet(top_window_fillet, window_height-wall_height, 0)
                 linear_extrude(window_height-wall_height)
                 center_window_inner(top_overhang);
+            }
+            
+            if (jst_cutout) {
+                // pad out the wire bump because it's too thin (usually only 1 layer on a 3d printer (JST connector is 2mm high)
+                wire_cover = [10.1, 11, 2];
+                translate([10, bottom_offset+3, thickness+wall_height])
+                top_fillet(top_window_fillet, wire_cover.z, 0)
+                cube(wire_cover);
             }
         }
 
