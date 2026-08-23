@@ -57,7 +57,7 @@ Hollow=false;
 Corner_rounding=false;
 
 // how much the window should overhang the top (for outer walls)
-Top_overhang=3.0;
+Top_overhang=2*2;
 
 /* [Hidden] */
 
@@ -152,11 +152,11 @@ module center_window(
         
         // Hollow out the window bump
         if (window_height > wall_height) {
-            top_fillet(top_window_fillet, window_height, 0)
-            translate([0, 23.575+top_overhang/4, 0])
+            space_for_pcb = 1.6;
+            translate([0, 23.575+space_for_pcb/2, 0]) // make some roo
             linear_extrude(window_height)
             offset(delta=-thickness)
-            center_window_inner(top_overhang/2);
+            center_window_inner(space_for_pcb);
         }
         
         // Mounting hole cutouts
@@ -201,12 +201,12 @@ module center_window(
             hull() {
                 translate([0, top_edge_offset+usb_overhang/4, nice_nano_usbc_height])
                 rotate([90, 0 ,0])
-                linear_extrude(thickness+1, center=true)
+                linear_extrude(thickness+usb_overhang+1, center=true)
                 usbc_cutout();
                 
                 translate([0, top_edge_offset+usb_overhang/4])
                 rotate([90, 0 ,0])
-                linear_extrude(thickness+1, center=true)
+                linear_extrude(thickness+usb_overhang+1, center=true)
                 usbc_cutout();
             }
         }

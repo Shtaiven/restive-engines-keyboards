@@ -25,6 +25,7 @@ Window_mounting_holes = true;
 Outer_wall = true;
 
 /* [Hidden] */
+Outer_wall_thickness = 1.6;
 
 
 //--------------------------------------------------------------------------------
@@ -276,10 +277,10 @@ module construct_outer_wall(fillet=1.1, thickness=1.5, height=5, tolerance=0.3, 
         
         // Terminal cutouts
         if (terminal8_cutout) {
-            translate([-11.78, bottom_offset, cutout_height])
+            translate([-11, bottom_offset, cutout_height])
             mirror([1, 0, 0])
             // extra x added to chop off; the thin bit left over
-            cube([21.0, 7.4, 5]);
+            cube([22.78, 7.4, 5]);
         }
 
         if (terminal5_cutout) {
@@ -292,7 +293,7 @@ module construct_outer_wall(fillet=1.1, thickness=1.5, height=5, tolerance=0.3, 
         // Slide switch cutout
         if (power_switch_cutout) {
             pwr_sw_size = [9.2, 9, 3];
-            translate([13.2, top_edge_offset, cutout_height])
+            translate([13.45, top_edge_offset, cutout_height])
             mirror([0, 1, 0])
             cube(pwr_sw_size);
         }
@@ -300,7 +301,7 @@ module construct_outer_wall(fillet=1.1, thickness=1.5, height=5, tolerance=0.3, 
         // Reset button cutout
         if (reset_button_cutout) {
             reset_btn_size = [8.5, 9, 5];
-            translate([-13.8, top_edge_offset, cutout_height])
+            translate([-13.55, top_edge_offset, cutout_height])
             mirror([1, 1, 0])
             cube(reset_btn_size);
         }
@@ -528,7 +529,7 @@ module generate_bottom_case(case_type, switch_type, window_mounting_holes, threa
         hole_diameter = threaded_insert_type_to_hole_diameter(threaded_insert_type);
         detent_diameter = threaded_insert_type_to_detent_diameter(threaded_insert_type);
         translate([0, 0, -6])
-        bottom_case_low_profile(bottom_fillet=bottom_fillet,hole_diameter=hole_diameter, detent_diameter=detent_diameter, window_mounting_detents=window_mounting_holes, outer_wall=outer_wall);
+        bottom_case_low_profile(bottom_fillet=bottom_fillet,hole_diameter=hole_diameter, detent_diameter=detent_diameter, window_mounting_detents=window_mounting_holes, outer_wall=outer_wall, wall_thickness=Outer_wall_thickness);
     }
     else if (case_type==2) {  // Spacer case for which screws in from the bottom
         case_height = switch_type_to_case_height(switch_type);
