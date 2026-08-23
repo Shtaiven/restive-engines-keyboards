@@ -135,7 +135,7 @@ module center_window(
             
             if (jst_cutout) {
                 // pad out the wire bump because it's too thin (usually only 1 layer on a 3d printer (JST connector is 2mm high)
-                wire_cover = [10.1, 11, 2];
+                wire_cover = [9, 12.1, 2];
                 translate([10, bottom_offset+3, thickness+wall_height])
                 top_fillet(top_window_fillet, wire_cover.z, 0)
                 cube(wire_cover);
@@ -234,7 +234,7 @@ module center_window(
             cube(jst_size);
             
             // space for wires
-            wires_size = [10, 10, 1.6];
+            wires_size = [9, 10, 1.6];
             translate([9, bottom_offset+4, 0])
             cube(wires_size);
         }
