@@ -124,7 +124,7 @@
 			(mirror no)
 			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "")
+			(outputdirectory "fabrication/")
 		)
 	)
 	(footprint "MountingHole:MountingHole_2.2mm_M2"
@@ -137,7 +137,7 @@
 			(at 0 -3.15 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "14e8e336-d513-4dff-b757-2391be0daa5b")
+			(uuid "bd32f20b-8de8-47d6-b3ed-7458b9ab97f5")
 			(effects
 				(font
 					(size 1 1)
@@ -145,10 +145,10 @@
 				)
 			)
 		)
-		(property "Value" "MountingHole_2.2mm_M2"
+		(property "Value" "MountingHole_2.4mm_M2"
 			(at 0 3.15 0)
 			(layer "F.Fab")
-			(uuid "73073157-3ba5-4dde-b8ea-848d590f35b6")
+			(uuid "1669d6a5-027d-4713-aabd-490c78593507")
 			(effects
 				(font
 					(size 1 1)
@@ -160,7 +160,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4f684978-45c7-4191-b295-fdd123016f91")
+			(uuid "117ddc31-2097-4080-bc34-2b35bd908355")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -171,7 +171,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "acbf3e1e-8268-4e33-ba1c-02edd0996fe7")
+			(uuid "fcc22204-75d5-439f-a608-6376e9540dcd")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -227,8 +227,8 @@
 		)
 		(pad "" np_thru_hole circle
 			(at 0 0)
-			(size 2.2 2.2)
-			(drill 2.2)
+			(size 2.4 2.4)
+			(drill 2.4)
 			(layers "*.Cu" "*.Mask")
 			(uuid "274dc843-24fd-4151-bccf-120b96111ea5")
 		)
@@ -244,7 +244,7 @@
 			(at 0 -3.15 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "14a964db-985a-4ae4-8a15-d0c562d67807")
+			(uuid "cc16862a-0568-47c2-aaee-93b0251af91d")
 			(effects
 				(font
 					(size 1 1)
@@ -252,10 +252,10 @@
 				)
 			)
 		)
-		(property "Value" "MountingHole_2.2mm_M2"
+		(property "Value" "MountingHole_2.4mm_M2"
 			(at 0 3.15 0)
 			(layer "F.Fab")
-			(uuid "2f415343-7927-4d4b-8451-fd9da92f1bc1")
+			(uuid "dde86165-968a-4a18-8892-e7b282d0cc06")
 			(effects
 				(font
 					(size 1 1)
@@ -267,7 +267,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "fba61e80-80df-419f-a661-58d9afe583a9")
+			(uuid "ea3dd098-cbec-4198-9ad2-47f873f69a38")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -278,7 +278,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "eea4dd36-9aa0-45ad-ad3f-cfcdfe6d45e5")
+			(uuid "6c661ee4-60dd-4b99-97c4-eebccd413f3f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -334,8 +334,8 @@
 		)
 		(pad "" np_thru_hole circle
 			(at 0 0)
-			(size 2.2 2.2)
-			(drill 2.2)
+			(size 2.4 2.4)
+			(drill 2.4)
 			(layers "*.Cu" "*.Mask")
 			(uuid "10b7d564-e8c7-4f63-a09a-f015141c848a")
 		)
@@ -351,7 +351,7 @@
 			(at 0 -3.15 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "7c94f44b-831b-49ed-b5cf-d6dc026556b0")
+			(uuid "8a64d263-a91a-4cfe-97dd-5e32816aa27e")
 			(effects
 				(font
 					(size 1 1)
@@ -359,10 +359,10 @@
 				)
 			)
 		)
-		(property "Value" "MountingHole_2.2mm_M2"
+		(property "Value" "MountingHole_2.4mm_M2"
 			(at 0 3.15 0)
 			(layer "F.Fab")
-			(uuid "6a7ea6d3-5391-4c79-ae1f-9d91419eadb5")
+			(uuid "5a829fac-d2f9-4de8-a913-700923defdaa")
 			(effects
 				(font
 					(size 1 1)
@@ -374,7 +374,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b55aac28-6747-4366-bcbc-68461b834f6c")
+			(uuid "d6ef297f-ebe3-41cd-9146-2f14b4363156")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -385,7 +385,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3e19a449-ca49-400e-b66f-fae3ad475b1b")
+			(uuid "426d7a0f-ce7b-4480-b2b5-d3fbdebbbfb0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -441,8 +441,8 @@
 		)
 		(pad "" np_thru_hole circle
 			(at 0 0)
-			(size 2.2 2.2)
-			(drill 2.2)
+			(size 2.4 2.4)
+			(drill 2.4)
 			(layers "*.Cu" "*.Mask")
 			(uuid "30dfcd70-6cd9-47f4-8300-29b3cd7e8ef7")
 		)
@@ -458,7 +458,7 @@
 			(at 0 -3.15 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "57b89efb-c7c1-49fd-bddc-1b2d3e09a0c0")
+			(uuid "125940b5-17e0-4497-b41f-75af269c0b8c")
 			(effects
 				(font
 					(size 1 1)
@@ -466,10 +466,10 @@
 				)
 			)
 		)
-		(property "Value" "MountingHole_2.2mm_M2"
+		(property "Value" "MountingHole_2.4mm_M2"
 			(at 0 3.15 0)
 			(layer "F.Fab")
-			(uuid "4a2b256d-7667-435c-aac0-6f4007f51ee7")
+			(uuid "e22ede0f-f496-430b-82cd-eb415da9b290")
 			(effects
 				(font
 					(size 1 1)
@@ -481,7 +481,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "58e083be-b0e2-44ef-b269-b900a3020056")
+			(uuid "75e0a35e-6199-4797-b82a-683fca0a38aa")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -492,7 +492,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f57625e8-754f-4b77-8a55-2ea1dee831ca")
+			(uuid "1c1ab214-a0a1-4155-8995-b342d66611fb")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -548,8 +548,8 @@
 		)
 		(pad "" np_thru_hole circle
 			(at 0 0)
-			(size 2.2 2.2)
-			(drill 2.2)
+			(size 2.4 2.4)
+			(drill 2.4)
 			(layers "*.Cu" "*.Mask")
 			(uuid "f8b5e43a-4f57-42b1-92ce-1fdea2f33351")
 		)
@@ -565,7 +565,7 @@
 			(at 0 -3.15 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "e36c9350-cfac-499f-bcc1-c3097d1af216")
+			(uuid "acc9ffb5-0746-4cce-8700-7cd01851b75d")
 			(effects
 				(font
 					(size 1 1)
@@ -573,10 +573,10 @@
 				)
 			)
 		)
-		(property "Value" "MountingHole_2.2mm_M2"
+		(property "Value" "MountingHole_2.4mm_M2"
 			(at 0 3.15 0)
 			(layer "F.Fab")
-			(uuid "62fbab78-860a-4a61-a2ea-51bd1c28788e")
+			(uuid "22c51240-a2ab-448a-8b0c-89824e73be13")
 			(effects
 				(font
 					(size 1 1)
@@ -588,7 +588,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a9fb61ae-8c79-46c2-a6a2-4ee15af02842")
+			(uuid "f519b594-82b2-48a1-adf4-17929e18f016")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -599,7 +599,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a4cd24b7-1a7d-455e-8a13-7fd016d98aa9")
+			(uuid "f5bc4a75-59a0-4bc6-b44a-8b1b76c58563")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -655,8 +655,8 @@
 		)
 		(pad "" np_thru_hole circle
 			(at 0 0)
-			(size 2.2 2.2)
-			(drill 2.2)
+			(size 2.4 2.4)
+			(drill 2.4)
 			(layers "*.Cu" "*.Mask")
 			(uuid "49ff91a9-edba-4e54-b2e4-432e81add650")
 		)
@@ -672,7 +672,7 @@
 			(at 0 -3.15 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "515f438f-e0ad-45a2-bf68-5424d3137806")
+			(uuid "69846db1-82ad-4e2e-9587-b1d621e1822b")
 			(effects
 				(font
 					(size 1 1)
@@ -680,10 +680,10 @@
 				)
 			)
 		)
-		(property "Value" "MountingHole_2.2mm_M2"
+		(property "Value" "MountingHole_2.4mm_M2"
 			(at 0 3.15 0)
 			(layer "F.Fab")
-			(uuid "88fe329d-7685-45fd-bad1-e2bc405c4d9f")
+			(uuid "9e05781c-a3e6-421b-983c-83d196c040f4")
 			(effects
 				(font
 					(size 1 1)
@@ -695,7 +695,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "23020de3-15de-4a3c-9a74-b7e16fd15534")
+			(uuid "4be65fa1-e99a-4f3d-a59a-3aa91d66a664")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -706,7 +706,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6174b260-a9c4-43b7-8b06-eb4901c5749f")
+			(uuid "0133c013-7345-4ea1-931d-00ee76bca4b7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -762,8 +762,8 @@
 		)
 		(pad "" np_thru_hole circle
 			(at 0 0)
-			(size 2.2 2.2)
-			(drill 2.2)
+			(size 2.4 2.4)
+			(drill 2.4)
 			(layers "*.Cu" "*.Mask")
 			(uuid "2c859ae2-d1bb-4d87-bb3f-6d9ebf2eaa11")
 		)
