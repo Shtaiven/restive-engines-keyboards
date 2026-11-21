@@ -1,0 +1,68 @@
+name,expression,unit,comment
+pcb_t,1.2 mm,mm,main PCB thickness
+plate_gap,1 mm,mm,PCB top to plate bottom (top_case.scad wall_height for Choc v1)
+plate_t,1.6 mm,mm,switch plate (PCB) thickness
+base_h,6 mm,mm,bottom case height below the PCB
+pocket_d,2 mm,mm,component pocket depth in the case floor
+pcb_clear,0.375 mm,mm,clearance PCB-to-case wall and window-to-plate (SCAD 0.3 + 0.075 outline stroke)
+wall,1.6 mm,mm,bottom case outer wall thickness
+lip_proud,0.025 mm,mm,case window-lip ends stand this far proud of the outer wall (a lip end inside the wall fillet fails)
+ledge_w,0.925 mm,mm,width of the ledge the PCB rests on
+fillet_r,1.1 mm,mm,outer edge fillet of the bottom case
+insert_d,3.1 mm,mm,M2 heatset insert hole in the bottom case
+win_hole_d,2.4 mm,mm,center window mounting hole
+bump_w,22 mm,mm,center window bump width
+top_overhang,4 mm,mm,window bump overhang past the PCB centre section (front + back)
+bump_fillet,1.1 mm,mm,window bump top and corner fillet
+win_base_t,2.2 mm,mm,center window base thickness (as printed)
+window_h,10 mm,mm,window bump inner height above the window base bottom
+thick,1.5 mm,mm,center window shell thickness
+cutout_z,1.5 mm,mm,case wall cutouts start this far above the PCB bottom
+term_cut_end,2.381 mm,mm,terminal cutouts end this far past the last terminal pin (case + window)
+case_term_start,2.619 mm,mm,case terminal cutout starts this far before the first terminal pin
+pwr_cut_w,9.2 mm,mm,power switch cutout width (centred on its pins)
+rst_cut_w,9 mm,mm,reset button cutout width (centred on its outer pins)
+case_cut_in,1.7 mm,mm,case wall cutouts reach this far inside the PCB edge
+case_cut_out,6.5 mm,mm,case wall cutouts reach this far outside the PCB edge
+win_term_start,5.719 mm,mm,window terminal cutout starts this far before the first terminal pin
+win_term_l,7.4 mm,mm,window terminal cutout length from the PCB centre bottom edge
+win_sw_past,1 mm,mm,window power/reset cutouts reach this far past the PCB centre top edge
+win_pwr_l,9 mm,mm,window power switch cutout length
+win_pwr_h,3 mm,mm,window power switch cutout height above the window bottom
+win_rst_l,8.5 mm,mm,window reset button cutout length
+win_rst_h,5 mm,mm,window reset button cutout height above the window bottom
+jst_cut_w,8 mm,mm,JST connector cutout width (centred on its pins)
+jst_cut_l,11 mm,mm,JST connector cutout length
+jst_cut_past,1.586 mm,mm,JST cutout reaches this far past the JST pins (+y)
+jst_cut_h,6 mm,mm,JST cutout height above the window bottom
+wire_cut_w,9 mm,mm,battery wire channel width
+wire_cut_l,10 mm,mm,battery wire channel length (ends at the JST cutout)
+wire_cut_dx,1.5 mm,mm,wire channel centre sits this far -x of the JST pins centre
+wire_cut_h,1.6 mm,mm,wire channel height above the window bottom
+cover_w,9 mm,mm,wire cover bump width
+cover_l,12.1 mm,mm,wire cover bump length
+cover_dx,0.5 mm,mm,wire cover centre sits this far -x of the JST pins centre
+cover_past,1.1 mm,mm,wire cover reaches this far past the JST cutout bottom (+y)
+cover_h,2 mm,mm,wire cover height above the window base top
+usbc_w,10 mm,mm,USB-C opening width
+usbc_h,4.1 mm,mm,USB-C opening slot height
+usbc_z,4.3 mm,mm,upper USB-C slot centre above the window bottom
+screen_w,12 mm,mm,screen opening width
+screen_l,26 mm,mm,screen opening length
+screen_top_l,43.5 mm - 2*bump_fillet - 1 mm,mm,screen chamfer length at the top surface
+scuf_w,6 mm,mm,SCUF foot width
+scuf_cc,36 mm,mm,SCUF foot end-centre to end-centre length
+scuf_depth,0.5 mm,mm,SCUF foot recess depth
+scuf_chamfer,0.1 mm,mm,SCUF foot recess chamfer
+scuf_top_dx,2.0985 mm,mm,top SCUF feet: x offset from the top index key centre hole (mirrored left/right)
+scuf_top_dy,9.3145 mm,mm,top SCUF feet: y offset from the top index key centre hole
+scuf_top_rot,14 deg,deg,top SCUF feet angle (mirrored)
+scuf_mid_rot,104 deg,deg,middle SCUF feet angle (centred on the pinky home key centre hole)
+scuf_bot_dx,1.887 mm,mm,bottom SCUF feet: x offset from the thumb key centre hole (mirrored)
+scuf_bot_dy,1.7075 mm,mm,bottom SCUF feet: y offset (below) the thumb key centre hole
+scuf_bot_rot,46 deg,deg,bottom SCUF feet angle (mirrored)
+frame_x,-211.7331 mm,mm,PCB Gerber x offset into the case frame (puts M2 holes on the case holes)
+frame_y,158.6875 mm,mm,PCB Gerber y offset into the case frame
+plate_l_x,-211.9876 mm,mm,left plate Gerber x offset (holes on PCB holes)
+plate_r_x,211.9854 mm,mm,right plate (turned over) x offset
+plate_y,94.476 mm,mm,plate Gerber y offset
